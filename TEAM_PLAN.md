@@ -5,12 +5,25 @@ Use case confirmed: **Use Case 3**. Due **Thu 6 Nov 2026, 11:55 PM** (11 days). 
 > ## ⚠️ CRASH SCHEDULE (26 Oct): **code + presentation by Thu 29 Oct**, report by Fri 6 Nov
 > The timeline further down is superseded. Scope is cut to what the rubric needs plus one spare.
 >
-> **Scope (4 basic + 4 advanced, spec needs 3 + 3):**
-> - A: preprocessing + POS key phrases + spaCy NER/regex (basic) · few-shot LLM extraction (advanced). Hand-label **20** abstracts.
-> - B: NB vs LogReg on TF-IDF (basic) · zero/few-shot LLM classifier **or** frozen-DistilBERT + LogReg (advanced). No full fine-tune, no BiLSTM, no ensemble.
-> - C: TF-IDF vs MiniLM retrieval + KMeans (basic) · `retrieval.py` RAG retriever (advanced). No Word2Vec.
-> - D: extractive baseline (basic) · LLM summary + CoT gaps + RAG synthesis + groundedness check on **10** samples (advanced). NB06 demo on 3 queries = the live demo in the presentation.
-> - LLM: whichever runs **today** (`LLM_BACKEND=openai` is fine; D commits `llm_cache.jsonl`).
+> **Scope: every lecture + prac must appear in the code. Lift code from the prac notebooks — don't rewrite.**
+> | Week | Lift from prac | Goes in | Owner | Level |
+> |---|---|---|---|---|
+> | 1 | word count, frequency plot, word cloud, vocab richness | NB02 EDA per category | A | required |
+> | 2 | tokenise, stop-words, stem vs lemma | NB02 preprocessing | A | required |
+> | 3 | POS, NER, chunking | NB02 POS key phrases + `noun_chunks` + NER/regex | A | required |
+> | 4 | BoW, TF-IDF, pretrained embeddings + PCA viz (§4–5) | NB04 TF-IDF → averaged spaCy/GloVe → MiniLM; PCA plot | C | required |
+> | 5 | NB / LogReg, metrics, confusion matrix | NB03 baselines | B | required |
+> | 6 | simplified LSTM + HF tokenizer (§2) | NB03 LSTM, 1–2 epochs | B | required-lite |
+> | 7 | zero-shot classification pipeline (steps 4–8) | NB03 zero-shot on 500 test papers | B | required |
+> | 8 | encoder vs decoder | NB04 uses encoder embeddings, NB05 uses decoder LLM — say so in markdown | C, D | covered |
+> | 9 | prompting ladder, zero/few-shot CoT (Parts 1–2); fine-tune BERT with Trainer (§4) | NB05 basic → role → few-shot → CoT; NB03 DistilBERT 1 epoch on 3k subset (Colab GPU) | D, B | required / required-lite |
+> | 9 supp | BART / T5 summarisation | NB05 comparison vs LLM on 10 abstracts | D | required |
+> | 10 | hallucination, prompt injection, guardrail system prompt | NB05 groundedness check + guardrail + one injected-abstract test | D | required |
+> | 11 | smolagents research assistant | NB06 wrap `retrieve` + `summarise` as agent tools | D | stretch |
+> | 12 | RAG; wav2vec speech; VQA | RAG = NB04/05 core; voice query → `analyse()` demo; VQA n/a (no images), note in report | C, D | RAG required · voice stretch |
+>
+> All "required" rows are copy-paste from a prac and fit in Tuesday. "required-lite" = run 1 epoch, report the number, move on. "stretch" only Wed morning after NB06 works.
+> Still cut: ensemble, full multi-epoch fine-tune, 50-abstract labelling (do 20), 20-sample rubric (do 10).
 >
 > **Phase 1 — code + slides (Mon 26 → Thu 29)**
 > | When | Everyone | D additionally |
