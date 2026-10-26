@@ -1,0 +1,73 @@
+{
+  "corpus_stats": [
+    {
+      "category": "cs.AI",
+      "papers": 2000,
+      "mean_words": 178.8,
+      "vocab_size": 15258,
+      "type_token_ratio": 0.0427
+    },
+    {
+      "category": "cs.CL",
+      "papers": 2000,
+      "mean_words": 168.6,
+      "vocab_size": 13824,
+      "type_token_ratio": 0.041
+    },
+    {
+      "category": "cs.CR",
+      "papers": 2000,
+      "mean_words": 181.8,
+      "vocab_size": 15245,
+      "type_token_ratio": 0.0419
+    },
+    {
+      "category": "cs.CV",
+      "papers": 2000,
+      "mean_words": 187.2,
+      "vocab_size": 14714,
+      "type_token_ratio": 0.0393
+    },
+    {
+      "category": "cs.IR",
+      "papers": 2000,
+      "mean_words": 184.8,
+      "vocab_size": 13308,
+      "type_token_ratio": 0.036
+    },
+    {
+      "category": "cs.LG",
+      "papers": 2000,
+      "mean_words": 182.6,
+      "vocab_size": 14251,
+      "type_token_ratio": 0.039
+    }
+  ],
+  "vocab_reduction_1000_abstracts": {
+    "raw lowercase words": 11417,
+    "cleaned, no stop-words/punct/numbers": 10818,
+    "+ Porter stemming": 6483,
+    "+ spaCy lemmatisation": 8466
+  },
+  "mean_key_phrases_per_paper": 25.3,
+  "mean_noun_chunks_per_paper": 27.3,
+  "spacy_entity_labels_600_papers": {
+    "ORG": 2020,
+    "CARDINAL": 971,
+    "PERSON": 296,
+    "ORDINAL": 184,
+    "GPE": 170,
+    "PERCENT": 168,
+    "NORP": 136,
+    "DATE": 99,
+    "PRODUCT": 73,
+    "LANGUAGE": 25
+  },
+  "regex_600_papers": {
+    "acronym_definitions": 299,
+    "dataset_mentions": 56,
+    "papers_with_a_year": 31
+  },
+  "regex_names_also_found_by_spacy": 0.542,
+  "extraction_scores": "not run: gold labels not filled in yet"
+}
