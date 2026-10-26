@@ -59,22 +59,27 @@ def load_classifier(path=CLASSIFIER_PATH):
     return _model
 
 
+def _as_list(texts):
+    # a bare string would otherwise be split into characters by list()
+    return [texts] if isinstance(texts, str) else list(texts)
+
+
 def predict(texts):
     """Predicted primary category for each text (title + abstract works best)."""
-    return list(load_classifier().predict(list(texts)))
+    return list(load_classifier().predict(_as_list(texts)))
 
 
 def predict_proba(texts):
     """Probability of every category for each text, as a DataFrame."""
     model = load_classifier()
-    return pd.DataFrame(model.predict_proba(list(texts)), columns=model.classes_)
+    return pd.DataFrame(model.predict_proba(_as_list(texts)), columns=model.classes_)
 
 
 def top_keywords(texts, k=5):
     """The k terms with the highest TF-IDF weight in each text, using the classifier's vectoriser."""
     vectoriser = load_classifier().named_steps["tfidf"]
     terms = vectoriser.get_feature_names_out()
-    matrix = vectoriser.transform(list(texts))
+    matrix = vectoriser.transform(_as_list(texts))
     keywords = []
     for i in range(matrix.shape[0]):
         row = matrix[i].toarray().ravel()
