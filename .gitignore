@@ -1,0 +1,9 @@
+.DS_Store
+__pycache__/
+.ipynb_checkpoints/
+codes/artifacts/*.pkl
+codes/artifacts/*.pt
+codes/artifacts/*.npy
+codes/artifacts/*.faiss
+codes/artifacts/models/
+# keep: codes/artifacts/*_results.json and llm_cache.jsonl (small, make results reproducible)
