@@ -1,0 +1,207 @@
+{
+  "models": [
+    {
+      "model": "Naive Bayes + BoW",
+      "test_papers": 2400,
+      "accuracy": 0.773,
+      "macro_precision": 0.774,
+      "macro_recall": 0.773,
+      "macro_f1": 0.773
+    },
+    {
+      "model": "Naive Bayes + TF-IDF",
+      "test_papers": 2400,
+      "accuracy": 0.77,
+      "macro_precision": 0.769,
+      "macro_recall": 0.77,
+      "macro_f1": 0.769
+    },
+    {
+      "model": "LogReg + TF-IDF",
+      "test_papers": 2400,
+      "accuracy": 0.787,
+      "macro_precision": 0.789,
+      "macro_recall": 0.787,
+      "macro_f1": 0.788
+    },
+    {
+      "model": "LogReg + TF-IDF (1-2 grams)",
+      "test_papers": 2400,
+      "accuracy": 0.792,
+      "macro_precision": 0.793,
+      "macro_recall": 0.792,
+      "macro_f1": 0.792
+    },
+    {
+      "model": "Zero-shot NLI (DeBERTa-v3)",
+      "test_papers": 500,
+      "accuracy": 0.31,
+      "macro_precision": 0.585,
+      "macro_recall": 0.319,
+      "macro_f1": 0.291,
+      "note": "500-paper subset"
+    },
+    {
+      "model": "LSTM (2 epochs)",
+      "test_papers": 2400,
+      "accuracy": 0.208,
+      "macro_precision": 0.209,
+      "macro_recall": 0.208,
+      "macro_f1": 0.148
+    },
+    {
+      "model": "Frozen DistilBERT + LogReg (no GPU fallback)",
+      "test_papers": 2400,
+      "accuracy": 0.716,
+      "macro_precision": 0.717,
+      "macro_recall": 0.716,
+      "macro_f1": 0.716
+    },
+    {
+      "model": "Few-shot LLM",
+      "test_papers": 200,
+      "accuracy": 0.415,
+      "macro_precision": 0.574,
+      "macro_recall": 0.412,
+      "macro_f1": 0.388,
+      "note": "200-paper subset, 0 unparsed"
+    },
+    {
+      "model": "Ensemble: LogReg + NB",
+      "test_papers": 2400,
+      "accuracy": 0.792,
+      "macro_precision": 0.791,
+      "macro_recall": 0.792,
+      "macro_f1": 0.791
+    },
+    {
+      "model": "LogReg (same 500 as zero-shot)",
+      "test_papers": 500,
+      "accuracy": 0.814,
+      "macro_precision": 0.815,
+      "macro_recall": 0.812,
+      "macro_f1": 0.813,
+      "note": "500-paper subset"
+    },
+    {
+      "model": "LogReg (same 200 as LLM)",
+      "test_papers": 200,
+      "accuracy": 0.825,
+      "macro_precision": 0.828,
+      "macro_recall": 0.826,
+      "macro_f1": 0.827,
+      "note": "200-paper subset"
+    }
+  ],
+  "domain_keywords": {
+    "cs.AI": [
+      "agent",
+      "reasoning",
+      "ai",
+      "agents",
+      "models",
+      "model",
+      "learning",
+      "based",
+      "language",
+      "knowledge"
+    ],
+    "cs.CL": [
+      "language",
+      "models",
+      "language models",
+      "llms",
+      "model",
+      "text",
+      "large",
+      "large language",
+      "tasks",
+      "task"
+    ],
+    "cs.CR": [
+      "security",
+      "attacks",
+      "privacy",
+      "attack",
+      "data",
+      "based",
+      "secure",
+      "paper",
+      "detection",
+      "blockchain"
+    ],
+    "cs.CV": [
+      "image",
+      "images",
+      "3d",
+      "object",
+      "model",
+      "method",
+      "methods",
+      "visual",
+      "video",
+      "learning"
+    ],
+    "cs.IR": [
+      "recommendation",
+      "user",
+      "retrieval",
+      "search",
+      "based",
+      "systems",
+      "recommender",
+      "item",
+      "information",
+      "users"
+    ],
+    "cs.LG": [
+      "learning",
+      "data",
+      "model",
+      "neural",
+      "models",
+      "training",
+      "networks",
+      "based",
+      "deep",
+      "methods"
+    ]
+  },
+  "most_confused_pairs": [
+    {
+      "actual": "cs.AI",
+      "predicted": "cs.LG",
+      "papers": 56
+    },
+    {
+      "actual": "cs.AI",
+      "predicted": "cs.CL",
+      "papers": 47
+    },
+    {
+      "actual": "cs.LG",
+      "predicted": "cs.AI",
+      "papers": 44
+    },
+    {
+      "actual": "cs.CL",
+      "predicted": "cs.AI",
+      "papers": 37
+    },
+    {
+      "actual": "cs.IR",
+      "predicted": "cs.CL",
+      "papers": 28
+    },
+    {
+      "actual": "cs.LG",
+      "predicted": "cs.CV",
+      "papers": 26
+    }
+  ],
+  "accuracy_by_listing": {
+    "single category": 0.828,
+    "cross-listed": 0.763
+  },
+  "lenient_accuracy_logreg": 0.875
+}
