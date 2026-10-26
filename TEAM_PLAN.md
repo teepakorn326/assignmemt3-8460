@@ -2,27 +2,34 @@
 
 Use case confirmed: **Use Case 3**. Due **Thu 6 Nov 2026, 11:55 PM** (11 days). Presentation is in **Week 13 = 2–6 Nov**, i.e. the same week as the deadline, possibly before it, so slides cannot be left to the last two days.
 
-> ## ⚠️ CRASH SCHEDULE (26 Oct): everything done by **Thu 29 Oct**
-> The timeline below this box is superseded. Scope is cut to what the rubric needs plus one spare.
+> ## ⚠️ CRASH SCHEDULE (26 Oct): **code + presentation by Thu 29 Oct**, report by Fri 6 Nov
+> The timeline further down is superseded. Scope is cut to what the rubric needs plus one spare.
 >
 > **Scope (4 basic + 4 advanced, spec needs 3 + 3):**
-> - A: preprocessing + POS key phrases + spaCy NER/regex (basic) · few-shot LLM extraction (advanced). Hand-label **20** abstracts, not 50.
-> - B: NB vs LogReg on TF-IDF (basic) · zero/few-shot LLM classifier **or** frozen-DistilBERT + LogReg (advanced). **No full fine-tune, no BiLSTM, no ensemble.**
-> - C: TF-IDF vs MiniLM retrieval + KMeans (basic) · `retrieval.py` RAG retriever (advanced). **No Word2Vec.**
-> - D: extractive baseline (basic) · LLM summary + CoT gaps + RAG synthesis + groundedness check on **10** samples (advanced). NB06 demo on 3 queries.
-> - LLM: whichever runs fastest **today** (API via `LLM_BACKEND=openai` is fine; D commits `llm_cache.jsonl` so it reproduces without a key).
-> - Report target **2,500–3,000 words**, not 4,000. Slides: 10–12 total, 2–3 per person.
+> - A: preprocessing + POS key phrases + spaCy NER/regex (basic) · few-shot LLM extraction (advanced). Hand-label **20** abstracts.
+> - B: NB vs LogReg on TF-IDF (basic) · zero/few-shot LLM classifier **or** frozen-DistilBERT + LogReg (advanced). No full fine-tune, no BiLSTM, no ensemble.
+> - C: TF-IDF vs MiniLM retrieval + KMeans (basic) · `retrieval.py` RAG retriever (advanced). No Word2Vec.
+> - D: extractive baseline (basic) · LLM summary + CoT gaps + RAG synthesis + groundedness check on **10** samples (advanced). NB06 demo on 3 queries = the live demo in the presentation.
+> - LLM: whichever runs **today** (`LLM_BACKEND=openai` is fine; D commits `llm_cache.jsonl`).
 >
+> **Phase 1 — code + slides (Mon 26 → Thu 29)**
 > | When | Everyone | D additionally |
 > |---|---|---|
-> | **Mon 26 (tonight)** | repo cloned, notebook runs, **basic technique working with a number** | NB06 `analyse(query)` on stand-ins; slide template; LLM backend decided |
-> | **Tue 27** | **advanced technique working**, `save_results()` done, pickle saved; **report section drafted (600–800 words)** in `report/sections/`; PR to main by 22:00 | NB05 LLM parts; collect PRs |
-> | **Wed 28 morning** | your 2–3 slides into the shared deck by 12:00 | NB06 on real components by 12:00 |
-> | **Wed 28 afternoon** | review D's merged report, fix your own section by 18:00 | merge report, architecture diagram, results table |
-> | **Wed 28 evening** | 15-min rehearsal (online ok) | clean run all notebooks on a fresh env |
-> | **Thu 29 by 12:00** | contribution form + evidence (your commit log) | report PDF, slides PDF, rename GroupID, zip, submit |
+> | **Mon 26 tonight** | repo cloned, notebook runs, **basic technique working with a number** | NB06 `analyse(query)` on stand-ins; slide template shared; LLM backend decided |
+> | **Tue 27** | **advanced working**, `save_results()`, pickle saved, PR to main by 22:00; **write 2–3 slides** (what / why / result table / one limitation) | NB05 done; merge PRs |
+> | **Wed 28 by 12:00** | slides in the shared deck | NB06 on real components |
+> | **Wed 28 evening** | **full rehearsal** (15 min: intro 2 · A 3 · B 3 · C 3 · D+demo 3 · Q&A) | clean run all notebooks; export slides PDF |
+> | **Thu 29** | present; each person answers questions on their own part | commit final outputs with cells executed |
 >
-> Rule: if your advanced technique isn't working by **Tue 18:00**, switch to the cheapest option (LLM zero-shot via `llm.generate`) and move on. Never leave a section empty — a working simple method with a number beats a broken ambitious one.
+> **Phase 2 — report (Fri 30 Oct → Fri 6 Nov)**
+> | When | What |
+> |---|---|
+> | Fri 30 – Sun 1 Nov | each member: 600–800 words in `report/sections/`, from their notebook markdown + slides |
+> | Mon 2 – Tue 3 | D merges, adds architecture diagram, results table, limitations/future work; others review their own section |
+> | Wed 4 | report PDF (2,500–3,000 words); contribution forms + commit-log evidence |
+> | Thu 5 | final clean run, rename `GroupID`, zip, **submit** (one day early) |
+>
+> Rule: advanced technique not working by **Tue 18:00** → switch to LLM zero-shot via `llm.generate` and move on. Slides need a number in every section; a simple method with a result beats an ambitious one without.
 
 ## Status check (26 Oct)
 - Done: `01_data_loading_and_sampling` (12k CS papers, 6 categories, fixed 80/20 split), `utils.py`, stubs for NB02–06, README, folder structure.
