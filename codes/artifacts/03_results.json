@@ -35,27 +35,35 @@
     {
       "model": "Zero-shot NLI (DeBERTa-v3)",
       "test_papers": 500,
-      "accuracy": 0.31,
-      "macro_precision": 0.585,
-      "macro_recall": 0.319,
-      "macro_f1": 0.291,
+      "accuracy": 0.366,
+      "macro_precision": 0.601,
+      "macro_recall": 0.372,
+      "macro_f1": 0.356,
       "note": "500-paper subset"
     },
     {
       "model": "LSTM (2 epochs)",
       "test_papers": 2400,
-      "accuracy": 0.208,
-      "macro_precision": 0.209,
-      "macro_recall": 0.208,
-      "macro_f1": 0.148
+      "accuracy": 0.661,
+      "macro_precision": 0.666,
+      "macro_recall": 0.661,
+      "macro_f1": 0.657
     },
     {
-      "model": "Frozen DistilBERT + LogReg (no GPU fallback)",
+      "model": "DistilBERT frozen + LogReg (3000 train)",
       "test_papers": 2400,
-      "accuracy": 0.716,
+      "accuracy": 0.717,
       "macro_precision": 0.717,
-      "macro_recall": 0.716,
-      "macro_f1": 0.716
+      "macro_recall": 0.717,
+      "macro_f1": 0.717
+    },
+    {
+      "model": "DistilBERT fine-tuned (1 epoch, 3000 train)",
+      "test_papers": 2400,
+      "accuracy": 0.76,
+      "macro_precision": 0.757,
+      "macro_recall": 0.76,
+      "macro_f1": 0.756
     },
     {
       "model": "Few-shot LLM",
@@ -73,6 +81,14 @@
       "macro_precision": 0.791,
       "macro_recall": 0.792,
       "macro_f1": 0.791
+    },
+    {
+      "model": "Ensemble: LogReg + DistilBERT",
+      "test_papers": 2400,
+      "accuracy": 0.777,
+      "macro_precision": 0.774,
+      "macro_recall": 0.777,
+      "macro_f1": 0.774
     },
     {
       "model": "LogReg (same 500 as zero-shot)",
