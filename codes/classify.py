@@ -34,6 +34,17 @@ CATEGORY_NAMES = {
 }
 CATEGORIES = sorted(CATEGORY_NAMES)
 
+# Short descriptions condensed from https://arxiv.org/category_taxonomy. With the bare names,
+# zero-shot and few-shot both sent most papers to cs.LG ("Machine Learning" fits nearly every abstract).
+CATEGORY_DESCRIPTIONS = {
+    "cs.AI": "artificial intelligence: agents, reasoning, planning and knowledge representation",
+    "cs.CL": "natural language processing: text, language models, translation and speech",
+    "cs.CR": "computer security, privacy and cryptography",
+    "cs.CV": "computer vision: images, video, 3D scenes and visual recognition",
+    "cs.IR": "information retrieval: search engines, ranking and recommender systems",
+    "cs.LG": "machine learning methods: training algorithms, optimisation and learning theory",
+}
+
 _model = None
 
 
@@ -96,14 +107,16 @@ SYSTEM_PROMPT = ("You are an arXiv moderator who assigns each computer-science p
                  "one primary category. Answer with the category code only.")
 
 
-def build_few_shot_prompt(text, examples):
+def build_few_shot_prompt(text, examples, describe=False):
     """Category list + one short worked example per category + the paper to classify.
 
     `examples` is a list of (text, category) pairs taken from the TRAINING set.
+    describe=True lists CATEGORY_DESCRIPTIONS instead of the official names.
     """
+    labels = CATEGORY_DESCRIPTIONS if describe else CATEGORY_NAMES
     lines = ["Categories:"]
     for code in CATEGORIES:
-        lines.append(f"- {code}: {CATEGORY_NAMES[code]}")
+        lines.append(f"- {code}: {labels[code]}")
     lines.append("")
     for example_text, code in examples:
         lines.append("Paper: " + shorten(example_text, 400))
@@ -133,8 +146,8 @@ def parse_category(reply):
     return None
 
 
-def llm_classify(text, examples, max_new_tokens=10):
+def llm_classify(text, examples, describe=False, max_new_tokens=10):
     from llm import generate
-    reply = generate(build_few_shot_prompt(text, examples), system=SYSTEM_PROMPT,
+    reply = generate(build_few_shot_prompt(text, examples, describe), system=SYSTEM_PROMPT,
                      max_new_tokens=max_new_tokens, temperature=0.0)
     return parse_category(reply)
