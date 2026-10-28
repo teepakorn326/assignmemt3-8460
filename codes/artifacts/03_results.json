@@ -33,7 +33,7 @@
       "macro_f1": 0.792
     },
     {
-      "model": "Zero-shot NLI (DeBERTa-v3)",
+      "model": "Zero-shot NLI, category names",
       "test_papers": 500,
       "accuracy": 0.366,
       "macro_precision": 0.601,
@@ -42,12 +42,29 @@
       "note": "500-paper subset"
     },
     {
+      "model": "Zero-shot NLI, category descriptions",
+      "test_papers": 500,
+      "accuracy": 0.616,
+      "macro_precision": 0.711,
+      "macro_recall": 0.615,
+      "macro_f1": 0.628,
+      "note": "500-paper subset"
+    },
+    {
       "model": "LSTM (2 epochs)",
       "test_papers": 2400,
-      "accuracy": 0.661,
-      "macro_precision": 0.666,
-      "macro_recall": 0.661,
-      "macro_f1": 0.657
+      "accuracy": 0.669,
+      "macro_precision": 0.681,
+      "macro_recall": 0.669,
+      "macro_f1": 0.671
+    },
+    {
+      "model": "LogReg + TF-IDF (3000 train)",
+      "test_papers": 2400,
+      "accuracy": 0.777,
+      "macro_precision": 0.778,
+      "macro_recall": 0.777,
+      "macro_f1": 0.777
     },
     {
       "model": "DistilBERT frozen + LogReg (3000 train)",
@@ -60,18 +77,27 @@
     {
       "model": "DistilBERT fine-tuned (1 epoch, 3000 train)",
       "test_papers": 2400,
-      "accuracy": 0.76,
-      "macro_precision": 0.757,
-      "macro_recall": 0.76,
-      "macro_f1": 0.756
+      "accuracy": 0.758,
+      "macro_precision": 0.754,
+      "macro_recall": 0.758,
+      "macro_f1": 0.753
     },
     {
-      "model": "Few-shot LLM",
+      "model": "Few-shot LLM, category names",
       "test_papers": 200,
       "accuracy": 0.415,
       "macro_precision": 0.574,
       "macro_recall": 0.412,
       "macro_f1": 0.388,
+      "note": "200-paper subset, 0 unparsed"
+    },
+    {
+      "model": "Few-shot LLM, category descriptions",
+      "test_papers": 200,
+      "accuracy": 0.485,
+      "macro_precision": 0.602,
+      "macro_recall": 0.473,
+      "macro_f1": 0.469,
       "note": "200-paper subset, 0 unparsed"
     },
     {
@@ -85,10 +111,10 @@
     {
       "model": "Ensemble: LogReg + DistilBERT",
       "test_papers": 2400,
-      "accuracy": 0.777,
-      "macro_precision": 0.774,
-      "macro_recall": 0.777,
-      "macro_f1": 0.774
+      "accuracy": 0.788,
+      "macro_precision": 0.785,
+      "macro_recall": 0.788,
+      "macro_f1": 0.784
     },
     {
       "model": "LogReg (same 500 as zero-shot)",

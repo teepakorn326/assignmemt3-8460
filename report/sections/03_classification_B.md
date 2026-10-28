@@ -21,10 +21,10 @@ Objective: assign each paper one of the six primary categories and extract its k
 | LogReg + TF-IDF | 9,600 | 2,400 | 0.787 | 0.788 |
 | **LogReg + TF-IDF (1–2 grams)** | 9,600 | 2,400 | **0.792** | **0.792** |
 | Ensemble: LogReg + NB | 9,600 | 2,400 | 0.792 | 0.791 |
-| Ensemble: LogReg + DistilBERT | 9,600 + 3,000 | 2,400 | 0.777 | 0.774 |
-| LSTM, 2 epochs | 9,600 | 2,400 | 0.661 | 0.657 |
+| Ensemble: LogReg + DistilBERT | 9,600 + 3,000 | 2,400 | 0.788 | 0.784 |
+| LSTM, 2 epochs | 9,600 | 2,400 | 0.669 | 0.671 |
 | LogReg + TF-IDF (1–2 grams) | 3,000 | 2,400 | 0.777 | 0.777 |
-| DistilBERT, full fine-tune, 1 epoch | 3,000 | 2,400 | 0.760 | 0.756 |
+| DistilBERT, full fine-tune, 1 epoch | 3,000 | 2,400 | 0.758 | 0.753 |
 | DistilBERT, frozen + LogReg | 3,000 | 2,400 | 0.717 | 0.717 |
 | Zero-shot NLI, category names | 0 | 500 | 0.366 | 0.356 |
 | Zero-shot NLI, category descriptions | 0 | 500 | 0.616 | 0.628 |
@@ -38,11 +38,11 @@ Objective: assign each paper one of the six primary categories and extract its k
 ## 3.4 Discussion
 TF-IDF bigrams with Logistic Regression is the best model and the one the system uses (`classify.predict`, saved as `classifier.pkl`). LogReg beats Naive Bayes by about two points, and bigrams add half a point more. Its train–test gap (0.94 vs 0.79) shows some over-fitting, but nothing else generalised better.
 
-The DistilBERT rows answer whether a pre-trained transformer beats word counts when both see the same data. It does not, at least after one epoch: on the same 3,000 papers LogReg reaches 0.777, the full fine-tune 0.760 and the frozen encoder 0.717. Full fine-tuning beats feature extraction, as the Week 9 lecture leads us to expect, but this task is decided mostly by topic vocabulary ("attack", "image", "recommendation"), and that is exactly what TF-IDF measures. Averaging LogReg with DistilBERT lowered the score to 0.777, because simple averaging gives the weaker model equal weight.
+The DistilBERT rows answer whether a pre-trained transformer beats word counts when both see the same data. It does not, at least after one epoch: on the same 3,000 papers LogReg reaches 0.777, the full fine-tune 0.758 and the frozen encoder 0.717. Full fine-tuning beats feature extraction, as the Week 9 lecture leads us to expect, but this task is decided mostly by topic vocabulary ("attack", "image", "recommendation"), and that is exactly what TF-IDF measures. Averaging LogReg with DistilBERT gave 0.788, just under LogReg alone: simple averaging gives the weaker model equal weight.
 
 For zero-shot, the wording of the labels mattered more than the model. With the bare names, 298 of 500 zero-shot answers were cs.LG, since "Machine Learning" describes nearly every abstract, and cs.CV was chosen only 10 times. One-line descriptions raised zero-shot from 0.366 to 0.616 and few-shot from 0.415 to 0.485. The 1.5B LLM gained less and still labelled 70 of 200 papers cs.LG. Both stay well below LogReg on the same papers (0.814 and 0.825). Their advantage is that they need no labelled data, which would matter for a new category with no training papers.
 
 Part of the remaining error comes from the labels rather than the models. The most frequent confusions are cs.AI ↔ cs.LG (56 and 44 papers) and cs.AI ↔ cs.CL (47 and 37). Cross-listed papers (1,332 of the 2,400) score 0.763 against 0.828 for single-category ones, and if any of a paper's listed categories counts as correct, LogReg reaches 0.875. One misclassified example, "Evaluating the Hidden Costs of Personalization in Large Language Models", is listed only under cs.AI, but the prediction cs.CL is defensible.
 
-**Limitations**: zero-shot and few-shot ran on subsets of 500 and 200 papers; DistilBERT had one epoch on 3,000 papers and the LSTM two epochs; only one small LLM was tried; the label descriptions were written after the names failed on the same subset, so 0.616 is slightly optimistic; and each paper gets a single label.
+**Limitations**: zero-shot and few-shot ran on subsets of 500 and 200 papers; DistilBERT had one epoch on 3,000 papers and the LSTM two epochs; only one small LLM was tried; the label descriptions were written after the names failed on the same subset, so 0.616 is slightly optimistic; each paper gets a single label; and GPU runs are not bit-for-bit repeatable (over three runs the LSTM ranged 0.661–0.669 and the fine-tune 0.758–0.760), so differences under 0.01 mean little.
 **Future improvements**: a multi-label classifier over `all_categories`; a domain-adapted encoder such as SciBERT, fine-tuned for several epochs on the full training set; a held-out validation split for choosing label wording; and a larger LLM for the few-shot classifier.
