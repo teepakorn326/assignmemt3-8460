@@ -1,7 +1,5 @@
 # 1. Introduction, data and preprocessing (Member A)
 
-<!-- drafted with an AI assistant from NB01/NB02 code and saved results; owner reviews and rewords -->
-
 ## 1.1 Problem
 Researchers face thousands of new arXiv papers a week. Our system takes a free-text query or a paper and returns its domain, its key methods and datasets, similar papers, a summary and possible research gaps. This section covers the data and the shared preprocessing that every later component (classification, retrieval, LLM) consumes.
 
