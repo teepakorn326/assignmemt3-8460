@@ -13,8 +13,6 @@ noun chunks and NER (spaCy), W3 rule-based extraction (regex), W9 few-shot promp
 import json
 import re
 
-import spacy
-
 _nlp = None
 
 
@@ -22,6 +20,7 @@ def get_nlp():
     """Load spaCy's small English model once and reuse it (loading takes a few seconds)."""
     global _nlp
     if _nlp is None:
+        import spacy                      # imported lazily so the regex/scoring helpers work without spaCy
         _nlp = spacy.load("en_core_web_sm")
     return _nlp
 
@@ -205,7 +204,8 @@ def regex_artefacts(text):
     names = list(rules["acronyms"]) + list(rules["datasets"])
     for short_form, long_form in rules["definitions"]:
         names.append(short_form)
-    return _unique(names)
+    # the dataset and definition rules can also produce generic acronyms ("NLP benchmarks", "(LLMs)")
+    return _unique([n for n in names if n not in GENERIC_ACRONYMS])
 
 
 def spacy_artefacts(text):
@@ -287,12 +287,70 @@ def parse_json_answer(text):
     return result
 
 
-def llm_extract(abstract, max_new_tokens=200):
-    """Few-shot LLM extraction through the team's shared llm.generate (cached, temperature 0)."""
+def build_zero_shot_prompt(abstract):
+    """Same instruction as the few-shot prompt but with no worked examples (ablation baseline)."""
+    return ("Extract the named methods/models, datasets/benchmarks and research tasks "
+            "mentioned in the abstract. Return JSON with keys \"methods\", \"datasets\", \"tasks\". "
+            "Use an empty list when nothing fits.\n\n"
+            "Abstract: " + clean_text(abstract) + "\nJSON:")
+
+
+def llm_extract(abstract, max_new_tokens=200, shots=3, return_raw=False):
+    """LLM extraction through the team's shared llm.generate (cached, temperature 0).
+
+    shots=3 -> few-shot prompt (the advanced technique); shots=0 -> zero-shot prompt (ablation).
+    return_raw=True also returns the model's reply, so the notebook can count invalid JSON.
+    """
     from llm import generate
-    reply = generate(build_few_shot_prompt(abstract), system=SYSTEM_PROMPT,
-                     max_new_tokens=max_new_tokens, temperature=0.0)
-    return parse_json_answer(reply)
+    prompt = build_few_shot_prompt(abstract) if shots else build_zero_shot_prompt(abstract)
+    reply = generate(prompt, system=SYSTEM_PROMPT, max_new_tokens=max_new_tokens, temperature=0.0)
+    parsed = parse_json_answer(reply)
+    return (parsed, reply) if return_raw else parsed
+
+
+def is_valid_json_answer(reply):
+    """True if the reply contains a parseable {...} object (format-following check)."""
+    match = re.search(r"\{.*\}", reply, flags=re.DOTALL)
+    if not match:
+        return False
+    try:
+        return isinstance(json.loads(match.group(0)), dict)
+    except json.JSONDecodeError:
+        return False
+
+
+# ---------------------------------------------------------------------------
+# Combining extractors and checking the LLM for invented names
+# ---------------------------------------------------------------------------
+
+def hybrid_artefacts(llm_names, text):
+    """Ensemble: the LLM's names plus any regex acronym/dataset the LLM did not already return.
+
+    Rules are precise on capitalised names (BERT, ImageNet) and the LLM is better on lower-case
+    multi-word methods, so the union is expected to raise recall at a small cost in precision.
+    """
+    names = list(llm_names)
+    covered = {normalise(n) for n in names}
+    for name in regex_artefacts(text):
+        key = normalise(name)
+        if key and not any(key == c or key in c or c in key for c in covered if c):
+            names.append(name)
+            covered.add(key)
+    return names
+
+
+def grounded(name, abstract):
+    """True if the extracted name actually appears in the abstract (after normalising)."""
+    key = normalise(name)
+    return bool(key) and key in normalise(clean_text(abstract))
+
+
+def grounding_rate(names, abstract):
+    """Share of extracted names that appear in the abstract; the rest are invented or paraphrased."""
+    names = [n for n in names if normalise(n)]
+    if not names:
+        return None
+    return sum(grounded(n, abstract) for n in names) / len(names)
 
 
 # ---------------------------------------------------------------------------

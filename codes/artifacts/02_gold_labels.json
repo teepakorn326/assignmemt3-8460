@@ -3,180 +3,385 @@
     "id": "2010.11863",
     "title": "Planning with Submodular Objective Functions",
     "abstract": "We study planning with submodular objective functions, where instead of maximizing the cumulative reward, the goal is to maximize the objective value induced by a submodular function. Our framework subsumes standard planning and submodular maximization with cardinality constraints as special cases, and thus many practical applications can be naturally formulated within our framework. Based on the notion of multilinear extension, we propose a novel and theoretically principled algorithmic framework for planning with submodular objective functions, which recovers classical algorithms when applied to the two special cases mentioned above. Empirically, our approach significantly outperforms baseline algorithms on synthetic environments and navigation tasks.",
-    "methods": [],
+    "methods": [
+      "multilinear extension"
+    ],
     "datasets": [],
-    "tasks": [],
-    "labelled": false
+    "tasks": [
+      "planning with submodular objective functions",
+      "submodular maximization",
+      "navigation tasks"
+    ],
+    "labelled": true,
+    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
   },
   {
     "id": "2502.09673",
     "title": "Are Smarter LLMs Safer? Exploring Safety-Reasoning Trade-offs in Prompting and Fine-Tuning",
     "abstract": "Large Language Models (LLMs) have demonstrated remarkable success across various NLP benchmarks. However, excelling in complex tasks that require nuanced reasoning and precise decision-making demands more than raw language proficiency--LLMs must reason, i.e., think logically, draw from past experiences, and synthesize information to reach conclusions and take action. To enhance reasoning abilities, approaches such as prompting and fine-tuning have been widely explored. While these methods have led to clear improvements in reasoning, their impact on LLM safety remains less understood. In this work, we investigate the interplay between reasoning and safety in LLMs. We highlight the latent safety risks that arise as reasoning capabilities improve, shedding light on previously overlooked vulnerabilities. At the same time, we explore how reasoning itself can be leveraged to enhance safety, uncovering potential mitigation strategies. By examining both the risks and opportunities in reasoning-driven LLM safety, our study provides valuable insights for developing models that are not only more capable but also more trustworthy in real-world deployments.",
-    "methods": [],
+    "methods": [
+      "prompting",
+      "fine-tuning"
+    ],
     "datasets": [],
-    "tasks": [],
-    "labelled": false
+    "tasks": [
+      "reasoning",
+      "LLM safety"
+    ],
+    "labelled": true,
+    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
   },
   {
     "id": "2602.19631",
     "title": "Localized Concept Erasure in Text-to-Image Diffusion Models via High-Level Representation Misdirection",
     "abstract": "Recent advances in text-to-image (T2I) diffusion models have seen rapid and widespread adoption. However, their powerful generative capabilities raise concerns about potential misuse for synthesizing harmful, private, or copyrighted content. To mitigate such risks, concept erasure techniques have emerged as a promising solution. Prior works have primarily focused on fine-tuning the denoising component (e.g., the U-Net backbone). However, recent causal tracing studies suggest that visual attribute information is localized in the early self-attention layers of the text encoder, indicating a potential alternative for concept erasing. Building on this insight, we conduct preliminary experiments and find that directly fine-tuning early layers can suppress target concepts but often degrades the generation quality of non-target concepts. To overcome this limitation, we propose High-Level Representation Misdirection (HiRM), which misdirects high-level semantic representations of target concepts in the text encoder toward designated vectors such as random directions or semantically defined directions (e.g., supercategories), while updating only early layers that contain causal states of visual attributes. Our decoupling strategy enables precise concept removal with minimal impact on unrelated concepts, as demonstrated by strong results on UnlearnCanvas and NSFW benchmarks across diverse targets (e.g., objects, styles, nudity). HiRM also preserves generative utility at low training cost, transfers to state-of-the-art architectures such as Flux without additional training, and shows synergistic effects with denoiser-based concept erasing methods.",
-    "methods": [],
-    "datasets": [],
-    "tasks": [],
-    "labelled": false
+    "methods": [
+      "High-Level Representation Misdirection",
+      "HiRM",
+      "U-Net",
+      "Flux",
+      "causal tracing"
+    ],
+    "datasets": [
+      "UnlearnCanvas",
+      "NSFW benchmarks"
+    ],
+    "tasks": [
+      "concept erasure",
+      "text-to-image diffusion"
+    ],
+    "labelled": true,
+    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
   },
   {
     "id": "2506.11033",
     "title": "Adaptive Shielding for Safe Reinforcement Learning under Hidden-Parameter Dynamics Shifts",
     "abstract": "Unseen shifts in environment dynamics, driven by hidden parameters such as friction or gravity, create a challenge for maintaining safety. We address this challenge by proposing Adaptive Shielding, a framework for safe reinforcement learning in constrained hidden-parameter Markov decision processes. A function encoder infers a low-dimensional representation of the underlying dynamics online from transition data, allowing the shield to adapt. To ensure safety during this process, we use a two-layer strategy. First, we introduce safety-regularized optimization that proactively trains the policy away from high-cost regions. Second, the adaptive shielding reactively uses the inferred dynamics to forecast safety risks and applies uncertainty-aware bounds using conformal prediction to filter unsafe actions. We prove that prediction errors in the shielding connect with bounds on the average cost rate. Empirically, across Safe-Gym benchmarks with varying hidden parameters, our approach outperforms baselines on the return-safety trade-off and generalizes reliably to unseen dynamics, while incurring only modest execution-time overhead. Code is available at https://github.com/safe-autonomy-lab/AdaptiveShieldingFE.",
-    "methods": [],
-    "datasets": [],
-    "tasks": [],
-    "labelled": false
+    "methods": [
+      "Adaptive Shielding",
+      "function encoder",
+      "safety-regularized optimization",
+      "conformal prediction"
+    ],
+    "datasets": [
+      "Safe-Gym"
+    ],
+    "tasks": [
+      "safe reinforcement learning"
+    ],
+    "labelled": true,
+    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
   },
   {
     "id": "1205.6396",
     "title": "Effective Listings of Function Stop words for Twitter",
     "abstract": "Many words in documents recur very frequently but are essentially meaningless as they are used to join words together in a sentence. It is commonly understood that stop words do not contribute to the context or content of textual documents. Due to their high frequency of occurrence, their presence in text mining presents an obstacle to the understanding of the content in the documents. To eliminate the bias effects, most text mining software or approaches make use of stop words list to identify and remove those words. However, the development of such top words list is difficult and inconsistent between textual sources. This problem is further aggravated by sources such as Twitter which are highly repetitive or similar in nature. In this paper, we will be examining the original work using term frequency, inverse document frequency and term adjacency for developing a stop words list for the Twitter data source. We propose a new technique using combinatorial values as an alternative measure to effectively list out stop words.",
-    "methods": [],
-    "datasets": [],
-    "tasks": [],
-    "labelled": false
+    "methods": [
+      "term frequency",
+      "inverse document frequency",
+      "term adjacency",
+      "combinatorial values"
+    ],
+    "datasets": [
+      "Twitter"
+    ],
+    "tasks": [
+      "stop words list",
+      "text mining"
+    ],
+    "labelled": true,
+    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
   },
   {
     "id": "1611.04426",
     "title": "Quantifying the Information Leak in Cache Attacks through Symbolic Execution",
     "abstract": "Cache timing attacks allow attackers to infer the properties of a secret execution by observing cache hits and misses. But how much information can actually leak through such attacks? For a given program, a cache model, and an input, our CHALICE framework leverages symbolic execution to compute the amount of information that can possibly leak through cache attacks. At the core of CHALICE is a novel approach to quantify information leak that can highlight critical cache side-channel leaks on arbitrary binary code. In our evaluation on real-world programs from OpenSSL and Linux GDK libraries, CHALICE effectively quantifies information leaks: For an AES-128 implementation on Linux, for instance, CHALICE finds that a cache attack can leak as much as 127 out of 128 bits of the encryption key.",
-    "methods": [],
-    "datasets": [],
-    "tasks": [],
-    "labelled": false
+    "methods": [
+      "CHALICE",
+      "symbolic execution"
+    ],
+    "datasets": [
+      "OpenSSL",
+      "Linux GDK",
+      "AES-128"
+    ],
+    "tasks": [
+      "cache timing attacks",
+      "information leak quantification"
+    ],
+    "labelled": true,
+    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
   },
   {
     "id": "2007.08911",
     "title": "Technologies for Trustworthy Machine Learning: A Survey in a Socio-Technical Context",
     "abstract": "Concerns about the societal impact of AI-based services and systems has encouraged governments and other organisations around the world to propose AI policy frameworks to address fairness, accountability, transparency and related topics. To achieve the objectives of these frameworks, the data and software engineers who build machine-learning systems require knowledge about a variety of relevant supporting tools and techniques. In this paper we provide an overview of technologies that support building trustworthy machine learning systems, i.e., systems whose properties justify that people place trust in them. We argue that four categories of system properties are instrumental in achieving the policy objectives, namely fairness, explainability, auditability and safety & security (FEAS). We discuss how these properties need to be considered across all stages of the machine learning life cycle, from data collection through run-time model inference. As a consequence, we survey in this paper the main technologies with respect to all four of the FEAS properties, for data-centric as well as model-centric stages of the machine learning system life cycle. We conclude with an identification of open research problems, with a particular focus on the connection between trustworthy machine learning technologies and their implications for individuals and society.",
-    "methods": [],
+    "methods": [
+      "FEAS"
+    ],
     "datasets": [],
-    "tasks": [],
-    "labelled": false
+    "tasks": [
+      "trustworthy machine learning",
+      "fairness",
+      "explainability",
+      "auditability",
+      "safety & security"
+    ],
+    "labelled": true,
+    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
   },
   {
     "id": "2407.16192",
     "title": "How to Leverage Personal Textual Knowledge for Personalized Conversational Information Retrieval",
     "abstract": "Personalized conversational information retrieval (CIR) combines conversational and personalizable elements to satisfy various users' complex information needs through multi-turn interaction based on their backgrounds. The key promise is that the personal textual knowledge base (PTKB) can improve the CIR effectiveness because the retrieval results can be more related to the user's background. However, PTKB is noisy: not every piece of knowledge in PTKB is relevant to the specific query at hand. In this paper, we explore and test several ways to select knowledge from PTKB and use it for query reformulation by using a large language model (LLM). The experimental results show the PTKB might not always improve the search results when used alone, but LLM can help generate a more appropriate personalized query when high-quality guidance is provided.",
-    "methods": [],
+    "methods": [
+      "large language model",
+      "LLM",
+      "query reformulation",
+      "PTKB"
+    ],
     "datasets": [],
-    "tasks": [],
-    "labelled": false
+    "tasks": [
+      "personalized conversational information retrieval",
+      "CIR"
+    ],
+    "labelled": true,
+    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
   },
   {
     "id": "2609.14703",
     "title": "Patient-Level, Leakage-Aware Deep Learning for Cross-Center Periapical Radiograph Classification",
     "abstract": "Dental caries and endodontic disease are among the most common health conditions worldwide, and intraoral periapical radiographs are central to their detection, treatment planning, and follow-up. Automated tooth-level classification of these images, however, lacks reproducible benchmarks, is often evaluated with image-level splits that leak patients between training and test, and is rarely validated across clinics. This paper presents the first patient-level, leakage-aware classification benchmark for single-tooth intraoral periapical radiographs on the DentIRO dataset, which comprises 5,300 images from 3,243 patients across two clinics and four classes: Healthy, Caries, Crowned, and Root Canal. Five transfer-learning models are compared with patient-grouped stratified cross-validation, so that every patient remains within a single fold. DenseNet121 gave the strongest and most stable result at a mean macro-F1 of 0.9787, while the four ImageNet-initialized backbones performed comparably. A controlled comparison on a fixed architecture showed that chest-radiograph pretraining transferred less effectively than ImageNet initialization. Bidirectional cross-center validation produced a small average generalization gap of 0.0077, and Grad-CAM confirmed that predictions rely on clinically meaningful tooth regions rather than acquisition artifacts. The benchmark offers a rigorous and reproducible baseline for intraoral radiograph classification.",
-    "methods": [],
-    "datasets": [],
-    "tasks": [],
-    "labelled": false
+    "methods": [
+      "DenseNet121",
+      "transfer-learning",
+      "patient-grouped stratified cross-validation",
+      "Grad-CAM"
+    ],
+    "datasets": [
+      "DentIRO",
+      "ImageNet"
+    ],
+    "tasks": [
+      "periapical radiograph classification",
+      "tooth-level classification"
+    ],
+    "labelled": true,
+    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
   },
   {
     "id": "2609.15383",
     "title": "Divide, Consult, Conquer: Capability Laundering Through Aligned LLMs",
     "abstract": "Language model safety is typically evaluated one interaction at a time. We show that a weaker, unaligned model can split a harmful task into benign-looking subproblems, consult a stronger aligned model independently on each, and combine the answers locally. We call this attack capability laundering. Unlike a jailbreak, no single response is a harmful task. We measure consultation-aided uplift using tasks that a raw frontier model solves, the aligned frontier refuses, and the unassisted orchestrator fails. We evaluate GPT-5.5, Claude Opus 4.8, and Grok-4.3 as consultants to four local orchestrators on CyBench, BountyBench, and harmful CBRN requests. On CyBench, Gemma-4-31B recovers 8/14 candidates with GPT-5.5 and 7/9 with Opus, compared with 2/21 and 4/15 for Gemma-4-12B. On BountyBench, Gemma-4-31B recovers 3/9 and 2/3 candidates, while Muse-Glimmer-30B recovers none of 22 and 13. For CBRN, we measure uplift across eight steps of a hypothetical bioweapon attack chain and find that consultation raises Gemma-4-31B's mean rubric score from 62.3 to 83.1 on a 100-point rubric scale. These results expose a gap in current defenses: refusing a harmful task does not prevent frontier capabilities from being transferred and composed across many individually permitted interactions.",
-    "methods": [],
-    "datasets": [],
-    "tasks": [],
-    "labelled": false
+    "methods": [
+      "capability laundering",
+      "GPT-5.5",
+      "Claude Opus 4.8",
+      "Grok-4.3",
+      "Gemma-4-31B",
+      "Gemma-4-12B",
+      "Muse-Glimmer-30B"
+    ],
+    "datasets": [
+      "CyBench",
+      "BountyBench"
+    ],
+    "tasks": [
+      "language model safety",
+      "jailbreak"
+    ],
+    "labelled": true,
+    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
   },
   {
     "id": "2506.01716",
     "title": "Self-Challenging Language Model Agents",
     "abstract": "Large language models are quickly becoming the foundation for intelligent agents that are capable of using tools. However, training such agents is challenging because it requires human creation and annotation of a diverse set of tasks, tools, and evaluation criteria. In this paper, we propose the Self-Challenging framework for training an agent on high-quality tasks that are generated by itself. The agent first plays the role of challenger and generates a task after interacting with the given tools. The tasks take the form of a novel general class of problems termed Code-as-Task, which are defined by an instruction, a verification function and solution and failure cases which serve as tests, allowing to filter only for high-quality tasks. The agent then takes an executor role and trains on those tasks with reinforcement learning using the evaluation feedback as a reward. Evaluation on two existing multi-turn tool-use agent benchmarks, M3ToolEval and TauBench, shows the Self-Challenging framework achieves over a two-fold improvement in Llama-3.1-8B-Instruct, despite using only self-generated training data.",
-    "methods": [],
-    "datasets": [],
-    "tasks": [],
-    "labelled": false
+    "methods": [
+      "Self-Challenging framework",
+      "Code-as-Task",
+      "reinforcement learning",
+      "Llama-3.1-8B-Instruct"
+    ],
+    "datasets": [
+      "M3ToolEval",
+      "TauBench"
+    ],
+    "tasks": [
+      "multi-turn tool-use agents"
+    ],
+    "labelled": true,
+    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
   },
   {
     "id": "2307.08304",
     "title": "Efficient Computation of Counterfactual Bounds",
     "abstract": "We assume to be given structural equations over discrete variables inducing a directed acyclic graph, namely, a structural causal model, together with data about its internal nodes. The question we want to answer is how we can compute bounds for partially identifiable counterfactual queries from such an input. We start by giving a map from structural casual models to credal networks. This allows us to compute exact counterfactual bounds via algorithms for credal nets on a subclass of structural causal models. Exact computation is going to be inefficient in general given that, as we show, causal inference is NP-hard even on polytrees. We target then approximate bounds via a causal EM scheme. We evaluate their accuracy by providing credible intervals on the quality of the approximation; we show through a synthetic benchmark that the EM scheme delivers accurate results in a fair number of runs. In the course of the discussion, we also point out what seems to be a neglected limitation to the trending idea that counterfactual bounds can be computed without knowledge of the structural equations. We also present a real case study on palliative care to show how our algorithms can readily be used for practical purposes.",
-    "methods": [],
+    "methods": [
+      "structural causal model",
+      "credal networks",
+      "causal EM scheme"
+    ],
     "datasets": [],
-    "tasks": [],
-    "labelled": false
+    "tasks": [
+      "counterfactual bounds",
+      "causal inference"
+    ],
+    "labelled": true,
+    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
   },
   {
     "id": "1506.06646",
     "title": "Nonparametric Bayesian Double Articulation Analyzer for Direct Language Acquisition from Continuous Speech Signals",
     "abstract": "Human infants can discover words directly from unsegmented speech signals without any explicitly labeled data. In this paper, we develop a novel machine learning method called nonparametric Bayesian double articulation analyzer (NPB-DAA) that can directly acquire language and acoustic models from observed continuous speech signals. For this purpose, we propose an integrative generative model that combines a language model and an acoustic model into a single generative model called the \"hierarchical Dirichlet process hidden language model\" (HDP-HLM). The HDP-HLM is obtained by extending the hierarchical Dirichlet process hidden semi-Markov model (HDP-HSMM) proposed by Johnson et al. An inference procedure for the HDP-HLM is derived using the blocked Gibbs sampler originally proposed for the HDP-HSMM. This procedure enables the simultaneous and direct inference of language and acoustic models from continuous speech signals. Based on the HDP-HLM and its inference procedure, we developed a novel double articulation analyzer. By assuming HDP-HLM as a generative model of observed time series data, and by inferring latent variables of the model, the method can analyze latent double articulation structure, i.e., hierarchically organized latent words and phonemes, of the data in an unsupervised manner. The novel unsupervised double articulation analyzer is called NPB-DAA. The NPB-DAA can automatically estimate double articulation structure embedded in speech signals. We also carried out two evaluation experiments using synthetic data and actual human continuous speech signals representing Japanese vowel sequences. In the word acquisition and phoneme categorization tasks, the NPB-DAA outperformed a conventional double articulation analyzer (DAA) and baseline automatic speech recognition system whose acoustic model was trained in a supervised manner.",
-    "methods": [],
+    "methods": [
+      "NPB-DAA",
+      "HDP-HLM",
+      "HDP-HSMM",
+      "blocked Gibbs sampler",
+      "nonparametric Bayesian double articulation analyzer"
+    ],
     "datasets": [],
-    "tasks": [],
-    "labelled": false
+    "tasks": [
+      "word acquisition",
+      "phoneme categorization",
+      "language acquisition from continuous speech"
+    ],
+    "labelled": true,
+    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
   },
   {
     "id": "1212.2546",
     "title": "A Learning Framework for Morphological Operators using Counter-Harmonic Mean",
     "abstract": "We present a novel framework for learning morphological operators using counter-harmonic mean. It combines concepts from morphology and convolutional neural networks. A thorough experimental validation analyzes basic morphological operators dilation and erosion, opening and closing, as well as the much more complex top-hat transform, for which we report a real-world application from the steel industry. Using online learning and stochastic gradient descent, our system learns both the structuring element and the composition of operators. It scales well to large datasets and online settings.",
-    "methods": [],
+    "methods": [
+      "counter-harmonic mean",
+      "convolutional neural networks",
+      "stochastic gradient descent",
+      "top-hat transform"
+    ],
     "datasets": [],
-    "tasks": [],
-    "labelled": false
+    "tasks": [
+      "learning morphological operators",
+      "dilation and erosion",
+      "opening and closing"
+    ],
+    "labelled": true,
+    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
   },
   {
     "id": "2310.17054",
     "title": "BOOST: Harnessing Black-Box Control to Boost Commonsense in LMs' Generation",
     "abstract": "Large language models (LLMs) such as GPT-3 have demonstrated a strong capability to generate coherent and contextually relevant text. However, amidst their successes, a crucial issue persists: their generated outputs still lack commonsense at times. Moreover, fine-tuning the entire LLM towards more commonsensical outputs is computationally expensive if not infeasible. In this paper, we present a computation-efficient framework that steers a frozen Pre-Trained Language Model (PTLM) towards more commonsensical generation (i.e., producing a plausible output that incorporates a list of concepts in a meaningful way). Specifically, we first construct a reference-free evaluator that assigns a sentence with a commonsensical score by grounding the sentence to a dynamic commonsense knowledge base from four different relational aspects. We then use the scorer as the oracle for commonsense knowledge, and extend the controllable generation method called NADO to train an auxiliary head that guides a fixed PTLM to better satisfy the oracle. We test our framework on a series of GPT-2-, Flan-T5-, and Alpaca-based language models (LMs) on two constrained concept-to-sentence benchmarks. Human evaluation results demonstrate that our method consistently leads to the most commonsensical outputs.",
-    "methods": [],
+    "methods": [
+      "BOOST",
+      "NADO",
+      "GPT-3",
+      "GPT-2",
+      "Flan-T5",
+      "Alpaca"
+    ],
     "datasets": [],
-    "tasks": [],
-    "labelled": false
+    "tasks": [
+      "commonsense generation",
+      "concept-to-sentence generation",
+      "controllable generation"
+    ],
+    "labelled": true,
+    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
   },
   {
     "id": "1910.04867",
     "title": "A Large-scale Study of Representation Learning with the Visual Task Adaptation Benchmark",
     "abstract": "Representation learning promises to unlock deep learning for the long tail of vision tasks without expensive labelled datasets. Yet, the absence of a unified evaluation for general visual representations hinders progress. Popular protocols are often too constrained (linear classification), limited in diversity (ImageNet, CIFAR, Pascal-VOC), or only weakly related to representation quality (ELBO, reconstruction error). We present the Visual Task Adaptation Benchmark (VTAB), which defines good representations as those that adapt to diverse, unseen tasks with few examples. With VTAB, we conduct a large-scale study of many popular publicly-available representation learning algorithms. We carefully control confounders such as architecture and tuning budget. We address questions like: How effective are ImageNet representations beyond standard natural datasets? How do representations trained via generative and discriminative models compare? To what extent can self-supervision replace labels? And, how close are we to general visual representations?",
-    "methods": [],
-    "datasets": [],
-    "tasks": [],
-    "labelled": false
+    "methods": [
+      "linear classification"
+    ],
+    "datasets": [
+      "Visual Task Adaptation Benchmark",
+      "VTAB",
+      "ImageNet",
+      "CIFAR",
+      "Pascal-VOC"
+    ],
+    "tasks": [
+      "representation learning",
+      "visual task adaptation"
+    ],
+    "labelled": true,
+    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
   },
   {
     "id": "1305.3321",
     "title": "A Mining-Based Compression Approach for Constraint Satisfaction Problems",
     "abstract": "In this paper, we propose an extension of our Mining for SAT framework to Constraint satisfaction Problem (CSP). We consider n-ary extensional constraints (table constraints). Our approach aims to reduce the size of the CSP by exploiting the structure of the constraints graph and of its associated microstructure. More precisely, we apply itemset mining techniques to search for closed frequent itemsets on these two representation. Using Tseitin extension, we rewrite the whole CSP to another compressed CSP equivalent with respect to satisfiability. Our approach contrast with previous proposed approach by Katsirelos and Walsh, as we do not change the structure of the constraints.",
-    "methods": [],
+    "methods": [
+      "Mining for SAT",
+      "itemset mining",
+      "closed frequent itemsets",
+      "Tseitin extension"
+    ],
     "datasets": [],
-    "tasks": [],
-    "labelled": false
+    "tasks": [
+      "Constraint satisfaction Problem",
+      "CSP compression"
+    ],
+    "labelled": true,
+    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
   },
   {
     "id": "2304.07210",
     "title": "Measuring Re-identification Risk",
     "abstract": "Compact user representations (such as embeddings) form the backbone of personalization services. In this work, we present a new theoretical framework to measure re-identification risk in such user representations. Our framework, based on hypothesis testing, formally bounds the probability that an attacker may be able to obtain the identity of a user from their representation. As an application, we show how our framework is general enough to model important real-world applications such as the Chrome's Topics API for interest-based advertising. We complement our theoretical bounds by showing provably good attack algorithms for re-identification that we use to estimate the re-identification risk in the Topics API. We believe this work provides a rigorous and interpretable notion of re-identification risk and a framework to measure it that can be used to inform real-world applications.",
-    "methods": [],
+    "methods": [
+      "hypothesis testing",
+      "Topics API"
+    ],
     "datasets": [],
-    "tasks": [],
-    "labelled": false
+    "tasks": [
+      "re-identification risk",
+      "interest-based advertising"
+    ],
+    "labelled": true,
+    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
   },
   {
     "id": "1804.00810",
     "title": "StarCraft Micromanagement with Reinforcement Learning and Curriculum Transfer Learning",
     "abstract": "Real-time strategy games have been an important field of game artificial intelligence in recent years. This paper presents a reinforcement learning and curriculum transfer learning method to control multiple units in StarCraft micromanagement. We define an efficient state representation, which breaks down the complexity caused by the large state space in the game environment. Then a parameter sharing multi-agent gradientdescent Sarsa({\\lambda}) (PS-MAGDS) algorithm is proposed to train the units. The learning policy is shared among our units to encourage cooperative behaviors. We use a neural network as a function approximator to estimate the action-value function, and propose a reward function to help units balance their move and attack. In addition, a transfer learning method is used to extend our model to more difficult scenarios, which accelerates the training process and improves the learning performance. In small scale scenarios, our units successfully learn to combat and defeat the built-in AI with 100% win rates. In large scale scenarios, curriculum transfer learning method is used to progressively train a group of units, and shows superior performance over some baseline methods in target scenarios. With reinforcement learning and curriculum transfer learning, our units are able to learn appropriate strategies in StarCraft micromanagement scenarios.",
-    "methods": [],
-    "datasets": [],
-    "tasks": [],
-    "labelled": false
+    "methods": [
+      "PS-MAGDS",
+      "Sarsa",
+      "reinforcement learning",
+      "curriculum transfer learning",
+      "neural network"
+    ],
+    "datasets": [
+      "StarCraft"
+    ],
+    "tasks": [
+      "StarCraft micromanagement",
+      "real-time strategy games"
+    ],
+    "labelled": true,
+    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
   },
   {
     "id": "2412.04276",
     "title": "Graph-Sequential Alignment and Uniformity: Toward Enhanced Recommendation Systems",
     "abstract": "Graph-based and sequential methods are two popular recommendation paradigms, each excelling in its domain but lacking the ability to leverage signals from the other. To address this, we propose a novel method that integrates both approaches for enhanced performance. Our framework uses Graph Neural Network (GNN)-based and sequential recommenders as separate submodules while sharing a unified embedding space optimized jointly. To enable positive knowledge transfer, we design a loss function that enforces alignment and uniformity both within and across submodules. Experiments on three real-world datasets demonstrate that the proposed method significantly outperforms using either approach alone and achieves state-of-the-art results. Our implementations are publicly available at https://github.com/YuweiCao-UIC/GSAU.git.",
-    "methods": [],
+    "methods": [
+      "Graph Neural Network",
+      "GNN",
+      "alignment and uniformity loss"
+    ],
     "datasets": [],
-    "tasks": [],
-    "labelled": false
+    "tasks": [
+      "recommendation",
+      "sequential recommendation",
+      "graph-based recommendation"
+    ],
+    "labelled": true,
+    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
   }
 ]
