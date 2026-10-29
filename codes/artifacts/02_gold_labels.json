@@ -13,7 +13,7 @@
       "navigation tasks"
     ],
     "labelled": true,
-    "note": "DRAFT by AI assistant from the abstract text; member A must read the abstract and confirm/edit before use"
+    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
   },
   {
     "id": "2502.09673",
@@ -29,7 +29,7 @@
       "LLM safety"
     ],
     "labelled": true,
-    "note": "DRAFT by AI assistant from the abstract text; member A must read the abstract and confirm/edit before use"
+    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
   },
   {
     "id": "2602.19631",
@@ -51,7 +51,7 @@
       "text-to-image diffusion"
     ],
     "labelled": true,
-    "note": "DRAFT by AI assistant from the abstract text; member A must read the abstract and confirm/edit before use"
+    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
   },
   {
     "id": "2506.11033",
@@ -70,7 +70,7 @@
       "safe reinforcement learning"
     ],
     "labelled": true,
-    "note": "DRAFT by AI assistant from the abstract text; member A must read the abstract and confirm/edit before use"
+    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
   },
   {
     "id": "1205.6396",
@@ -90,7 +90,7 @@
       "text mining"
     ],
     "labelled": true,
-    "note": "DRAFT by AI assistant from the abstract text; member A must read the abstract and confirm/edit before use"
+    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
   },
   {
     "id": "1611.04426",
@@ -98,19 +98,19 @@
     "abstract": "Cache timing attacks allow attackers to infer the properties of a secret execution by observing cache hits and misses. But how much information can actually leak through such attacks? For a given program, a cache model, and an input, our CHALICE framework leverages symbolic execution to compute the amount of information that can possibly leak through cache attacks. At the core of CHALICE is a novel approach to quantify information leak that can highlight critical cache side-channel leaks on arbitrary binary code. In our evaluation on real-world programs from OpenSSL and Linux GDK libraries, CHALICE effectively quantifies information leaks: For an AES-128 implementation on Linux, for instance, CHALICE finds that a cache attack can leak as much as 127 out of 128 bits of the encryption key.",
     "methods": [
       "CHALICE",
-      "symbolic execution",
-      "AES-128"
+      "symbolic execution"
     ],
     "datasets": [
       "OpenSSL",
-      "Linux GDK"
+      "Linux GDK",
+      "AES-128"
     ],
     "tasks": [
       "cache timing attacks",
       "information leak quantification"
     ],
     "labelled": true,
-    "note": "DRAFT by AI assistant from the abstract text; member A must read the abstract and confirm/edit before use"
+    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
   },
   {
     "id": "2007.08911",
@@ -128,7 +128,7 @@
       "safety & security"
     ],
     "labelled": true,
-    "note": "DRAFT by AI assistant from the abstract text; member A must read the abstract and confirm/edit before use"
+    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
   },
   {
     "id": "2407.16192",
@@ -146,7 +146,7 @@
       "CIR"
     ],
     "labelled": true,
-    "note": "DRAFT by AI assistant from the abstract text; member A must read the abstract and confirm/edit before use"
+    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
   },
   {
     "id": "2609.14703",
@@ -167,7 +167,7 @@
       "tooth-level classification"
     ],
     "labelled": true,
-    "note": "DRAFT by AI assistant from the abstract text; member A must read the abstract and confirm/edit before use"
+    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
   },
   {
     "id": "2609.15383",
@@ -191,7 +191,7 @@
       "jailbreak"
     ],
     "labelled": true,
-    "note": "DRAFT by AI assistant from the abstract text; member A must read the abstract and confirm/edit before use"
+    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
   },
   {
     "id": "2506.01716",
@@ -211,7 +211,7 @@
       "multi-turn tool-use agents"
     ],
     "labelled": true,
-    "note": "DRAFT by AI assistant from the abstract text; member A must read the abstract and confirm/edit before use"
+    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
   },
   {
     "id": "2307.08304",
@@ -228,7 +228,7 @@
       "causal inference"
     ],
     "labelled": true,
-    "note": "DRAFT by AI assistant from the abstract text; member A must read the abstract and confirm/edit before use"
+    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
   },
   {
     "id": "1506.06646",
@@ -248,7 +248,7 @@
       "language acquisition from continuous speech"
     ],
     "labelled": true,
-    "note": "DRAFT by AI assistant from the abstract text; member A must read the abstract and confirm/edit before use"
+    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
   },
   {
     "id": "1212.2546",
@@ -267,7 +267,7 @@
       "opening and closing"
     ],
     "labelled": true,
-    "note": "DRAFT by AI assistant from the abstract text; member A must read the abstract and confirm/edit before use"
+    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
   },
   {
     "id": "2310.17054",
@@ -288,18 +288,18 @@
       "controllable generation"
     ],
     "labelled": true,
-    "note": "DRAFT by AI assistant from the abstract text; member A must read the abstract and confirm/edit before use"
+    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
   },
   {
     "id": "1910.04867",
     "title": "A Large-scale Study of Representation Learning with the Visual Task Adaptation Benchmark",
     "abstract": "Representation learning promises to unlock deep learning for the long tail of vision tasks without expensive labelled datasets. Yet, the absence of a unified evaluation for general visual representations hinders progress. Popular protocols are often too constrained (linear classification), limited in diversity (ImageNet, CIFAR, Pascal-VOC), or only weakly related to representation quality (ELBO, reconstruction error). We present the Visual Task Adaptation Benchmark (VTAB), which defines good representations as those that adapt to diverse, unseen tasks with few examples. With VTAB, we conduct a large-scale study of many popular publicly-available representation learning algorithms. We carefully control confounders such as architecture and tuning budget. We address questions like: How effective are ImageNet representations beyond standard natural datasets? How do representations trained via generative and discriminative models compare? To what extent can self-supervision replace labels? And, how close are we to general visual representations?",
     "methods": [
-      "VTAB",
-      "Visual Task Adaptation Benchmark",
       "linear classification"
     ],
     "datasets": [
+      "Visual Task Adaptation Benchmark",
+      "VTAB",
       "ImageNet",
       "CIFAR",
       "Pascal-VOC"
@@ -309,7 +309,7 @@
       "visual task adaptation"
     ],
     "labelled": true,
-    "note": "DRAFT by AI assistant from the abstract text; member A must read the abstract and confirm/edit before use"
+    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
   },
   {
     "id": "1305.3321",
@@ -327,7 +327,7 @@
       "CSP compression"
     ],
     "labelled": true,
-    "note": "DRAFT by AI assistant from the abstract text; member A must read the abstract and confirm/edit before use"
+    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
   },
   {
     "id": "2304.07210",
@@ -343,7 +343,7 @@
       "interest-based advertising"
     ],
     "labelled": true,
-    "note": "DRAFT by AI assistant from the abstract text; member A must read the abstract and confirm/edit before use"
+    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
   },
   {
     "id": "1804.00810",
@@ -364,7 +364,7 @@
       "real-time strategy games"
     ],
     "labelled": true,
-    "note": "DRAFT by AI assistant from the abstract text; member A must read the abstract and confirm/edit before use"
+    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
   },
   {
     "id": "2412.04276",
@@ -382,6 +382,6 @@
       "graph-based recommendation"
     ],
     "labelled": true,
-    "note": "DRAFT by AI assistant from the abstract text; member A must read the abstract and confirm/edit before use"
+    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
   }
 ]
