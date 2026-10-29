@@ -1,0 +1,94 @@
+{
+  "pca_variance_explained": {
+    "TF-IDF": 0.009,
+    "Averaged word vectors": 0.212,
+    "MiniLM sentence embeddings": 0.129
+  },
+  "retrieval_eval": [
+    {
+      "retriever": "TF-IDF (1-2 grams)",
+      "P@5": 0.619,
+      "nDCG@5": 0.636
+    },
+    {
+      "retriever": "Averaged word vectors",
+      "P@5": 0.42,
+      "nDCG@5": 0.42
+    },
+    {
+      "retriever": "MiniLM sentence embeddings",
+      "P@5": 0.704,
+      "nDCG@5": 0.708
+    },
+    {
+      "retriever": "random baseline",
+      "P@5": 0.167,
+      "nDCG@5": 0.167
+    }
+  ],
+  "best_retriever": "MiniLM sentence embeddings",
+  "p_at_5_by_category": {
+    "cs.LG": 0.44,
+    "cs.AI": 0.526,
+    "cs.CL": 0.754,
+    "cs.CV": 0.812,
+    "cs.IR": 0.843,
+    "cs.CR": 0.865
+  },
+  "clustering": [
+    {
+      "space": "TF-IDF (SVD-100)",
+      "purity": 0.572,
+      "adjusted_rand": 0.263
+    },
+    {
+      "space": "Averaged word vectors",
+      "purity": 0.296,
+      "adjusted_rand": 0.046
+    },
+    {
+      "space": "MiniLM sentence embeddings",
+      "purity": 0.727,
+      "adjusted_rand": 0.484
+    }
+  ],
+  "minilm_cluster_terms": [
+    {
+      "cluster": 0,
+      "papers": 1620,
+      "majority": "cs.LG (67%)",
+      "top terms": "learning, data, neural, networks, model, deep, training, models"
+    },
+    {
+      "cluster": 1,
+      "papers": 915,
+      "majority": "cs.IR (92%)",
+      "top terms": "recommendation, user, recommender, item, recommender systems, users, items, systems"
+    },
+    {
+      "cluster": 2,
+      "papers": 2260,
+      "majority": "cs.CL (56%)",
+      "top terms": "language, models, retrieval, text, model, language models, large, llms"
+    },
+    {
+      "cluster": 3,
+      "papers": 1597,
+      "majority": "cs.AI (63%)",
+      "top terms": "reasoning, agent, agents, learning, models, reinforcement, model, ai"
+    },
+    {
+      "cluster": 4,
+      "papers": 1648,
+      "majority": "cs.CR (89%)",
+      "top terms": "security, attacks, privacy, attack, data, based, paper, secure"
+    },
+    {
+      "cluster": 5,
+      "papers": 1560,
+      "majority": "cs.CV (84%)",
+      "top terms": "image, images, 3d, visual, object, video, model, models"
+    }
+  ],
+  "retrieve_latency_ms": 10.0
+}

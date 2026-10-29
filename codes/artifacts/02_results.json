@@ -69,5 +69,31 @@
     "papers_with_a_year": 31
   },
   "regex_names_also_found_by_spacy": 0.542,
-  "extraction_scores": "not run: gold labels not filled in yet"
+  "extraction_scores": [
+    {
+      "extractor": "Regex rules",
+      "precision": 0.75,
+      "recall": 0.367,
+      "f1": 0.493,
+      "predicted": 44,
+      "gold": 90
+    },
+    {
+      "extractor": "spaCy NER (ORG/PRODUCT)",
+      "precision": 0.643,
+      "recall": 0.3,
+      "f1": 0.409,
+      "predicted": 42,
+      "gold": 90
+    },
+    {
+      "extractor": "Few-shot LLM",
+      "precision": 0.718,
+      "recall": 0.567,
+      "f1": 0.634,
+      "predicted": 71,
+      "gold": 90
+    }
+  ],
+  "n_labelled_abstracts": 20
 }

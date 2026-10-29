@@ -1,0 +1,395 @@
+[
+  {
+    "id":"2203.07320",
+    "title":"The Right to be Forgotten in Federated Learning: An Efficient Realization with Rapid Retraining",
+    "abstract":"In Machine Learning, the emergence of \\textit{the right to be forgotten} gave birth to a paradigm named \\textit{machine unlearning}, which enables data holders to proactively erase their data from a trained model. Existing machine unlearning techniques focus on centralized training, where access to all holders' training data is a must for the server to conduct the unlearning process. It remains largely underexplored about how to achieve unlearning when full access to all training data becomes unavailable. One noteworthy example is Federated Learning (FL), where each participating data holder trains locally, without sharing their training data to the central server. In this paper, we investigate the problem of machine unlearning in FL systems. We start with a formal definition of the unlearning problem in FL and propose a rapid retraining approach to fully erase data samples from a trained FL model. The resulting design allows data holders to jointly conduct the unlearning process efficiently while keeping their training data locally. Our formal convergence and complexity analysis demonstrate that our design can preserve model utility with high efficiency. Extensive evaluations on four real-world datasets illustrate the effectiveness and performance of our proposed realization.",
+    "authors":"Yi Liu, Lei Xu, Xingliang Yuan, Cong Wang, Bo Li",
+    "categories":"cs.CR cs.LG",
+    "doi":"10.1109\/INFOCOM48880.2022.9796721",
+    "journal-ref":null,
+    "update_date":"2022-07-01",
+    "versions":[
+      {
+        "version":"v1",
+        "created":"Mon, 14 Mar 2022 17:22:40 GMT"
+      }
+    ],
+    "primary_category":"cs.CR",
+    "all_categories":[
+      "cs.CR",
+      "cs.LG"
+    ],
+    "author_list":[
+      "Yi Liu",
+      "Lei Xu",
+      "Xingliang Yuan",
+      "Cong Wang",
+      "Bo Li"
+    ],
+    "text":"The Right to be Forgotten in Federated Learning: An Efficient Realization with Rapid Retraining. In Machine Learning, the emergence of \\textit{the right to be forgotten} gave birth to a paradigm named \\textit{machine unlearning}, which enables data holders to proactively erase their data from a trained model. Existing machine unlearning techniques focus on centralized training, where access to all holders' training data is a must for the server to conduct the unlearning process. It remains largely underexplored about how to achieve unlearning when full access to all training data becomes unavailable. One noteworthy example is Federated Learning (FL), where each participating data holder trains locally, without sharing their training data to the central server. In this paper, we investigate the problem of machine unlearning in FL systems. We start with a formal definition of the unlearning problem in FL and propose a rapid retraining approach to fully erase data samples from a trained FL model. The resulting design allows data holders to jointly conduct the unlearning process efficiently while keeping their training data locally. Our formal convergence and complexity analysis demonstrate that our design can preserve model utility with high efficiency. Extensive evaluations on four real-world datasets illustrate the effectiveness and performance of our proposed realization.",
+    "sum_extractive":"The resulting design allows data holders to jointly conduct the unlearning process efficiently while keeping their training data locally. Our formal convergence and complexity analysis demonstrate that our design can preserve model utility with high efficiency. Extensive evaluations on four real-world datasets illustrate the effectiveness and performance of our proposed realization.",
+    "sum_bart":"Machine unlearning enables data holders to proactively erase their data from a trained model. Existing machine unlearning techniques focus on centralized training, where access to all holders' training data is a must. Federated Learning (FL) allows each participating data holder to train locally, without sharing their training data to the central server.",
+    "sum_t5":"the right to be forgotten gave birth to a paradigm called machine unlearning . it enables data holders to proactively erase their data from a trained model . the paper proposes a rapid retraining approach to fully erase data samples .",
+    "sum_llm_basic":"The abstract discusses the concept of \"machine unlearning\" in the context of Federated Learning (FL) systems. This involves erasing specific data samples from a trained model across multiple decentralized participants without requiring direct access to shared training data. Key points include:\n1. A formal definition of the unlearning problem in FL.\n2. Proposing a rapid retraining method to remove data samples from an FL model.\n3. Allowing data holders to perform unlearning independently while retaining local training data.\n4. Demonstrating through formal convergence and complexity analyses that the solution preserves model utility effectively.\n5. Evalu",
+    "sum_llm_role":"This abstract discusses the concept of \"machine unlearning\" within the context of Federated Learning (FL). It highlights the challenge of erasing data from models trained using decentralized methods like FL, where data holders train independently without sharing their data with a central authority. The study introduces a method called \"rapid retraining\" designed specifically for FL environments, allowing data holders to perform unlearning processes collectively while retaining control over their local training data. Key points include:\n1. A formal definition of the unlearning problem in FL.\n2. Proposing a rapid retraining approach to remove data samples from an FL",
+    "sum_llm_instruction":"The study investigates the problem of machine unlearning in federated learning systems, proposing a rapid retraining approach to remove data samples from an FL model's training. This method allows data holders to perform unlearning independently while preserving model utility efficiently.",
+    "sum_llm_few-shot":"In machine learning, the right to be forgotten led to the concept of machine unlearning, enabling data holders to erase their data from models. Traditional methods require full access to training data. Federated Learning offers an alternative but challenges exist. This paper proposes a rapid retraining approach for federated unlearning, allowing local erasure without central server involvement. Formal analysis shows it preserves model utility efficiently. Evaluations on real-world datasets confirm its effectiveness.",
+    "reference":"The Right to be Forgotten in Federated Learning: An Efficient Realization with Rapid Retraining. In Machine Learning, the emergence of the right to be forgotten gave birth to a paradigm named machine unlearning, which enables data holders to proactively erase their data from a trained model."
+  },
+  {
+    "id":"2201.06035",
+    "title":"Sequential Recommendation via Stochastic Self-Attention",
+    "abstract":"Sequential recommendation models the dynamics of a user's previous behaviors in order to forecast the next item, and has drawn a lot of attention. Transformer-based approaches, which embed items as vectors and use dot-product self-attention to measure the relationship between items, demonstrate superior capabilities among existing sequential methods. However, users' real-world sequential behaviors are \\textit{\\textbf{uncertain}} rather than deterministic, posing a significant challenge to present techniques. We further suggest that dot-product-based approaches cannot fully capture \\textit{\\textbf{collaborative transitivity}}, which can be derived in item-item transitions inside sequences and is beneficial for cold start items. We further argue that BPR loss has no constraint on positive and sampled negative items, which misleads the optimization. We propose a novel \\textbf{STO}chastic \\textbf{S}elf-\\textbf{A}ttention~(STOSA) to overcome these issues. STOSA, in particular, embeds each item as a stochastic Gaussian distribution, the covariance of which encodes the uncertainty. We devise a novel Wasserstein Self-Attention module to characterize item-item position-wise relationships in sequences, which effectively incorporates uncertainty into model training. Wasserstein attentions also enlighten the collaborative transitivity learning as it satisfies triangle inequality. Moreover, we introduce a novel regularization term to the ranking loss, which assures the dissimilarity between positive and the negative items. Extensive experiments on five real-world benchmark datasets demonstrate the superiority of the proposed model over state-of-the-art baselines, especially on cold start items. The code is available in \\url{https:\/\/github.com\/zfan20\/STOSA}.",
+    "authors":"Ziwei Fan, Zhiwei Liu, Alice Wang, Zahra Nazari, Lei Zheng, Hao Peng,\n  Philip S. Yu",
+    "categories":"cs.IR cs.AI cs.LG",
+    "doi":null,
+    "journal-ref":null,
+    "update_date":"2022-03-08",
+    "versions":[
+      {
+        "version":"v1",
+        "created":"Sun, 16 Jan 2022 12:38:45 GMT"
+      },
+      {
+        "version":"v2",
+        "created":"Sat, 5 Mar 2022 17:00:57 GMT"
+      }
+    ],
+    "primary_category":"cs.IR",
+    "all_categories":[
+      "cs.IR",
+      "cs.AI",
+      "cs.LG"
+    ],
+    "author_list":[
+      "Ziwei Fan",
+      "Zhiwei Liu",
+      "Alice Wang",
+      "Zahra Nazari",
+      "Lei Zheng",
+      "Hao Peng",
+      "Philip S. Yu"
+    ],
+    "text":"Sequential Recommendation via Stochastic Self-Attention. Sequential recommendation models the dynamics of a user's previous behaviors in order to forecast the next item, and has drawn a lot of attention. Transformer-based approaches, which embed items as vectors and use dot-product self-attention to measure the relationship between items, demonstrate superior capabilities among existing sequential methods. However, users' real-world sequential behaviors are \\textit{\\textbf{uncertain}} rather than deterministic, posing a significant challenge to present techniques. We further suggest that dot-product-based approaches cannot fully capture \\textit{\\textbf{collaborative transitivity}}, which can be derived in item-item transitions inside sequences and is beneficial for cold start items. We further argue that BPR loss has no constraint on positive and sampled negative items, which misleads the optimization. We propose a novel \\textbf{STO}chastic \\textbf{S}elf-\\textbf{A}ttention~(STOSA) to overcome these issues. STOSA, in particular, embeds each item as a stochastic Gaussian distribution, the covariance of which encodes the uncertainty. We devise a novel Wasserstein Self-Attention module to characterize item-item position-wise relationships in sequences, which effectively incorporates uncertainty into model training. Wasserstein attentions also enlighten the collaborative transitivity learning as it satisfies triangle inequality. Moreover, we introduce a novel regularization term to the ranking loss, which assures the dissimilarity between positive and the negative items. Extensive experiments on five real-world benchmark datasets demonstrate the superiority of the proposed model over state-of-the-art baselines, especially on cold start items. The code is available in \\url{https:\/\/github.com\/zfan20\/STOSA}.",
+    "sum_extractive":"Transformer-based approaches, which embed items as vectors and use dot-product self-attention to measure the relationship between items, demonstrate superior capabilities among existing sequential methods. We devise a novel Wasserstein Self-Attention module to characterize item-item position-wise relationships in sequences, which effectively incorporates uncertainty into model training. Extensive experiments on five real-world benchmark datasets demonstrate the superiority of the proposed model over state-of-the-art baselines, especially on cold start items.",
+    "sum_bart":"We propose a novel STOchastic Self-Attention~(STOSA) to overcome these issues. STOSA embeds each item as a stochastic Gaussian distribution, which encodes the uncertainty. Extensive experiments on five real-world benchmark datasets demonstrate the superiority of the proposed model over state-of-",
+    "sum_t5":"transformer-based approaches demonstrate superior capabilities among existing methods . but users' real-world sequential behaviors are uncertain rather than deterministic . we propose a novel STOchastic Self-Attention(STOSA) to overcome these issues .",
+    "sum_llm_basic":"The abstract discusses an improvement to sequential recommendation models using transformer-based approaches. It highlights how traditional dot-product based methods struggle with uncertain user behavior due to their deterministic nature. The authors suggest that these methods fail to capture collaborative transitivity, which involves understanding relationships between items within sequences, crucial for handling cold-start scenarios.\n\nThey propose a new method called STochastic Self-Attention (STOSA), which uses stochastic Gaussian distributions to represent items instead of fixed vectors. This allows for better modeling of uncertainty. Additionally, they introduce a Wasserstein Self-Attention module to handle positional relationships between items more accurately, thereby",
+    "sum_llm_role":"The abstract discusses an improvement to sequential recommendation models by introducing a new approach called STOchastic Self-Attention (STOSA). This method addresses two main challenges: capturing uncertain user behavior and incorporating collaborative transitivity, which is crucial for handling cold-start items.\n\nKey points:\n1. **Uncertainty Handling**: Traditional dot-product-based approaches struggle with capturing the true nature of user behavior due to its deterministic assumption.\n2. **Collaborative Transitivity**: This refers to the ability to predict the relevance of items based on their positions within a sequence, which is essential for recommending items that have not",
+    "sum_llm_instruction":"The abstract discusses the challenges faced by current sequential recommendation models due to uncertain user behavior and proposes a new approach called STOchastic Self-Attention (STOSA) to address these issues. STOSA uses stochastic Gaussian distributions to represent items and incorporates uncertainty through Wasserstein Self-Attention modules, improving performance on both active and cold start items compared to traditional methods.",
+    "sum_llm_few-shot":"Sequential recommendation models predict the next item based on past behavior, but real-world behaviors are uncertain. Traditional dot-product-based approaches fail to capture collaborative transitivity, leading to poor performance on cold-start items. STOSA, an innovative approach that uses stochastic Gaussian distributions and Wasserstein attentions, addresses these issues by incorporating uncertainty and promoting collaborative transitivity. The model outperforms current benchmarks, particularly on cold-start scenarios.",
+    "reference":"Sequential Recommendation via Stochastic Self-Attention. Sequential recommendation models the dynamics of a user's previous behaviors in order to forecast the next item, and has drawn a lot of attention."
+  },
+  {
+    "id":"2505.09742",
+    "title":"A Generative Neural Annealer for Black-Box Combinatorial Optimization",
+    "abstract":"We propose a generative, end-to-end solver for black-box combinatorial optimization that emphasizes both sample efficiency and solution quality on NP problems. Drawing inspiration from annealing-based algorithms, we treat the black-box objective as an energy function and train a neural network to model the associated Boltzmann distribution. By conditioning on temperature, the network captures a continuum of distributions--from near-uniform at high temperatures to sharply peaked around global optima at low temperatures--thereby learning the structure of the energy landscape and facilitating global optimization. When queries are expensive, the temperature-dependent distributions naturally enable data augmentation and improve sample efficiency. When queries are cheap but the problem remains hard, the model learns implicit variable interactions, effectively \"opening\" the black box. We validate our approach on challenging combinatorial tasks under both limited and unlimited query budgets, showing competitive performance against state-of-the-art black-box optimizers.",
+    "authors":"Yuan-Hang Zhang, Massimiliano Di Ventra",
+    "categories":"cs.LG cond-mat.dis-nn cond-mat.stat-mech cs.AI cs.NE",
+    "doi":null,
+    "journal-ref":null,
+    "update_date":"2025-08-07",
+    "versions":[
+      {
+        "version":"v1",
+        "created":"Wed, 14 May 2025 19:05:19 GMT"
+      },
+      {
+        "version":"v2",
+        "created":"Tue, 05 Aug 2025 18:14:19 GMT"
+      }
+    ],
+    "primary_category":"cs.LG",
+    "all_categories":[
+      "cs.LG",
+      "cond-mat.dis-nn",
+      "cond-mat.stat-mech",
+      "cs.AI",
+      "cs.NE"
+    ],
+    "author_list":[
+      "Yuan-Hang Zhang",
+      "Massimiliano Di Ventra"
+    ],
+    "text":"A Generative Neural Annealer for Black-Box Combinatorial Optimization. We propose a generative, end-to-end solver for black-box combinatorial optimization that emphasizes both sample efficiency and solution quality on NP problems. Drawing inspiration from annealing-based algorithms, we treat the black-box objective as an energy function and train a neural network to model the associated Boltzmann distribution. By conditioning on temperature, the network captures a continuum of distributions--from near-uniform at high temperatures to sharply peaked around global optima at low temperatures--thereby learning the structure of the energy landscape and facilitating global optimization. When queries are expensive, the temperature-dependent distributions naturally enable data augmentation and improve sample efficiency. When queries are cheap but the problem remains hard, the model learns implicit variable interactions, effectively \"opening\" the black box. We validate our approach on challenging combinatorial tasks under both limited and unlimited query budgets, showing competitive performance against state-of-the-art black-box optimizers.",
+    "sum_extractive":"We propose a generative, end-to-end solver for black-box combinatorial optimization that emphasizes both sample efficiency and solution quality on NP problems. When queries are expensive, the temperature-dependent distributions naturally enable data augmentation and improve sample efficiency. We validate our approach on challenging combinatorial tasks under both limited and unlimited query budgets, showing competitive performance against state-of-the-art black-box optimizers.",
+    "sum_bart":"We treat the black-box objective as an energy function and train a neural network to model the associated Boltzmann distribution. By conditioning on temperature, the network captures a continuum of distributions--from near-uniform at high temperatures to sharply peaked around global optima at low temperatures.",
+    "sum_t5":"we propose a generative, end-to-end solver for black-box combinatorial optimization . the approach emphasizes sample efficiency and solution quality on NP problems . by conditioning on temperature, the network captures a continuum of distributions . when queries are expensive, the temperature-dependent distributions naturally",
+    "sum_llm_basic":"The abstract describes a new method for solving complex combinatorial optimization problems using deep learning techniques. The proposed algorithm treats the black-box objective function as an energy function and trains a neural network to approximate its Boltzmann distribution. This allows the system to learn about the underlying energy landscape and find optimal solutions efficiently.\n\nKey features include:\n1. Sample efficiency: The method can quickly converge to good solutions even with limited queries.\n2. Global optimization: It excels in finding global optima rather than local ones.\n3. Data augmentation: Temperature-dependent distributions help improve sample efficiency when queries are costly.\n4",
+    "sum_llm_role":"The proposed method is an end-to-end generative solver designed for combinatorial optimization in NP problems. It treats the black-box objective as an energy function and trains a neural network to approximate the Boltzmann distribution, which models the probability of different solutions based on their fitness (energy). The key features include:\n1. Temperature control: The network's output can be conditioned on temperature, allowing it to capture various levels of exploration.\n2. Sample efficiency: As temperature decreases, the distribution becomes more concentrated around optimal solutions, improving the model's ability to find good solutions quickly.\n3. Implicit interaction",
+    "sum_llm_instruction":"The study proposes a novel generative, end-to-end solver for combinatorial optimization using a neural network trained to approximate the Boltzmann distribution of a black-box objective function. The method leverages temperature control to capture different levels of exploration (uniform vs. peaked) and adaptability to varying query costs, achieving efficient sampling and improved solution quality across diverse problem domains.",
+    "sum_llm_few-shot":"We introduce a generative, end-to-end solver for black-box combinatorial optimization that combines sample efficiency and solution quality. The model treats the black-box objective as an energy function and trains a neural network to approximate the Boltzmann distribution, capturing different levels of exploration based on temperature. This allows it to learn the energy landscape and optimize efficiently even when queries are costly.",
+    "reference":"A Generative Neural Annealer for Black-Box Combinatorial Optimization. We propose a generative, end-to-end solver for black-box combinatorial optimization that emphasizes both sample efficiency and solution quality on NP problems."
+  },
+  {
+    "id":"2602.08678",
+    "title":"SA-CAISR: Stage-Adaptive and Conflict-Aware Incremental Sequential Recommendation",
+    "abstract":"Sequential recommendation (SR) aims to predict a user's next action by learning from their historical interaction sequences. In real-world applications, these models require periodic updates to adapt to new interactions and evolving user preferences. While incremental learning methods facilitate these updates, they face significant challenges. Replay-based approaches incur high memory and computational costs, and regularization-based methods often struggle to discard outdated or conflicting knowledge. To overcome these challenges, we propose SA-CAISR, a Stage-Adaptive and Conflict-Aware Incremental Sequential Recommendation framework. As a buffer-free framework, SA-CAISR operates using only the old model and new data, directly addressing the high costs of replay-based techniques. SA-CAISR introduces a novel Fisher-weighted knowledge-screening mechanism that dynamically identifies outdated knowledge by estimating parameter-level conflicts between the old model and new data, selectively removing obsolete knowledge while preserving compatible historical patterns. This dynamic balance between stability and adaptability allows our method to achieve state-of-the-art performance in incremental SR. Specifically, SA-CAISR improves Recall@20 by 2.0% on average across datasets, while reducing memory usage by 97.5% and training time by 46.9% compared to the best baseline. This efficiency allows real-world systems to rapidly update user profiles with minimal computational overhead, ensuring more timely and accurate recommendations.",
+    "authors":"Xiaomeng Song, Xinru Wang, Hanbing Wang, Hongyu Lu, Yu Chen, Zhaochun Ren, Zhumin Chen",
+    "categories":"cs.IR",
+    "doi":null,
+    "journal-ref":null,
+    "update_date":"2026-02-12",
+    "versions":[
+      {
+        "version":"v1",
+        "created":"Mon, 09 Feb 2026 14:00:52 GMT"
+      },
+      {
+        "version":"v2",
+        "created":"Wed, 11 Feb 2026 12:06:44 GMT"
+      }
+    ],
+    "primary_category":"cs.IR",
+    "all_categories":[
+      "cs.IR"
+    ],
+    "author_list":[
+      "Xiaomeng Song",
+      "Xinru Wang",
+      "Hanbing Wang",
+      "Hongyu Lu",
+      "Yu Chen",
+      "Zhaochun Ren",
+      "Zhumin Chen"
+    ],
+    "text":"SA-CAISR: Stage-Adaptive and Conflict-Aware Incremental Sequential Recommendation. Sequential recommendation (SR) aims to predict a user's next action by learning from their historical interaction sequences. In real-world applications, these models require periodic updates to adapt to new interactions and evolving user preferences. While incremental learning methods facilitate these updates, they face significant challenges. Replay-based approaches incur high memory and computational costs, and regularization-based methods often struggle to discard outdated or conflicting knowledge. To overcome these challenges, we propose SA-CAISR, a Stage-Adaptive and Conflict-Aware Incremental Sequential Recommendation framework. As a buffer-free framework, SA-CAISR operates using only the old model and new data, directly addressing the high costs of replay-based techniques. SA-CAISR introduces a novel Fisher-weighted knowledge-screening mechanism that dynamically identifies outdated knowledge by estimating parameter-level conflicts between the old model and new data, selectively removing obsolete knowledge while preserving compatible historical patterns. This dynamic balance between stability and adaptability allows our method to achieve state-of-the-art performance in incremental SR. Specifically, SA-CAISR improves Recall@20 by 2.0% on average across datasets, while reducing memory usage by 97.5% and training time by 46.9% compared to the best baseline. This efficiency allows real-world systems to rapidly update user profiles with minimal computational overhead, ensuring more timely and accurate recommendations.",
+    "sum_extractive":"To overcome these challenges, we propose SA-CAISR, a Stage-Adaptive and Conflict-Aware Incremental Sequential Recommendation framework. SA-CAISR introduces a novel Fisher-weighted knowledge-screening mechanism that dynamically identifies outdated knowledge by estimating parameter-level conflicts between the old model and new data, selectively removing obsolete knowledge while preserving compatible historical patterns. This efficiency allows real-world systems to rapidly update user profiles with minimal computational overhead, ensuring more timely and accurate recommendations.",
+    "sum_bart":"Sequential recommendation (SR) aims to predict a user's next action by learning from their historical interaction sequences. In real-world applications, these models require periodic updates to adapt to new interactions and evolving user preferences. Replay-based approaches incur high memory and computational costs.",
+    "sum_t5":"in real-world applications, models require periodic updates to adapt to new interactions . incremental learning methods face significant costs and high memory and computational costs . we propose a stage-adaptive and conflict-aware Incremental Sequential Recommendation framework .",
+    "sum_llm_basic":"The abstract describes a sequential recommendation system called SA-CAISR, which addresses the challenge of updating models periodically in real-world applications. It proposes a stage-adaptive and conflict-aware incremental approach to improve upon existing methods like replay-based and regularization-based techniques.\n\nKey points:\n1. SA-CAISR is designed as a buffer-free framework.\n2. It uses only the old model and new data for predictions.\n3. A novel Fisher-weighted knowledge-screening mechanism is introduced to identify and remove outdated knowledge.\n4. The method balances stability and adaptability effectively.\n5. On average, it achieves an",
+    "sum_llm_role":"The paper discusses Sequential Recommendation (SR), which predicts users' next actions based on their past interactions. Real-world applications need frequent updates due to new interactions and changing preferences. Current methods like incremental learning can be costly but have limitations such as high memory use and difficulty in discarding outdated knowledge.\n\nTo address these issues, the authors introduce SA-CAISR, a Stage-Adaptive and Conflict-Aware Incremental Sequential Recommendation system. Unlike traditional replay-based methods, it uses only the old model and new data without requiring additional storage. The key innovation is its Fisher-weighted knowledge screening mechanism, which estimates",
+    "sum_llm_instruction":"The study proposes SA-CAISR, an efficient stage-adaptive conflict-aware incremental sequential recommendation framework designed to address the challenges faced by traditional incremental learning methods for real-time updates in sequential recommendation systems. By dynamically identifying and discarding outdated knowledge through a novel Fisher-weighted knowledge screening mechanism, SA-CAISR significantly reduces memory usage, training time, and computational costs without compromising performance. On average, it achieves a 2.0% improvement in recall@20 and reduces memory usage by 97.5%, demonstrating its effectiveness in maintaining both stability and adaptability in real-world applications.",
+    "sum_llm_few-shot":"SA-CAISR is a Stage-Adaptive and Conflict-Aware Incremental Sequential Recommendation framework designed for real-world applications requiring frequent updates. It addresses high costs associated with replay-based and regularization-based methods by operating solely on the old model and new data, using a novel Fisher-weighted knowledge-screening mechanism to identify and remove outdated knowledge while retaining relevant patterns. The method achieves state-of-the-art performance in incremental SR, improving Recall@20 by 2.0% and reducing memory usage by 97.5%, as well as training time by 46.9%.",
+    "reference":"SA-CAISR: Stage-Adaptive and Conflict-Aware Incremental Sequential Recommendation. Sequential recommendation (SR) aims to predict a user's next action by learning from their historical interaction sequences."
+  },
+  {
+    "id":"2304.07210",
+    "title":"Measuring Re-identification Risk",
+    "abstract":"Compact user representations (such as embeddings) form the backbone of personalization services. In this work, we present a new theoretical framework to measure re-identification risk in such user representations. Our framework, based on hypothesis testing, formally bounds the probability that an attacker may be able to obtain the identity of a user from their representation. As an application, we show how our framework is general enough to model important real-world applications such as the Chrome's Topics API for interest-based advertising. We complement our theoretical bounds by showing provably good attack algorithms for re-identification that we use to estimate the re-identification risk in the Topics API. We believe this work provides a rigorous and interpretable notion of re-identification risk and a framework to measure it that can be used to inform real-world applications.",
+    "authors":"CJ Carey, Travis Dick, Alessandro Epasto, Adel Javanmard, Josh Karlin,\n  Shankar Kumar, Andres Munoz Medina, Vahab Mirrokni, Gabriel Henrique Nunes,\n  Sergei Vassilvitskii, Peilin Zhong",
+    "categories":"cs.CR cs.LG",
+    "doi":null,
+    "journal-ref":null,
+    "update_date":"2023-08-01",
+    "versions":[
+      {
+        "version":"v1",
+        "created":"Wed, 12 Apr 2023 16:27:36 GMT"
+      },
+      {
+        "version":"v2",
+        "created":"Mon, 31 Jul 2023 17:35:57 GMT"
+      }
+    ],
+    "primary_category":"cs.CR",
+    "all_categories":[
+      "cs.CR",
+      "cs.LG"
+    ],
+    "author_list":[
+      "CJ Carey",
+      "Travis Dick",
+      "Alessandro Epasto",
+      "Adel Javanmard",
+      "Josh Karlin",
+      "Shankar Kumar",
+      "Andres Munoz Medina",
+      "Vahab Mirrokni",
+      "Gabriel Henrique Nunes",
+      "Sergei Vassilvitskii",
+      "Peilin Zhong"
+    ],
+    "text":"Measuring Re-identification Risk. Compact user representations (such as embeddings) form the backbone of personalization services. In this work, we present a new theoretical framework to measure re-identification risk in such user representations. Our framework, based on hypothesis testing, formally bounds the probability that an attacker may be able to obtain the identity of a user from their representation. As an application, we show how our framework is general enough to model important real-world applications such as the Chrome's Topics API for interest-based advertising. We complement our theoretical bounds by showing provably good attack algorithms for re-identification that we use to estimate the re-identification risk in the Topics API. We believe this work provides a rigorous and interpretable notion of re-identification risk and a framework to measure it that can be used to inform real-world applications.",
+    "sum_extractive":"Compact user representations (such as embeddings) form the backbone of personalization services. In this work, we present a new theoretical framework to measure re-identification risk in such user representations. We complement our theoretical bounds by showing provably good attack algorithms for re-identification that we use to estimate the re-identification risk in the Topics API.",
+    "sum_bart":"New theoretical framework to measure re-identification risk in user representations. Framework is general enough to model important real-world applications such as the Chrome's Topics API.",
+    "sum_t5":"our framework formally bounds the probability that an attacker may be able to obtain the identity of a user from their representation . as an application, we show how our framework is general enough to model important real-world applications .",
+    "sum_llm_basic":"The abstract discusses a new theoretical framework designed to measure the risk of re-identification in compact user representations, which are crucial components of personalized systems like those found in recommendation engines. The proposed method uses hypothesis testing to quantify the likelihood that an attacker could deduce a user's identity from their representation.\n\nThe authors apply this framework to demonstrate its utility through practical examples. Specifically, they analyze the Chrome's Topics API, which employs topic modeling techniques to identify users' interests. By applying their theoretical bounds and attack algorithms, they provide estimates of the re-identification risk associated with these methods.\n\nOverall, the paper",
+    "sum_llm_role":"This abstract discusses a new theoretical framework designed to assess the risk of re-identification in compact user representations like embeddings. The framework uses hypothesis testing to quantify the likelihood that an attacker could deduce a user's identity from these representations. It applies this concept to evaluate the re-identification risk in practical scenarios, particularly within the context of Google's Topics API for targeted advertising. The authors also demonstrate effective attack algorithms to estimate actual re-identification risks using this framework. Overall, they aim to provide a robust method for measuring re-identification risk that can guide the design and evaluation of privacy-preserving systems.",
+    "sum_llm_instruction":"The study presents a novel theoretical framework to quantify re-identification risk in compact user representations like embeddings, which are crucial for personalized services. It demonstrates the applicability of this framework through its use in modeling real-world scenarios like the Chrome's Topics API for targeted advertising, providing both theoretical bounds and practical attack algorithms to assess re-identification risks.",
+    "sum_llm_few-shot":"A new theoretical framework measures re-identification risk in compact user representations, formalizing the probability of obtaining identities from these representations. The framework applies to Chrome's Topics API, demonstrating its utility through both theory and practical attacks.",
+    "reference":"Measuring Re-identification Risk. Compact user representations (such as embeddings) form the backbone of personalization services."
+  },
+  {
+    "id":"2206.12808",
+    "title":"Memory-Guided Multi-View Multi-Domain Fake News Detection",
+    "abstract":"The wide spread of fake news is increasingly threatening both individuals and society. Great efforts have been made for automatic fake news detection on a single domain (e.g., politics). However, correlations exist commonly across multiple news domains, and thus it is promising to simultaneously detect fake news of multiple domains. Based on our analysis, we pose two challenges in multi-domain fake news detection: 1) domain shift, caused by the discrepancy among domains in terms of words, emotions, styles, etc. 2) domain labeling incompleteness, stemming from the real-world categorization that only outputs one single domain label, regardless of topic diversity of a news piece. In this paper, we propose a Memory-guided Multi-view Multi-domain Fake News Detection Framework (M$^3$FEND) to address these two challenges. We model news pieces from a multi-view perspective, including semantics, emotion, and style. Specifically, we propose a Domain Memory Bank to enrich domain information which could discover potential domain labels based on seen news pieces and model domain characteristics. Then, with enriched domain information as input, a Domain Adapter could adaptively aggregate discriminative information from multiple views for news in various domains. Extensive offline experiments on English and Chinese datasets demonstrate the effectiveness of M$^3$FEND, and online tests verify its superiority in practice. Our code is available at https:\/\/github.com\/ICTMCG\/M3FEND.",
+    "authors":"Yongchun Zhu, Qiang Sheng, Juan Cao, Qiong Nan, Kai Shu, Minghui Wu,\n  Jindong Wang, and Fuzhen Zhuang",
+    "categories":"cs.CL cs.AI cs.LG",
+    "doi":"10.1109\/TKDE.2022.3185151",
+    "journal-ref":null,
+    "update_date":"2022-06-28",
+    "versions":[
+      {
+        "version":"v1",
+        "created":"Sun, 26 Jun 2022 07:09:23 GMT"
+      }
+    ],
+    "primary_category":"cs.CL",
+    "all_categories":[
+      "cs.CL",
+      "cs.AI",
+      "cs.LG"
+    ],
+    "author_list":[
+      "Yongchun Zhu",
+      "Qiang Sheng",
+      "Juan Cao",
+      "Qiong Nan",
+      "Kai Shu",
+      "Minghui Wu",
+      "Jindong Wang",
+      "Fuzhen Zhuang"
+    ],
+    "text":"Memory-Guided Multi-View Multi-Domain Fake News Detection. The wide spread of fake news is increasingly threatening both individuals and society. Great efforts have been made for automatic fake news detection on a single domain (e.g., politics). However, correlations exist commonly across multiple news domains, and thus it is promising to simultaneously detect fake news of multiple domains. Based on our analysis, we pose two challenges in multi-domain fake news detection: 1) domain shift, caused by the discrepancy among domains in terms of words, emotions, styles, etc. 2) domain labeling incompleteness, stemming from the real-world categorization that only outputs one single domain label, regardless of topic diversity of a news piece. In this paper, we propose a Memory-guided Multi-view Multi-domain Fake News Detection Framework (M$^3$FEND) to address these two challenges. We model news pieces from a multi-view perspective, including semantics, emotion, and style. Specifically, we propose a Domain Memory Bank to enrich domain information which could discover potential domain labels based on seen news pieces and model domain characteristics. Then, with enriched domain information as input, a Domain Adapter could adaptively aggregate discriminative information from multiple views for news in various domains. Extensive offline experiments on English and Chinese datasets demonstrate the effectiveness of M$^3$FEND, and online tests verify its superiority in practice. Our code is available at https:\/\/github.com\/ICTMCG\/M3FEND.",
+    "sum_extractive":"The wide spread of fake news is increasingly threatening both individuals and society. In this paper, we propose a Memory-guided Multi-view Multi-domain Fake News Detection Framework (M FEND) to address these two challenges. We model news pieces from a multi-view perspective, including semantics, emotion, and style.",
+    "sum_bart":"The wide spread of fake news is increasingly threatening both individuals and society. Great efforts have been made for automatic fake news detection on a single domain. correlations exist commonly across multiple news domains, and thus it is promising to simultaneously detect fake news of multiple domains.",
+    "sum_t5":"the wide spread of fake news is increasingly threatening both individuals and society . efforts have been made for automatic fake news detection on a single domain . but correlations exist commonly across multiple news domains . we propose a Memory-guided Multi-view Multi-domain Fake News Detection Framework .",
+    "sum_llm_basic":"This abstract discusses an approach called M FEND (Memory-guided Multi-view Multi-domain Fake News Detection Framework) designed to combat the problem of fake news spreading across different domains. The key points include:\n- Challenges faced in detecting fake news across multiple domains due to differences in word usage, emotions, and styles.\n- Two main issues addressed by M FEND: \n  1. Domain shift resulting from variations between domains regarding their content characteristics.\n  2. Domain labeling incompleteness arising from the limitation of real-world categorizations that assign a single domain label per piece.\n- The framework models",
+    "sum_llm_role":"This abstract discusses the issue of fake news spreading widely and threatens both individuals and society. It highlights that while there has been significant effort in detecting fake news within specific domains like politics, addressing the challenge of detecting fake news across multiple domains remains an open problem due to commonalities between them.\n\nThe main challenges identified include:\n1. **Domain Shift**: Differences in word usage, emotional content, and stylistic elements across different domains.\n2. **Domain Labeling Incompleteness**: The current practice of assigning a single domain label to all news pieces, ignoring their diverse topics.\n\nTo tackle these issues",
+    "sum_llm_instruction":"The summary of the abstract in exactly two sentences:\n\nThis paper proposes an approach called M FEND (Memory-guided Multi-view Multi-domain Fake News Detection Framework) to address the challenges of detecting fake news across multiple domains due to differences in word usage, emotional content, and stylistic variations between domains. Experiments show that M FEND outperforms existing methods in both offline and online testing scenarios.",
+    "sum_llm_few-shot":"The proposed M FEND framework addresses challenges in multi-domain fake news detection through a multi-view approach, utilizing a Domain Memory Bank to enhance domain-specific knowledge and improve adaptation between different domains.",
+    "reference":"Memory-Guided Multi-View Multi-Domain Fake News Detection. The wide spread of fake news is increasingly threatening both individuals and society."
+  },
+  {
+    "id":"1304.3422",
+    "title":"A Constraint Propagation Approach to Probabilistic Reasoning",
+    "abstract":"The paper demonstrates that strict adherence to probability theory does not preclude the use of concurrent, self-activated constraint-propagation mechanisms for managing uncertainty. Maintaining local records of sources-of-belief allows both predictive and diagnostic inferences to be activated simultaneously and propagate harmoniously towards a stable equilibrium.",
+    "authors":"Judea Pearl",
+    "categories":"cs.AI",
+    "doi":null,
+    "journal-ref":null,
+    "update_date":"2013-04-15",
+    "versions":[
+      {
+        "version":"v1",
+        "created":"Wed, 27 Mar 2013 19:55:56 GMT"
+      }
+    ],
+    "primary_category":"cs.AI",
+    "all_categories":[
+      "cs.AI"
+    ],
+    "author_list":[
+      "Judea Pearl"
+    ],
+    "text":"A Constraint Propagation Approach to Probabilistic Reasoning. The paper demonstrates that strict adherence to probability theory does not preclude the use of concurrent, self-activated constraint-propagation mechanisms for managing uncertainty. Maintaining local records of sources-of-belief allows both predictive and diagnostic inferences to be activated simultaneously and propagate harmoniously towards a stable equilibrium.",
+    "sum_extractive":"The paper demonstrates that strict adherence to probability theory does not preclude the use of concurrent, self-activated constraint-propagation mechanisms for managing uncertainty. Maintaining local records of sources-of-belief allows both predictive and diagnostic inferences to be activated simultaneously and propagate harmoniously towards a stable equilibrium.",
+    "sum_bart":"The paper demonstrates that strict adherence to probability theory does not preclude the use of concurrent, self-activated constraint-propagation mechanisms. Maintaining local records of sources-of-belief allows both predictive and diagnostic inferences to be activated simultaneously.",
+    "sum_t5":"the paper demonstrates that strict adherence to probability theory does not preclude the use of concurrent, self-activated constraint-propagation mechanisms .",
+    "sum_llm_basic":"This abstract discusses how strictly following probability theory can coexist with using concurrent, self-activated constraint propagation methods to manage uncertainty. It suggests maintaining local belief records enables simultaneous activation of predictive and diagnostic inferences, which then propagate harmoniously toward a stable equilibrium.",
+    "sum_llm_role":"This abstract discusses how strictly following probability theory can coexist with using concurrent, self-activated constraint propagation techniques to manage uncertainty effectively. It highlights the ability to maintain records of beliefs locally while allowing both predictive and diagnostic inferences to occur simultaneously and work together harmoniously toward achieving stability.",
+    "sum_llm_instruction":"The paper shows that while strictly following probability theory, it's possible to utilize concurrent, self-activated constraint propagation methods to manage uncertainty effectively by maintaining local belief records, enabling simultaneous activation of predictive and diagnostic inferences which can converge towards a stable state.",
+    "sum_llm_few-shot":"The paper shows how strictly following probability theory can coexist with concurrent, self-activated constraint propagation for managing uncertainty, allowing simultaneous activation of predictive and diagnostic inferences while propagating beliefs harmoniously toward stability.",
+    "reference":"A Constraint Propagation Approach to Probabilistic Reasoning. The paper demonstrates that strict adherence to probability theory does not preclude the use of concurrent, self-activated constraint-propagation mechanisms for managing uncertainty."
+  },
+  {
+    "id":"1909.06239",
+    "title":"Modelling Stopping Criteria for Search Results using Poisson Processes",
+    "abstract":"Text retrieval systems often return large sets of documents, particularly when applied to large collections. Stopping criteria can reduce the number of these documents that need to be manually evaluated for relevance by predicting when a suitable level of recall has been achieved. In this work, a novel method for determining a stopping criterion is proposed that models the rate at which relevant documents occur using a Poisson process. This method allows a user to specify both a minimum desired level of recall to achieve and a desired probability of having achieved it. We evaluate our method on a public dataset and compare it with previous techniques for determining stopping criteria.",
+    "authors":"Alison Sneyd and Mark Stevenson",
+    "categories":"cs.IR",
+    "doi":null,
+    "journal-ref":null,
+    "update_date":"2019-09-16",
+    "versions":[
+      {
+        "version":"v1",
+        "created":"Fri, 13 Sep 2019 14:05:04 GMT"
+      }
+    ],
+    "primary_category":"cs.IR",
+    "all_categories":[
+      "cs.IR"
+    ],
+    "author_list":[
+      "Alison Sneyd",
+      "Mark Stevenson"
+    ],
+    "text":"Modelling Stopping Criteria for Search Results using Poisson Processes. Text retrieval systems often return large sets of documents, particularly when applied to large collections. Stopping criteria can reduce the number of these documents that need to be manually evaluated for relevance by predicting when a suitable level of recall has been achieved. In this work, a novel method for determining a stopping criterion is proposed that models the rate at which relevant documents occur using a Poisson process. This method allows a user to specify both a minimum desired level of recall to achieve and a desired probability of having achieved it. We evaluate our method on a public dataset and compare it with previous techniques for determining stopping criteria.",
+    "sum_extractive":"Text retrieval systems often return large sets of documents, particularly when applied to large collections. Stopping criteria can reduce the number of these documents that need to be manually evaluated for relevance by predicting when a suitable level of recall has been achieved. We evaluate our method on a public dataset and compare it with previous techniques for determining stopping criteria.",
+    "sum_bart":"Text retrieval systems often return large sets of documents, particularly when applied to large collections. Stopping criteria can reduce the number of these documents that need to be manually evaluated for relevance. In this work, a novel method for determining a stopping criterion is proposed.",
+    "sum_t5":"a new method for determining a stopping criterion is proposed . it predicts when a suitable level of recall has been achieved . the method is evaluated on a public dataset .",
+    "sum_llm_basic":"The abstract describes a new approach to setting stopping criteria in text retrieval systems, specifically focusing on reducing manual evaluation workload. The system uses a Poisson process model to predict when a satisfactory recall level has been reached. Users can set a minimum required recall and the likelihood of achieving it. The method is tested against existing stopping criteria methods on a publicly available dataset.",
+    "sum_llm_role":"The abstract describes a new approach to setting stopping criteria in text retrieval systems, specifically focusing on reducing manual evaluation workload. The system uses a Poisson process model to predict when a satisfactory recall level has been reached. Users can define both a minimum required recall and the likelihood of achieving it. The study evaluates this method against existing approaches using a publicly available dataset.",
+    "sum_llm_instruction":"The study proposes a new method for setting a stopping criterion in text retrieval systems based on modeling document relevance occurrence as a Poisson process. The method enables users to define both a required recall level and the likelihood of achieving it. The effectiveness of this approach is demonstrated through evaluation against existing stopping criteria methods on a publicly available dataset.",
+    "sum_llm_few-shot":"A new method predicts document relevance in text retrieval systems, allowing users to set a minimum recall and probability threshold, evaluated on a public dataset.",
+    "reference":"Modelling Stopping Criteria for Search Results using Poisson Processes. Text retrieval systems often return large sets of documents, particularly when applied to large collections."
+  },
+  {
+    "id":"1411.3880",
+    "title":"Optimal Cost Almost-sure Reachability in POMDPs",
+    "abstract":"We consider partially observable Markov decision processes (POMDPs) with a set of target states and every transition is associated with an integer cost. The optimization objective we study asks to minimize the expected total cost till the target set is reached, while ensuring that the target set is reached almost-surely (with probability 1). We show that for integer costs approximating the optimal cost is undecidable. For positive costs, our results are as follows: (i) we establish matching lower and upper bounds for the optimal cost and the bound is double exponential; (ii) we show that the problem of approximating the optimal cost is decidable and present approximation algorithms developing on the existing algorithms for POMDPs with finite-horizon objectives. While the worst-case running time of our algorithm is double exponential, we also present efficient stopping criteria for the algorithm and show experimentally that it performs well in many examples of interest.",
+    "authors":"Krishnendu Chatterjee, Martin Chmel\\'ik, Raghav Gupta, Ayush Kanodia",
+    "categories":"cs.AI",
+    "doi":null,
+    "journal-ref":null,
+    "update_date":"2014-11-17",
+    "versions":[
+      {
+        "version":"v1",
+        "created":"Fri, 14 Nov 2014 12:13:45 GMT"
+      }
+    ],
+    "primary_category":"cs.AI",
+    "all_categories":[
+      "cs.AI"
+    ],
+    "author_list":[
+      "Krishnendu Chatterjee",
+      "Martin Chmel\u00edk",
+      "Raghav Gupta",
+      "Ayush Kanodia"
+    ],
+    "text":"Optimal Cost Almost-sure Reachability in POMDPs. We consider partially observable Markov decision processes (POMDPs) with a set of target states and every transition is associated with an integer cost. The optimization objective we study asks to minimize the expected total cost till the target set is reached, while ensuring that the target set is reached almost-surely (with probability 1). We show that for integer costs approximating the optimal cost is undecidable. For positive costs, our results are as follows: (i) we establish matching lower and upper bounds for the optimal cost and the bound is double exponential; (ii) we show that the problem of approximating the optimal cost is decidable and present approximation algorithms developing on the existing algorithms for POMDPs with finite-horizon objectives. While the worst-case running time of our algorithm is double exponential, we also present efficient stopping criteria for the algorithm and show experimentally that it performs well in many examples of interest.",
+    "sum_extractive":"We consider partially observable Markov decision processes (POMDPs) with a set of target states and every transition is associated with an integer cost. We show that for integer costs approximating the optimal cost is undecidable. For positive costs, our results are as follows: (i) we establish matching lower and upper bounds for the optimal cost and the bound is double exponential; (ii) we show that the problem of approximating the optimal cost is decidable and present approximation algorithms developing on the existing algorithms for POMDPs with finite-horizon objectives.",
+    "sum_bart":"We consider partially observable Markov decision processes (POMDPs) with a set of target states and every transition is associated with an integer cost. We show that for integer costs approximating the optimal cost is undecidable. While the worst-case running time of our algorithm is double exponential, we also present efficient stopping criteria for",
+    "sum_t5":"we show that for integer costs approximating the optimal cost is decidable . for positive costs, we establish matching lower and upper bounds . we also present efficient stopping criteria for the algorithm .",
+    "sum_llm_basic":"The abstract discusses partially observable Markov decision processes (POMDPs) where transitions have associated integer costs. The focus is on optimizing the process to minimize expected total cost until reaching a specified target set, with the goal being \"almost-surely\" (probability 1) that the target set is reached.\n\nKey points:\n- Integer costs can approximate the optimal cost but are undecidable.\n- Positive costs allow for establishing exact bounds on the optimal cost, which are double-exponential.\n- Decidability is achieved for positive costs by presenting approximation algorithms based on existing methods for POMDP",
+    "sum_llm_role":"The abstract discusses the complexity and decidability aspects of solving Partially Observable Markov Decision Processes (POMDPs) with specific constraints. Here's a summary based on the key points provided:\n\n### Key Points:\n- **Objective**: Minimize the expected total cost until reaching a specified set of target states.\n- **Cost Structure**: Transitions have associated integer costs.\n- **Optimization Goal**: Reach all target states almost surely within the total cost.\n\n### Results:\n1. **Undecidability**:\n   - For integer costs, finding the exact optimal cost is undecidable.\n\n2",
+    "sum_llm_instruction":"The abstract discusses the complexity and decidability of minimizing expected total cost in partially observable Markov decision processes (POMDPs), focusing on both integer and positive cost scenarios. It presents findings including matching lower and upper bounds for the optimal cost when costs are positive, showing that approximating this cost is decidable but has a double-exponential worst-case running time. However, efficient stopping criteria and performance in practical examples are also discussed.",
+    "sum_llm_few-shot":"This paper explores partially observable Markov decision processes with integer costs, showing that approximating the optimal cost is undecidable but presenting algorithms for both exact and approximate solutions when costs are positive.",
+    "reference":"Optimal Cost Almost-sure Reachability in POMDPs. We consider partially observable Markov decision processes (POMDPs) with a set of target states and every transition is associated with an integer cost."
+  },
+  {
+    "id":"2303.05186",
+    "title":"A Framework for History-Aware Hyperparameter Optimisation in Reinforcement Learning",
+    "abstract":"A Reinforcement Learning (RL) system depends on a set of initial conditions (hyperparameters) that affect the system's performance. However, defining a good choice of hyperparameters is a challenging problem. Hyperparameter tuning often requires manual or automated searches to find optimal values. Nonetheless, a noticeable limitation is the high cost of algorithm evaluation for complex models, making the tuning process computationally expensive and time-consuming. In this paper, we propose a framework based on integrating complex event processing and temporal models, to alleviate these trade-offs. Through this combination, it is possible to gain insights about a running RL system efficiently and unobtrusively based on data stream monitoring and to create abstract representations that allow reasoning about the historical behaviour of the RL system. The obtained knowledge is exploited to provide feedback to the RL system for optimising its hyperparameters while making effective use of parallel resources. We introduce a novel history-aware epsilon-greedy logic for hyperparameter optimisation that instead of using static hyperparameters that are kept fixed for the whole training, adjusts the hyperparameters at runtime based on the analysis of the agent's performance over time windows in a single agent's lifetime. We tested the proposed approach in a 5G mobile communications case study that uses DQN, a variant of RL, for its decision-making. Our experiments demonstrated the effects of hyperparameter tuning using history on training stability and reward values. The encouraging results show that the proposed history-aware framework significantly improved performance compared to traditional hyperparameter tuning approaches.",
+    "authors":"Juan Marcelo Parra-Ullauri, Chen Zhen, Antonio Garc\\'ia-Dom\\'inguez,\n  Nelly Bencomo, Changgang Zheng, Juan Boubeta-Puig, Guadalupe Ortiz, Shufan\n  Yang",
+    "categories":"cs.LG cs.AI cs.SE",
+    "doi":null,
+    "journal-ref":null,
+    "update_date":"2023-03-10",
+    "versions":[
+      {
+        "version":"v1",
+        "created":"Thu, 9 Mar 2023 11:30:40 GMT"
+      }
+    ],
+    "primary_category":"cs.LG",
+    "all_categories":[
+      "cs.LG",
+      "cs.AI",
+      "cs.SE"
+    ],
+    "author_list":[
+      "Juan Marcelo Parra-Ullauri",
+      "Chen Zhen",
+      "Antonio Garc\u00eda-Dom\u00ednguez",
+      "Nelly Bencomo",
+      "Changgang Zheng",
+      "Juan Boubeta-Puig",
+      "Guadalupe Ortiz",
+      "Shufan Yang"
+    ],
+    "text":"A Framework for History-Aware Hyperparameter Optimisation in Reinforcement Learning. A Reinforcement Learning (RL) system depends on a set of initial conditions (hyperparameters) that affect the system's performance. However, defining a good choice of hyperparameters is a challenging problem. Hyperparameter tuning often requires manual or automated searches to find optimal values. Nonetheless, a noticeable limitation is the high cost of algorithm evaluation for complex models, making the tuning process computationally expensive and time-consuming. In this paper, we propose a framework based on integrating complex event processing and temporal models, to alleviate these trade-offs. Through this combination, it is possible to gain insights about a running RL system efficiently and unobtrusively based on data stream monitoring and to create abstract representations that allow reasoning about the historical behaviour of the RL system. The obtained knowledge is exploited to provide feedback to the RL system for optimising its hyperparameters while making effective use of parallel resources. We introduce a novel history-aware epsilon-greedy logic for hyperparameter optimisation that instead of using static hyperparameters that are kept fixed for the whole training, adjusts the hyperparameters at runtime based on the analysis of the agent's performance over time windows in a single agent's lifetime. We tested the proposed approach in a 5G mobile communications case study that uses DQN, a variant of RL, for its decision-making. Our experiments demonstrated the effects of hyperparameter tuning using history on training stability and reward values. The encouraging results show that the proposed history-aware framework significantly improved performance compared to traditional hyperparameter tuning approaches.",
+    "sum_extractive":"Hyperparameter tuning often requires manual or automated searches to find optimal values. Nonetheless, a noticeable limitation is the high cost of algorithm evaluation for complex models, making the tuning process computationally expensive and time-consuming. The encouraging results show that the proposed history-aware framework significantly improved performance compared to traditional hyperparameter tuning approaches.",
+    "sum_bart":"A Reinforcement Learning (RL) system depends on a set of initial conditions that affect the system's performance. Hyperparameter tuning often requires manual or automated searches to find optimal values. A noticeable limitation is the high cost of algorithm evaluation for complex models.",
+    "sum_t5":"hyperparameter tuning often requires manual or automated searches to find optimal values . high cost of algorithm evaluation for complex models makes tuning process computationally expensive and time-consuming . epsilon-greedy logic adjusts hyper parameters at runtime based on analysis of agent's performance over time windows in ",
+    "sum_llm_basic":"The abstract describes a reinforcement learning (RL) system where hyperparameters need to be carefully chosen due to their impact on performance. Defining optimal hyperparameters is challenging and can be costly, especially with complex models. A new framework combining complex event processing and temporal models aims to address these issues by providing efficient and unobtrusive insights into an RL system's behavior through real-time data monitoring. This framework allows for creating abstract representations of the system's past behaviors, which can then inform hyperparameter optimization. Specifically, a novel \"history-aware epsilon-greedy\" strategy dynamically adjusts hyperparameters based on the",
+    "sum_llm_role":"The abstract describes a new approach to hyperparameter optimization for reinforcement learning systems, which combines complex event processing with temporal models to improve efficiency and effectiveness. Key points include:\n1. Traditional hyperparameter tuning can be costly due to computational expense.\n2. A proposed framework integrates complex event processing and temporal models to monitor and analyze real-time data streams.\n3. This integration allows for efficient and non-intrusive insights into the running RL system.\n4. The framework creates abstract representations of the system's behavior.\n5. It enables dynamic adjustment of hyperparameters based on historical performance data.\n6. A specific implementation",
+    "sum_llm_instruction":"The proposed framework integrates complex event processing and temporal models to optimize hyperparameters in reinforcement learning systems by analyzing real-time data streams and providing dynamic adjustments based on past performance. This approach enhances training stability and reward values compared to conventional methods.",
+    "sum_llm_few-shot":"A reinforcement learning system's performance can be enhanced through an integrated framework combining complex event processing and temporal models. This approach allows efficient and non-intrusive exploration of a running RL system's behavior, leading to better hyperparameter optimization and more stable training outcomes. The history-aware epsilon-greedy logic dynamically adjusts hyperparameters based on past performance, demonstrating significant improvements over conventional methods.",
+    "reference":"A Framework for History-Aware Hyperparameter Optimisation in Reinforcement Learning. A Reinforcement Learning (RL) system depends on a set of initial conditions (hyperparameters) that affect the system's performance."
+  }
+]

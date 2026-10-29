@@ -1,0 +1,98 @@
+{
+  "demo": [
+    {
+      "query": "defending large language models against prompt injection and jailbreak attacks",
+      "key_phrases": [
+        "large language models",
+        "prompt injection",
+        "jailbreak attacks"
+      ],
+      "entities": [],
+      "domain": "cs.CR",
+      "retrieved_domains": {
+        "cs.CR": 4,
+        "cs.LG": 1
+      },
+      "synthesis": "The collective findings of the papers highlight several important aspects of defending large language models against prompt injection and jailbreak attacks:\n\n1. **Vulnerabilities Across Input Structures**: Papers like [1] demonstrate that LLMs are vulnerable regardless of whether inputs are single-turn or multi-turn, indicating a need to study defenses in both contexts.\n\n2. **Different Filter Performance**: Research such as [2] shows that LLM-based filter guards may perform differently based on the input structure rather than just the content, suggesting the importance of considering structural variations when designing defenses.\n\n3. **Compositional Jailbreak Attacks**: [3] introduces the concept of jailbreak attacks being composed of smaller components, highlighting the need for formal representations to explore larger spaces of possible attacks.\n\n4. **Red Teaming Approach**: [4] proposes a red-teaming strategy to enhance LLM safety by automating the creation of jailbreak prompts, demonstrating the feasibility of automated security testing.\n\nHowever, none of the papers address the following:\n\n**GAP**: What none of the papers directly address is the specific implementation details of how to integrate these defenses into real-world applications, including considerations for performance, scalability, and user experience.\n\nRecommendations:\n\n1. **[1] - Emerging Vulnerabilities in Frontier Models: Multi-Turn Jailbreak Attacks**\n   - Reason: This paper provides a foundational understanding of the challenges faced by LLMs in both single-turn and multi-turn scenarios, which is crucial for developing targeted defenses.\n\n2. **[2] - h4rm3l: A language for Composable Jailbreak Attack Synthesis**\n   - Reason: While focusing on the theoretical aspects of jailbreak attacks, this paper introduces a DSL that can help in creating more complex and varied attacks, potentially aiding in the development of more sophisticated defenses.\n\n3. **[3] - JULI: Jailbreak Large Language Models by Self-Introspection**\n   - Reason: This paper presents a method that leverages introspection to bypass safety alignments, offering a new perspective on how to defend against adversarial attacks within the context of LLMs.",
+      "gap": "",
+      "recommendations": "",
+      "grounded_share": 0.75,
+      "n_claims": 8,
+      "seconds": 48.4,
+      "paper_ids": [
+        "2409.00137",
+        "2408.04811",
+        "2505.11790",
+        "2407.01902",
+        "2506.10597"
+      ]
+    },
+    {
+      "query": "using graph neural networks to recommend items to users",
+      "key_phrases": [
+        "graph neural networks"
+      ],
+      "entities": [],
+      "domain": "cs.LG",
+      "retrieved_domains": {
+        "cs.IR": 5
+      },
+      "synthesis": "The collective findings of the papers suggest that integrating dynamic graphs and attribute networks into recommendation systems significantly enhances the ability to capture and predict user preferences over time and across multiple interactions. Papers like [1] and [2] demonstrate how dynamic graph neural networks and attribute-aware product networks respectively extend traditional sequential recommendation methods by incorporating temporal dynamics and contextual attributes, leading to improved performance metrics such as precision and recall. Additionally, [3] highlights the potential of combining social relations with interaction data in recommender systems, suggesting that leveraging social networks alongside user-item interactions can lead to more personalized and contextually aware recommendations.\n\nHowever, there remains a gap in understanding how to effectively integrate heterogeneous data sources, such as social networks and user ratings, while maintaining interpretability and providing clear explanations for recommendations. This area needs further exploration to bridge the current limitations in explainability and accuracy in recommendation systems.\n\nRecommendations:\n1. [1] \"Dynamic Graph Neural Networks for Sequential Recommendation\" - Addresses the need for capturing dynamic patterns in user sequences and integrating collaborative signals.\n2. [2] \"Recommendation with Attribute-aware Product Networks: A Representation Learning Model\" - Focuses on combining item attributes and correlations for better personalization and explainability.\n3. [3] \"Combining social relations and interaction data in Recommender System with Graph Convolution Collaborative Filtering\" - Highlights the importance of social networks in influencing consumption habits and improving recommendation quality.",
+      "gap": "",
+      "recommendations": "",
+      "grounded_share": 1.0,
+      "n_claims": 8,
+      "seconds": 9.6,
+      "paper_ids": [
+        "2104.07368",
+        "1908.05928",
+        "2506.02834",
+        "1710.07134",
+        "2204.03827"
+      ]
+    },
+    {
+      "query": "We present an introduction and a review of the Shapes Constraint Language (SHACL), the W3C recommendation language for validating RDF data. A SHACL document describes a set of constraints on RDF nodes, and a graph is valid with respect to the document if its nodes satisfy these constraints. We revisit the basic concepts of the language, its constructs and components and their interaction. We review the different formal frameworks used to study this language and the different semantics proposed. We examine a number of related problems, from containment and satisfiability to the interaction of SHACL with inference rules, and exhibit how different modellings of the language are useful for different problems. We also cover practical aspects of SHACL, discussing its implementations and state of adoption, to present a holistic review useful to practitioners and theoreticians alike.",
+      "key_phrases": [
+        "shapes constraint language",
+        "w3c recommendation language",
+        "rdf data",
+        "shacl document",
+        "rdf nodes",
+        "basic concepts"
+      ],
+      "entities": [
+        "SHACL",
+        "W3C",
+        "RDF"
+      ],
+      "domain": "cs.AI",
+      "retrieved_domains": {
+        "cs.AI": 3,
+        "cs.IR": 1,
+        "cs.CL": 1
+      },
+      "synthesis": "The papers collectively demonstrate the versatility and potential of Shape Constraint Language (SHACL) in validating RDF data and reasoning about RDF graphs. They highlight the importance of SHACL in addressing various challenges such as containment, satisfiability, and interactions with inference rules. Additionally, the papers discuss the practical aspects of implementing SHACL, including its implementations and state of adoption among practitioners and researchers.\n\nNone of the papers directly address the limitations of using large language models (LLMs) as formalizers for solving constraint satisfaction problems (CSPs). This gap suggests that while LLMs excel at generating formal programs, they may struggle with the complexity and scale of CSPs compared to traditional solver approaches.\n\nRecommendations:\n1. \"A Review of SHACL\" - provides comprehensive coverage of SHACL, including its formal frameworks, semantics, and practical considerations.\n2. \"Constraint-based Recommender System via RDF Knowledge Graphs\" - explores the integration of SHACL with knowledge graphs for recommender systems, offering insights into practical applications.\n3. \"ChatRule: Mining Logical Rules with Large Language Models for Knowledge Graph Reasoning\" - introduces a method for using LLMs to mine logical rules over knowledge graphs, potentially bridging the gap between theoretical and practical aspects of SHACL.",
+      "gap": "",
+      "recommendations": "",
+      "grounded_share": 0.5,
+      "n_claims": 8,
+      "seconds": 8.5,
+      "paper_ids": [
+        "2112.01441",
+        "2307.10702",
+        "2309.01538",
+        "2410.16803",
+        "2505.13252"
+      ]
+    }
+  ],
+  "components": {
+    "classifier": true,
+    "minilm_index": true,
+    "llm": {
+      "backend": "hf",
+      "model": "Qwen/Qwen2.5-1.5B-Instruct"
+    }
+  }
+}
