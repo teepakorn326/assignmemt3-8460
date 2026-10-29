@@ -18,7 +18,7 @@
       "recommendations": "",
       "grounded_share": 0.75,
       "n_claims": 8,
-      "seconds": 48.4,
+      "seconds": 8.5,
       "paper_ids": [
         "2409.00137",
         "2408.04811",
@@ -42,7 +42,7 @@
       "recommendations": "",
       "grounded_share": 1.0,
       "n_claims": 8,
-      "seconds": 9.6,
+      "seconds": 0.0,
       "paper_ids": [
         "2104.07368",
         "1908.05928",
@@ -77,7 +77,7 @@
       "recommendations": "",
       "grounded_share": 0.5,
       "n_claims": 8,
-      "seconds": 8.5,
+      "seconds": 0.0,
       "paper_ids": [
         "2112.01441",
         "2307.10702",
