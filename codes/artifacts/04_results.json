@@ -90,5 +90,5 @@
       "top terms": "image, images, 3d, visual, object, video, model, models"
     }
   ],
-  "retrieve_latency_ms": 10.0
+  "retrieve_latency_ms": 36.2
 }
