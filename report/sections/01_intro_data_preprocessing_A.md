@@ -15,7 +15,7 @@ We use the arXiv metadata snapshot (Kaggle, ~3.2M records, 5.6 GB). NB01 streams
 | cs.IR | 184.8 | 13,308 | 0.036 |
 | cs.LG | 182.6 | 14,251 | 0.039 |
 
-*Table 1. Week 1 corpus statistics (2,000 papers each).* Lengths are similar across domains (169–187 words), so length cannot separate them, but vocabularies differ, which the per-domain word clouds in NB02 make visible (Figure ▢). This motivated lexical features (TF-IDF) as the classification and retrieval baselines.
+*Table 1. Week 1 corpus statistics (2,000 papers each).* Lengths are similar across domains (169–187 words), so length cannot separate them, but vocabularies differ, which the per-domain word clouds in NB02 make visible (NB02 word clouds; slide 3). This motivated lexical features (TF-IDF) as the classification and retrieval baselines.
 
 ## 1.3 Preprocessing pipeline (Week 2)
 `extraction.preprocess(text)` is the one function shared by the team: (1) remove LaTeX maths (`$...$`, ~7% of abstracts), LaTeX commands and URLs; (2) tokenise with spaCy `en_core_web_sm`; (3) lowercase and drop stop-words, punctuation and non-alphabetic tokens; (4) lemmatise.
