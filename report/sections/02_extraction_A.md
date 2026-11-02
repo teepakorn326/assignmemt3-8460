@@ -1,5 +1,5 @@
 # 2. Extracting information (Member A)
-Objective: Extract method names and dataset names from each abstract for display in the demo. Since arXiv does not provide ground-truth labels, the team manually annotated 20 abstracts from the test set (containing 90 names) and compared five different extraction methods on this data.
+Objective: Extract method names and dataset names from each abstract for display in the demo. Since arXiv does not provide ground-truth labels, we built a gold set of 20 test abstracts (90 names). The labels were drafted with an AI assistant (not the Qwen model being evaluated), cross-checked against each abstract and confirmed by Member A [A: confirm before submission]. Five extraction methods were compared on this data.
 
 ## 2.1 Basic techniques (weeks 2–3)
 **Regex**: identifies acronyms (e.g., HiRM, GPT-3), their definitions, and patterns like “X dataset.”
@@ -33,5 +33,5 @@ Objective: Extract method names and dataset names from each abstract for display
 
 ## 2.4 Discussion
 The regex is accurate but misses all 32 lowercase instances (“symbolic execution”) because it only searches for uppercase letters. The zero-shot approach is highly conservative, failing to identify almost any datasets (recall 0.05). Providing three examples does not help with formatting—as both prompts already yield 100% valid JSON—but it does clarify what the model should extract: dataset recall rises to 0.74, and the F1 score improves from 0.38 to 0.63. The trade-off is that 11% of the names identified via the few-shot approach do not appear verbatim in the abstracts, typically because the extracted phrases are too long (e.g., “causal tracing studies” instead of “causal tracing”). The hybrid method achieves the highest F1 score (0.68) with virtually no loss in precision, making it the preferred choice for the system.
-**Limitations**: the study is based on only 20 abstracts annotated by a single person; it employs loose matching criteria; and it utilizes a small, 1.5B-parameter model.
+**Limitations**: the study is based on only 20 abstracts with AI-drafted labels checked by one person; the same 20 abstracts were used while designing the hybrid and the acronym stop-list, so there is no development set; it employs loose matching criteria (exact-match F1 is lower, see NB02); and it utilizes a small, 1.5B-parameter model.
 **Future improvements**: expand the dataset to 50+ papers with dual-annotator verification; enforce strict verbatim matching against the source text; and experiment with larger models or SciBERT.

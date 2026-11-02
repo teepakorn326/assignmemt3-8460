@@ -362,24 +362,45 @@ def normalise(name):
     return re.sub(r"[^a-z0-9]", "", name.lower())
 
 
-def match_counts(predicted, gold):
-    """Count true positives with a relaxed match: equal after normalising, or one contains the other.
+def _dedup(names):
+    """Unique names by normalised form, keeping the first spelling: [(normalised, original), ...]."""
+    seen, out = set(), []
+    for n in names:
+        key = normalise(n)
+        if key and key not in seen:
+            seen.add(key)
+            out.append((key, n))
+    return out
 
-    Returns (true_positives, number_predicted, number_gold).
+
+def match(predicted, gold, relaxed=True):
+    """One-to-one matching of predicted to gold names.
+
+    relaxed=True: equal after normalising, or one contains the other (both longer than 2 characters).
+    relaxed=False: equal after normalising only.
+    Returns (pairs, unmatched_predicted, unmatched_gold), using the original spellings, so the P/R/F1
+    table and the error analysis are always computed from the same matches.
     """
-    pred = _unique([normalise(p) for p in predicted if normalise(p)])
-    gold = _unique([normalise(g) for g in gold if normalise(g)])
-    matched_gold = set()
-    true_positives = 0
-    for p in pred:
-        for i, g in enumerate(gold):
+    pred, gold = _dedup(predicted), _dedup(gold)
+    matched_gold, pairs, unmatched_pred = set(), [], []
+    for p, p_orig in pred:
+        for i, (g, g_orig) in enumerate(gold):
             if i in matched_gold:
                 continue
-            if p == g or (len(p) > 2 and len(g) > 2 and (p in g or g in p)):
+            if p == g or (relaxed and len(p) > 2 and len(g) > 2 and (p in g or g in p)):
                 matched_gold.add(i)
-                true_positives += 1
+                pairs.append((p_orig, g_orig))
                 break
-    return true_positives, len(pred), len(gold)
+        else:
+            unmatched_pred.append(p_orig)
+    unmatched_gold = [g_orig for i, (_, g_orig) in enumerate(gold) if i not in matched_gold]
+    return pairs, unmatched_pred, unmatched_gold
+
+
+def match_counts(predicted, gold, relaxed=True):
+    """(true_positives, number_predicted, number_gold) from `match`."""
+    pairs, fp, fn = match(predicted, gold, relaxed=relaxed)
+    return len(pairs), len(pairs) + len(fp), len(pairs) + len(fn)
 
 
 def precision_recall_f1(tp, n_pred, n_gold):

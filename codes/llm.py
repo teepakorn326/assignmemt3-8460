@@ -88,6 +88,14 @@ def generate(prompt, system=None, max_new_tokens=300, temperature=0.0, use_cache
     return text
 
 
+def is_cached(prompt, system=None, max_new_tokens=300, temperature=0.0):
+    """True if generate() with these arguments would be answered from the cache (so timings are not real latency)."""
+    messages = ([{"role": "system", "content": system}] if system else []) + [
+        {"role": "user", "content": prompt}]
+    return _key(backend=BACKEND, model=MODEL, messages=messages,
+                max_new_tokens=max_new_tokens, temperature=temperature) in _load_cache()
+
+
 def describe():
     """Model name and backend, for the report's reproducibility section."""
     return {"backend": BACKEND, "model": MODEL}
