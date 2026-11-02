@@ -117,6 +117,33 @@
       "macro_f1": 0.784
     },
     {
+      "model": "DistilBERT fine-tuned (2 epochs, 3000 train)",
+      "test_papers": 2400,
+      "accuracy": 0.776,
+      "macro_precision": 0.774,
+      "macro_recall": 0.776,
+      "macro_f1": 0.774,
+      "note": "mean of 3 seeds"
+    },
+    {
+      "model": "DistilBERT fine-tuned (2 epochs, 9600 train)",
+      "test_papers": 2400,
+      "accuracy": 0.798,
+      "macro_precision": 0.798,
+      "macro_recall": 0.798,
+      "macro_f1": 0.798,
+      "note": "mean of 3 seeds"
+    },
+    {
+      "model": "Ensemble: LogReg + DistilBERT (9600 train)",
+      "test_papers": 2400,
+      "accuracy": 0.806,
+      "macro_precision": 0.806,
+      "macro_recall": 0.806,
+      "macro_f1": 0.805,
+      "note": "mean of 3 seeds"
+    },
+    {
       "model": "LogReg (same 500 as zero-shot)",
       "test_papers": 500,
       "accuracy": 0.814,
@@ -209,6 +236,329 @@
       "methods"
     ]
   },
+  "logreg_cv": [
+    {
+      "ngrams": "(1, 1)",
+      "C": 0.3,
+      "cv_macro_f1": 0.792,
+      "sd": 0.008
+    },
+    {
+      "ngrams": "(1, 1)",
+      "C": 1,
+      "cv_macro_f1": 0.793,
+      "sd": 0.008
+    },
+    {
+      "ngrams": "(1, 1)",
+      "C": 3,
+      "cv_macro_f1": 0.789,
+      "sd": 0.005
+    },
+    {
+      "ngrams": "(1, 1)",
+      "C": 10,
+      "cv_macro_f1": 0.782,
+      "sd": 0.004
+    },
+    {
+      "ngrams": "(1, 2)",
+      "C": 0.3,
+      "cv_macro_f1": 0.788,
+      "sd": 0.006
+    },
+    {
+      "ngrams": "(1, 2)",
+      "C": 1,
+      "cv_macro_f1": 0.799,
+      "sd": 0.007
+    },
+    {
+      "ngrams": "(1, 2)",
+      "C": 3,
+      "cv_macro_f1": 0.797,
+      "sd": 0.005
+    },
+    {
+      "ngrams": "(1, 2)",
+      "C": 10,
+      "cv_macro_f1": 0.797,
+      "sd": 0.005
+    },
+    {
+      "ngrams": "(1, 3)",
+      "C": 0.3,
+      "cv_macro_f1": 0.786,
+      "sd": 0.005
+    },
+    {
+      "ngrams": "(1, 3)",
+      "C": 1,
+      "cv_macro_f1": 0.796,
+      "sd": 0.008
+    },
+    {
+      "ngrams": "(1, 3)",
+      "C": 3,
+      "cv_macro_f1": 0.797,
+      "sd": 0.006
+    },
+    {
+      "ngrams": "(1, 3)",
+      "C": 10,
+      "cv_macro_f1": 0.798,
+      "sd": 0.005
+    }
+  ],
+  "lstm_epoch_check": {
+    "best_epoch_per_seed": [
+      4,
+      5,
+      6
+    ],
+    "chosen_epoch": 5,
+    "test_accuracy_mean": 0.711,
+    "test_macro_f1_mean": 0.712,
+    "test_accuracy_by_seed": [
+      0.71,
+      0.725,
+      0.697
+    ],
+    "test_macro_f1_by_seed": [
+      0.715,
+      0.722,
+      0.697
+    ],
+    "epoch_2_test_accuracy_by_seed": [
+      0.65,
+      0.694,
+      0.597
+    ],
+    "epoch_20_mean_train_accuracy": 0.98,
+    "epoch_20_mean_test_macro_f1": 0.704,
+    "best_test_macro_f1_any_run": 0.727
+  },
+  "distilbert_check": {
+    "history_3k": [
+      {
+        "epoch": 1,
+        "val_macro_f1": 0.76,
+        "test_macro_f1": 0.743
+      },
+      {
+        "epoch": 2,
+        "val_macro_f1": 0.797,
+        "test_macro_f1": 0.764
+      },
+      {
+        "epoch": 3,
+        "val_macro_f1": 0.792,
+        "test_macro_f1": 0.771
+      },
+      {
+        "epoch": 4,
+        "val_macro_f1": 0.79,
+        "test_macro_f1": 0.776
+      }
+    ],
+    "history_full": [
+      {
+        "epoch": 1,
+        "val_macro_f1": 0.784,
+        "test_macro_f1": 0.783
+      },
+      {
+        "epoch": 2,
+        "val_macro_f1": 0.786,
+        "test_macro_f1": 0.796
+      },
+      {
+        "epoch": 3,
+        "val_macro_f1": 0.782,
+        "test_macro_f1": 0.796
+      },
+      {
+        "epoch": 4,
+        "val_macro_f1": 0.781,
+        "test_macro_f1": 0.801
+      }
+    ],
+    "chosen_epoch_3k": 2,
+    "chosen_epoch_full": 2,
+    "by_seed": [
+      {
+        "model": "DistilBERT 3k seed 42",
+        "test_papers": 2400,
+        "accuracy": 0.772,
+        "macro_precision": 0.768,
+        "macro_recall": 0.772,
+        "macro_f1": 0.769,
+        "gain": -0.023,
+        "ci_95": [
+          -0.038,
+          -0.009
+        ],
+        "only_logreg_right": 199,
+        "only_other_right": 151,
+        "mcnemar_p": 0.012,
+        "train": "3k",
+        "seed": 42,
+        "kind": "DistilBERT"
+      },
+      {
+        "model": "DistilBERT 3k seed 1",
+        "test_papers": 2400,
+        "accuracy": 0.774,
+        "macro_precision": 0.774,
+        "macro_recall": 0.774,
+        "macro_f1": 0.772,
+        "gain": -0.02,
+        "ci_95": [
+          -0.036,
+          -0.004
+        ],
+        "only_logreg_right": 196,
+        "only_other_right": 154,
+        "mcnemar_p": 0.028,
+        "train": "3k",
+        "seed": 1,
+        "kind": "DistilBERT"
+      },
+      {
+        "model": "DistilBERT 3k seed 2",
+        "test_papers": 2400,
+        "accuracy": 0.781,
+        "macro_precision": 0.781,
+        "macro_recall": 0.781,
+        "macro_f1": 0.78,
+        "gain": -0.011,
+        "ci_95": [
+          -0.027,
+          0.004
+        ],
+        "only_logreg_right": 199,
+        "only_other_right": 173,
+        "mcnemar_p": 0.195,
+        "train": "3k",
+        "seed": 2,
+        "kind": "DistilBERT"
+      },
+      {
+        "model": "DistilBERT full seed 42",
+        "test_papers": 2400,
+        "accuracy": 0.797,
+        "macro_precision": 0.798,
+        "macro_recall": 0.797,
+        "macro_f1": 0.797,
+        "gain": 0.005,
+        "ci_95": [
+          -0.009,
+          0.019
+        ],
+        "only_logreg_right": 150,
+        "only_other_right": 163,
+        "mcnemar_p": 0.498,
+        "train": "full",
+        "seed": 42,
+        "kind": "DistilBERT"
+      },
+      {
+        "model": "Ensemble seed 42",
+        "test_papers": 2400,
+        "accuracy": 0.81,
+        "macro_precision": 0.811,
+        "macro_recall": 0.81,
+        "macro_f1": 0.81,
+        "gain": 0.018,
+        "ci_95": [
+          0.006,
+          0.031
+        ],
+        "only_logreg_right": 98,
+        "only_other_right": 143,
+        "mcnemar_p": 0.004,
+        "train": "full",
+        "seed": 42,
+        "kind": "Ensemble"
+      },
+      {
+        "model": "DistilBERT full seed 1",
+        "test_papers": 2400,
+        "accuracy": 0.803,
+        "macro_precision": 0.802,
+        "macro_recall": 0.803,
+        "macro_f1": 0.802,
+        "gain": 0.011,
+        "ci_95": [
+          -0.003,
+          0.024
+        ],
+        "only_logreg_right": 131,
+        "only_other_right": 159,
+        "mcnemar_p": 0.113,
+        "train": "full",
+        "seed": 1,
+        "kind": "DistilBERT"
+      },
+      {
+        "model": "Ensemble seed 1",
+        "test_papers": 2400,
+        "accuracy": 0.807,
+        "macro_precision": 0.806,
+        "macro_recall": 0.807,
+        "macro_f1": 0.806,
+        "gain": 0.015,
+        "ci_95": [
+          0.002,
+          0.027
+        ],
+        "only_logreg_right": 102,
+        "only_other_right": 139,
+        "mcnemar_p": 0.02,
+        "train": "full",
+        "seed": 1,
+        "kind": "Ensemble"
+      },
+      {
+        "model": "DistilBERT full seed 2",
+        "test_papers": 2400,
+        "accuracy": 0.795,
+        "macro_precision": 0.794,
+        "macro_recall": 0.795,
+        "macro_f1": 0.794,
+        "gain": 0.002,
+        "ci_95": [
+          -0.012,
+          0.016
+        ],
+        "only_logreg_right": 145,
+        "only_other_right": 154,
+        "mcnemar_p": 0.644,
+        "train": "full",
+        "seed": 2,
+        "kind": "DistilBERT"
+      },
+      {
+        "model": "Ensemble seed 2",
+        "test_papers": 2400,
+        "accuracy": 0.8,
+        "macro_precision": 0.8,
+        "macro_recall": 0.8,
+        "macro_f1": 0.799,
+        "gain": 0.008,
+        "ci_95": [
+          -0.005,
+          0.021
+        ],
+        "only_logreg_right": 110,
+        "only_other_right": 131,
+        "mcnemar_p": 0.198,
+        "train": "full",
+        "seed": 2,
+        "kind": "Ensemble"
+      }
+    ]
+  },
   "most_confused_pairs": [
     {
       "actual": "cs.AI",
@@ -246,18 +596,25 @@
     "cross-listed": 0.763
   },
   "lenient_accuracy_logreg": 0.875,
-  "validation_ngrams": [
-    {
-      "n_grams": "(1, 1)",
-      "train_papers": 7680,
-      "validation_papers": 1920,
-      "macro_f1": 0.8057
-    },
-    {
-      "n_grams": "(1, 2)",
-      "train_papers": 7680,
-      "validation_papers": 1920,
-      "macro_f1": 0.8051
-    }
-  ]
+  "short_input_check": {
+    "median_title_words": 9,
+    "rows": [
+      {
+        "model": "LogReg, title + abstract",
+        "test_papers": 2400,
+        "accuracy": 0.792,
+        "macro_precision": 0.793,
+        "macro_recall": 0.792,
+        "macro_f1": 0.792
+      },
+      {
+        "model": "LogReg, title only",
+        "test_papers": 2400,
+        "accuracy": 0.69,
+        "macro_precision": 0.716,
+        "macro_recall": 0.69,
+        "macro_f1": 0.698
+      }
+    ]
+  }
 }
