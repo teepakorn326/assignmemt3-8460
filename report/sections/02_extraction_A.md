@@ -1,5 +1,5 @@
 # 2. Extracting information (Member A)
-Objective: Extract method names and dataset names from each abstract for display in the demo. Since arXiv does not provide ground-truth labels, we built a gold set of 20 test abstracts (90 names). The labels were drafted with an AI assistant (not the Qwen model being evaluated), cross-checked against each abstract and confirmed by Member A [A: confirm before submission]. Five extraction methods were compared on this data.
+Objective: Extract method names and dataset names from each abstract for display in the demo. Since arXiv does not provide ground-truth labels, we built a provisional set of 20 test abstracts (90 names). The labels were drafted with an AI assistant (not the Qwen model being evaluated) and cross-checked against each abstract; independent human confirmation remains to be done. Five extraction methods were compared on this data.
 
 ## 2.1 Basic techniques (weeks 2–3)
 **Regex**: identifies acronyms (e.g., HiRM, GPT-3), their definitions, and patterns like “X dataset.”
@@ -26,8 +26,8 @@ Objective: Extract method names and dataset names from each abstract for display
 
 | Prompt | F1 methods | F1 datasets | F1 tasks | Valid JSON | Name included in the abstract |
 |---|---|---|---|---|---|
-| Zero-shot | 0,44 | 0,10 | 0,44 | 100% | 96% |
-| Few-shot | 0,61 | 0,70 | 0,30 | 100% | 89% |
+| Zero-shot | 0.44 | 0.10 | 0.44 | 100% | 96% |
+| Few-shot | 0.61 | 0.70 | 0.30 | 100% | 89% |
 
 *Table 4. LLM scores by type and reliability.*
 

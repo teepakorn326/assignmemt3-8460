@@ -3,20 +3,20 @@
 > **OUTLINE for Member D to write up in their own words (target ~800 words).** Numbers are from NB06 (`artifacts/06_results.json`, `06_summary_table.csv`) and the other notebooks' results files. Delete this box when done.
 
 ## 6.1 End-to-end demo (NB06)
-`analyse(query)`: extraction (02) → classifier (03) → MiniLM retrieval, or `recommend(paper_id)` for a pasted paper so it can't retrieve itself (04) → one RAG call (05) → groundedness judge on the synthesis.
+`analyse(query)`: key phrases for short topics or the evaluated hybrid extractor for abstracts (02) → classifier (03) → MiniLM retrieval, or `recommend(paper_id)` for a known paper so it cannot retrieve itself (04) → a few-shot single-paper summary for abstracts and RAG synthesis (05) → grounding and citation checks. If generated synthesis fails, cited sentences copied from the retrieved abstracts are shown as an explicit fallback.
 
-| Query | Predicted domain | Retrieved | Synthesis grounded | LLM time* |
+| Query | Predicted domain | Retrieved | Generated support (LLM judge) | Final exact-source support |
 |---|---|---|---|---|
-| defending LLMs against prompt injection and jailbreak attacks | cs.CR | 4 cs.CR, 1 cs.LG | 3/3 | 30.1 s |
-| GNNs to recommend items to users | cs.LG | 5 cs.IR | 4/5 | 78.6 s |
-| pasted abstract: SHACL review (test paper) | cs.AI | 3 cs.AI, 1 cs.IR, 1 cs.CL | **0/4** | 23.1 s |
+| defending LLMs against prompt injection and jailbreak attacks | cs.CR | 4 cs.CR, 1 cs.LG | 3/3; no citations | 3/3 fallback |
+| GNNs to recommend items to users | cs.LG | 5 cs.IR | 4/5; 3/5 cited | 3/3 fallback |
+| pasted abstract: SHACL review (test paper) | cs.AI | 3 cs.AI, 1 cs.IR, 1 cs.CL | **0/4; no citations** | 3/3 fallback |
 
-\*Uncached Qwen2.5-1.5B on an Apple-silicon laptop (MPS). Everything before the LLM takes under 0.5 s once models are loaded. All three replies kept the SYNTHESIS / GAP / RECOMMENDATIONS format.
+All three generated replies kept the SYNTHESIS / GAP / RECOMMENDATIONS headings, but none passed both support and citation checks. The final fallback copies sentences verbatim from numbered retrieved abstracts and verifies them by exact text matching. The gap and recommendation reasons remain generated and unverified.
 
 - Discussion points:
   - Query 2 is predicted cs.LG, but all five retrieved papers are cs.IR: the classifier and the retriever disagree on an overlapping topic.
   - Query 3 shows the main failure mode: the synthesis claims "all four papers discuss LLMs", which the judge rejects for every sentence. It is a generic summary, not a grounded one.
-  - Across the 3 demos, 7 of 12 synthesis sentences are supported, against 16/17 on the five NB05 questions. Five questions is a small sample.
+  - Across the 3 demos, 7 of 12 **generated** synthesis sentences are supported. The fallback supplies 9/9 exact source sentences across the three final replies; this is an extractive safety response, not evidence that the LLM became more accurate. Five NB05 RAG questions is a small sample.
 
 ## 6.2 Comparative analysis: what we kept and why (one table)
 
@@ -33,11 +33,11 @@ Pattern: classic methods win on labelled tasks (classification, extraction preci
 
 ## 6.3 Limitations
 - Proxy labels: relevance = same primary category; single-label classification although 55% of papers are cross-listed.
-- Small evaluation sets: 20 extraction abstracts (AI-drafted labels, confirmed by A), 20 summaries, 10 CoT papers, 5 RAG questions, 9 injection attempts.
+- Small evaluation sets: 20 extraction abstracts (AI-drafted labels, independent human confirmation pending), 20 summaries, 10 CoT papers, 5 RAG questions, 9 injection attempts.
 - A 1.5B model that also acts as its own judge (validated only on clear-cut planted claims).
-- No validation split in NB03; the hybrid extractor was designed on its evaluation set.
+- NB03 now has a training-only n-gram validation check, but earlier model choices were informed by test scores; the hybrid extractor was designed on its evaluation set.
 - No citation graph in the arXiv metadata; no affiliations, so institution NER is not possible.
-- The guard sentence did not reduce prompt injection (2/9 vs 3/9).
+- The guard sentence did not reduce prompt injection (2/9 vs 3/9). All three demo syntheses needed extractive fallback; the generated gaps and recommendation reasons are not independently grounded.
 
 ## 6.4 Future work
 - Human relevance labels and human summary ratings (template in `artifacts/05_human_check.csv`).

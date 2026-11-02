@@ -37,12 +37,12 @@
 
 ## 5.5 RAG ablation (5 research questions)
 
-| Mode | Format OK | Supported synthesis sentences | Valid [n] citations |
-|---|---|---|---|
-| RAG | 5/5 | 16/17 (94%) | 9 |
-| No RAG | 4/5 | 5/20 (25%) | 0 |
+| Mode | Format OK | Supported synthesis sentences | Cited synthesis sentences | Valid [n] markers |
+|---|---|---|---|---|
+| RAG | 5/5 | 16/17 (94%) | 5/17 | 9 |
+| No RAG | 4/5 | 5/20 (25%) | 0/20 | 0 |
 
-- Finding: retrieval is what makes the answers checkable; this is the clearest advanced-technique win.
+- Finding: retrieval gives the judge more support (16/17 vs 5/20), but most generated synthesis sentences still lack a citation. The end-to-end demo checks both support and citation coverage before displaying a synthesis as verified.
 
 ## 5.6 Safety (W10)
 - Prompt injection, 3 attacks × 3 abstracts, same few-shot prompt, only the guard sentence toggled: succeeded 2/9 without the guard, 3/9 with it. The guard sentence adds no measurable protection; the few-shot template itself resists most attacks.

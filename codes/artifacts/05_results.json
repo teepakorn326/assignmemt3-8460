@@ -124,7 +124,9 @@
       "synthesis claims": 17,
       "supported by retrieved papers": 16,
       "grounded rate": 0.941,
-      "valid [n] citations": 9
+      "valid [n] citations": 9,
+      "cited synthesis claims": "5/17",
+      "invalid citations": 0
     },
     {
       "mode": "no RAG",
@@ -132,7 +134,9 @@
       "synthesis claims": 20,
       "supported by retrieved papers": 5,
       "grounded rate": 0.25,
-      "valid [n] citations": 0
+      "valid [n] citations": 0,
+      "cited synthesis claims": "0/20",
+      "invalid citations": 0
     }
   ],
   "rag_examples": [
