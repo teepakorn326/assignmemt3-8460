@@ -77,77 +77,77 @@
   "extraction_scores": [
     {
       "extractor": "Regex rules (W3)",
-      "precision": 0.78,
-      "recall": 0.356,
-      "f1": 0.489,
+      "precision": 0.732,
+      "recall": 0.357,
+      "f1": 0.48,
       "predicted": 41,
-      "gold": 90,
-      "f1_exact": 0.412,
-      "f1_95ci": "0.36\u20130.60"
+      "gold": 84,
+      "f1_exact": 0.4,
+      "f1_95ci": "0.34\u20130.61"
     },
     {
       "extractor": "spaCy NER ORG/PRODUCT (W3)",
-      "precision": 0.643,
-      "recall": 0.3,
-      "f1": 0.409,
+      "precision": 0.595,
+      "recall": 0.298,
+      "f1": 0.397,
       "predicted": 42,
-      "gold": 90,
-      "f1_exact": 0.379,
-      "f1_95ci": "0.28\u20130.53"
+      "gold": 84,
+      "f1_exact": 0.365,
+      "f1_95ci": "0.26\u20130.52"
     },
     {
       "extractor": "Zero-shot LLM (W9)",
       "precision": 0.88,
-      "recall": 0.244,
-      "f1": 0.383,
+      "recall": 0.262,
+      "f1": 0.404,
       "predicted": 25,
-      "gold": 90,
-      "f1_exact": 0.261,
-      "f1_95ci": "0.28\u20130.48"
+      "gold": 84,
+      "f1_exact": 0.275,
+      "f1_95ci": "0.31\u20130.50"
     },
     {
       "extractor": "Few-shot LLM (W9)",
-      "precision": 0.708,
-      "recall": 0.567,
-      "f1": 0.63,
+      "precision": 0.681,
+      "recall": 0.583,
+      "f1": 0.628,
       "predicted": 72,
-      "gold": 90,
-      "f1_exact": 0.494,
-      "f1_95ci": "0.54\u20130.70"
+      "gold": 84,
+      "f1_exact": 0.513,
+      "f1_95ci": "0.53\u20130.70"
     },
     {
       "extractor": "Hybrid: few-shot LLM + regex",
-      "precision": 0.698,
-      "recall": 0.667,
-      "f1": 0.682,
+      "precision": 0.663,
+      "recall": 0.679,
+      "f1": 0.671,
       "predicted": 86,
-      "gold": 90,
-      "f1_exact": 0.545,
-      "f1_95ci": "0.58\u20130.76"
+      "gold": 84,
+      "f1_exact": 0.553,
+      "f1_95ci": "0.56\u20130.76"
     }
   ],
   "hybrid_minus_few_shot_f1_95ci": [
-    0.018,
-    0.088
+    0.005,
+    0.083
   ],
   "llm_per_field": [
     {
       "extractor": "zero-shot",
       "field": "methods",
       "precision": 0.875,
-      "recall": 0.296,
-      "f1": 0.442,
+      "recall": 0.328,
+      "f1": 0.477,
       "predicted": 24,
-      "gold": 71
+      "gold": 64
     },
     {
       "extractor": "zero-shot",
       "field": "datasets",
       "precision": 1.0,
-      "recall": 0.053,
-      "f1": 0.1,
+      "recall": 0.05,
+      "f1": 0.095,
       "predicted": 1,
-      "gold": 19
+      "gold": 20
     },
     {
       "extractor": "zero-shot",
@@ -161,20 +161,20 @@
     {
       "extractor": "few-shot",
       "field": "methods",
-      "precision": 0.725,
-      "recall": 0.521,
-      "f1": 0.607,
+      "precision": 0.686,
+      "recall": 0.547,
+      "f1": 0.609,
       "predicted": 51,
-      "gold": 71
+      "gold": 64
     },
     {
       "extractor": "few-shot",
       "field": "datasets",
       "precision": 0.667,
-      "recall": 0.737,
-      "f1": 0.7,
+      "recall": 0.7,
+      "f1": 0.683,
       "predicted": 21,
-      "gold": 19
+      "gold": 20
     },
     {
       "extractor": "few-shot",
@@ -203,27 +203,34 @@
   "error_analysis": [
     {
       "extractor": "Regex rules (W3)",
-      "true positives": 32,
-      "missed lower-case names": 32,
-      "missed capitalised names": 26,
-      "false positives": 9,
-      "example false positives": "T2I, CIR, CBRN, NP, EM, DAA"
+      "true positives": 30,
+      "missed lower-case names": 30,
+      "missed capitalised names": 24,
+      "false positives": 11,
+      "example false positives": "T2I, CIR, PTKB, CBRN, NP, EM"
     },
     {
       "extractor": "Few-shot LLM (W9)",
-      "true positives": 51,
-      "missed lower-case names": 18,
-      "missed capitalised names": 21,
-      "false positives": 21,
-      "example false positives": "submodular maximization with cardinality constraints, text-to-image (T2I) diffusion models, concept erasure techniques, fine-tuning the denoising component, decoupling strategy, two-layer strategy"
+      "true positives": 49,
+      "missed lower-case names": 17,
+      "missed capitalised names": 18,
+      "false positives": 23,
+      "example false positives": "submodular maximization with cardinality constraints, text-to-image (T2I) diffusion models, concept erasure techniques, fine-tuning the denoising component, causal tracing studies, decoupling strategy"
     },
     {
       "extractor": "Hybrid: few-shot LLM + regex",
-      "true positives": 60,
-      "missed lower-case names": 18,
-      "missed capitalised names": 12,
-      "false positives": 26,
-      "example false positives": "submodular maximization with cardinality constraints, text-to-image (T2I) diffusion models, concept erasure techniques, fine-tuning the denoising component, decoupling strategy, two-layer strategy"
+      "true positives": 57,
+      "missed lower-case names": 17,
+      "missed capitalised names": 10,
+      "false positives": 29,
+      "example false positives": "submodular maximization with cardinality constraints, text-to-image (T2I) diffusion models, concept erasure techniques, fine-tuning the denoising component, causal tracing studies, decoupling strategy"
     }
-  ]
+  ],
+  "gold_label_audit": {
+    "provenance": "AI draft",
+    "abstracts_with_labels": 20,
+    "human_verified_abstracts": 0,
+    "method_dataset_names": 84,
+    "nonverbatim_method_dataset_names": 0
+  }
 }

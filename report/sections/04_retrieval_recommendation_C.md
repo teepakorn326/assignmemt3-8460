@@ -21,6 +21,8 @@
 | Averaged word vectors | 0.420 | 0.420 |
 | Random baseline | 0.167 | 0.167 |
 
+The three-way comparison uses a 9,600-paper training index. On the **deployed 12,000-paper MiniLM index**, with each query paper excluded, P@5 is **0.717** and nDCG@5 is **0.720** on the same 200 test queries.
+
 | Space | Purity | ARI |
 |---|---|---|
 | MiniLM | **0.727** | **0.484** |
@@ -29,7 +31,7 @@
 
 - P@5 by query domain (MiniLM): cs.CR 0.865, cs.IR 0.843, cs.CV 0.812, cs.CL 0.754, cs.AI 0.526, cs.LG 0.440.
 - Clean MiniLM clusters: cs.IR 92%, cs.CR 89%, cs.CV 84%; cs.LG (67%), cs.AI (63%), cs.CL (56%) are mixed.
-- Latency: 10–36 ms per query for MiniLM retrieval, depending on the machine (10 ms in the original run, 36 ms in the final macOS run).
+- Latency depends on hardware and cache state; the current CPU run measured 88.9 ms per query including query encoding.
 
 ## 4.4 Discussion points
 - Why averaged word vectors are worst: word order is lost and frequent generic words dominate the average.

@@ -1,5 +1,5 @@
 # 2. Extracting information (Member A)
-Objective: Extract method names and dataset names from each abstract for display in the demo. Since arXiv does not provide ground-truth labels, we built a provisional set of 20 test abstracts (90 names). The labels were drafted with an AI assistant (not the Qwen model being evaluated) and cross-checked against each abstract; independent human confirmation remains to be done. Five extraction methods were compared on this data.
+Objective: Extract method names and dataset names from each abstract for display in the demo. Since arXiv does not provide ground-truth labels, we built a provisional set of 20 test abstracts (84 names). The labels were drafted with an AI assistant (not the Qwen model being evaluated) and checked for verbatim abstract spans; independent human confirmation remains to be done. Five extraction methods were compared on this data.
 
 ## 2.1 Basic techniques (weeks 2–3)
 **Regex**: identifies acronyms (e.g., HiRM, GPT-3), their definitions, and patterns like “X dataset.”
@@ -15,23 +15,23 @@ Objective: Extract method names and dataset names from each abstract for display
 
 | How to extract | Precision | Recall | F1 |
 |---|---|---|---|
-| Regex rules | 0.78 | 0.36 | 0.49 |
-| spaCy NER (ORG/PRODUCT) | 0.64 | 0.30 | 0.41 |
-| LLM zero-shot | **0.88** | 0.24 | 0.38 |
-| LLM few-shot | 0.71 | 0.57 | 0.63 |
-| Hybrid (few-shot + regex) | 0.70 | **0.67** | **0.68** |
+| Regex rules | 0.73 | 0.36 | 0.48 |
+| spaCy NER (ORG/PRODUCT) | 0.60 | 0.30 | 0.40 |
+| LLM zero-shot | **0.88** | 0.26 | 0.40 |
+| LLM few-shot | 0.68 | 0.58 | 0.63 |
+| Hybrid (few-shot + regex) | 0.66 | **0.68** | **0.67** |
 
 
-*Table 2. Micro P/R/F1 across methods and datasets; 20 abstracts, 90 target labels, relaxed matching.*
+*Table 2. Micro P/R/F1 across methods and datasets; 20 abstracts, 84 provisional target labels, relaxed matching.*
 
 | Prompt | F1 methods | F1 datasets | F1 tasks | Valid JSON | Name included in the abstract |
 |---|---|---|---|---|---|
-| Zero-shot | 0.44 | 0.10 | 0.44 | 100% | 96% |
-| Few-shot | 0.61 | 0.70 | 0.30 | 100% | 89% |
+| Zero-shot | 0.48 | 0.10 | 0.44 | 100% | 96% |
+| Few-shot | 0.61 | 0.68 | 0.30 | 100% | 89% |
 
 *Table 4. LLM scores by type and reliability.*
 
 ## 2.4 Discussion
-The regex is accurate but misses all 32 lowercase instances (“symbolic execution”) because it only searches for uppercase letters. The zero-shot approach is highly conservative, failing to identify almost any datasets (recall 0.05). Providing three examples does not help with formatting—as both prompts already yield 100% valid JSON—but it does clarify what the model should extract: dataset recall rises to 0.74, and the F1 score improves from 0.38 to 0.63. The trade-off is that 11% of the names identified via the few-shot approach do not appear verbatim in the abstracts, typically because the extracted phrases are too long (e.g., “causal tracing studies” instead of “causal tracing”). The hybrid method achieves the highest F1 score (0.68) with virtually no loss in precision, making it the preferred choice for the system.
-**Limitations**: the study is based on only 20 abstracts with AI-drafted labels checked by one person; the same 20 abstracts were used while designing the hybrid and the acronym stop-list, so there is no development set; it employs loose matching criteria (exact-match F1 is lower, see NB02); and it utilizes a small, 1.5B-parameter model.
+The regex misses 30 lower-case gold names (including “symbolic execution”) because it searches for capital letters. The zero-shot approach is highly conservative, failing to identify almost any datasets (recall 0.05). Providing three examples does not help with formatting—as both prompts already yield 100% valid JSON—but it clarifies what the model should extract: dataset recall rises to 0.70, and the F1 score improves from 0.40 to 0.63. The trade-off is that 11% of the names identified via the few-shot approach do not appear verbatim in the abstracts, typically because the extracted phrases are too long. The hybrid method has the highest measured F1 (0.67), with lower precision than few-shot alone, and is the extractor used by the demo.
+**Limitations**: the study is based on only 20 abstracts with AI-drafted labels and no independent human confirmation; the same 20 abstracts were used while designing the hybrid and the acronym stop-list, so there is no development set; it employs loose matching criteria (exact-match F1 is lower, see NB02); and it utilizes a small, 1.5B-parameter model.
 **Future improvements**: expand the dataset to 50+ papers with dual-annotator verification; enforce strict verbatim matching against the source text; and experiment with larger models or SciBERT.

@@ -27,6 +27,10 @@ SUMMARY_EXAMPLES = [
 ]
 
 _ABBREV = re.compile(r"(?:\b(?:e\.g|i\.e|et al|etc|vs|cf|Fig|Eq|resp|approx)\.|\b[A-Z]\.)$")
+_ALL_PAPERS = re.compile(r"\ball\s+(\d+|one|two|three|four|five|six|seven|eight|nine|ten)\s+papers\b", re.I)
+_NUMBER_WORDS = {word: n for n, word in enumerate(
+    ("zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"))}
+CONTEXT_ABSTRACT_CHARS = 1200
 
 
 def split_sentences(text, min_words=4):
@@ -54,7 +58,7 @@ def summarise_abstract(abstract):
 
 
 def validate_citations(text, n_papers):
-    """Check whether each synthesis sentence cites an available retrieved paper."""
+    """Check citation coverage and number range; this does not establish evidential support."""
     claims = split_sentences(text, min_words=1)
     cited = 0
     valid_count = 0
@@ -69,6 +73,23 @@ def validate_citations(text, n_papers):
             "coverage": round(cited / len(claims), 3) if claims else 0.0,
             "valid_references": valid_count,
             "invalid_references": invalid}
+
+
+def exact_citation_support(text, hits, prompt_only=False):
+    """Count claims copied verbatim from their single cited paper or supplied excerpt."""
+    claims = split_sentences(text, min_words=1)
+    supported = 0
+    for claim in claims:
+        refs = [int(n) for n in re.findall(r"\[(\d+)\]", claim)]
+        if len(refs) != 1 or not 1 <= refs[0] <= len(hits):
+            continue
+        body = re.sub(r"\[\d+\]", "", claim).strip()
+        source = clean_text(hits.iloc[refs[0] - 1]["abstract"])
+        if prompt_only:
+            source = source[:CONTEXT_ABSTRACT_CHARS]
+        if body and body in source:
+            supported += 1
+    return supported, len(claims)
 
 
 def evidence_synthesis(hits, n=3):
@@ -97,8 +118,14 @@ def verify_evidence_synthesis(text, hits):
     return supported, len(claims)
 
 
+def hits_source(hits):
+    """Exactly the retrieved text supplied to the generator and groundedness judge."""
+    return "".join(f"[{i + 1}] {h['title']}. {clean_text(h['abstract'])[:CONTEXT_ABSTRACT_CHARS]}\n\n"
+                   for i, h in hits.iterrows())
+
+
 def build_rag_prompt(question, hits):
-    context = "".join(f"[{i + 1}] {h['title']}. {clean_text(h['abstract'])[:1200]}\n\n" for i, h in hits.iterrows())
+    context = hits_source(hits)
     return (f"Research question: {question}\n\nRetrieved papers:\n\n{context}"
             "Using only these papers, answer in exactly this format, each label at the start of its own line:\n"
             "SYNTHESIS: 3-4 sentences on what the papers collectively show, citing papers as [n].\n"
@@ -156,12 +183,15 @@ def is_supported(claim, source):
     return re.fullmatch(r"SUPPORTED[.!]?", reply.strip(), flags=re.IGNORECASE) is not None
 
 
-def groundedness(text, source):
+def groundedness(text, source, expected_papers=None):
     """(supported claims, total claims): each sentence of `text` judged against `source`."""
-    claims = split_sentences(text) or ([text] if text.strip() else [])
-    flags = [is_supported(c, source) for c in claims]
+    claims = split_sentences(text, min_words=1 if expected_papers is not None else 4) or (
+        [text] if text.strip() else [])
+    flags = []
+    for claim in claims:
+        count = _ALL_PAPERS.search(claim)
+        stated = int(count.group(1)) if count and count.group(1).isdigit() else (
+            _NUMBER_WORDS[count.group(1).lower()] if count else None)
+        flags.append(False if expected_papers is not None and stated is not None
+                     and stated != expected_papers else is_supported(claim, source))
     return sum(flags), len(claims)
-
-
-def hits_source(hits):
-    return "\n\n".join(f"[{i + 1}] {clean_text(h['abstract'])}" for i, h in hits.iterrows())

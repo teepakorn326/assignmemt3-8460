@@ -13,7 +13,8 @@
       "navigation tasks"
     ],
     "labelled": true,
-    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
+    "note": "AI-drafted labels; method/dataset names checked for an exact span in the abstract; human verification pending.",
+    "human_verified": false
   },
   {
     "id": "2502.09673",
@@ -29,7 +30,8 @@
       "LLM safety"
     ],
     "labelled": true,
-    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
+    "note": "AI-drafted labels; method/dataset names checked for an exact span in the abstract; human verification pending.",
+    "human_verified": false
   },
   {
     "id": "2602.19631",
@@ -38,9 +40,7 @@
     "methods": [
       "High-Level Representation Misdirection",
       "HiRM",
-      "U-Net",
-      "Flux",
-      "causal tracing"
+      "Flux"
     ],
     "datasets": [
       "UnlearnCanvas",
@@ -51,7 +51,8 @@
       "text-to-image diffusion"
     ],
     "labelled": true,
-    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
+    "note": "AI-drafted labels; method/dataset names checked for an exact span in the abstract; human verification pending. Review: U-Net and causal tracing describe prior work rather than a method this paper uses.",
+    "human_verified": false
   },
   {
     "id": "2506.11033",
@@ -70,7 +71,8 @@
       "safe reinforcement learning"
     ],
     "labelled": true,
-    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
+    "note": "AI-drafted labels; method/dataset names checked for an exact span in the abstract; human verification pending.",
+    "human_verified": false
   },
   {
     "id": "1205.6396",
@@ -90,7 +92,8 @@
       "text mining"
     ],
     "labelled": true,
-    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
+    "note": "AI-drafted labels; method/dataset names checked for an exact span in the abstract; human verification pending.",
+    "human_verified": false
   },
   {
     "id": "1611.04426",
@@ -110,7 +113,8 @@
       "information leak quantification"
     ],
     "labelled": true,
-    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
+    "note": "AI-drafted labels; method/dataset names checked for an exact span in the abstract; human verification pending. Review: OpenSSL, Linux GDK, and AES-128 are evaluation targets rather than datasets in the narrow sense.",
+    "human_verified": false
   },
   {
     "id": "2007.08911",
@@ -128,7 +132,8 @@
       "safety & security"
     ],
     "labelled": true,
-    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
+    "note": "AI-drafted labels; method/dataset names checked for an exact span in the abstract; human verification pending. Review: confirm whether FEAS taxonomy should count as a method.",
+    "human_verified": false
   },
   {
     "id": "2407.16192",
@@ -137,8 +142,7 @@
     "methods": [
       "large language model",
       "LLM",
-      "query reformulation",
-      "PTKB"
+      "query reformulation"
     ],
     "datasets": [],
     "tasks": [
@@ -146,7 +150,8 @@
       "CIR"
     ],
     "labelled": true,
-    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
+    "note": "AI-drafted labels; method/dataset names checked for an exact span in the abstract; human verification pending. Review: PTKB is an input knowledge base, not a method name or named benchmark.",
+    "human_verified": false
   },
   {
     "id": "2609.14703",
@@ -167,7 +172,8 @@
       "tooth-level classification"
     ],
     "labelled": true,
-    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
+    "note": "AI-drafted labels; method/dataset names checked for an exact span in the abstract; human verification pending.",
+    "human_verified": false
   },
   {
     "id": "2609.15383",
@@ -191,7 +197,8 @@
       "jailbreak"
     ],
     "labelled": true,
-    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
+    "note": "AI-drafted labels; method/dataset names checked for an exact span in the abstract; human verification pending.",
+    "human_verified": false
   },
   {
     "id": "2506.01716",
@@ -211,7 +218,8 @@
       "multi-turn tool-use agents"
     ],
     "labelled": true,
-    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
+    "note": "AI-drafted labels; method/dataset names checked for an exact span in the abstract; human verification pending.",
+    "human_verified": false
   },
   {
     "id": "2307.08304",
@@ -228,7 +236,8 @@
       "causal inference"
     ],
     "labelled": true,
-    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
+    "note": "AI-drafted labels; method/dataset names checked for an exact span in the abstract; human verification pending.",
+    "human_verified": false
   },
   {
     "id": "1506.06646",
@@ -248,7 +257,8 @@
       "language acquisition from continuous speech"
     ],
     "labelled": true,
-    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
+    "note": "AI-drafted labels; method/dataset names checked for an exact span in the abstract; human verification pending.",
+    "human_verified": false
   },
   {
     "id": "1212.2546",
@@ -267,16 +277,15 @@
       "opening and closing"
     ],
     "labelled": true,
-    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
+    "note": "AI-drafted labels; method/dataset names checked for an exact span in the abstract; human verification pending.",
+    "human_verified": false
   },
   {
     "id": "2310.17054",
     "title": "BOOST: Harnessing Black-Box Control to Boost Commonsense in LMs' Generation",
     "abstract": "Large language models (LLMs) such as GPT-3 have demonstrated a strong capability to generate coherent and contextually relevant text. However, amidst their successes, a crucial issue persists: their generated outputs still lack commonsense at times. Moreover, fine-tuning the entire LLM towards more commonsensical outputs is computationally expensive if not infeasible. In this paper, we present a computation-efficient framework that steers a frozen Pre-Trained Language Model (PTLM) towards more commonsensical generation (i.e., producing a plausible output that incorporates a list of concepts in a meaningful way). Specifically, we first construct a reference-free evaluator that assigns a sentence with a commonsensical score by grounding the sentence to a dynamic commonsense knowledge base from four different relational aspects. We then use the scorer as the oracle for commonsense knowledge, and extend the controllable generation method called NADO to train an auxiliary head that guides a fixed PTLM to better satisfy the oracle. We test our framework on a series of GPT-2-, Flan-T5-, and Alpaca-based language models (LMs) on two constrained concept-to-sentence benchmarks. Human evaluation results demonstrate that our method consistently leads to the most commonsensical outputs.",
     "methods": [
-      "BOOST",
       "NADO",
-      "GPT-3",
       "GPT-2",
       "Flan-T5",
       "Alpaca"
@@ -288,15 +297,14 @@
       "controllable generation"
     ],
     "labelled": true,
-    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
+    "note": "AI-drafted labels; method/dataset names checked for an exact span in the abstract; human verification pending. BOOST was removed because it occurs only in the title, while extraction reads the abstract. Review: GPT-3 is background context, not a model evaluated by this paper.",
+    "human_verified": false
   },
   {
     "id": "1910.04867",
     "title": "A Large-scale Study of Representation Learning with the Visual Task Adaptation Benchmark",
     "abstract": "Representation learning promises to unlock deep learning for the long tail of vision tasks without expensive labelled datasets. Yet, the absence of a unified evaluation for general visual representations hinders progress. Popular protocols are often too constrained (linear classification), limited in diversity (ImageNet, CIFAR, Pascal-VOC), or only weakly related to representation quality (ELBO, reconstruction error). We present the Visual Task Adaptation Benchmark (VTAB), which defines good representations as those that adapt to diverse, unseen tasks with few examples. With VTAB, we conduct a large-scale study of many popular publicly-available representation learning algorithms. We carefully control confounders such as architecture and tuning budget. We address questions like: How effective are ImageNet representations beyond standard natural datasets? How do representations trained via generative and discriminative models compare? To what extent can self-supervision replace labels? And, how close are we to general visual representations?",
-    "methods": [
-      "linear classification"
-    ],
+    "methods": [],
     "datasets": [
       "Visual Task Adaptation Benchmark",
       "VTAB",
@@ -309,7 +317,8 @@
       "visual task adaptation"
     ],
     "labelled": true,
-    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
+    "note": "AI-drafted labels; method/dataset names checked for an exact span in the abstract; human verification pending. Review: Linear classification is a prior protocol contrasted with VTAB, not a method evaluated here.",
+    "human_verified": false
   },
   {
     "id": "1305.3321",
@@ -327,23 +336,26 @@
       "CSP compression"
     ],
     "labelled": true,
-    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
+    "note": "AI-drafted labels; method/dataset names checked for an exact span in the abstract; human verification pending.",
+    "human_verified": false
   },
   {
     "id": "2304.07210",
     "title": "Measuring Re-identification Risk",
     "abstract": "Compact user representations (such as embeddings) form the backbone of personalization services. In this work, we present a new theoretical framework to measure re-identification risk in such user representations. Our framework, based on hypothesis testing, formally bounds the probability that an attacker may be able to obtain the identity of a user from their representation. As an application, we show how our framework is general enough to model important real-world applications such as the Chrome's Topics API for interest-based advertising. We complement our theoretical bounds by showing provably good attack algorithms for re-identification that we use to estimate the re-identification risk in the Topics API. We believe this work provides a rigorous and interpretable notion of re-identification risk and a framework to measure it that can be used to inform real-world applications.",
     "methods": [
-      "hypothesis testing",
+      "hypothesis testing"
+    ],
+    "datasets": [
       "Topics API"
     ],
-    "datasets": [],
     "tasks": [
       "re-identification risk",
       "interest-based advertising"
     ],
     "labelled": true,
-    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
+    "note": "AI-drafted labels; method/dataset names checked for an exact span in the abstract; human verification pending. Review: Topics API moved to evaluation targets; it is the application measured, not the proposed method.",
+    "human_verified": false
   },
   {
     "id": "1804.00810",
@@ -364,7 +376,8 @@
       "real-time strategy games"
     ],
     "labelled": true,
-    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
+    "note": "AI-drafted labels; method/dataset names checked for an exact span in the abstract; human verification pending.",
+    "human_verified": false
   },
   {
     "id": "2412.04276",
@@ -373,7 +386,7 @@
     "methods": [
       "Graph Neural Network",
       "GNN",
-      "alignment and uniformity loss"
+      "loss function that enforces alignment and uniformity"
     ],
     "datasets": [],
     "tasks": [
@@ -382,6 +395,7 @@
       "graph-based recommendation"
     ],
     "labelled": true,
-    "note": "Drafted with an AI assistant and cross-checked against the abstract (VTAB moved to datasets; AES-128 is an evaluation target). Member A confirms before submission."
+    "note": "AI-drafted labels; method/dataset names checked for an exact span in the abstract; human verification pending. The loss label was changed to its verbatim abstract span.",
+    "human_verified": false
   }
 ]

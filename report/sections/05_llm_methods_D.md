@@ -22,7 +22,7 @@
 
 - ROUGE reference = title + first abstract sentence, which rewards copying the lead (state this plainly).
 - The rubric is judged by the same Qwen model (self-grading bias); the top three are within 0.03, so it can't separate them.
-- **Judge validation:** 40/40 copied sentences → SUPPORTED; 23/23 planted claims → UNSUPPORTED. It is reliable on clear-cut cases; subtle errors were not tested.
+- **Judge validation:** 40/40 copied sentences → SUPPORTED; 23/23 planted claims → UNSUPPORTED. It still accepted a "four papers" claim when five were retrieved in the earlier RAG run, so an explicit count check was added; subtle errors remain untested.
 
 ## 5.4 Research gaps: CoT ablation (10 papers)
 
@@ -37,12 +37,12 @@
 
 ## 5.5 RAG ablation (5 research questions)
 
-| Mode | Format OK | Supported synthesis sentences | Cited synthesis sentences | Valid [n] markers |
-|---|---|---|---|---|
-| RAG | 5/5 | 16/17 (94%) | 5/17 | 9 |
-| No RAG | 4/5 | 5/20 (25%) | 0/20 | 0 |
+| Mode | Format OK | Judge-supported synthesis sentences | Cited synthesis sentences | In-range [n] markers | Exact-source cited sentences |
+|---|---|---|---|---|---|
+| RAG | 5/5 | 13/17 (76%) | 5/17 | 9 | 0/17 |
+| No RAG | 4/5 | 8/20 (40%) | 0/20 | 0 | 0/20 |
 
-- Finding: retrieval gives the judge more support (16/17 vs 5/20), but most generated synthesis sentences still lack a citation. The end-to-end demo checks both support and citation coverage before displaying a synthesis as verified.
+- Finding: retrieval gives the judge more support (13/17 vs 8/20), but most generated synthesis sentences still lack a citation. The judge now sees the same 1,200-character excerpts as the generator; exact-source checking is a conservative lower bound for paraphrases. The end-to-end demo displays verbatim cited fallback sentences when generated claims lack checkable evidence.
 
 ## 5.6 Safety (W10)
 - Prompt injection, 3 attacks × 3 abstracts, same few-shot prompt, only the guard sentence toggled: succeeded 2/9 without the guard, 3/9 with it. The guard sentence adds no measurable protection; the few-shot template itself resists most attacks.

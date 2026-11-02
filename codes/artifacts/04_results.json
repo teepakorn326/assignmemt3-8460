@@ -90,5 +90,12 @@
       "top terms": "image, images, 3d, visual, object, video, model, models"
     }
   ],
-  "retrieve_latency_ms": 36.2
+  "retrieve_latency_ms": 88.9,
+  "deployed_retrieval_eval": {
+    "index_papers": 12000,
+    "query_papers": 200,
+    "self_excluded": true,
+    "P@5": 0.717,
+    "nDCG@5": 0.72
+  }
 }

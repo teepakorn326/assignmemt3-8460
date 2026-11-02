@@ -122,9 +122,10 @@
       "mode": "RAG",
       "format_ok": "5/5",
       "synthesis claims": 17,
-      "supported by retrieved papers": 16,
-      "grounded rate": 0.941,
-      "valid [n] citations": 9,
+      "supported by retrieved papers": 13,
+      "grounded rate": 0.765,
+      "in-range [n] markers": 9,
+      "exact-source cited claims": 0,
       "cited synthesis claims": "5/17",
       "invalid citations": 0
     },
@@ -132,9 +133,10 @@
       "mode": "no RAG",
       "format_ok": "4/5",
       "synthesis claims": 20,
-      "supported by retrieved papers": 5,
-      "grounded rate": 0.25,
-      "valid [n] citations": 0,
+      "supported by retrieved papers": 8,
+      "grounded rate": 0.4,
+      "in-range [n] markers": 0,
+      "exact-source cited claims": 0,
       "cited synthesis claims": "0/20",
       "invalid citations": 0
     }
