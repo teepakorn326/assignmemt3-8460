@@ -1,0 +1,514 @@
+{
+  "generators": [
+    "Qwen/Qwen2.5-1.5B-Instruct",
+    "Qwen/Qwen2.5-3B-Instruct"
+  ],
+  "judge": "Qwen/Qwen2.5-1.5B-Instruct",
+  "summary_by_source": [
+    {
+      "source": "NB05",
+      "model": "Qwen2.5-1.5B-Instruct",
+      "answers": 5,
+      "format ok": "5/5",
+      "synthesis sentences": 21,
+      "judge-supported": "18/21",
+      "cited": "10/21",
+      "kept by per-claim filter": "10/21",
+      "invalid citations": 0,
+      "answers needing fallback": "2/5"
+    },
+    {
+      "source": "NB05",
+      "model": "Qwen2.5-3B-Instruct",
+      "answers": 5,
+      "format ok": "5/5",
+      "synthesis sentences": 16,
+      "judge-supported": "13/16",
+      "cited": "13/16",
+      "kept by per-claim filter": "11/16",
+      "invalid citations": 0,
+      "answers needing fallback": "0/5"
+    },
+    {
+      "source": "NB06",
+      "model": "Qwen2.5-1.5B-Instruct",
+      "answers": 3,
+      "format ok": "3/3",
+      "synthesis sentences": 8,
+      "judge-supported": "5/8",
+      "cited": "1/8",
+      "kept by per-claim filter": "0/8",
+      "invalid citations": 0,
+      "answers needing fallback": "3/3"
+    },
+    {
+      "source": "NB06",
+      "model": "Qwen2.5-3B-Instruct",
+      "answers": 3,
+      "format ok": "3/3",
+      "synthesis sentences": 13,
+      "judge-supported": "11/13",
+      "cited": "13/13",
+      "kept by per-claim filter": "12/13",
+      "invalid citations": 0,
+      "answers needing fallback": "0/3"
+    }
+  ],
+  "summary_overall": [
+    {
+      "model": "Qwen2.5-1.5B-Instruct",
+      "answers": 8,
+      "format ok": "8/8",
+      "synthesis sentences": 29,
+      "judge-supported": "23/29",
+      "cited": "11/29",
+      "kept by per-claim filter": "10/29",
+      "invalid citations": 0,
+      "answers needing fallback": "5/8"
+    },
+    {
+      "model": "Qwen2.5-3B-Instruct",
+      "answers": 8,
+      "format ok": "8/8",
+      "synthesis sentences": 29,
+      "judge-supported": "24/29",
+      "cited": "26/29",
+      "kept by per-claim filter": "23/29",
+      "invalid citations": 0,
+      "answers needing fallback": "0/8"
+    }
+  ],
+  "runs": [
+    {
+      "source": "NB05",
+      "question": "How can large language models be defended against prompt injection attacks?",
+      "model": "Qwen2.5-1.5B-Instruct",
+      "synthesis": "The collective papers highlight the prevalence and complexity of prompt injection attacks on large language models (LLMs). They cover various approaches to defending against these attacks, including categorizing different types of prompt injections, evaluating the effectiveness of existing defenses like fine-tuning and architecture-aware attacks, and proposing innovative solutions like automated co-evolutionary frameworks and generative adversarial networks. Despite advancements, many challenges remain, particularly in ensuring robustness across diverse use cases and environments.",
+      "format_ok": true,
+      "claims": 3,
+      "supported": 0,
+      "cited": 0,
+      "invalid_citations": 0,
+      "kept": 0,
+      "kept_sentences": [],
+      "dropped": [
+        [
+          "The collective papers highlight the prevalence and complexity of prompt injection attacks on large language models (LLMs).",
+          "no valid citation"
+        ],
+        [
+          "They cover various approaches to defending against these attacks, including categorizing different types of prompt injections, evaluating the effectiveness of existing defenses like fine-tuning and architecture-aware attacks, and proposing innovative solutions like automated co-evolutionary frameworks and generative adversarial networks.",
+          "no valid citation"
+        ],
+        [
+          "Despite advancements, many challenges remain, particularly in ensuring robustness across diverse use cases and environments.",
+          "no valid citation"
+        ]
+      ],
+      "fallback": true
+    },
+    {
+      "source": "NB05",
+      "question": "How can large language models be defended against prompt injection attacks?",
+      "model": "Qwen2.5-3B-Instruct",
+      "synthesis": "[1] The papers collectively highlight the emergence of prompt injection attacks on large language models, detailing various attack strategies and defenses. They emphasize the importance of categorizing these attacks and developing robust defenses to protect against misuse. [2] The research demonstrates that current defenses against prompt injection attacks are not fully secure, particularly in the whitebox setting, and introduces new attack techniques to undermine these defenses. [3] AEGIS presents an automated co-evolutionary framework that enhances the robustness of prompt injection defenses, offering a solution to the manual prompt engineering challenge. [4] The global prompt hacking competition underscores the vulnerability of LLMs to prompt injection attacks, providing a large-scale dataset to study and mitigate these issues. [5] LocalAlign proposes a more generalized approach to prompt injection defense by generating near-target adversarial examples, aiming to improve the model's ability to resist attacks.",
+      "format_ok": true,
+      "claims": 6,
+      "supported": 3,
+      "cited": 5,
+      "invalid_citations": 0,
+      "kept": 5,
+      "kept_sentences": [
+        "[1] The papers collectively highlight the emergence of prompt injection attacks on large language models, detailing various attack strategies and defenses.",
+        "[2] The research demonstrates that current defenses against prompt injection attacks are not fully secure, particularly in the whitebox setting, and introduces new attack techniques to undermine these defenses.",
+        "[3] AEGIS presents an automated co-evolutionary framework that enhances the robustness of prompt injection defenses, offering a solution to the manual prompt engineering challenge.",
+        "[4] The global prompt hacking competition underscores the vulnerability of LLMs to prompt injection attacks, providing a large-scale dataset to study and mitigate these issues.",
+        "[5] LocalAlign proposes a more generalized approach to prompt injection defense by generating near-target adversarial examples, aiming to improve the model's ability to resist attacks."
+      ],
+      "dropped": [
+        [
+          "They emphasize the importance of categorizing these attacks and developing robust defenses to protect against misuse.",
+          "no valid citation"
+        ]
+      ],
+      "fallback": false
+    },
+    {
+      "source": "NB05",
+      "question": "What methods improve sequential recommendation with transformers?",
+      "model": "Qwen2.5-1.5B-Instruct",
+      "synthesis": "The collective findings suggest that enhancing Transformer-based sequential recommendation models through regularization and loss landscape analysis can mitigate noise and improve performance. Techniques like Sharpness-Aware Minimization (SAM) and Linear Attention Models (HydraAttention) offer promising solutions to overcome data sparsity and reduce computational costs. Furthermore, incorporating sequence uniformity and item frequency can significantly boost performance in handling non-uniform sequences and infrequent items. However, there remains a gap in understanding how to effectively incorporate personalized elements into Transformer-based models for improved recommendation accuracy.",
+      "format_ok": true,
+      "claims": 4,
+      "supported": 4,
+      "cited": 0,
+      "invalid_citations": 0,
+      "kept": 0,
+      "kept_sentences": [],
+      "dropped": [
+        [
+          "The collective findings suggest that enhancing Transformer-based sequential recommendation models through regularization and loss landscape analysis can mitigate noise and improve performance.",
+          "no valid citation"
+        ],
+        [
+          "Techniques like Sharpness-Aware Minimization (SAM) and Linear Attention Models (HydraAttention) offer promising solutions to overcome data sparsity and reduce computational costs.",
+          "no valid citation"
+        ],
+        [
+          "Furthermore, incorporating sequence uniformity and item frequency can significantly boost performance in handling non-uniform sequences and infrequent items.",
+          "no valid citation"
+        ],
+        [
+          "However, there remains a gap in understanding how to effectively incorporate personalized elements into Transformer-based models for improved recommendation accuracy.",
+          "no valid citation"
+        ]
+      ],
+      "fallback": true
+    },
+    {
+      "source": "NB05",
+      "question": "What methods improve sequential recommendation with transformers?",
+      "model": "Qwen2.5-3B-Instruct",
+      "synthesis": "[1] and [2] highlight the importance of noise reduction in Transformer-based sequential recommendation models, suggesting that incorporating denoising mechanisms can improve performance. [3] and [4] focus on enhancing the efficiency and scalability of Transformer-based models, proposing methods to reduce computational complexity and improve data efficiency. [5] introduces a novel approach that considers both sequence uniformity and item frequency, demonstrating improvements in handling non-uniform sequences and infrequent items. [1] [2] [3] [4] [5]",
+      "format_ok": true,
+      "claims": 4,
+      "supported": 4,
+      "cited": 4,
+      "invalid_citations": 0,
+      "kept": 3,
+      "kept_sentences": [
+        "[1] and [2] highlight the importance of noise reduction in Transformer-based sequential recommendation models, suggesting that incorporating denoising mechanisms can improve performance.",
+        "[3] and [4] focus on enhancing the efficiency and scalability of Transformer-based models, proposing methods to reduce computational complexity and improve data efficiency.",
+        "[5] introduces a novel approach that considers both sequence uniformity and item frequency, demonstrating improvements in handling non-uniform sequences and infrequent items."
+      ],
+      "dropped": [
+        [
+          "[1] [2] [3] [4] [5]",
+          "no content"
+        ]
+      ],
+      "fallback": false
+    },
+    {
+      "source": "NB05",
+      "question": "How is federated learning made robust to poisoned clients?",
+      "model": "Qwen2.5-1.5B-Instruct",
+      "synthesis": "All five papers discuss various aspects of federated learning resilience against poisoning attacks, focusing on different techniques such as detection methods, mitigation strategies, and defense mechanisms. Papers [1], [2], and [3] emphasize the importance of detecting and defending against specific types of poisoning attacks, including targeted and untargeted attacks, respectively. Paper [4] presents a novel self-purification technique that enhances the robustness of federated learning against poisoning attacks. Paper [5] provides a survey of heterogeneity considerations in federated learning, highlighting the need for efficient collaboration among diverse clients.",
+      "format_ok": true,
+      "claims": 4,
+      "supported": 4,
+      "cited": 3,
+      "invalid_citations": 0,
+      "kept": 3,
+      "kept_sentences": [
+        "Papers [1], [2], and [3] emphasize the importance of detecting and defending against specific types of poisoning attacks, including targeted and untargeted attacks, respectively.",
+        "Paper [4] presents a novel self-purification technique that enhances the robustness of federated learning against poisoning attacks.",
+        "Paper [5] provides a survey of heterogeneity considerations in federated learning, highlighting the need for efficient collaboration among diverse clients."
+      ],
+      "dropped": [
+        [
+          "All five papers discuss various aspects of federated learning resilience against poisoning attacks, focusing on different techniques such as detection methods, mitigation strategies, and defense mechanisms.",
+          "no valid citation"
+        ]
+      ],
+      "fallback": false
+    },
+    {
+      "source": "NB05",
+      "question": "How is federated learning made robust to poisoned clients?",
+      "model": "Qwen2.5-3B-Instruct",
+      "synthesis": "[1] [2] [3] [4] [5] These papers collectively show that federated learning can be robust to poisoned clients through various methods including detection and prevention techniques, understanding the impact of network-level adversaries, and proposing self-purification methods. They also emphasize the importance of considering heterogeneity in federated learning environments.",
+      "format_ok": true,
+      "claims": 2,
+      "supported": 2,
+      "cited": 1,
+      "invalid_citations": 0,
+      "kept": 1,
+      "kept_sentences": [
+        "[1] [2] [3] [4] [5] These papers collectively show that federated learning can be robust to poisoned clients through various methods including detection and prevention techniques, understanding the impact of network-level adversaries, and proposing self-purification methods."
+      ],
+      "dropped": [
+        [
+          "They also emphasize the importance of considering heterogeneity in federated learning environments.",
+          "no valid citation"
+        ]
+      ],
+      "fallback": false
+    },
+    {
+      "source": "NB05",
+      "question": "How do vision transformers compare with convolutional networks for image classif",
+      "model": "Qwen2.5-1.5B-Instruct",
+      "synthesis": "All five papers discuss the performance of vision transformers compared to convolutional networks in image classification tasks. Papers [1], [2], and [3] explore how vision transformers perform relative to traditional CNNs, highlighting improvements in accuracy and robustness. Paper [4] focuses on optimizing Transformer architectures for real-world applications, emphasizing practical considerations like computational efficiency. Lastly, [5] introduces a method to reduce kernel complexity in transformers, potentially leading to further improvements in efficiency.",
+      "format_ok": true,
+      "claims": 4,
+      "supported": 4,
+      "cited": 3,
+      "invalid_citations": 0,
+      "kept": 3,
+      "kept_sentences": [
+        "Papers [1], [2], and [3] explore how vision transformers perform relative to traditional CNNs, highlighting improvements in accuracy and robustness.",
+        "Paper [4] focuses on optimizing Transformer architectures for real-world applications, emphasizing practical considerations like computational efficiency.",
+        "Lastly, [5] introduces a method to reduce kernel complexity in transformers, potentially leading to further improvements in efficiency."
+      ],
+      "dropped": [
+        [
+          "All five papers discuss the performance of vision transformers compared to convolutional networks in image classification tasks.",
+          "no valid citation"
+        ]
+      ],
+      "fallback": false
+    },
+    {
+      "source": "NB05",
+      "question": "How do vision transformers compare with convolutional networks for image classif",
+      "model": "Qwen2.5-3B-Instruct",
+      "synthesis": "[1] [2] [3] [4] [5] The papers collectively show that while vision transformers like ViT and Visformer offer advantages in certain scenarios, particularly in terms of robustness and efficiency, convolutional neural networks (CNNs) remain dominant in terms of accuracy on ImageNet and other large-scale datasets. However, vision transformers exhibit superior performance in tasks requiring robustness against distributional shifts and in resource-constrained environments. [2]",
+      "format_ok": true,
+      "claims": 3,
+      "supported": 3,
+      "cited": 2,
+      "invalid_citations": 0,
+      "kept": 1,
+      "kept_sentences": [
+        "[1] [2] [3] [4] [5] The papers collectively show that while vision transformers like ViT and Visformer offer advantages in certain scenarios, particularly in terms of robustness and efficiency, convolutional neural networks (CNNs) remain dominant in terms of accuracy on ImageNet and other large-scale datasets."
+      ],
+      "dropped": [
+        [
+          "However, vision transformers exhibit superior performance in tasks requiring robustness against distributional shifts and in resource-constrained environments.",
+          "no valid citation"
+        ],
+        [
+          "[2]",
+          "no content"
+        ]
+      ],
+      "fallback": false
+    },
+    {
+      "source": "NB05",
+      "question": "Which techniques reduce hallucination in retrieval-augmented question answering?",
+      "model": "Qwen2.5-1.5B-Instruct",
+      "synthesis": "All five papers discuss techniques aimed at reducing hallucinations in retrieval-augmented question answering (RAG). They explore ways to mitigate knowledge redundancy, ensure correctness of generated responses, and enhance the ability of LLMs to handle complex queries without producing erroneous results. Paper [1] focuses on identifying and pruning redundant knowledge using a Mastery-Score metric, while proposing Query Router and Noise-Tolerant Tuning to refine the query selection process. Paper [2] introduces TRAQ, a method that provides statistical guarantees on the correctness of RAG responses through conformal prediction. Papers [3] and [4] both highlight the importance of addressing retrieval and reasoning failures in KG-enhanced LLMs, though their solutions differ slightly\u2014[3] proposes a multi-hop approach, whereas [4] employs rationale-guided retrieval augmentation. Lastly, [5] presents PersonaRAG, which personalizes the retrieval process based on user feedback, aiming to improve the reliability and relevance of RAG outputs.",
+      "format_ok": true,
+      "claims": 6,
+      "supported": 6,
+      "cited": 4,
+      "invalid_citations": 0,
+      "kept": 4,
+      "kept_sentences": [
+        "Paper [1] focuses on identifying and pruning redundant knowledge using a Mastery-Score metric, while proposing Query Router and Noise-Tolerant Tuning to refine the query selection process.",
+        "Paper [2] introduces TRAQ, a method that provides statistical guarantees on the correctness of RAG responses through conformal prediction.",
+        "Papers [3] and [4] both highlight the importance of addressing retrieval and reasoning failures in KG-enhanced LLMs, though their solutions differ slightly\u2014[3] proposes a multi-hop approach, whereas [4] employs rationale-guided retrieval augmentation.",
+        "Lastly, [5] presents PersonaRAG, which personalizes the retrieval process based on user feedback, aiming to improve the reliability and relevance of RAG outputs."
+      ],
+      "dropped": [
+        [
+          "All five papers discuss techniques aimed at reducing hallucinations in retrieval-augmented question answering (RAG).",
+          "no valid citation"
+        ],
+        [
+          "They explore ways to mitigate knowledge redundancy, ensure correctness of generated responses, and enhance the ability of LLMs to handle complex queries without producing erroneous results.",
+          "no valid citation"
+        ]
+      ],
+      "fallback": false
+    },
+    {
+      "source": "NB05",
+      "question": "Which techniques reduce hallucination in retrieval-augmented question answering?",
+      "model": "Qwen2.5-3B-Instruct",
+      "synthesis": "[1] [2] [3] [4] [5] These papers collectively show that addressing hallucinations in retrieval-augmented question answering involves multiple strategies such as identifying and pruning redundant knowledge, using statistical guarantees like conformal prediction, improving retrieval and reasoning processes, and personalizing the retrieval and generation process based on user data.",
+      "format_ok": true,
+      "claims": 1,
+      "supported": 1,
+      "cited": 1,
+      "invalid_citations": 0,
+      "kept": 1,
+      "kept_sentences": [
+        "[1] [2] [3] [4] [5] These papers collectively show that addressing hallucinations in retrieval-augmented question answering involves multiple strategies such as identifying and pruning redundant knowledge, using statistical guarantees like conformal prediction, improving retrieval and reasoning processes, and personalizing the retrieval and generation process based on user data."
+      ],
+      "dropped": [],
+      "fallback": false
+    },
+    {
+      "source": "NB06",
+      "question": "defending large language models against prompt injection and jailbreak attacks",
+      "model": "Qwen2.5-1.5B-Instruct",
+      "synthesis": "All five papers collectively highlight the importance of studying both single-turn and multi-turn jailbreak attacks to understand the vulnerabilities of large language models (LLMs). They emphasize the need for more comprehensive datasets and frameworks to address the weaknesses in current safety assessments. Papers like [1], [2], and [3] specifically focus on introducing new techniques and datasets to improve LLM defenses, while [4] and [5] contribute to the understanding of how to create and test jailbreak prompts systematically.",
+      "format_ok": true,
+      "claims": 3,
+      "supported": 1,
+      "cited": 1,
+      "invalid_citations": 0,
+      "kept": 0,
+      "kept_sentences": [],
+      "dropped": [
+        [
+          "All five papers collectively highlight the importance of studying both single-turn and multi-turn jailbreak attacks to understand the vulnerabilities of large language models (LLMs).",
+          "no valid citation"
+        ],
+        [
+          "They emphasize the need for more comprehensive datasets and frameworks to address the weaknesses in current safety assessments.",
+          "no valid citation"
+        ],
+        [
+          "Papers like [1], [2], and [3] specifically focus on introducing new techniques and datasets to improve LLM defenses, while [4] and [5] contribute to the understanding of how to create and test jailbreak prompts systematically.",
+          "not supported by cited paper"
+        ]
+      ],
+      "fallback": true
+    },
+    {
+      "source": "NB06",
+      "question": "defending large language models against prompt injection and jailbreak attacks",
+      "model": "Qwen2.5-3B-Instruct",
+      "synthesis": "[1] [2] [3] [4] [5] The collective findings highlight the necessity of studying jailbreak attacks in both single and multi-turn formats, emphasizing the importance of considering input structure in defense strategies. Additionally, [2] and [4] demonstrate the effectiveness of automated methods in generating and optimizing jailbreak prompts, while [5] provides a comprehensive evaluation framework for assessing jailbreak guardrails.",
+      "format_ok": true,
+      "claims": 2,
+      "supported": 1,
+      "cited": 2,
+      "invalid_citations": 0,
+      "kept": 2,
+      "kept_sentences": [
+        "[1] [2] [3] [4] [5] The collective findings highlight the necessity of studying jailbreak attacks in both single and multi-turn formats, emphasizing the importance of considering input structure in defense strategies.",
+        "Additionally, [2] and [4] demonstrate the effectiveness of automated methods in generating and optimizing jailbreak prompts, while [5] provides a comprehensive evaluation framework for assessing jailbreak guardrails."
+      ],
+      "dropped": [],
+      "fallback": false
+    },
+    {
+      "source": "NB06",
+      "question": "using graph neural networks to recommend items to users",
+      "model": "Qwen2.5-1.5B-Instruct",
+      "synthesis": "The papers collectively demonstrate advancements in utilizing graph neural networks for sequential recommendation tasks. They introduce various approaches including dynamic graph neural networks (DGSR), attribute-aware product networks (eRAN), and interactive graph convolutional networks (IA-GCN) to enhance recommendation accuracy and explainability. These methods aim to capture temporal dynamics, collaborative interactions, and user-item relationships effectively.",
+      "format_ok": true,
+      "claims": 3,
+      "supported": 3,
+      "cited": 0,
+      "invalid_citations": 0,
+      "kept": 0,
+      "kept_sentences": [],
+      "dropped": [
+        [
+          "The papers collectively demonstrate advancements in utilizing graph neural networks for sequential recommendation tasks.",
+          "no valid citation"
+        ],
+        [
+          "They introduce various approaches including dynamic graph neural networks (DGSR), attribute-aware product networks (eRAN), and interactive graph convolutional networks (IA-GCN) to enhance recommendation accuracy and explainability.",
+          "no valid citation"
+        ],
+        [
+          "These methods aim to capture temporal dynamics, collaborative interactions, and user-item relationships effectively.",
+          "no valid citation"
+        ]
+      ],
+      "fallback": true
+    },
+    {
+      "source": "NB06",
+      "question": "using graph neural networks to recommend items to users",
+      "model": "Qwen2.5-3B-Instruct",
+      "synthesis": "[1] Dynamic Graph Neural Networks for Sequential Recommendation introduces a novel approach by integrating user sequences and dynamic collaborative signals into a single framework, enhancing the exploration of user preferences over time. [2] Recommendation with Attribute-aware Product Networks proposes a method that combines item attributes and correlations to generate personalized recommendations, offering a unique perspective on leveraging both types of information. [3] Combining social relations and interaction data in Recommender System with Graph Convolution Collaborative Filtering explores how incorporating social friendship data alongside item ratings can improve recommendation accuracy and relevance. [4] UniWalk: Explainable and Accurate Recommendation for Rating and Network Data presents a system that integrates both social network and rating data to provide accurate and explainable recommendations, addressing the need for transparency in recommendation processes. [5] IA-GCN: Interactive Graph Convolutional Network for Recommendation offers a solution to enhance the expressiveness of recommendation models by focusing on interactive features between users and items, aiming to improve user and item representations.",
+      "format_ok": true,
+      "claims": 5,
+      "supported": 5,
+      "cited": 5,
+      "invalid_citations": 0,
+      "kept": 5,
+      "kept_sentences": [
+        "[1] Dynamic Graph Neural Networks for Sequential Recommendation introduces a novel approach by integrating user sequences and dynamic collaborative signals into a single framework, enhancing the exploration of user preferences over time.",
+        "[2] Recommendation with Attribute-aware Product Networks proposes a method that combines item attributes and correlations to generate personalized recommendations, offering a unique perspective on leveraging both types of information.",
+        "[3] Combining social relations and interaction data in Recommender System with Graph Convolution Collaborative Filtering explores how incorporating social friendship data alongside item ratings can improve recommendation accuracy and relevance.",
+        "[4] UniWalk: Explainable and Accurate Recommendation for Rating and Network Data presents a system that integrates both social network and rating data to provide accurate and explainable recommendations, addressing the need for transparency in recommendation processes.",
+        "[5] IA-GCN: Interactive Graph Convolutional Network for Recommendation offers a solution to enhance the expressiveness of recommendation models by focusing on interactive features between users and items, aiming to improve user and item representations."
+      ],
+      "dropped": [],
+      "fallback": false
+    },
+    {
+      "source": "NB06",
+      "question": "We present an introduction and a review of the Shapes Constraint Language (SHACL",
+      "model": "Qwen2.5-1.5B-Instruct",
+      "synthesis": "All five papers discuss various aspects of constraint-based approaches in knowledge representation and reasoning, focusing on different facets such as constraint generation, formalization, rule extraction, and application to specific domains like vehicle purchases and knowledge graph reasoning. They highlight advancements in using large language models for formalizing and solving complex problems, while also addressing limitations and challenges in applying these techniques across diverse contexts.",
+      "format_ok": true,
+      "claims": 2,
+      "supported": 1,
+      "cited": 0,
+      "invalid_citations": 0,
+      "kept": 0,
+      "kept_sentences": [],
+      "dropped": [
+        [
+          "All five papers discuss various aspects of constraint-based approaches in knowledge representation and reasoning, focusing on different facets such as constraint generation, formalization, rule extraction, and application to specific domains like vehicle purchases and knowledge graph reasoning.",
+          "no valid citation"
+        ],
+        [
+          "They highlight advancements in using large language models for formalizing and solving complex problems, while also addressing limitations and challenges in applying these techniques across diverse contexts.",
+          "no valid citation"
+        ]
+      ],
+      "fallback": true
+    },
+    {
+      "source": "NB06",
+      "question": "We present an introduction and a review of the Shapes Constraint Language (SHACL",
+      "model": "Qwen2.5-3B-Instruct",
+      "synthesis": "[1] demonstrates the application of RDF knowledge graphs in a constraint-based recommender system, showing its effectiveness in identifying recommendations according to user preferences. [2] explores the limitations of using large language models as formalizers for solving constraint satisfaction problems, revealing that while they can generate formal programs, they often underperform compared to dedicated solvers. [3] introduces ChatRule, a method utilizing large language models to mine logical rules from knowledge graphs, aiming to enhance reasoning performance and provide interpretable results. [4] presents a system that automates the reformulation of essence specifications using graph rewriting techniques, offering improvements in the efficiency of solving parameterized problem classes. [5] discusses a context-aware approach to inductive knowledge graph completion, emphasizing the importance of latent type constraints and subgraph reasoning in predicting missing triples. [2]",
+      "format_ok": true,
+      "claims": 6,
+      "supported": 5,
+      "cited": 6,
+      "invalid_citations": 0,
+      "kept": 5,
+      "kept_sentences": [
+        "[1] demonstrates the application of RDF knowledge graphs in a constraint-based recommender system, showing its effectiveness in identifying recommendations according to user preferences.",
+        "[2] explores the limitations of using large language models as formalizers for solving constraint satisfaction problems, revealing that while they can generate formal programs, they often underperform compared to dedicated solvers.",
+        "[3] introduces ChatRule, a method utilizing large language models to mine logical rules from knowledge graphs, aiming to enhance reasoning performance and provide interpretable results.",
+        "[4] presents a system that automates the reformulation of essence specifications using graph rewriting techniques, offering improvements in the efficiency of solving parameterized problem classes.",
+        "[5] discusses a context-aware approach to inductive knowledge graph completion, emphasizing the importance of latent type constraints and subgraph reasoning in predicting missing triples."
+      ],
+      "dropped": [
+        [
+          "[2]",
+          "no content"
+        ]
+      ],
+      "fallback": false
+    }
+  ],
+  "replies_large": [
+    {
+      "question": "How can large language models be defended against prompt injection attacks?",
+      "reply": "SYNTHESIS: [1] The papers collectively highlight the emergence of prompt injection attacks on large language models, detailing various attack strategies and defenses. They emphasize the importance of categorizing these attacks and developing robust defenses to protect against misuse. [2] The research demonstrates that current defenses against prompt injection attacks are not fully secure, particularly in the whitebox setting, and introduces new attack techniques to undermine these defenses. [3] AEGIS presents an automated co-evolutionary framework that enhances the robustness of prompt injection defenses, offering a solution to the manual prompt engineering challenge. [4] The global prompt hacking competition underscores the vulnerability of LLMs to prompt injection attacks, providing a large-scale dataset to study and mitigate these issues. [5] LocalAlign proposes a more generalized approach to prompt injection defense by generating near-target adversarial examples, aiming to improve the model's ability to resist attacks.\nGAP: None of the papers directly address the ethical considerations and societal impact of prompt injection attacks on large language models.\nRECOMMENDATIONS: [1] An Early Categorization of Prompt Injection Attacks on Large Language Models - Provides a foundational understanding of the problem and potential solutions. [2] May I have your Attention? Breaking Fine-Tuning based Prompt Injection Defenses using Architecture-Aware Attacks - Highlights the limitations of current defenses and suggests improvements through new attack methodologies. [3] AEGIS : Automated Co-Evolutionary Framework for Guarding Prompt Injections Schema - Offers a practical solution to enhance the security of LLMs against prompt injection attacks."
+    },
+    {
+      "question": "What methods improve sequential recommendation with transformers?",
+      "reply": "SYNTHESIS: [1] and [2] highlight the importance of noise reduction in Transformer-based sequential recommendation models, suggesting that incorporating denoising mechanisms can improve performance. [3] and [4] focus on enhancing the efficiency and scalability of Transformer-based models, proposing methods to reduce computational complexity and improve data efficiency. [5] introduces a novel approach that considers both sequence uniformity and item frequency, demonstrating improvements in handling non-uniform sequences and infrequent items. [1] [2] [3] [4] [5]\nGAP: None of the papers directly address the issue of how to effectively incorporate user feedback or explicit ratings into Transformer-based recommendation models.\nRECOMMENDATIONS: [1] Denoising Self-attentive Sequential Recommendation - It provides insights into how to handle noisy sequences, which is crucial for improving recommendation quality.\n[4] An Efficient Attention Mechanism for Sequential Recommendation Tasks: HydraRec - Offers a practical solution for reducing the computational complexity of Transformer-based models, making them more scalable for real-world applications.\n[5] UniRec - Demonstrates a method that specifically targets the challenges of non-uniform sequences and infrequent items, providing a unique approach to enhancing recommendation performance."
+    },
+    {
+      "question": "How is federated learning made robust to poisoned clients?",
+      "reply": "SYNTHESIS: [1] [2] [3] [4] [5] These papers collectively show that federated learning can be robust to poisoned clients through various methods including detection and prevention techniques, understanding the impact of network-level adversaries, and proposing self-purification methods. They also emphasize the importance of considering heterogeneity in federated learning environments.\nGAP: None of the papers directly address the specific mechanisms for ensuring robustness in federated learning when dealing with poisoned clients in highly heterogeneous environments.\nRECOMMENDATIONS: [1] Detection and Prevention Against Poisoning Attacks in Federated Learning - For understanding and implementing robust detection and prevention methods.\n[3] Network-Level Adversaries in Federated Learning - For insights into the impact of network-level adversaries and potential defenses.\n[4] SPFL: A Self-purified Federated Learning Method Against Poisoning Attacks - For a method that enhances robustness through self-purification and improved model training."
+    },
+    {
+      "question": "How do vision transformers compare with convolutional networks for image classif",
+      "reply": "SYNTHESIS: [1] [2] [3] [4] [5] The papers collectively show that while vision transformers like ViT and Visformer offer advantages in certain scenarios, particularly in terms of robustness and efficiency, convolutional neural networks (CNNs) remain dominant in terms of accuracy on ImageNet and other large-scale datasets. However, vision transformers exhibit superior performance in tasks requiring robustness against distributional shifts and in resource-constrained environments. [2]\nGAP: [5] None of the papers address the specific issue of reducing kernel complexity in vision transformers, which could lead to further improvements in model efficiency without sacrificing performance.\nRECOMMENDATIONS: [1] Visformer - Its empirical approach to transitioning between transformer and convolutional models provides insights into how to improve visual recognition systems.\n[4] TRT-ViT - Its practical guidelines for deploying vision transformers efficiently on hardware align well with the need for real-world applicability.\n[3] Does Robustness on ImageNet Transfer to Downstream Tasks? - This paper highlights the importance of considering robustness in the context of downstream tasks, offering valuable insights into the practical implications of model robustness."
+    },
+    {
+      "question": "Which techniques reduce hallucination in retrieval-augmented question answering?",
+      "reply": "SYNTHESIS: [1] [2] [3] [4] [5] These papers collectively show that addressing hallucinations in retrieval-augmented question answering involves multiple strategies such as identifying and pruning redundant knowledge, using statistical guarantees like conformal prediction, improving retrieval and reasoning processes, and personalizing the retrieval and generation process based on user data.\nGAP: None of the papers explicitly discuss the impact of hallucination reduction on specific domains or the effectiveness of their techniques in real-world applications.\nRECOMMENDATIONS: [1] ProgRAG - It offers a multi-hop approach to progressive retrieval and reasoning over knowledge graphs, which could be particularly useful for complex, knowledge-intensive tasks.\n[2] TRAQ - Its use of conformal prediction provides a statistical correctness guarantee for RAG, which is crucial for ensuring reliable responses in open-domain question answering.\n[4] Rationale-Guided Retrieval Augmented Generation for Medical Question Answering - This paper presents a framework specifically tailored for medical contexts, demonstrating improvements in reliability for large language models in biomedical applications."
+    },
+    {
+      "question": "defending large language models against prompt injection and jailbreak attacks",
+      "reply": "SYNTHESIS: [1] [2] [3] [4] [5] The collective findings highlight the necessity of studying jailbreak attacks in both single and multi-turn formats, emphasizing the importance of considering input structure in defense strategies. Additionally, [2] and [4] demonstrate the effectiveness of automated methods in generating and optimizing jailbreak prompts, while [5] provides a comprehensive evaluation framework for assessing jailbreak guardrails.\nGAP: None of the papers address the specific impact of prompt length and complexity on the effectiveness of jailbreak defenses.\nRECOMMENDATIONS: [3] JULI - Demonstrates a method for jailbreaking LLMs without needing access to model weights or generation processes, offering a unique approach to defense.\n[4] SeqAR - Presents a simple yet effective framework for generating and optimizing jailbreak prompts, showing high success rates in bypassing LLM guardrails.\n[5] - Offers a systematic evaluation framework for jailbreak guardrails, providing a structured approach to understanding and improving defense mechanisms."
+    },
+    {
+      "question": "using graph neural networks to recommend items to users",
+      "reply": "SYNTHESIS: [1] Dynamic Graph Neural Networks for Sequential Recommendation introduces a novel approach by integrating user sequences and dynamic collaborative signals into a single framework, enhancing the exploration of user preferences over time. [2] Recommendation with Attribute-aware Product Networks proposes a method that combines item attributes and correlations to generate personalized recommendations, offering a unique perspective on leveraging both types of information. [3] Combining social relations and interaction data in Recommender System with Graph Convolution Collaborative Filtering explores how incorporating social friendship data alongside item ratings can improve recommendation accuracy and relevance. [4] UniWalk: Explainable and Accurate Recommendation for Rating and Network Data presents a system that integrates both social network and rating data to provide accurate and explainable recommendations, addressing the need for transparency in recommendation processes. [5] IA-GCN: Interactive Graph Convolutional Network for Recommendation offers a solution to enhance the expressiveness of recommendation models by focusing on interactive features between users and items, aiming to improve user and item representations.\nGAP: None of the papers collectively address the integration of multiple recommendation strategies (such as sequential, attribute-based, social, and interactive) into a unified framework.\nRECOMMENDATIONS: [1] Dynamic Graph Neural Networks for Sequential Recommendation - This paper provides a comprehensive approach to sequential recommendation by considering temporal dynamics and collaborative signals.\n[3] Combining social relations and interaction data in Recommender System with Graph Convolution Collaborative Filtering - This paper highlights the importance of social data in improving recommendation accuracy and relevance.\n[5] IA-GCN: Interactive Graph Convolutional Network for Recommendation - This paper offers a method to enhance recommendation models by focusing on interactive features, potentially leading to better user and item representations."
+    },
+    {
+      "question": "We present an introduction and a review of the Shapes Constraint Language (SHACL",
+      "reply": "SYNTHESIS: [1] demonstrates the application of RDF knowledge graphs in a constraint-based recommender system, showing its effectiveness in identifying recommendations according to user preferences. [2] explores the limitations of using large language models as formalizers for solving constraint satisfaction problems, revealing that while they can generate formal programs, they often underperform compared to dedicated solvers. [3] introduces ChatRule, a method utilizing large language models to mine logical rules from knowledge graphs, aiming to enhance reasoning performance and provide interpretable results. [4] presents a system that automates the reformulation of essence specifications using graph rewriting techniques, offering improvements in the efficiency of solving parameterized problem classes. [5] discusses a context-aware approach to inductive knowledge graph completion, emphasizing the importance of latent type constraints and subgraph reasoning in predicting missing triples. [2]\nGAP: None of the papers address the specific application of SHACL in the context of knowledge graph completion or the integration of large language models with SHACL for enhancing constraint satisfaction problem solving.\nRECOMMENDATIONS: [3] ChatRule - leverages large language models to discover logical rules within knowledge graphs, potentially providing insights into how SHACL can be enhanced for more effective constraint satisfaction. [4] Automating Reformulation of Essence Specifications via Graph Rewriting - offers a method for automatically refining constraint models, which could be adapted to improve the efficiency of SHACL validation processes. [5] Context-aware Inductive Knowledge Graph Completion with Latent Type Constraints and Subgraph Reasoning - highlights the importance of latent type constraints and subgraph reasoning, suggesting potential areas where SHACL could be further developed to incorporate these elements for more comprehensive constraint validation."
+    }
+  ]
+}

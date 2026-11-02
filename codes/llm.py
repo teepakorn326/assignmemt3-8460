@@ -4,6 +4,7 @@
     generate("Summarise: ...")                     # plain prompt
     generate(prompt, system="You are ...")         # with a system message
     generate(prompt, max_new_tokens=400, temperature=0.0)
+    generate(prompt, model="Qwen/Qwen2.5-3B-Instruct")   # one call on another model (model-size comparison)
 
 Backend is chosen by the LLM_BACKEND env var (default "hf"):
   hf      local open model via transformers (default model Qwen/Qwen2.5-1.5B-Instruct,
@@ -25,7 +26,7 @@ BACKEND = os.environ.get("LLM_BACKEND", "hf")
 MODEL = os.environ.get("LLM_MODEL", {"hf": "Qwen/Qwen2.5-1.5B-Instruct", "openai": "gpt-4o-mini"}.get(BACKEND, BACKEND))
 
 _cache = None
-_pipe = None
+_pipes = {}                                   # one loaded pipeline per model name
 
 
 def _load_cache():
@@ -44,55 +45,58 @@ def _key(**fields):
     return hashlib.sha256(json.dumps(fields, sort_keys=True).encode()).hexdigest()
 
 
-def _hf_generate(messages, max_new_tokens, temperature):
-    global _pipe
-    if _pipe is None:
+def _hf_generate(messages, max_new_tokens, temperature, model):
+    if model not in _pipes:
         import torch
         from transformers import pipeline
         device = 0 if torch.cuda.is_available() else ("mps" if torch.backends.mps.is_available() else -1)
-        _pipe = pipeline("text-generation", model=MODEL, device=device, torch_dtype="auto")
+        _pipes[model] = pipeline("text-generation", model=model, device=device, torch_dtype="auto")
     kwargs = dict(max_new_tokens=max_new_tokens, return_full_text=False)
     kwargs.update(dict(do_sample=True, temperature=temperature) if temperature > 0 else dict(do_sample=False))
-    out = _pipe(messages, **kwargs)
+    out = _pipes[model](messages, **kwargs)
     return out[0]["generated_text"].strip()
 
 
-def _openai_generate(messages, max_new_tokens, temperature):
+def _openai_generate(messages, max_new_tokens, temperature, model):
     from openai import OpenAI
     client = OpenAI(base_url=os.environ.get("OPENAI_BASE_URL"))
-    r = client.chat.completions.create(model=MODEL, messages=messages,
+    r = client.chat.completions.create(model=model, messages=messages,
                                        max_tokens=max_new_tokens, temperature=temperature)
     return r.choices[0].message.content.strip()
 
 
-def generate(prompt, system=None, max_new_tokens=300, temperature=0.0, use_cache=True):
-    """Return the model's reply as a string. Deterministic by default (temperature 0)."""
+def generate(prompt, system=None, max_new_tokens=300, temperature=0.0, use_cache=True, model=None):
+    """Return the model's reply as a string. Deterministic by default (temperature 0).
+
+    model=None uses the team's default MODEL; pass a name to run one call on another model.
+    """
+    model = model or MODEL
     messages = ([{"role": "system", "content": system}] if system else []) + [
         {"role": "user", "content": prompt}]
-    key = _key(backend=BACKEND, model=MODEL, messages=messages,
+    key = _key(backend=BACKEND, model=model, messages=messages,
                max_new_tokens=max_new_tokens, temperature=temperature)
     cache = _load_cache()
     if use_cache and key in cache:
         return cache[key]
     if BACKEND == "echo":
-        text = f"[echo:{MODEL}] " + prompt[:200]
+        text = f"[echo:{model}] " + prompt[:200]
     elif BACKEND == "openai":
-        text = _openai_generate(messages, max_new_tokens, temperature)
+        text = _openai_generate(messages, max_new_tokens, temperature, model)
     else:
-        text = _hf_generate(messages, max_new_tokens, temperature)
+        text = _hf_generate(messages, max_new_tokens, temperature, model)
     cache[key] = text
     CACHE_PATH.parent.mkdir(exist_ok=True)
     with CACHE_PATH.open("a", encoding="utf-8") as f:
-        f.write(json.dumps({"key": key, "backend": BACKEND, "model": MODEL,
+        f.write(json.dumps({"key": key, "backend": BACKEND, "model": model,
                             "prompt": prompt, "system": system, "output": text}) + "\n")
     return text
 
 
-def is_cached(prompt, system=None, max_new_tokens=300, temperature=0.0):
+def is_cached(prompt, system=None, max_new_tokens=300, temperature=0.0, model=None):
     """True if generate() with these arguments would be answered from the cache (so timings are not real latency)."""
     messages = ([{"role": "system", "content": system}] if system else []) + [
         {"role": "user", "content": prompt}]
-    return _key(backend=BACKEND, model=MODEL, messages=messages,
+    return _key(backend=BACKEND, model=model or MODEL, messages=messages,
                 max_new_tokens=max_new_tokens, temperature=temperature) in _load_cache()
 
 

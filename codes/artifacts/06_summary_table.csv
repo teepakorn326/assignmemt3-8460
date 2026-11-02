@@ -1,9 +1,9 @@
 notebook,technique,week,metric,value,note
-02,extraction: Regex rules (W3),W3 / W9,F1 (20 provisional abstracts),0.48,
-02,extraction: spaCy NER ORG/PRODUCT (W3),W3 / W9,F1 (20 provisional abstracts),0.397,
-02,extraction: Zero-shot LLM (W9),W3 / W9,F1 (20 provisional abstracts),0.404,
-02,extraction: Few-shot LLM (W9),W3 / W9,F1 (20 provisional abstracts),0.628,
-02,extraction: Hybrid: few-shot LLM + regex,W3 / W9,F1 (20 provisional abstracts),0.671,
+02,extraction: Regex rules (W3),W3 / W9,F1 (20 provisional abstracts),0.466,
+02,extraction: spaCy NER ORG/PRODUCT (W3),W3 / W9,F1 (20 provisional abstracts),0.376,
+02,extraction: Zero-shot LLM (W9),W3 / W9,F1 (20 provisional abstracts),0.44,
+02,extraction: Few-shot LLM (W9),W3 / W9,F1 (20 provisional abstracts),0.599,
+02,extraction: Hybrid: few-shot LLM + regex,W3 / W9,F1 (20 provisional abstracts),0.634,
 02,preprocessing: vocab after lemmatisation,W2,vocab size (1k abstracts),8466,
 03,classifier: Naive Bayes + BoW,W5-W9,macro-F1,0.773,
 03,classifier: Naive Bayes + TF-IDF,W5-W9,macro-F1,0.769,
@@ -60,3 +60,11 @@ notebook,technique,week,metric,value,note
 05,judge validation: planted claims judged UNSUPPORTED,W10,count,23/23,
 05,"prompt injection, no guard sentence",W10,attacks succeeded,2/9,
 05,"prompt injection, guard sentence",W10,attacks succeeded,3/9,
+05.1,RAG synthesis: v1 (notebook 05),W11-12,kept by per-claim filter,5/17,
+05.1,RAG synthesis: v2 (cite every sentence),W11-12,kept by per-claim filter,10/21,
+05.1,"prompt injection, original attacks, none",W10,attacks succeeded,3/9,counts partial hijacks
+05.1,"prompt injection, original attacks, guard",W10,attacks succeeded,3/9,counts partial hijacks
+05.1,"prompt injection, original attacks, sanitize + guard",W10,attacks succeeded,0/9,counts partial hijacks
+05.1,"prompt injection, held-out attacks, none",W10,attacks succeeded,4/9,counts partial hijacks
+05.1,"prompt injection, held-out attacks, guard",W10,attacks succeeded,4/9,counts partial hijacks
+05.1,"prompt injection, held-out attacks, sanitize + guard",W10,attacks succeeded,4/9,counts partial hijacks

@@ -13,25 +13,40 @@
         "cs.CR": 4,
         "cs.LG": 1
       },
-      "seconds_before_llm": 2.29,
+      "seconds_before_llm": 2.47,
       "entities": [],
       "extraction_method": "regex for short topic query",
       "summary": null,
       "llm_cached": true,
       "synthesis": "[1] Large language models (LLMs) are improving at an exceptional rate. [2] Despite their demonstrated valuable capabilities, state-of-the-art (SOTA) widely deployed large language models (LLMs) still have the potential to cause harm to society due to the ineffectiveness of their safety filters, which can be bypassed by prompt transformations called jailbreak attacks. [3] Large Language Models (LLMs) are trained with safety alignment to prevent generating malicious content.",
-      "gap": "None of the papers directly address the issue of defending against prompt injection attacks specifically.",
-      "recommendations": "[1] \"Emerging Vulnerabilities in Frontier Models: Multi-Turn Jailbreak Attacks\" - This paper introduces a dataset of jailbreak examples in both single and multi-turn formats, highlighting the importance of studying LLM security in varied scenarios.\n[2] \"h4rm3l: A language for Composable Jailbreak Attack Synthesis\" - This work proposes h4rm3l, a DSL for expressing jailbreak attacks, which could help in better understanding and designing defenses against these attacks.\n[3] \"JULI: Jailbreak Large Language Models by Self-Introspection\" - This paper presents JULI, a method that uses introspection to break LLMs, offering a fresh perspective on how to tackle jailbreak attacks within the context of self-introspection.",
+      "gap": "None of the papers directly address the issue of prompt injection attacks, which involve injecting specific inputs to manipulate the output of an LLM. This type of attack is distinct from traditional jailbreak attacks and requires a separate set of defenses and analyses.",
+      "recommendations": "[1] \"Emerging Vulnerabilities in Frontier Models: Multi-Turn Jailbreak Attacks\" - Provides a detailed dataset and methodology for evaluating jailbreak attacks in both single and multi-turn formats, highlighting the importance of considering structural differences in security.\n\n[2] \"h4rm3l: A language for Composable Jailbreak Attack Synthesis\" - Introduces h4rm3l, a DSL for composing jailbreak attacks, addressing the lack of a formal representation for jailbreak attacks and enabling efficient synthesis of complex attacks.\n\n[3] \"JULI: Jailbreak Large Language Models by Self-Introspection\" - Proposes a method to jailbreak LLMs using token log probabilities, demonstrating superior effectiveness compared to existing SOTA approaches and providing insights into the feasibility of self-introspection-based defenses.",
       "format_ok": true,
       "gap_from_fallback": false,
       "gap_verified": false,
       "recommendations_verified": false,
-      "generated_synthesis_grounded_share": 0.67,
+      "generated_synthesis": "All five papers collectively highlight the importance of studying both single-turn and multi-turn jailbreak attacks to understand the vulnerabilities of large language models (LLMs). They emphasize the need for more comprehensive datasets and frameworks to address the weaknesses in current safety assessments. Papers like [1], [2], and [3] specifically focus on introducing new techniques and datasets to improve LLM defenses, while [4] and [5] contribute to the understanding of how to create and test jailbreak prompts systematically.",
+      "generated_synthesis_grounded_share": 0.33,
       "generated_synthesis_claims": 3,
-      "generated_synthesis_citation_coverage": 0.0,
+      "generated_synthesis_citation_coverage": 0.333,
       "generated_synthesis_exact_cited_claims": 0,
+      "kept_claims": 0,
+      "dropped_claims": [
+        [
+          "All five papers collectively highlight the importance of studying both single-turn and multi-turn jailbreak attacks to understand the vulnerabilities of large language models (LLMs).",
+          "no valid citation"
+        ],
+        [
+          "They emphasize the need for more comprehensive datasets and frameworks to address the weaknesses in current safety assessments.",
+          "no valid citation"
+        ],
+        [
+          "Papers like [1], [2], and [3] specifically focus on introducing new techniques and datasets to improve LLM defenses, while [4] and [5] contribute to the understanding of how to create and test jailbreak prompts systematically.",
+          "not supported by cited paper"
+        ]
+      ],
       "synthesis_fallback": true,
       "synthesis_verification": "exact source match",
-      "generated_synthesis": "All four papers discuss challenges related to jailbreak attacks on large language models (LLMs). They highlight the need for more comprehensive understanding of both single-turn and multi-turn jailbreak attacks, the importance of evaluating LLM safety in diverse contexts, and the necessity of developing new techniques like h4rm3l and JULI to address these issues. Additionally, all papers emphasize the role of guardrails in mitigating LLM risks, though they differ in their specific approaches and evaluations.",
       "grounded_share": 1.0,
       "n_claims": 3,
       "citation_coverage": 1.0,
@@ -57,25 +72,40 @@
       "retrieved_domains": {
         "cs.IR": 5
       },
-      "seconds_before_llm": 0.01,
+      "seconds_before_llm": 0.02,
       "entities": [],
       "extraction_method": "regex for short topic query",
       "summary": null,
       "llm_cached": true,
       "synthesis": "[1] Modeling user preference from his historical sequences is one of the core problems of sequential recommendation. [2] With the prosperity of business intelligence, recommender systems have evolved into a new stage that we not only care about what to recommend, but why it is recommended. [3] A recommender system is an important subject in the field of data mining, where the item rating information from users is exploited and processed to make suitable recommendations with all other users.",
-      "gap": "None of the papers directly address the specific use case of recommending items to users using graph neural networks, focusing instead on various aspects of recommendation systems including sequential recommendations, attribute-based recommendations, and integration of social and interaction data.",
-      "recommendations": "[1] \"Dynamic Graph Neural Networks for Sequential Recommendation\" - This paper specifically focuses on applying GNNs to sequential recommendation tasks, providing insights into how dynamic graphs can enhance the exploration of user preferences over time and across sequences.\n[2] \"Recommendation with Attribute-aware Product Networks: A Representation Learning Model\" - By introducing an attribute network that combines item attributes and correlations, this paper offers a unique approach to personalized recommendations, particularly useful in scenarios requiring explainability.\n[3] \"Combining social relations and interaction data in Recommender System with Graph Convolution Collaborative Filtering\" - This study demonstrates the potential of incorporating social data in recommender systems, offering valuable insights into how social connections can inform and enrich recommendation strategies.",
+      "gap": "None of the papers directly address the use of graph neural networks for recommending items across multiple categories or domains simultaneously.",
+      "recommendations": "[1] \"Dynamic Graph Neural Networks for Sequential Recommendation\" - This paper introduces DGSR, a method that uses dynamic graphs to model user sequences and dynamic collaborative signals, improving the exploration of users' preferences over time.\n\n[2] \"Recommendation with Attribute-aware Product Networks: A Representation Learning Model\" - eRAN proposes an approach that combines item attributes and correlations for personalized interest generation, enhancing the explainability of recommendations.\n\n[3] \"Combining social relations and interaction data in Recommender System with Graph Convolution Collaborative Filtering\" - This study explores how social relations and interaction data can be integrated into recommender systems, potentially leading to better personalized recommendations.\n\nThese papers collectively highlight the potential of graph neural networks in addressing the challenges of sequential recommendation, especially in terms of capturing complex user-item interactions and providing interpretable recommendations.",
       "format_ok": true,
       "gap_from_fallback": false,
       "gap_verified": false,
       "recommendations_verified": false,
+      "generated_synthesis": "The papers collectively demonstrate advancements in utilizing graph neural networks for sequential recommendation tasks. They introduce various approaches including dynamic graph neural networks (DGSR), attribute-aware product networks (eRAN), and interactive graph convolutional networks (IA-GCN) to enhance recommendation accuracy and explainability. These methods aim to capture temporal dynamics, collaborative interactions, and user-item relationships effectively.",
       "generated_synthesis_grounded_share": 1.0,
-      "generated_synthesis_claims": 5,
-      "generated_synthesis_citation_coverage": 0.6,
+      "generated_synthesis_claims": 3,
+      "generated_synthesis_citation_coverage": 0.0,
       "generated_synthesis_exact_cited_claims": 0,
+      "kept_claims": 0,
+      "dropped_claims": [
+        [
+          "The papers collectively demonstrate advancements in utilizing graph neural networks for sequential recommendation tasks.",
+          "no valid citation"
+        ],
+        [
+          "They introduce various approaches including dynamic graph neural networks (DGSR), attribute-aware product networks (eRAN), and interactive graph convolutional networks (IA-GCN) to enhance recommendation accuracy and explainability.",
+          "no valid citation"
+        ],
+        [
+          "These methods aim to capture temporal dynamics, collaborative interactions, and user-item relationships effectively.",
+          "no valid citation"
+        ]
+      ],
       "synthesis_fallback": true,
       "synthesis_verification": "exact source match",
-      "generated_synthesis": "The collective papers highlight advancements in utilizing graph neural networks (GNNs) for sequential recommendation tasks. They demonstrate how GNNs can effectively capture temporal dynamics and collaborative interactions across multiple user sequences, thereby improving the accuracy and relevance of item recommendations. Papers like [1] introduce Dynamic Graph Neural Networks (DGNS) for sequential recommendation, while [2] proposes an attribute-aware product network (eRAN) that integrates item attributes for better personalization. Additionally, [3] explores combining social relations and interaction data in recommender systems, showing promise in enhancing recommendation quality and understanding user behaviors. Lastly, [4] introduces UniWalk, a system that leverages both social network and rating data for accurate and explainable recommendations, addressing the need for integrating heterogeneous data sources.",
       "grounded_share": 1.0,
       "n_claims": 3,
       "citation_coverage": 1.0,
@@ -118,19 +148,30 @@
       "summary": "This paper provides an overview of the Shapes Constraint Language (SHACL), including its basic concepts, formal frameworks, and practical applications. It discusses the language's validation of RDF data and explores various aspects such as containment, satisfiability, and interactions with inference rules. The summary highlights the language's importance for RDF data validation and its diverse use cases across different domains.",
       "llm_cached": true,
       "synthesis": "[1] Knowledge graphs, represented in RDF, are able to model entities and their relations by means of ontologies. [2] Recent work shows superior performance when using large language models (LLMs) as formalizers instead of as end-to-end solvers for symbolic reasoning problems. [3] Logical rules are essential for uncovering the logical connections between relations, which could improve reasoning performance and provide interpretable results on knowledge graphs (KGs).",
-      "gap": "None of the provided papers specifically address the integration of SHACL (Shapes Constraint Language) with other validation mechanisms or inferencing rules within the same framework. This gap suggests potential areas for future research where SHACL might benefit from combining with other validation techniques to enhance its robustness and utility.",
-      "recommendations": "[1] \"A Constraint-based Recommender System via RDF Knowledge Graphs\" - discusses integrating constraint-based recommender systems with knowledge graphs, offering insights into how SHACL can be leveraged alongside other technologies.\n[2] \"A Reality Check of Language Models as Formalizers on Constraint Satisfaction Problems\" - examines the limitations of using LLMs as formalizers versus solvers, suggesting ways to improve their application in constraint satisfaction tasks.\n[3] \"ChatRule: Mining Logical Rules with Large Language Models for Knowledge Graph Reasoning\" - proposes a method for generating logical rules from knowledge graphs using LLMs, potentially enhancing SHACL's ability to handle complex queries and relationships.",
+      "gap": "None of the papers specifically address the integration of SHACL with other validation mechanisms or inferential processes within the same framework.",
+      "recommendations": "[1] \"A Constraint-based Recommender System via RDF Knowledge Graphs\" - discusses the integration of constraint-based recommender systems with knowledge graphs, providing insights into how SHACL can be utilized alongside other technologies for personalized recommendations.\n[2] \"ChatRule: Mining Logical Rules with Large Language Models for Knowledge Graph Reasoning\" - explores the potential of large language models for generating logical rules over knowledge graphs, offering a new perspective on how SHACL might complement traditional rule-based approaches.\n[3] \"Automating Reformulation of Essence Specifications via Graph Rewriting\" - demonstrates how graph rewriting can be used to automate the reformulation process for constraint specifications, potentially enhancing the efficiency and effectiveness of SHACL applications.",
       "format_ok": true,
       "gap_from_fallback": false,
       "gap_verified": false,
       "recommendations_verified": false,
-      "generated_synthesis_grounded_share": 0.0,
-      "generated_synthesis_claims": 4,
+      "generated_synthesis": "All five papers discuss various aspects of constraint-based approaches in knowledge representation and reasoning, focusing on different facets such as constraint generation, formalization, rule extraction, and application to specific domains like vehicle purchases and knowledge graph reasoning. They highlight advancements in using large language models for formalizing and solving complex problems, while also addressing limitations and challenges in applying these techniques across diverse contexts.",
+      "generated_synthesis_grounded_share": 0.5,
+      "generated_synthesis_claims": 2,
       "generated_synthesis_citation_coverage": 0.0,
       "generated_synthesis_exact_cited_claims": 0,
+      "kept_claims": 0,
+      "dropped_claims": [
+        [
+          "All five papers discuss various aspects of constraint-based approaches in knowledge representation and reasoning, focusing on different facets such as constraint generation, formalization, rule extraction, and application to specific domains like vehicle purchases and knowledge graph reasoning.",
+          "no valid citation"
+        ],
+        [
+          "They highlight advancements in using large language models for formalizing and solving complex problems, while also addressing limitations and challenges in applying these techniques across diverse contexts.",
+          "no valid citation"
+        ]
+      ],
       "synthesis_fallback": true,
       "synthesis_verification": "exact source match",
-      "generated_synthesis": "All four papers discuss advancements in applying large language models (LLMs) to solve complex problems such as constraint satisfaction, knowledge graph reasoning, and reformulating essence specifications. They highlight improvements in computational efficiency, scalability, and interpretability compared to traditional approaches. While some papers focus on specific domains like vehicle purchases or knowledge graph reasoning, others explore broader techniques like reformulating constraints and utilizing latent type constraints. These studies collectively contribute to making LLMs more versatile tools for solving intricate problems across various fields.",
       "grounded_share": 1.0,
       "n_claims": 3,
       "citation_coverage": 1.0,

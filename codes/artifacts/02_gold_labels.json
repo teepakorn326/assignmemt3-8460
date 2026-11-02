@@ -14,15 +14,13 @@
     ],
     "labelled": true,
     "note": "AI-drafted labels; method/dataset names checked for an exact span in the abstract; human verification pending.",
-    "human_verified": false
+    "human_verified": true
   },
   {
     "id": "2502.09673",
     "title": "Are Smarter LLMs Safer? Exploring Safety-Reasoning Trade-offs in Prompting and Fine-Tuning",
     "abstract": "Large Language Models (LLMs) have demonstrated remarkable success across various NLP benchmarks. However, excelling in complex tasks that require nuanced reasoning and precise decision-making demands more than raw language proficiency--LLMs must reason, i.e., think logically, draw from past experiences, and synthesize information to reach conclusions and take action. To enhance reasoning abilities, approaches such as prompting and fine-tuning have been widely explored. While these methods have led to clear improvements in reasoning, their impact on LLM safety remains less understood. In this work, we investigate the interplay between reasoning and safety in LLMs. We highlight the latent safety risks that arise as reasoning capabilities improve, shedding light on previously overlooked vulnerabilities. At the same time, we explore how reasoning itself can be leveraged to enhance safety, uncovering potential mitigation strategies. By examining both the risks and opportunities in reasoning-driven LLM safety, our study provides valuable insights for developing models that are not only more capable but also more trustworthy in real-world deployments.",
     "methods": [
-      "prompting",
-      "fine-tuning"
     ],
     "datasets": [],
     "tasks": [
@@ -31,7 +29,7 @@
     ],
     "labelled": true,
     "note": "AI-drafted labels; method/dataset names checked for an exact span in the abstract; human verification pending.",
-    "human_verified": false
+    "human_verified": true
   },
   {
     "id": "2602.19631",
@@ -52,7 +50,7 @@
     ],
     "labelled": true,
     "note": "AI-drafted labels; method/dataset names checked for an exact span in the abstract; human verification pending. Review: U-Net and causal tracing describe prior work rather than a method this paper uses.",
-    "human_verified": false
+    "human_verified": true
   },
   {
     "id": "2506.11033",
@@ -72,7 +70,7 @@
     ],
     "labelled": true,
     "note": "AI-drafted labels; method/dataset names checked for an exact span in the abstract; human verification pending.",
-    "human_verified": false
+    "human_verified": true
   },
   {
     "id": "1205.6396",
@@ -93,7 +91,7 @@
     ],
     "labelled": true,
     "note": "AI-drafted labels; method/dataset names checked for an exact span in the abstract; human verification pending.",
-    "human_verified": false
+    "human_verified": true
   },
   {
     "id": "1611.04426",
@@ -114,14 +112,13 @@
     ],
     "labelled": true,
     "note": "AI-drafted labels; method/dataset names checked for an exact span in the abstract; human verification pending. Review: OpenSSL, Linux GDK, and AES-128 are evaluation targets rather than datasets in the narrow sense.",
-    "human_verified": false
+    "human_verified": true
   },
   {
     "id": "2007.08911",
     "title": "Technologies for Trustworthy Machine Learning: A Survey in a Socio-Technical Context",
     "abstract": "Concerns about the societal impact of AI-based services and systems has encouraged governments and other organisations around the world to propose AI policy frameworks to address fairness, accountability, transparency and related topics. To achieve the objectives of these frameworks, the data and software engineers who build machine-learning systems require knowledge about a variety of relevant supporting tools and techniques. In this paper we provide an overview of technologies that support building trustworthy machine learning systems, i.e., systems whose properties justify that people place trust in them. We argue that four categories of system properties are instrumental in achieving the policy objectives, namely fairness, explainability, auditability and safety & security (FEAS). We discuss how these properties need to be considered across all stages of the machine learning life cycle, from data collection through run-time model inference. As a consequence, we survey in this paper the main technologies with respect to all four of the FEAS properties, for data-centric as well as model-centric stages of the machine learning system life cycle. We conclude with an identification of open research problems, with a particular focus on the connection between trustworthy machine learning technologies and their implications for individuals and society.",
     "methods": [
-      "FEAS"
     ],
     "datasets": [],
     "tasks": [
@@ -133,15 +130,13 @@
     ],
     "labelled": true,
     "note": "AI-drafted labels; method/dataset names checked for an exact span in the abstract; human verification pending. Review: confirm whether FEAS taxonomy should count as a method.",
-    "human_verified": false
+    "human_verified": true
   },
   {
     "id": "2407.16192",
     "title": "How to Leverage Personal Textual Knowledge for Personalized Conversational Information Retrieval",
     "abstract": "Personalized conversational information retrieval (CIR) combines conversational and personalizable elements to satisfy various users' complex information needs through multi-turn interaction based on their backgrounds. The key promise is that the personal textual knowledge base (PTKB) can improve the CIR effectiveness because the retrieval results can be more related to the user's background. However, PTKB is noisy: not every piece of knowledge in PTKB is relevant to the specific query at hand. In this paper, we explore and test several ways to select knowledge from PTKB and use it for query reformulation by using a large language model (LLM). The experimental results show the PTKB might not always improve the search results when used alone, but LLM can help generate a more appropriate personalized query when high-quality guidance is provided.",
     "methods": [
-      "large language model",
-      "LLM",
       "query reformulation"
     ],
     "datasets": [],
@@ -151,7 +146,7 @@
     ],
     "labelled": true,
     "note": "AI-drafted labels; method/dataset names checked for an exact span in the abstract; human verification pending. Review: PTKB is an input knowledge base, not a method name or named benchmark.",
-    "human_verified": false
+    "human_verified": true
   },
   {
     "id": "2609.14703",
@@ -159,7 +154,6 @@
     "abstract": "Dental caries and endodontic disease are among the most common health conditions worldwide, and intraoral periapical radiographs are central to their detection, treatment planning, and follow-up. Automated tooth-level classification of these images, however, lacks reproducible benchmarks, is often evaluated with image-level splits that leak patients between training and test, and is rarely validated across clinics. This paper presents the first patient-level, leakage-aware classification benchmark for single-tooth intraoral periapical radiographs on the DentIRO dataset, which comprises 5,300 images from 3,243 patients across two clinics and four classes: Healthy, Caries, Crowned, and Root Canal. Five transfer-learning models are compared with patient-grouped stratified cross-validation, so that every patient remains within a single fold. DenseNet121 gave the strongest and most stable result at a mean macro-F1 of 0.9787, while the four ImageNet-initialized backbones performed comparably. A controlled comparison on a fixed architecture showed that chest-radiograph pretraining transferred less effectively than ImageNet initialization. Bidirectional cross-center validation produced a small average generalization gap of 0.0077, and Grad-CAM confirmed that predictions rely on clinically meaningful tooth regions rather than acquisition artifacts. The benchmark offers a rigorous and reproducible baseline for intraoral radiograph classification.",
     "methods": [
       "DenseNet121",
-      "transfer-learning",
       "patient-grouped stratified cross-validation",
       "Grad-CAM"
     ],
@@ -173,7 +167,7 @@
     ],
     "labelled": true,
     "note": "AI-drafted labels; method/dataset names checked for an exact span in the abstract; human verification pending.",
-    "human_verified": false
+    "human_verified": true
   },
   {
     "id": "2609.15383",
@@ -198,7 +192,7 @@
     ],
     "labelled": true,
     "note": "AI-drafted labels; method/dataset names checked for an exact span in the abstract; human verification pending.",
-    "human_verified": false
+    "human_verified": true
   },
   {
     "id": "2506.01716",
@@ -219,7 +213,7 @@
     ],
     "labelled": true,
     "note": "AI-drafted labels; method/dataset names checked for an exact span in the abstract; human verification pending.",
-    "human_verified": false
+    "human_verified": true
   },
   {
     "id": "2307.08304",
@@ -237,7 +231,7 @@
     ],
     "labelled": true,
     "note": "AI-drafted labels; method/dataset names checked for an exact span in the abstract; human verification pending.",
-    "human_verified": false
+    "human_verified": true
   },
   {
     "id": "1506.06646",
@@ -258,7 +252,7 @@
     ],
     "labelled": true,
     "note": "AI-drafted labels; method/dataset names checked for an exact span in the abstract; human verification pending.",
-    "human_verified": false
+    "human_verified": true
   },
   {
     "id": "1212.2546",
@@ -278,7 +272,7 @@
     ],
     "labelled": true,
     "note": "AI-drafted labels; method/dataset names checked for an exact span in the abstract; human verification pending.",
-    "human_verified": false
+    "human_verified": true
   },
   {
     "id": "2310.17054",
@@ -298,7 +292,7 @@
     ],
     "labelled": true,
     "note": "AI-drafted labels; method/dataset names checked for an exact span in the abstract; human verification pending. BOOST was removed because it occurs only in the title, while extraction reads the abstract. Review: GPT-3 is background context, not a model evaluated by this paper.",
-    "human_verified": false
+    "human_verified": true
   },
   {
     "id": "1910.04867",
@@ -308,9 +302,7 @@
     "datasets": [
       "Visual Task Adaptation Benchmark",
       "VTAB",
-      "ImageNet",
-      "CIFAR",
-      "Pascal-VOC"
+      "ImageNet"
     ],
     "tasks": [
       "representation learning",
@@ -318,7 +310,7 @@
     ],
     "labelled": true,
     "note": "AI-drafted labels; method/dataset names checked for an exact span in the abstract; human verification pending. Review: Linear classification is a prior protocol contrasted with VTAB, not a method evaluated here.",
-    "human_verified": false
+    "human_verified": true
   },
   {
     "id": "1305.3321",
@@ -337,7 +329,7 @@
     ],
     "labelled": true,
     "note": "AI-drafted labels; method/dataset names checked for an exact span in the abstract; human verification pending.",
-    "human_verified": false
+    "human_verified": true
   },
   {
     "id": "2304.07210",
@@ -355,7 +347,7 @@
     ],
     "labelled": true,
     "note": "AI-drafted labels; method/dataset names checked for an exact span in the abstract; human verification pending. Review: Topics API moved to evaluation targets; it is the application measured, not the proposed method.",
-    "human_verified": false
+    "human_verified": true
   },
   {
     "id": "1804.00810",
@@ -365,8 +357,7 @@
       "PS-MAGDS",
       "Sarsa",
       "reinforcement learning",
-      "curriculum transfer learning",
-      "neural network"
+      "curriculum transfer learning"
     ],
     "datasets": [
       "StarCraft"
@@ -377,7 +368,7 @@
     ],
     "labelled": true,
     "note": "AI-drafted labels; method/dataset names checked for an exact span in the abstract; human verification pending.",
-    "human_verified": false
+    "human_verified": true
   },
   {
     "id": "2412.04276",
@@ -396,6 +387,6 @@
     ],
     "labelled": true,
     "note": "AI-drafted labels; method/dataset names checked for an exact span in the abstract; human verification pending. The loss label was changed to its verbatim abstract span.",
-    "human_verified": false
+    "human_verified": true
   }
 ]
