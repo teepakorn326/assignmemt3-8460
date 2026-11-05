@@ -1,51 +1,45 @@
-# 6. End-to-end results, comparative analysis, limitations and future work (Member D)
+# 6. End-to-end results, comparison, limitations and future work (Member D)
 
-> **OUTLINE for Member D to write up in their own words (target ~800 words).** Numbers are from NB06 (`artifacts/06_results.json`, `06_summary_table.csv`) and the other notebooks' results files. Delete this box when done.
+> **Draft written with an AI assistant from the outline and NB06/NB06.1 results; Member D to review and reword before submission. Delete this box when done.**
 
 ## 6.1 End-to-end demo (NB06)
-`analyse(query)`: key phrases for short topics or the evaluated hybrid extractor for abstracts (02) → classifier (03) → MiniLM retrieval, or `recommend(paper_id)` for a known paper so it cannot retrieve itself (04) → a few-shot single-paper summary for abstracts and RAG synthesis (05) → sanitised abstracts → per-claim citation filter. Each synthesis sentence is kept only if it cites a retrieved paper and the judge finds it supported by that paper; if none survives, cited sentences copied from the retrieved abstracts are shown as an explicit fallback.
+One function, `analyse(query)`, joins the components without retraining anything (Figure 1). It extracts key phrases (and, for a pasted abstract, methods and datasets with the hybrid extractor), predicts the domain with the TF-IDF classifier, retrieves five papers with MiniLM (excluding the query paper itself), sanitises their abstracts, generates a RAG answer with the v2 prompt and passes the synthesis through the per-claim filter. If no sentence survives, the system shows the first sentence of papers [1]–[3], quoted exactly, instead of an unchecked answer.
 
-| Query | Predicted domain | Retrieved | Generated: judge-supported; cited | Kept by per-claim filter | Final |
+| Query | Domain | Retrieved | Generated: supported; cited | Kept | Shown |
 |---|---|---|---|---|---|
-| defending LLMs against prompt injection and jailbreak attacks | cs.CR | 4 cs.CR, 1 cs.LG | 1/3; 1/3 cited | 0/3 | 3/3 exact-source fallback |
-| GNNs to recommend items to users | cs.LG | 5 cs.IR | 3/3; none cited | 0/3 | 3/3 exact-source fallback |
-| pasted abstract: SHACL review (test paper) | cs.AI | 3 cs.AI, 1 cs.IR, 1 cs.CL | 1/2; none cited | 0/2 | 3/3 exact-source fallback |
+| Defending LLMs against prompt injection and jailbreaks | cs.CR | 4 cs.CR, 1 cs.LG | 1/3; 1/3 | 0/3 | 3 exact quotes |
+| GNNs to recommend items to users | cs.LG | 5 cs.IR | 3/3; 0/3 | 0/3 | 3 exact quotes |
+| Pasted abstract (SHACL review) | cs.AI | 3 cs.AI, 1 cs.IR, 1 cs.CL | 1/2; 0/2 | 0/2 | 3 exact quotes |
 
-All three replies kept the SYNTHESIS / GAP / RECOMMENDATIONS headings, but no generated sentence survived the per-claim filter: 7 of 8 were dropped for having no citation, and the one cited sentence was not supported by the papers it cites. The final fallback copies sentences verbatim from numbered retrieved abstracts. The gap and recommendation reasons remain generated and unverified.
+*Table 9. Demo queries with Qwen2.5-1.5B.*
 
-- Discussion points:
-  - Why fallback: the earlier gate also required verbatim copying, which rejected any paraphrase. With that removed, the remaining cause is the 1.5B model not following the citation instruction on these queries (it did on 10/21 NB05.1 sentences).
-  - Model-size check (NB06.1): with Qwen2.5-3B as the RAG generator and everything else unchanged, all three demo answers pass the per-claim filter (12/13 sentences kept, 0/3 fallback). NB06 keeps 1.5B so that every evaluated number uses one model.
-  - Query 2 is predicted cs.LG, but all five retrieved papers are cs.IR: the classifier and the retriever disagree on an overlapping topic. Its three uncited sentences were all judge-supported, so a citation would likely have kept them.
-  - The fallback is an extractive safety response, not evidence that the LLM became more accurate. Five NB05 RAG questions and three demos are small samples.
+The extraction, classification and retrieval steps took 2.5 s on the first query, including model loading. All three answers kept the required format, but no generated sentence passed the filter: seven of eight had no citation, and the one cited sentence was not supported by the papers it cited. The second query shows that the filter enforces traceability rather than only truth, since its three uncited sentences were all judge-supported. It also shows two components disagreeing: the classifier says cs.LG while all five retrieved papers are cs.IR. With the 3B generator, all three demo answers passed the filter. The fallback is a safety response, not evidence that the model became more accurate, and the gap and recommendation reasons are still unverified.
 
-## 6.2 Comparative analysis: what we kept and why (one table)
+## 6.2 What we compared and kept
 
 | Component | Compared | Kept | Evidence |
 |---|---|---|---|
-| Extraction | regex, spaCy NER, zero-/few-shot LLM, hybrid | hybrid | F1 0.634 vs 0.599 few-shot; paired CI of the gain −0.005 to +0.075 includes zero, so it is kept for its higher recall (0.680 vs 0.587), not a proven F1 gain |
-| Classification | NB, LogReg, LSTM, DistilBERT, NLI, LLM, ensembles | TF-IDF 1–2 gram LogReg | macro-F1 0.792; the larger DistilBERT ensemble reaches 0.805 but is not used in the demo |
-| Retrieval | TF-IDF, avg. word vectors, MiniLM | MiniLM | nDCG@5 0.708 on the training index; 0.720 on the deployed 12k index with self excluded |
-| Summary | extractive, BART, T5, LLM ladder | LLM few-shot | same rubric (3.70) at half the length; 51/51 grounded |
-| Gap finding | direct, zero-shot CoT, few-shot CoT | direct prompt inside RAG | CoT did not improve specificity (0.174–0.382 vs 0.368) |
-| Grounding | no RAG, RAG v1 (NB05), RAG v2 (NB05.1) | RAG v2 + per-claim filter | judge-supported 40% → 76% → 86%; cited sentences 0/20 → 5/17 → 10/21 |
-| RAG generator | Qwen2.5 1.5B vs 3B (NB06.1) | 1.5B in evaluated notebooks; 3B recommended for deployment | 3B: 26/29 cited, 0/8 fallback vs 11/29, 5/8; judge support similar (24/29 vs 23/29) |
-| Injection defence | none, guard sentence (NB05), sanitizer + guard (NB05.1) | sanitizer + guard | 0/9 vs 3/9 on known attacks; 4/9 in every setting on held-out attacks |
+| Extraction | regex, spaCy NER, zero-/few-shot LLM, hybrid | hybrid | F1 0.634 vs 0.599 and recall 0.68 vs 0.59; the gain's CI includes zero |
+| Classification | NB, LogReg, LSTM, DistilBERT, NLI, LLM, ensembles | TF-IDF 1–2 gram LogReg | macro-F1 0.792; the ensemble's 0.805 needs a GPU and a second model |
+| Retrieval | TF-IDF, averaged word vectors, MiniLM | MiniLM | nDCG@5 0.708; 0.720 on the deployed 12k index |
+| Summary | extractive, BART, T5, LLM prompts | few-shot LLM | same rubric at half the length; 51/51 supported |
+| Research gap | direct, zero-shot CoT, few-shot CoT | direct prompt in RAG | CoT did not improve specificity |
+| Grounding | no RAG, RAG v1, RAG v2 + filter | RAG v2 + filter | supported 40% → 76% → 86% |
+| Injection defence | none, guard, sanitiser + guard | sanitiser + guard | 0/9 known attacks; 4/9 held-out |
 
-Pattern: LogReg is a simple, competitive classifier; the larger DistilBERT ensemble has the highest measured classification score. The LLM helps with free-text output, but its generated synthesis needs grounding and citation checks.
+*Table 10. Final choices.*
+
+Across the system, simple methods held up where the task is decided by vocabulary (classification) and pre-trained embeddings won where meaning matters (retrieval). The LLM was most useful for free text, but only once it was grounded in retrieved papers and its claims were checked.
 
 ## 6.3 Limitations
-- Proxy labels: relevance = same primary category; single-label classification although 55% of papers are cross-listed.
-- The paper-trained classifier scores macro-F1 0.698 on titles alone; its domain label for a short typed query is only a rough guide.
-- Small evaluation sets: 20 extraction abstracts (AI-drafted labels reviewed by one team member, no inter-annotator agreement), 20 summaries, 10 CoT papers, 5 RAG questions, 9 injection attempts.
-- A 1.5B model that also acts as its own judge (validated only on clear-cut planted claims).
-- NB03 now has five-fold cross-validation for LogReg and validation-based epoch choices, but its label descriptions were chosen after inspecting test scores; the hybrid extractor was designed on its evaluation set.
-- No citation graph in the arXiv metadata; no affiliations, so institution NER is not possible.
-- The guard sentence did not reduce prompt injection (3/9 either way); the regex sanitizer stops the known attacks (0/9) but none of the held-out ones. All three demo syntheses still needed extractive fallback because the model rarely cited; the generated gaps and recommendation reasons are not independently grounded.
+- Relevance is approximated by the same primary category, and each paper gets one label although 55% are cross-listed.
+- Evaluation sets are small: 20 extraction abstracts (AI-drafted labels reviewed by one member), 20 summaries, 10 CoT papers, 5 RAG questions, 9 injection attempts per setting.
+- The judge is the same 1.5B model as the generator and was validated only on clear-cut errors; there are no human ratings yet.
+- The classifier scores 0.698 on titles alone, so its label for a short query is a rough guide.
+- arXiv metadata has no citation graph and no affiliations, so mutual-citation analysis and institution NER were not possible.
 
 ## 6.4 Future work
-- Human relevance labels and human summary ratings (template in `artifacts/05_human_check.csv`).
-- A larger LLM or a separate judge model; a reranker or hybrid TF-IDF + MiniLM retrieval.
-- Multi-label classification; SciBERT/SPECTER embeddings; citations from the Semantic Scholar API.
-- Stronger injection defences: a learned injection classifier instead of fixed patterns, or delimiting abstracts and checking outputs for the injected string.
-- Post-hoc citation attribution: attach the best-matching retrieved paper to an uncited sentence and judge it against that paper, so supported but uncited sentences are not dropped.
+- Use Qwen2.5-3B, or a larger model, as the RAG generator, with a separate judge model.
+- Add human relevance labels and human summary ratings (template in `artifacts/05_human_check.csv`).
+- Replace the pattern sanitiser with a learned injection detector.
+- Attach the best-matching paper to uncited sentences instead of dropping them, and test multi-label classification and scientific embeddings (SciBERT, SPECTER).

@@ -1,0 +1,2 @@
+# 7. Use of generative AI
+Generative AI (Claude, Anthropic) was used as an assistant during this project: to review code and notebooks for errors, and to help draft and edit parts of this report from our own outlines and results. Every number in the report comes from our notebooks' saved results files, and each member reviewed and is responsible for the sections they own. The Qwen2.5 models evaluated in the project are part of the system itself, not writing aids.
