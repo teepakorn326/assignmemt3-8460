@@ -11,7 +11,7 @@ One function, `analyse(query)`, joins the components without retraining anything
 
 *Table 9. Demo queries with Qwen2.5-1.5B.*
 
-The extraction, classification and retrieval steps took 2.5 s on the first query, including model loading. All three answers kept the required format, but no generated sentence passed the filter: seven of eight had no citation, and the one cited sentence was not supported by the papers it cited. The second query shows that the filter enforces traceability rather than only truth, since its three uncited sentences were all judge-supported. It also shows two components disagreeing: the classifier says cs.LG while all five retrieved papers are cs.IR. With the 3B generator, all three demo answers passed the filter. The fallback is a safety response, not evidence that the model became more accurate, and the gap and recommendation reasons are still unverified.
+The extraction, classification and retrieval steps took 2.5 s on the first query, including model loading. All three answers kept the required format, but no generated sentence passed the filter: seven of eight had no citation, and the one cited sentence was not supported by the papers it cited. The second query shows that the filter enforces traceability rather than only truth, since its three uncited sentences were all judge-supported. It also shows two components disagreeing: the classifier says cs.LG while all five retrieved papers are cs.IR. With the 3B generator, all three demo answers passed the filter. The fallback is a safety response, not evidence that the model became more accurate, and the gap and recommendation reasons are still unverified. For a user, the 1.5B system currently gives the domain, key phrases and five papers to read, but quoted sentences instead of a synthesis; the 3B generator makes the cited answer usable.
 
 ## 6.2 What we compared and kept
 
@@ -27,7 +27,7 @@ The extraction, classification and retrieval steps took 2.5 s on the first query
 
 *Table 10. Final choices.*
 
-Across the system, simple methods held up where the task is decided by vocabulary (classification) and pre-trained embeddings won where meaning matters (retrieval). The LLM was most useful for free text, but only once it was grounded in retrieved papers and its claims were checked.
+Across the system, simple methods held up where the task is decided by vocabulary (classification) and pre-trained embeddings won where meaning matters (retrieval). The LLM was most useful for free text, but only once it was grounded in retrieved papers and its claims were checked. For a researcher, one query returns the field, the key methods, five papers to read next and a cited summary and gap, in place of a keyword list. Retrieval makes that answer checkable: support doubled with the evidence in the prompt, and the filter drops any sentence that does not cite a retrieved paper or is not supported by it.
 
 ## 6.3 Limitations
 - Relevance is approximated by the same primary category, and each paper gets one label although 55% are cross-listed.

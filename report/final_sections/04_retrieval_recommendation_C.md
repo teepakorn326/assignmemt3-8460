@@ -1,7 +1,7 @@
 # 4. Retrieval, recommendation and topic discovery (Member C)
 
 ## 4.1 System architecture
-Figure 1 shows how the components fit together. A query or abstract passes through extraction (NB02), domain classification (NB03) and MiniLM retrieval (NB04); the retrieved abstracts then ground the LLM's synthesis (NB05), and every generated sentence is checked against the paper it cites before it is shown (NB06). Blue stages use basic techniques (weeks 1–6) and orange stages advanced ones (weeks 7–12).
+Figure 1 (Section 1.1) shows how the components fit together. A query or abstract passes through extraction (NB02), domain classification (NB03) and MiniLM retrieval (NB04); the retrieved abstracts then ground the LLM's synthesis (NB05), and every generated sentence is checked against the paper it cites before it is shown (NB06). Blue stages use basic techniques (weeks 1–6) and orange stages advanced ones (weeks 7–12).
 
 ## 4.2 Techniques
 We compared three ways of representing a paper (week 4): sparse TF-IDF over unigrams and bigrams, the average of pretrained spaCy `en_core_web_md` word vectors, and `all-MiniLM-L6-v2` sentence embeddings, a small pretrained encoder transformer (week 8) used without fine-tuning. Papers are ranked by cosine similarity. To evaluate without self-matches, the 9,600 training papers form the index and 200 test papers are the queries; a result counts as relevant if it shares the query's primary category. We report P@5 and nDCG@5, which also rewards placing relevant papers higher. KMeans with k = 6 in each space tests whether the six domains emerge without labels.

@@ -1,5 +1,5 @@
 # 2. Extracting information (Member A)
-Objective: Extract method names and dataset names from each abstract for display in the demo. Since arXiv does not provide ground-truth labels, we built a set of 20 labelled test abstracts (75 method/dataset names). The labels were drafted with an AI assistant (not the Qwen model being evaluated), checked for verbatim abstract spans, and reviewed by one team member, who removed 9 generic or background-only names (e.g. "prompting", "LLM", "CIFAR"). Five extraction methods were compared on this data.
+Objective: Extract method names and dataset names from each abstract, so a user can see what a paper uses without reading it. Since arXiv does not provide ground-truth labels, we built a set of 20 labelled test abstracts (75 method/dataset names). The labels were drafted with an AI assistant (not the Qwen model being evaluated), checked for verbatim abstract spans, and reviewed by one team member, who removed 9 generic or background-only names (e.g. "prompting", "LLM", "CIFAR"). Five extraction methods were compared on this data.
 
 ## 2.1 Basic techniques (weeks 2–3)
 **Regex**: identifies acronyms (e.g., HiRM, GPT-3), their definitions, and patterns like “X dataset.”

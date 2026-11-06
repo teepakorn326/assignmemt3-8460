@@ -1,5 +1,5 @@
 # 3. Research-domain classification and keywords (Member B)
-Objective: assign each paper one of the six primary categories and extract its keywords, so the demo can tell a user which field a query or paper belongs to. Labels are the arXiv `primary_category`, and every model is scored on the shared 2,400-paper test split (400 per class) with accuracy and macro-F1.
+Objective: assign each paper one of the six primary categories and extract its keywords, so a user new to a topic can see which field a query or paper belongs to. When the label disagrees with the retrieved papers, as in the second demo query (Section 6.1), the work may sit between fields. Labels are the arXiv `primary_category`, and every model is scored on the shared 2,400-paper test split (400 per class) with accuracy and macro-F1.
 
 ## 3.1 Techniques
 **TF-IDF keywords** (week 4): a unigram + bigram vectoriser fitted on the training abstracts after A's `clean_text`. A domain's keywords are its highest mean-weight terms (cs.CR: security, attacks, privacy; cs.IR: recommendation, user, retrieval), while cs.AI and cs.LG share generic terms such as "model" and "learning", an early sign of later confusion.
