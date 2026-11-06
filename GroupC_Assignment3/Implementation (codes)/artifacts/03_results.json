@@ -1,0 +1,620 @@
+{
+  "models": [
+    {
+      "model": "Naive Bayes + BoW",
+      "test_papers": 2400,
+      "accuracy": 0.773,
+      "macro_precision": 0.774,
+      "macro_recall": 0.773,
+      "macro_f1": 0.773
+    },
+    {
+      "model": "Naive Bayes + TF-IDF",
+      "test_papers": 2400,
+      "accuracy": 0.77,
+      "macro_precision": 0.769,
+      "macro_recall": 0.77,
+      "macro_f1": 0.769
+    },
+    {
+      "model": "LogReg + TF-IDF",
+      "test_papers": 2400,
+      "accuracy": 0.787,
+      "macro_precision": 0.789,
+      "macro_recall": 0.787,
+      "macro_f1": 0.788
+    },
+    {
+      "model": "LogReg + TF-IDF (1-2 grams)",
+      "test_papers": 2400,
+      "accuracy": 0.792,
+      "macro_precision": 0.793,
+      "macro_recall": 0.792,
+      "macro_f1": 0.792
+    },
+    {
+      "model": "Zero-shot NLI, category names",
+      "test_papers": 500,
+      "accuracy": 0.366,
+      "macro_precision": 0.601,
+      "macro_recall": 0.372,
+      "macro_f1": 0.356,
+      "note": "500-paper subset"
+    },
+    {
+      "model": "Zero-shot NLI, category descriptions",
+      "test_papers": 500,
+      "accuracy": 0.616,
+      "macro_precision": 0.711,
+      "macro_recall": 0.615,
+      "macro_f1": 0.628,
+      "note": "500-paper subset"
+    },
+    {
+      "model": "LSTM (2 epochs)",
+      "test_papers": 2400,
+      "accuracy": 0.669,
+      "macro_precision": 0.681,
+      "macro_recall": 0.669,
+      "macro_f1": 0.671
+    },
+    {
+      "model": "LogReg + TF-IDF (3000 train)",
+      "test_papers": 2400,
+      "accuracy": 0.777,
+      "macro_precision": 0.778,
+      "macro_recall": 0.777,
+      "macro_f1": 0.777
+    },
+    {
+      "model": "DistilBERT frozen + LogReg (3000 train)",
+      "test_papers": 2400,
+      "accuracy": 0.717,
+      "macro_precision": 0.717,
+      "macro_recall": 0.717,
+      "macro_f1": 0.717
+    },
+    {
+      "model": "DistilBERT fine-tuned (1 epoch, 3000 train)",
+      "test_papers": 2400,
+      "accuracy": 0.758,
+      "macro_precision": 0.754,
+      "macro_recall": 0.758,
+      "macro_f1": 0.753
+    },
+    {
+      "model": "Few-shot LLM, category names",
+      "test_papers": 200,
+      "accuracy": 0.415,
+      "macro_precision": 0.574,
+      "macro_recall": 0.412,
+      "macro_f1": 0.388,
+      "note": "200-paper subset, 0 unparsed"
+    },
+    {
+      "model": "Few-shot LLM, category descriptions",
+      "test_papers": 200,
+      "accuracy": 0.485,
+      "macro_precision": 0.602,
+      "macro_recall": 0.473,
+      "macro_f1": 0.469,
+      "note": "200-paper subset, 0 unparsed"
+    },
+    {
+      "model": "Ensemble: LogReg + NB",
+      "test_papers": 2400,
+      "accuracy": 0.792,
+      "macro_precision": 0.791,
+      "macro_recall": 0.792,
+      "macro_f1": 0.791
+    },
+    {
+      "model": "Ensemble: LogReg + DistilBERT",
+      "test_papers": 2400,
+      "accuracy": 0.788,
+      "macro_precision": 0.785,
+      "macro_recall": 0.788,
+      "macro_f1": 0.784
+    },
+    {
+      "model": "DistilBERT fine-tuned (2 epochs, 3000 train)",
+      "test_papers": 2400,
+      "accuracy": 0.776,
+      "macro_precision": 0.774,
+      "macro_recall": 0.776,
+      "macro_f1": 0.774,
+      "note": "mean of 3 seeds"
+    },
+    {
+      "model": "DistilBERT fine-tuned (2 epochs, 9600 train)",
+      "test_papers": 2400,
+      "accuracy": 0.798,
+      "macro_precision": 0.798,
+      "macro_recall": 0.798,
+      "macro_f1": 0.798,
+      "note": "mean of 3 seeds"
+    },
+    {
+      "model": "Ensemble: LogReg + DistilBERT (9600 train)",
+      "test_papers": 2400,
+      "accuracy": 0.806,
+      "macro_precision": 0.806,
+      "macro_recall": 0.806,
+      "macro_f1": 0.805,
+      "note": "mean of 3 seeds"
+    },
+    {
+      "model": "LogReg (same 500 as zero-shot)",
+      "test_papers": 500,
+      "accuracy": 0.814,
+      "macro_precision": 0.815,
+      "macro_recall": 0.812,
+      "macro_f1": 0.813,
+      "note": "500-paper subset"
+    },
+    {
+      "model": "LogReg (same 200 as LLM)",
+      "test_papers": 200,
+      "accuracy": 0.825,
+      "macro_precision": 0.828,
+      "macro_recall": 0.826,
+      "macro_f1": 0.827,
+      "note": "200-paper subset"
+    }
+  ],
+  "domain_keywords": {
+    "cs.AI": [
+      "agent",
+      "reasoning",
+      "ai",
+      "agents",
+      "models",
+      "model",
+      "learning",
+      "based",
+      "language",
+      "knowledge"
+    ],
+    "cs.CL": [
+      "language",
+      "models",
+      "language models",
+      "llms",
+      "model",
+      "text",
+      "large",
+      "large language",
+      "tasks",
+      "task"
+    ],
+    "cs.CR": [
+      "security",
+      "attacks",
+      "privacy",
+      "attack",
+      "data",
+      "based",
+      "secure",
+      "paper",
+      "detection",
+      "blockchain"
+    ],
+    "cs.CV": [
+      "image",
+      "images",
+      "3d",
+      "object",
+      "model",
+      "method",
+      "methods",
+      "visual",
+      "video",
+      "learning"
+    ],
+    "cs.IR": [
+      "recommendation",
+      "user",
+      "retrieval",
+      "search",
+      "based",
+      "systems",
+      "recommender",
+      "item",
+      "information",
+      "users"
+    ],
+    "cs.LG": [
+      "learning",
+      "data",
+      "model",
+      "neural",
+      "models",
+      "training",
+      "networks",
+      "based",
+      "deep",
+      "methods"
+    ]
+  },
+  "logreg_cv": [
+    {
+      "ngrams": "(1, 1)",
+      "C": 0.3,
+      "cv_macro_f1": 0.792,
+      "sd": 0.008
+    },
+    {
+      "ngrams": "(1, 1)",
+      "C": 1,
+      "cv_macro_f1": 0.793,
+      "sd": 0.008
+    },
+    {
+      "ngrams": "(1, 1)",
+      "C": 3,
+      "cv_macro_f1": 0.789,
+      "sd": 0.005
+    },
+    {
+      "ngrams": "(1, 1)",
+      "C": 10,
+      "cv_macro_f1": 0.782,
+      "sd": 0.004
+    },
+    {
+      "ngrams": "(1, 2)",
+      "C": 0.3,
+      "cv_macro_f1": 0.788,
+      "sd": 0.006
+    },
+    {
+      "ngrams": "(1, 2)",
+      "C": 1,
+      "cv_macro_f1": 0.799,
+      "sd": 0.007
+    },
+    {
+      "ngrams": "(1, 2)",
+      "C": 3,
+      "cv_macro_f1": 0.797,
+      "sd": 0.005
+    },
+    {
+      "ngrams": "(1, 2)",
+      "C": 10,
+      "cv_macro_f1": 0.797,
+      "sd": 0.005
+    },
+    {
+      "ngrams": "(1, 3)",
+      "C": 0.3,
+      "cv_macro_f1": 0.786,
+      "sd": 0.005
+    },
+    {
+      "ngrams": "(1, 3)",
+      "C": 1,
+      "cv_macro_f1": 0.796,
+      "sd": 0.008
+    },
+    {
+      "ngrams": "(1, 3)",
+      "C": 3,
+      "cv_macro_f1": 0.797,
+      "sd": 0.006
+    },
+    {
+      "ngrams": "(1, 3)",
+      "C": 10,
+      "cv_macro_f1": 0.798,
+      "sd": 0.005
+    }
+  ],
+  "lstm_epoch_check": {
+    "best_epoch_per_seed": [
+      4,
+      5,
+      6
+    ],
+    "chosen_epoch": 5,
+    "test_accuracy_mean": 0.711,
+    "test_macro_f1_mean": 0.712,
+    "test_accuracy_by_seed": [
+      0.71,
+      0.725,
+      0.697
+    ],
+    "test_macro_f1_by_seed": [
+      0.715,
+      0.722,
+      0.697
+    ],
+    "epoch_2_test_accuracy_by_seed": [
+      0.65,
+      0.694,
+      0.597
+    ],
+    "epoch_20_mean_train_accuracy": 0.98,
+    "epoch_20_mean_test_macro_f1": 0.704,
+    "best_test_macro_f1_any_run": 0.727
+  },
+  "distilbert_check": {
+    "history_3k": [
+      {
+        "epoch": 1,
+        "val_macro_f1": 0.76,
+        "test_macro_f1": 0.743
+      },
+      {
+        "epoch": 2,
+        "val_macro_f1": 0.797,
+        "test_macro_f1": 0.764
+      },
+      {
+        "epoch": 3,
+        "val_macro_f1": 0.792,
+        "test_macro_f1": 0.771
+      },
+      {
+        "epoch": 4,
+        "val_macro_f1": 0.79,
+        "test_macro_f1": 0.776
+      }
+    ],
+    "history_full": [
+      {
+        "epoch": 1,
+        "val_macro_f1": 0.784,
+        "test_macro_f1": 0.783
+      },
+      {
+        "epoch": 2,
+        "val_macro_f1": 0.786,
+        "test_macro_f1": 0.796
+      },
+      {
+        "epoch": 3,
+        "val_macro_f1": 0.782,
+        "test_macro_f1": 0.796
+      },
+      {
+        "epoch": 4,
+        "val_macro_f1": 0.781,
+        "test_macro_f1": 0.801
+      }
+    ],
+    "chosen_epoch_3k": 2,
+    "chosen_epoch_full": 2,
+    "by_seed": [
+      {
+        "model": "DistilBERT 3k seed 42",
+        "test_papers": 2400,
+        "accuracy": 0.772,
+        "macro_precision": 0.768,
+        "macro_recall": 0.772,
+        "macro_f1": 0.769,
+        "gain": -0.023,
+        "ci_95": [
+          -0.038,
+          -0.009
+        ],
+        "only_logreg_right": 199,
+        "only_other_right": 151,
+        "mcnemar_p": 0.012,
+        "train": "3k",
+        "seed": 42,
+        "kind": "DistilBERT"
+      },
+      {
+        "model": "DistilBERT 3k seed 1",
+        "test_papers": 2400,
+        "accuracy": 0.774,
+        "macro_precision": 0.774,
+        "macro_recall": 0.774,
+        "macro_f1": 0.772,
+        "gain": -0.02,
+        "ci_95": [
+          -0.036,
+          -0.004
+        ],
+        "only_logreg_right": 196,
+        "only_other_right": 154,
+        "mcnemar_p": 0.028,
+        "train": "3k",
+        "seed": 1,
+        "kind": "DistilBERT"
+      },
+      {
+        "model": "DistilBERT 3k seed 2",
+        "test_papers": 2400,
+        "accuracy": 0.781,
+        "macro_precision": 0.781,
+        "macro_recall": 0.781,
+        "macro_f1": 0.78,
+        "gain": -0.011,
+        "ci_95": [
+          -0.027,
+          0.004
+        ],
+        "only_logreg_right": 199,
+        "only_other_right": 173,
+        "mcnemar_p": 0.195,
+        "train": "3k",
+        "seed": 2,
+        "kind": "DistilBERT"
+      },
+      {
+        "model": "DistilBERT full seed 42",
+        "test_papers": 2400,
+        "accuracy": 0.797,
+        "macro_precision": 0.798,
+        "macro_recall": 0.797,
+        "macro_f1": 0.797,
+        "gain": 0.005,
+        "ci_95": [
+          -0.009,
+          0.019
+        ],
+        "only_logreg_right": 150,
+        "only_other_right": 163,
+        "mcnemar_p": 0.498,
+        "train": "full",
+        "seed": 42,
+        "kind": "DistilBERT"
+      },
+      {
+        "model": "Ensemble seed 42",
+        "test_papers": 2400,
+        "accuracy": 0.81,
+        "macro_precision": 0.811,
+        "macro_recall": 0.81,
+        "macro_f1": 0.81,
+        "gain": 0.018,
+        "ci_95": [
+          0.006,
+          0.031
+        ],
+        "only_logreg_right": 98,
+        "only_other_right": 143,
+        "mcnemar_p": 0.004,
+        "train": "full",
+        "seed": 42,
+        "kind": "Ensemble"
+      },
+      {
+        "model": "DistilBERT full seed 1",
+        "test_papers": 2400,
+        "accuracy": 0.803,
+        "macro_precision": 0.802,
+        "macro_recall": 0.803,
+        "macro_f1": 0.802,
+        "gain": 0.011,
+        "ci_95": [
+          -0.003,
+          0.024
+        ],
+        "only_logreg_right": 131,
+        "only_other_right": 159,
+        "mcnemar_p": 0.113,
+        "train": "full",
+        "seed": 1,
+        "kind": "DistilBERT"
+      },
+      {
+        "model": "Ensemble seed 1",
+        "test_papers": 2400,
+        "accuracy": 0.807,
+        "macro_precision": 0.806,
+        "macro_recall": 0.807,
+        "macro_f1": 0.806,
+        "gain": 0.015,
+        "ci_95": [
+          0.002,
+          0.027
+        ],
+        "only_logreg_right": 102,
+        "only_other_right": 139,
+        "mcnemar_p": 0.02,
+        "train": "full",
+        "seed": 1,
+        "kind": "Ensemble"
+      },
+      {
+        "model": "DistilBERT full seed 2",
+        "test_papers": 2400,
+        "accuracy": 0.795,
+        "macro_precision": 0.794,
+        "macro_recall": 0.795,
+        "macro_f1": 0.794,
+        "gain": 0.002,
+        "ci_95": [
+          -0.012,
+          0.016
+        ],
+        "only_logreg_right": 145,
+        "only_other_right": 154,
+        "mcnemar_p": 0.644,
+        "train": "full",
+        "seed": 2,
+        "kind": "DistilBERT"
+      },
+      {
+        "model": "Ensemble seed 2",
+        "test_papers": 2400,
+        "accuracy": 0.8,
+        "macro_precision": 0.8,
+        "macro_recall": 0.8,
+        "macro_f1": 0.799,
+        "gain": 0.008,
+        "ci_95": [
+          -0.005,
+          0.021
+        ],
+        "only_logreg_right": 110,
+        "only_other_right": 131,
+        "mcnemar_p": 0.198,
+        "train": "full",
+        "seed": 2,
+        "kind": "Ensemble"
+      }
+    ]
+  },
+  "most_confused_pairs": [
+    {
+      "actual": "cs.AI",
+      "predicted": "cs.LG",
+      "papers": 56
+    },
+    {
+      "actual": "cs.AI",
+      "predicted": "cs.CL",
+      "papers": 47
+    },
+    {
+      "actual": "cs.LG",
+      "predicted": "cs.AI",
+      "papers": 44
+    },
+    {
+      "actual": "cs.CL",
+      "predicted": "cs.AI",
+      "papers": 37
+    },
+    {
+      "actual": "cs.IR",
+      "predicted": "cs.CL",
+      "papers": 28
+    },
+    {
+      "actual": "cs.LG",
+      "predicted": "cs.CV",
+      "papers": 26
+    }
+  ],
+  "accuracy_by_listing": {
+    "single category": 0.828,
+    "cross-listed": 0.763
+  },
+  "lenient_accuracy_logreg": 0.875,
+  "short_input_check": {
+    "median_title_words": 9,
+    "rows": [
+      {
+        "model": "LogReg, title + abstract",
+        "test_papers": 2400,
+        "accuracy": 0.792,
+        "macro_precision": 0.793,
+        "macro_recall": 0.792,
+        "macro_f1": 0.792
+      },
+      {
+        "model": "LogReg, title only",
+        "test_papers": 2400,
+        "accuracy": 0.69,
+        "macro_precision": 0.716,
+        "macro_recall": 0.69,
+        "macro_f1": 0.698
+      }
+    ]
+  }
+}

@@ -1,0 +1,236 @@
+{
+  "corpus_stats": [
+    {
+      "category": "cs.AI",
+      "papers": 2000,
+      "mean_words": 178.8,
+      "vocab_size": 15258,
+      "type_token_ratio": 0.0427
+    },
+    {
+      "category": "cs.CL",
+      "papers": 2000,
+      "mean_words": 168.6,
+      "vocab_size": 13824,
+      "type_token_ratio": 0.041
+    },
+    {
+      "category": "cs.CR",
+      "papers": 2000,
+      "mean_words": 181.8,
+      "vocab_size": 15245,
+      "type_token_ratio": 0.0419
+    },
+    {
+      "category": "cs.CV",
+      "papers": 2000,
+      "mean_words": 187.2,
+      "vocab_size": 14714,
+      "type_token_ratio": 0.0393
+    },
+    {
+      "category": "cs.IR",
+      "papers": 2000,
+      "mean_words": 184.8,
+      "vocab_size": 13308,
+      "type_token_ratio": 0.036
+    },
+    {
+      "category": "cs.LG",
+      "papers": 2000,
+      "mean_words": 182.6,
+      "vocab_size": 14251,
+      "type_token_ratio": 0.039
+    }
+  ],
+  "vocab_reduction_1000_abstracts": {
+    "raw lowercase words": 11417,
+    "cleaned, no stop-words/punct/numbers": 10818,
+    "+ Porter stemming": 6483,
+    "+ spaCy lemmatisation": 8466
+  },
+  "mean_key_phrases_per_paper": 25.3,
+  "mean_noun_chunks_per_paper": 27.3,
+  "spacy_entity_labels_600_papers": {
+    "ORG": 2020,
+    "CARDINAL": 971,
+    "PERSON": 296,
+    "ORDINAL": 184,
+    "GPE": 170,
+    "PERCENT": 168,
+    "NORP": 136,
+    "DATE": 99,
+    "PRODUCT": 73,
+    "LANGUAGE": 25
+  },
+  "regex_600_papers": {
+    "acronym_definitions": 299,
+    "dataset_mentions": 56,
+    "papers_with_a_year": 31
+  },
+  "regex_names_also_found_by_spacy": 0.553,
+  "gold_label_audit": {
+    "provenance": "AI draft, human verified (20/20)",
+    "abstracts_with_labels": 20,
+    "human_verified_abstracts": 20,
+    "method_dataset_names": 75,
+    "nonverbatim_method_dataset_names": 0
+  },
+  "llm_backend": {
+    "backend": "hf",
+    "model": "Qwen/Qwen2.5-1.5B-Instruct"
+  },
+  "n_labelled_abstracts": 20,
+  "extraction_scores": [
+    {
+      "extractor": "Regex rules (W3)",
+      "precision": 0.659,
+      "recall": 0.36,
+      "f1": 0.466,
+      "predicted": 41,
+      "gold": 75,
+      "f1_exact": 0.397,
+      "f1_95ci": "0.32\u20130.59"
+    },
+    {
+      "extractor": "spaCy NER ORG/PRODUCT (W3)",
+      "precision": 0.524,
+      "recall": 0.293,
+      "f1": 0.376,
+      "predicted": 42,
+      "gold": 75,
+      "f1_exact": 0.342,
+      "f1_95ci": "0.25\u20130.49"
+    },
+    {
+      "extractor": "Zero-shot LLM (W9)",
+      "precision": 0.88,
+      "recall": 0.293,
+      "f1": 0.44,
+      "predicted": 25,
+      "gold": 75,
+      "f1_exact": 0.3,
+      "f1_95ci": "0.35\u20130.53"
+    },
+    {
+      "extractor": "Few-shot LLM (W9)",
+      "precision": 0.611,
+      "recall": 0.587,
+      "f1": 0.599,
+      "predicted": 72,
+      "gold": 75,
+      "f1_exact": 0.49,
+      "f1_95ci": "0.49\u20130.69"
+    },
+    {
+      "extractor": "Hybrid: few-shot LLM + regex",
+      "precision": 0.593,
+      "recall": 0.68,
+      "f1": 0.634,
+      "predicted": 86,
+      "gold": 75,
+      "f1_exact": 0.522,
+      "f1_95ci": "0.51\u20130.73"
+    }
+  ],
+  "hybrid_minus_few_shot_f1_95ci": [
+    -0.005,
+    0.075
+  ],
+  "llm_per_field": [
+    {
+      "extractor": "zero-shot",
+      "field": "methods",
+      "precision": 0.875,
+      "recall": 0.368,
+      "f1": 0.519,
+      "predicted": 24,
+      "gold": 57
+    },
+    {
+      "extractor": "zero-shot",
+      "field": "datasets",
+      "precision": 1.0,
+      "recall": 0.056,
+      "f1": 0.105,
+      "predicted": 1,
+      "gold": 18
+    },
+    {
+      "extractor": "zero-shot",
+      "field": "tasks",
+      "precision": 0.593,
+      "recall": 0.348,
+      "f1": 0.438,
+      "predicted": 27,
+      "gold": 46
+    },
+    {
+      "extractor": "few-shot",
+      "field": "methods",
+      "precision": 0.627,
+      "recall": 0.561,
+      "f1": 0.593,
+      "predicted": 51,
+      "gold": 57
+    },
+    {
+      "extractor": "few-shot",
+      "field": "datasets",
+      "precision": 0.571,
+      "recall": 0.667,
+      "f1": 0.615,
+      "predicted": 21,
+      "gold": 18
+    },
+    {
+      "extractor": "few-shot",
+      "field": "tasks",
+      "precision": 0.5,
+      "recall": 0.217,
+      "f1": 0.303,
+      "predicted": 20,
+      "gold": 46
+    }
+  ],
+  "llm_reliability": [
+    {
+      "prompt": "zero-shot",
+      "valid_json_rate": 1.0,
+      "names_returned": 52,
+      "names_found_in_abstract": 0.962
+    },
+    {
+      "prompt": "few-shot",
+      "valid_json_rate": 1.0,
+      "names_returned": 92,
+      "names_found_in_abstract": 0.891
+    }
+  ],
+  "error_analysis": [
+    {
+      "extractor": "Regex rules (W3)",
+      "true positives": 27,
+      "missed lower-case names": 25,
+      "missed capitalised names": 23,
+      "false positives": 14,
+      "example false positives": "T2I, FEAS, CIR, PTKB, CBRN, NP"
+    },
+    {
+      "extractor": "Few-shot LLM (W9)",
+      "true positives": 44,
+      "missed lower-case names": 15,
+      "missed capitalised names": 16,
+      "false positives": 28,
+      "example false positives": "submodular maximization with cardinality constraints, text-to-image (T2I) diffusion models, concept erasure techniques, fine-tuning the denoising component, causal tracing studies, decoupling strategy"
+    },
+    {
+      "extractor": "Hybrid: few-shot LLM + regex",
+      "true positives": 51,
+      "missed lower-case names": 15,
+      "missed capitalised names": 9,
+      "false positives": 35,
+      "example false positives": "submodular maximization with cardinality constraints, text-to-image (T2I) diffusion models, concept erasure techniques, fine-tuning the denoising component, causal tracing studies, decoupling strategy"
+    }
+  ]
+}

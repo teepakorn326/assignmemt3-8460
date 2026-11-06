@@ -1,0 +1,70 @@
+notebook,technique,week,metric,value,note
+02,extraction: Regex rules (W3),W3 / W9,F1 (20 provisional abstracts),0.466,
+02,extraction: spaCy NER ORG/PRODUCT (W3),W3 / W9,F1 (20 provisional abstracts),0.376,
+02,extraction: Zero-shot LLM (W9),W3 / W9,F1 (20 provisional abstracts),0.44,
+02,extraction: Few-shot LLM (W9),W3 / W9,F1 (20 provisional abstracts),0.599,
+02,extraction: Hybrid: few-shot LLM + regex,W3 / W9,F1 (20 provisional abstracts),0.634,
+02,preprocessing: vocab after lemmatisation,W2,vocab size (1k abstracts),8466,
+03,classifier: Naive Bayes + BoW,W5-W9,macro-F1,0.773,
+03,classifier: Naive Bayes + TF-IDF,W5-W9,macro-F1,0.769,
+03,classifier: LogReg + TF-IDF,W5-W9,macro-F1,0.788,
+03,classifier: LogReg + TF-IDF (1-2 grams),W5-W9,macro-F1,0.792,
+03,"classifier: Zero-shot NLI, category names",W5-W9,macro-F1,0.356,500-paper subset
+03,"classifier: Zero-shot NLI, category descriptions",W5-W9,macro-F1,0.628,500-paper subset
+03,classifier: LSTM (2 epochs),W5-W9,macro-F1,0.671,
+03,classifier: LogReg + TF-IDF (3000 train),W5-W9,macro-F1,0.777,
+03,classifier: DistilBERT frozen + LogReg (3000 train),W5-W9,macro-F1,0.717,
+03,"classifier: DistilBERT fine-tuned (1 epoch, 3000 train)",W5-W9,macro-F1,0.753,
+03,"classifier: Few-shot LLM, category names",W5-W9,macro-F1,0.388,"200-paper subset, 0 unparsed"
+03,"classifier: Few-shot LLM, category descriptions",W5-W9,macro-F1,0.469,"200-paper subset, 0 unparsed"
+03,classifier: Ensemble: LogReg + NB,W5-W9,macro-F1,0.791,
+03,classifier: Ensemble: LogReg + DistilBERT,W5-W9,macro-F1,0.784,
+03,"classifier: DistilBERT fine-tuned (2 epochs, 3000 train)",W5-W9,macro-F1,0.774,mean of 3 seeds
+03,"classifier: DistilBERT fine-tuned (2 epochs, 9600 train)",W5-W9,macro-F1,0.798,mean of 3 seeds
+03,classifier: Ensemble: LogReg + DistilBERT (9600 train),W5-W9,macro-F1,0.805,mean of 3 seeds
+03,classifier: LogReg (same 500 as zero-shot),W5-W9,macro-F1,0.813,500-paper subset
+03,classifier: LogReg (same 200 as LLM),W5-W9,macro-F1,0.827,200-paper subset
+03,"classifier: LogReg, title only",W5,macro-F1,0.698,title-only proxy for short queries
+04,retrieval: TF-IDF (1-2 grams),W4 / W8 / W12,nDCG@5,0.636,
+04,retrieval: Averaged word vectors,W4 / W8 / W12,nDCG@5,0.42,
+04,retrieval: MiniLM sentence embeddings,W4 / W8 / W12,nDCG@5,0.708,
+04,retrieval: random baseline,W4 / W8 / W12,nDCG@5,0.167,
+04,retrieval: MiniLM deployed 12k (self excluded),W12,nDCG@5,0.72,
+04,clustering: TF-IDF (SVD-100),W4,purity,0.572,
+04,clustering: Averaged word vectors,W4,purity,0.296,
+04,clustering: MiniLM sentence embeddings,W4,purity,0.727,
+05,summary: extractive,W9,ROUGE-L,0.308,
+05,summary: BART,W9,ROUGE-L,0.371,
+05,summary: T5,W9,ROUGE-L,0.288,
+05,summary: LLM basic,W9,ROUGE-L,0.171,
+05,summary: LLM few-shot,W9,ROUGE-L,0.259,
+05,summary: extractive,W9,rubric 1-5,3.72,
+05,summary: BART,W9,rubric 1-5,3.55,
+05,summary: T5,W9,rubric 1-5,3.43,
+05,summary: LLM basic,W9,rubric 1-5,3.73,
+05,summary: LLM few-shot,W9,rubric 1-5,3.7,
+05,groundedness: extractive,W10,supported claims,1.0,
+05,groundedness: BART,W10,supported claims,0.98,
+05,groundedness: T5,W10,supported claims,0.982,
+05,groundedness: LLM few-shot,W10,supported claims,1.0,
+05,RAG synthesis: RAG,W11-12,claims supported by retrieved papers,0.765,
+05,RAG synthesis: RAG,W11-12,claims with an in-range [n] marker,5/17,
+05,RAG synthesis: RAG,W11-12,exact-source cited claims,0,
+05,RAG synthesis: no RAG,W11-12,claims supported by retrieved papers,0.4,
+05,RAG synthesis: no RAG,W11-12,claims with an in-range [n] marker,0/20,
+05,RAG synthesis: no RAG,W11-12,exact-source cited claims,0,
+05,research gap: direct,W8-9,specificity (gap words in abstract),0.368,
+05,research gap: zero_shot_cot,W8-9,specificity (gap words in abstract),0.382,
+05,research gap: few_shot_cot,W8-9,specificity (gap words in abstract),0.174,
+05,judge validation: copied sentences judged SUPPORTED,W10,count,40/40,
+05,judge validation: planted claims judged UNSUPPORTED,W10,count,23/23,
+05,"prompt injection, no guard sentence",W10,attacks succeeded,2/9,
+05,"prompt injection, guard sentence",W10,attacks succeeded,3/9,
+05.1,RAG synthesis: v1 (notebook 05),W11-12,kept by per-claim filter,5/17,
+05.1,RAG synthesis: v2 (cite every sentence),W11-12,kept by per-claim filter,10/21,
+05.1,"prompt injection, original attacks, none",W10,attacks succeeded,3/9,counts partial hijacks
+05.1,"prompt injection, original attacks, guard",W10,attacks succeeded,3/9,counts partial hijacks
+05.1,"prompt injection, original attacks, sanitize + guard",W10,attacks succeeded,0/9,counts partial hijacks
+05.1,"prompt injection, held-out attacks, none",W10,attacks succeeded,4/9,counts partial hijacks
+05.1,"prompt injection, held-out attacks, guard",W10,attacks succeeded,4/9,counts partial hijacks
+05.1,"prompt injection, held-out attacks, sanitize + guard",W10,attacks succeeded,4/9,counts partial hijacks

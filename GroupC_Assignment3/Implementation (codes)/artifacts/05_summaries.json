@@ -1,0 +1,787 @@
+[
+  {
+    "id":"2203.07320",
+    "title":"The Right to be Forgotten in Federated Learning: An Efficient Realization with Rapid Retraining",
+    "abstract":"In Machine Learning, the emergence of \\textit{the right to be forgotten} gave birth to a paradigm named \\textit{machine unlearning}, which enables data holders to proactively erase their data from a trained model. Existing machine unlearning techniques focus on centralized training, where access to all holders' training data is a must for the server to conduct the unlearning process. It remains largely underexplored about how to achieve unlearning when full access to all training data becomes unavailable. One noteworthy example is Federated Learning (FL), where each participating data holder trains locally, without sharing their training data to the central server. In this paper, we investigate the problem of machine unlearning in FL systems. We start with a formal definition of the unlearning problem in FL and propose a rapid retraining approach to fully erase data samples from a trained FL model. The resulting design allows data holders to jointly conduct the unlearning process efficiently while keeping their training data locally. Our formal convergence and complexity analysis demonstrate that our design can preserve model utility with high efficiency. Extensive evaluations on four real-world datasets illustrate the effectiveness and performance of our proposed realization.",
+    "authors":"Yi Liu, Lei Xu, Xingliang Yuan, Cong Wang, Bo Li",
+    "categories":"cs.CR cs.LG",
+    "doi":"10.1109\/INFOCOM48880.2022.9796721",
+    "journal-ref":null,
+    "update_date":"2022-07-01",
+    "versions":[
+      {
+        "version":"v1",
+        "created":"Mon, 14 Mar 2022 17:22:40 GMT"
+      }
+    ],
+    "primary_category":"cs.CR",
+    "all_categories":[
+      "cs.CR",
+      "cs.LG"
+    ],
+    "author_list":[
+      "Yi Liu",
+      "Lei Xu",
+      "Xingliang Yuan",
+      "Cong Wang",
+      "Bo Li"
+    ],
+    "text":"The Right to be Forgotten in Federated Learning: An Efficient Realization with Rapid Retraining. In Machine Learning, the emergence of \\textit{the right to be forgotten} gave birth to a paradigm named \\textit{machine unlearning}, which enables data holders to proactively erase their data from a trained model. Existing machine unlearning techniques focus on centralized training, where access to all holders' training data is a must for the server to conduct the unlearning process. It remains largely underexplored about how to achieve unlearning when full access to all training data becomes unavailable. One noteworthy example is Federated Learning (FL), where each participating data holder trains locally, without sharing their training data to the central server. In this paper, we investigate the problem of machine unlearning in FL systems. We start with a formal definition of the unlearning problem in FL and propose a rapid retraining approach to fully erase data samples from a trained FL model. The resulting design allows data holders to jointly conduct the unlearning process efficiently while keeping their training data locally. Our formal convergence and complexity analysis demonstrate that our design can preserve model utility with high efficiency. Extensive evaluations on four real-world datasets illustrate the effectiveness and performance of our proposed realization.",
+    "sum_extractive":"The resulting design allows data holders to jointly conduct the unlearning process efficiently while keeping their training data locally. Our formal convergence and complexity analysis demonstrate that our design can preserve model utility with high efficiency. Extensive evaluations on four real-world datasets illustrate the effectiveness and performance of our proposed realization.",
+    "sum_bart":"Machine unlearning enables data holders to proactively erase their data from a trained model. Existing machine unlearning techniques focus on centralized training, where access to all holders' training data is a must. Federated Learning (FL) allows each participating data holder to train locally, without sharing their training data to the central server.",
+    "sum_t5":"the right to be forgotten gave birth to a paradigm called machine unlearning . it enables data holders to proactively erase their data from a trained model . the paper proposes a rapid retraining approach to fully erase data samples .",
+    "sum_llm_basic":"The abstract discusses the concept of \"machine unlearning\" in the context of Federated Learning (FL) systems. This involves erasing specific data samples from a trained model across multiple decentralized participants without needing direct access to all training data. Key points include:\n1. A formal definition of the unlearning problem in FL.\n2. Proposing a rapid retraining approach to remove data samples from an FL model.\n3. Allowing data holders to perform unlearning processes independently while retaining local training data.\n4. Demonstrating through formal convergence and complexity analyses that the method preserves model utility effectively.\n5. Evaluations using four real-world datasets showing the effectiveness and performance of the proposed solution.",
+    "sum_llm_role":"This abstract discusses the concept of \"machine unlearning\" within the context of Federated Learning (FL). It highlights the challenge of erasing specific data points from models trained using FL, where direct access to all training data is not feasible due to privacy concerns or other reasons. The study proposes a method called \"rapid retraining\" to address this issue by allowing individual data holders to train local models independently without sharing their data with a central server. This approach aims to maintain privacy while enabling efficient unlearning processes. The authors also provide theoretical analyses showing that their solution preserves model utility effectively. Finally, they present experimental results demonstrating the practical benefits of their approach across various real-world datasets.",
+    "sum_llm_instruction":"The study investigates the challenge of machine unlearning in federated learning systems, proposing a rapid retraining approach to remove specific data samples from an FL model's training. This method allows data holders to perform unlearning independently while preserving local training data, ensuring efficient and effective model utility retention.",
+    "sum_llm_few-shot":"In machine learning, the right to be forgotten led to the concept of machine unlearning, enabling data holders to erase their data from models. Traditional methods require full access to training data. Federated Learning offers an alternative but challenges exist. This paper addresses these issues by proposing a rapid retraining approach for machine unlearning in federated settings. The solution preserves model utility efficiently while allowing local control over training data.",
+    "reference":"The Right to be Forgotten in Federated Learning: An Efficient Realization with Rapid Retraining. In Machine Learning, the emergence of the right to be forgotten gave birth to a paradigm named machine unlearning, which enables data holders to proactively erase their data from a trained model."
+  },
+  {
+    "id":"2201.06035",
+    "title":"Sequential Recommendation via Stochastic Self-Attention",
+    "abstract":"Sequential recommendation models the dynamics of a user's previous behaviors in order to forecast the next item, and has drawn a lot of attention. Transformer-based approaches, which embed items as vectors and use dot-product self-attention to measure the relationship between items, demonstrate superior capabilities among existing sequential methods. However, users' real-world sequential behaviors are \\textit{\\textbf{uncertain}} rather than deterministic, posing a significant challenge to present techniques. We further suggest that dot-product-based approaches cannot fully capture \\textit{\\textbf{collaborative transitivity}}, which can be derived in item-item transitions inside sequences and is beneficial for cold start items. We further argue that BPR loss has no constraint on positive and sampled negative items, which misleads the optimization. We propose a novel \\textbf{STO}chastic \\textbf{S}elf-\\textbf{A}ttention~(STOSA) to overcome these issues. STOSA, in particular, embeds each item as a stochastic Gaussian distribution, the covariance of which encodes the uncertainty. We devise a novel Wasserstein Self-Attention module to characterize item-item position-wise relationships in sequences, which effectively incorporates uncertainty into model training. Wasserstein attentions also enlighten the collaborative transitivity learning as it satisfies triangle inequality. Moreover, we introduce a novel regularization term to the ranking loss, which assures the dissimilarity between positive and the negative items. Extensive experiments on five real-world benchmark datasets demonstrate the superiority of the proposed model over state-of-the-art baselines, especially on cold start items. The code is available in \\url{https:\/\/github.com\/zfan20\/STOSA}.",
+    "authors":"Ziwei Fan, Zhiwei Liu, Alice Wang, Zahra Nazari, Lei Zheng, Hao Peng,\n  Philip S. Yu",
+    "categories":"cs.IR cs.AI cs.LG",
+    "doi":null,
+    "journal-ref":null,
+    "update_date":"2022-03-08",
+    "versions":[
+      {
+        "version":"v1",
+        "created":"Sun, 16 Jan 2022 12:38:45 GMT"
+      },
+      {
+        "version":"v2",
+        "created":"Sat, 5 Mar 2022 17:00:57 GMT"
+      }
+    ],
+    "primary_category":"cs.IR",
+    "all_categories":[
+      "cs.IR",
+      "cs.AI",
+      "cs.LG"
+    ],
+    "author_list":[
+      "Ziwei Fan",
+      "Zhiwei Liu",
+      "Alice Wang",
+      "Zahra Nazari",
+      "Lei Zheng",
+      "Hao Peng",
+      "Philip S. Yu"
+    ],
+    "text":"Sequential Recommendation via Stochastic Self-Attention. Sequential recommendation models the dynamics of a user's previous behaviors in order to forecast the next item, and has drawn a lot of attention. Transformer-based approaches, which embed items as vectors and use dot-product self-attention to measure the relationship between items, demonstrate superior capabilities among existing sequential methods. However, users' real-world sequential behaviors are \\textit{\\textbf{uncertain}} rather than deterministic, posing a significant challenge to present techniques. We further suggest that dot-product-based approaches cannot fully capture \\textit{\\textbf{collaborative transitivity}}, which can be derived in item-item transitions inside sequences and is beneficial for cold start items. We further argue that BPR loss has no constraint on positive and sampled negative items, which misleads the optimization. We propose a novel \\textbf{STO}chastic \\textbf{S}elf-\\textbf{A}ttention~(STOSA) to overcome these issues. STOSA, in particular, embeds each item as a stochastic Gaussian distribution, the covariance of which encodes the uncertainty. We devise a novel Wasserstein Self-Attention module to characterize item-item position-wise relationships in sequences, which effectively incorporates uncertainty into model training. Wasserstein attentions also enlighten the collaborative transitivity learning as it satisfies triangle inequality. Moreover, we introduce a novel regularization term to the ranking loss, which assures the dissimilarity between positive and the negative items. Extensive experiments on five real-world benchmark datasets demonstrate the superiority of the proposed model over state-of-the-art baselines, especially on cold start items. The code is available in \\url{https:\/\/github.com\/zfan20\/STOSA}.",
+    "sum_extractive":"Transformer-based approaches, which embed items as vectors and use dot-product self-attention to measure the relationship between items, demonstrate superior capabilities among existing sequential methods. We devise a novel Wasserstein Self-Attention module to characterize item-item position-wise relationships in sequences, which effectively incorporates uncertainty into model training. Extensive experiments on five real-world benchmark datasets demonstrate the superiority of the proposed model over state-of-the-art baselines, especially on cold start items.",
+    "sum_bart":"We propose a novel STOchastic Self-Attention~(STOSA) to overcome these issues. STOSA embeds each item as a stochastic Gaussian distribution, which encodes the uncertainty. Extensive experiments on five real-world benchmark datasets demonstrate the superiority of the proposed model over state-of-",
+    "sum_t5":"transformer-based approaches demonstrate superior capabilities among existing methods . but users' real-world sequential behaviors are uncertain rather than deterministic . we propose a novel STOchastic Self-Attention(STOSA) to overcome these issues .",
+    "sum_llm_basic":"The abstract discusses an improvement to sequential recommendation models using transformer-based approaches. It highlights how traditional dot-product based methods struggle with uncertain user behavior due to their deterministic nature. The authors suggest that these methods fail to capture collaborative transitivity, which they claim benefits cold-start items.\n\nThey propose a new method called STochastic Self-Attention (STOSA), which uses stochastic Gaussian distributions to represent items and incorporates uncertainty through covariance matrices. This approach introduces a Wasserstein Self-Attention module to better understand item-item relationships within sequences and ensures that the model respects the triangle inequality, thereby improving its ability to learn collaborative transitivity.\n\nAdditionally, the authors introduce a novel regularization term in the ranking loss function to ensure that positive and negative recommendations have different characteristics. They validate their improvements across multiple real-world datasets, showing that STOSA outperforms other state-of-the-art methods, particularly in handling cold-start scenarios.",
+    "sum_llm_role":"The abstract discusses an improvement to sequential recommendation models by introducing a new approach called STOchastic Self-Attention (STOSA). This method addresses two main challenges: capturing uncertain user behavior and incorporating collaborative transitivity learned through item-item transitions within sequences. \n\nKey points include:\n1. Traditional dot-product based approaches struggle with non-deterministic user behavior.\n2. These methods fail to accurately represent collaborative transitivity, which is crucial for handling cold-start scenarios where there isn't enough data about a user's preferences.\n3. The authors propose using a stochastic Gaussian distribution to encode uncertainty associated with each item.\n4. A novel Wasserstein Self-Attention module is introduced to better understand and incorporate the relationships between different positions within sequence data, thereby enhancing the ability to learn collaborative transitivity.\n5. An additional regularization term is added to ensure that the positive and negative items being compared during the ranking process have distinct characteristics.\n\nExperiments conducted on various real-world datasets show that the proposed STOSA model significantly outperforms current state-of-the-art methods, particularly when dealing with cold-start recommendations.",
+    "sum_llm_instruction":"The abstract discusses the challenges faced by current sequential recommendation models due to uncertain user behavior and proposes a new approach called STOchastic Self-Attention (STOSA) to address these issues. STOSA uses stochastic Gaussian distributions to represent items and incorporates uncertainty through Wasserstein Self-Attention modules, improving performance on both active and cold start items compared to existing methods.",
+    "sum_llm_few-shot":"Sequential recommendation models predict the next item based on past behavior, but handle uncertain user actions poorly. STOSA, an STochastic Self-Attention, addresses this by embedding items as distributions and incorporating uncertainty. It uses Wasserstein Self-Attention to learn item-item relationships and a new regularization term to ensure positive vs. negative item dissimilarity.",
+    "reference":"Sequential Recommendation via Stochastic Self-Attention. Sequential recommendation models the dynamics of a user's previous behaviors in order to forecast the next item, and has drawn a lot of attention."
+  },
+  {
+    "id":"2505.09742",
+    "title":"A Generative Neural Annealer for Black-Box Combinatorial Optimization",
+    "abstract":"We propose a generative, end-to-end solver for black-box combinatorial optimization that emphasizes both sample efficiency and solution quality on NP problems. Drawing inspiration from annealing-based algorithms, we treat the black-box objective as an energy function and train a neural network to model the associated Boltzmann distribution. By conditioning on temperature, the network captures a continuum of distributions--from near-uniform at high temperatures to sharply peaked around global optima at low temperatures--thereby learning the structure of the energy landscape and facilitating global optimization. When queries are expensive, the temperature-dependent distributions naturally enable data augmentation and improve sample efficiency. When queries are cheap but the problem remains hard, the model learns implicit variable interactions, effectively \"opening\" the black box. We validate our approach on challenging combinatorial tasks under both limited and unlimited query budgets, showing competitive performance against state-of-the-art black-box optimizers.",
+    "authors":"Yuan-Hang Zhang, Massimiliano Di Ventra",
+    "categories":"cs.LG cond-mat.dis-nn cond-mat.stat-mech cs.AI cs.NE",
+    "doi":null,
+    "journal-ref":null,
+    "update_date":"2025-08-07",
+    "versions":[
+      {
+        "version":"v1",
+        "created":"Wed, 14 May 2025 19:05:19 GMT"
+      },
+      {
+        "version":"v2",
+        "created":"Tue, 05 Aug 2025 18:14:19 GMT"
+      }
+    ],
+    "primary_category":"cs.LG",
+    "all_categories":[
+      "cs.LG",
+      "cond-mat.dis-nn",
+      "cond-mat.stat-mech",
+      "cs.AI",
+      "cs.NE"
+    ],
+    "author_list":[
+      "Yuan-Hang Zhang",
+      "Massimiliano Di Ventra"
+    ],
+    "text":"A Generative Neural Annealer for Black-Box Combinatorial Optimization. We propose a generative, end-to-end solver for black-box combinatorial optimization that emphasizes both sample efficiency and solution quality on NP problems. Drawing inspiration from annealing-based algorithms, we treat the black-box objective as an energy function and train a neural network to model the associated Boltzmann distribution. By conditioning on temperature, the network captures a continuum of distributions--from near-uniform at high temperatures to sharply peaked around global optima at low temperatures--thereby learning the structure of the energy landscape and facilitating global optimization. When queries are expensive, the temperature-dependent distributions naturally enable data augmentation and improve sample efficiency. When queries are cheap but the problem remains hard, the model learns implicit variable interactions, effectively \"opening\" the black box. We validate our approach on challenging combinatorial tasks under both limited and unlimited query budgets, showing competitive performance against state-of-the-art black-box optimizers.",
+    "sum_extractive":"We propose a generative, end-to-end solver for black-box combinatorial optimization that emphasizes both sample efficiency and solution quality on NP problems. When queries are expensive, the temperature-dependent distributions naturally enable data augmentation and improve sample efficiency. We validate our approach on challenging combinatorial tasks under both limited and unlimited query budgets, showing competitive performance against state-of-the-art black-box optimizers.",
+    "sum_bart":"We treat the black-box objective as an energy function and train a neural network to model the associated Boltzmann distribution. By conditioning on temperature, the network captures a continuum of distributions--from near-uniform at high temperatures to sharply peaked around global optima at low temperatures.",
+    "sum_t5":"we propose a generative, end-to-end solver for black-box combinatorial optimization . the approach emphasizes sample efficiency and solution quality on NP problems . by conditioning on temperature, the network captures a continuum of distributions . when queries are expensive, the temperature-dependent distributions naturally",
+    "sum_llm_basic":"The abstract describes a new method for solving complex combinatorial optimization problems using deep learning techniques. The proposed algorithm treats the black-box objective function as an energy function and trains a neural network to approximate its Boltzmann distribution. This allows the system to learn about the underlying energy landscape and find optimal solutions efficiently.\n\nKey features include:\n1. Sample efficiency: The method can quickly converge to good solutions even with limited queries.\n2. Global optimization: It excels in finding global optima rather than local ones.\n3. Data augmentation: Temperature-dependent distributions help improve sample efficiency when queries are costly.\n4. Implicit interaction learning: For harder problems where direct queries are expensive, it discovers hidden relationships between variables.\n5. Validation: The approach has been tested successfully on various combinatorial tasks across different query budget scenarios, demonstrating competitive performance compared to existing methods.",
+    "sum_llm_role":"The proposed method is an end-to-end generative solver designed for combinatorial optimization in NP problems. It treats the black-box objective as an energy function and trains a neural network to approximate the Boltzmann distribution, capturing different levels of temperature to explore various aspects of the energy landscape. At higher temperatures, it simulates uniform exploration, while lower temperatures focus on finding local optima. This allows the model to learn the complexity of the problem and adapt its search strategy accordingly. The method's flexibility enables efficient use of limited queries by allowing gradual cooling, and effective handling of complex problems with insufficient queries through implicit interaction modeling. Validation across diverse combinatorial tasks demonstrates superior performance compared to existing black-box optimization techniques.",
+    "sum_llm_instruction":"The study proposes a novel generative, end-to-end solver for combinatorial optimization using a neural network trained to approximate the Boltzmann distribution of a black-box objective function. The method leverages temperature control to capture different levels of exploration (uniform vs. peaked) and adaptability to varying query costs, achieving improved sample efficiency and solution quality across diverse problem domains.",
+    "sum_llm_few-shot":"We introduce a generative, end-to-end solver for black-box combinatorial optimization that combines sample efficiency and solution quality. The model treats the black-box objective as an energy function and trains a neural network to approximate the Boltzmann distribution, capturing different levels of exploration based on temperature. This allows it to learn the energy landscape and optimize efficiently even when queries are costly.",
+    "reference":"A Generative Neural Annealer for Black-Box Combinatorial Optimization. We propose a generative, end-to-end solver for black-box combinatorial optimization that emphasizes both sample efficiency and solution quality on NP problems."
+  },
+  {
+    "id":"2602.08678",
+    "title":"SA-CAISR: Stage-Adaptive and Conflict-Aware Incremental Sequential Recommendation",
+    "abstract":"Sequential recommendation (SR) aims to predict a user's next action by learning from their historical interaction sequences. In real-world applications, these models require periodic updates to adapt to new interactions and evolving user preferences. While incremental learning methods facilitate these updates, they face significant challenges. Replay-based approaches incur high memory and computational costs, and regularization-based methods often struggle to discard outdated or conflicting knowledge. To overcome these challenges, we propose SA-CAISR, a Stage-Adaptive and Conflict-Aware Incremental Sequential Recommendation framework. As a buffer-free framework, SA-CAISR operates using only the old model and new data, directly addressing the high costs of replay-based techniques. SA-CAISR introduces a novel Fisher-weighted knowledge-screening mechanism that dynamically identifies outdated knowledge by estimating parameter-level conflicts between the old model and new data, selectively removing obsolete knowledge while preserving compatible historical patterns. This dynamic balance between stability and adaptability allows our method to achieve state-of-the-art performance in incremental SR. Specifically, SA-CAISR improves Recall@20 by 2.0% on average across datasets, while reducing memory usage by 97.5% and training time by 46.9% compared to the best baseline. This efficiency allows real-world systems to rapidly update user profiles with minimal computational overhead, ensuring more timely and accurate recommendations.",
+    "authors":"Xiaomeng Song, Xinru Wang, Hanbing Wang, Hongyu Lu, Yu Chen, Zhaochun Ren, Zhumin Chen",
+    "categories":"cs.IR",
+    "doi":null,
+    "journal-ref":null,
+    "update_date":"2026-02-12",
+    "versions":[
+      {
+        "version":"v1",
+        "created":"Mon, 09 Feb 2026 14:00:52 GMT"
+      },
+      {
+        "version":"v2",
+        "created":"Wed, 11 Feb 2026 12:06:44 GMT"
+      }
+    ],
+    "primary_category":"cs.IR",
+    "all_categories":[
+      "cs.IR"
+    ],
+    "author_list":[
+      "Xiaomeng Song",
+      "Xinru Wang",
+      "Hanbing Wang",
+      "Hongyu Lu",
+      "Yu Chen",
+      "Zhaochun Ren",
+      "Zhumin Chen"
+    ],
+    "text":"SA-CAISR: Stage-Adaptive and Conflict-Aware Incremental Sequential Recommendation. Sequential recommendation (SR) aims to predict a user's next action by learning from their historical interaction sequences. In real-world applications, these models require periodic updates to adapt to new interactions and evolving user preferences. While incremental learning methods facilitate these updates, they face significant challenges. Replay-based approaches incur high memory and computational costs, and regularization-based methods often struggle to discard outdated or conflicting knowledge. To overcome these challenges, we propose SA-CAISR, a Stage-Adaptive and Conflict-Aware Incremental Sequential Recommendation framework. As a buffer-free framework, SA-CAISR operates using only the old model and new data, directly addressing the high costs of replay-based techniques. SA-CAISR introduces a novel Fisher-weighted knowledge-screening mechanism that dynamically identifies outdated knowledge by estimating parameter-level conflicts between the old model and new data, selectively removing obsolete knowledge while preserving compatible historical patterns. This dynamic balance between stability and adaptability allows our method to achieve state-of-the-art performance in incremental SR. Specifically, SA-CAISR improves Recall@20 by 2.0% on average across datasets, while reducing memory usage by 97.5% and training time by 46.9% compared to the best baseline. This efficiency allows real-world systems to rapidly update user profiles with minimal computational overhead, ensuring more timely and accurate recommendations.",
+    "sum_extractive":"To overcome these challenges, we propose SA-CAISR, a Stage-Adaptive and Conflict-Aware Incremental Sequential Recommendation framework. SA-CAISR introduces a novel Fisher-weighted knowledge-screening mechanism that dynamically identifies outdated knowledge by estimating parameter-level conflicts between the old model and new data, selectively removing obsolete knowledge while preserving compatible historical patterns. This efficiency allows real-world systems to rapidly update user profiles with minimal computational overhead, ensuring more timely and accurate recommendations.",
+    "sum_bart":"Sequential recommendation (SR) aims to predict a user's next action by learning from their historical interaction sequences. In real-world applications, these models require periodic updates to adapt to new interactions and evolving user preferences. Replay-based approaches incur high memory and computational costs.",
+    "sum_t5":"in real-world applications, models require periodic updates to adapt to new interactions . incremental learning methods face significant costs and high memory and computational costs . we propose a stage-adaptive and conflict-aware Incremental Sequential Recommendation framework .",
+    "sum_llm_basic":"The abstract describes Sequential Recommendation (SR) as predicting users' next actions based on past interactions. Real-world applications need frequent updates due to new interactions and changing preferences. Traditional methods like incremental learning can be costly but have issues with replay-based and regularization-based approaches.\n\nSA-CAISR is proposed as an efficient solution: it uses only the previous model and new data without requiring additional storage. It includes a conflict-aware mechanism that screens out outdated knowledge, balancing stability and adaptability. The method significantly boosts recall at rank 20, reduces memory usage, and cuts down training times compared to other baselines. This makes it suitable for real-time system updates, improving both accuracy and speed in recommending content or products.",
+    "sum_llm_role":"The abstract describes a sequential recommendation system called SA-CAISR, which addresses the challenge of updating models periodically in real-world applications. It proposes a stage-adaptive and conflict-aware incremental approach to improve upon existing methods like replay-based and regularization-based techniques.\n\nKey points:\n1. SA-CAISR is designed as a buffer-free framework.\n2. It uses only the old model and new data without requiring extensive replay operations.\n3. A novel Fisher-weighted knowledge-screening mechanism is introduced to identify and remove outdated knowledge.\n4. The method balances stability and adaptability effectively.\n5. On average, SA-CAISR achieves an improvement of 2.0% in Recall@20 across various datasets.\n6. It reduces memory usage by 97.5% and training time by 46.9% compared to the best baseline.\n7. This efficiency enables rapid and efficient updates to user profiles, enhancing recommendation accuracy in real-world applications.",
+    "sum_llm_instruction":"The study proposes SA-CAISR, an efficient stage-adaptive conflict-aware incremental sequential recommendation framework designed to address the challenges faced by traditional incremental learning methods for real-time updates in sequential recommendation systems. By dynamically identifying and discarding outdated knowledge through a novel Fisher-weighted knowledge screening mechanism, SA-CAISR significantly reduces memory usage, training times, and computational costs without compromising performance. On average, it achieves up to 2.0% higher recall at the second position and 97.5% lower memory usage compared to existing baselines. This approach enables real-world systems to quickly update user profiles with minimal impact on system performance.",
+    "sum_llm_few-shot":"SA-CAISR is a Stage-Adaptive and Conflict-Aware Incremental Sequential Recommendation framework designed for real-world applications requiring frequent updates. It addresses high costs associated with replay-based and regularization-based methods by operating solely on the old model and new data, using a novel Fisher-weighted knowledge-screening mechanism to identify and remove outdated knowledge while retaining compatible patterns. The method achieves state-of-the-art performance in incremental SR, improving Recall@20 by 2.0% and reducing memory usage by 97.5%, as well as training time by 46.9%.",
+    "reference":"SA-CAISR: Stage-Adaptive and Conflict-Aware Incremental Sequential Recommendation. Sequential recommendation (SR) aims to predict a user's next action by learning from their historical interaction sequences."
+  },
+  {
+    "id":"2304.07210",
+    "title":"Measuring Re-identification Risk",
+    "abstract":"Compact user representations (such as embeddings) form the backbone of personalization services. In this work, we present a new theoretical framework to measure re-identification risk in such user representations. Our framework, based on hypothesis testing, formally bounds the probability that an attacker may be able to obtain the identity of a user from their representation. As an application, we show how our framework is general enough to model important real-world applications such as the Chrome's Topics API for interest-based advertising. We complement our theoretical bounds by showing provably good attack algorithms for re-identification that we use to estimate the re-identification risk in the Topics API. We believe this work provides a rigorous and interpretable notion of re-identification risk and a framework to measure it that can be used to inform real-world applications.",
+    "authors":"CJ Carey, Travis Dick, Alessandro Epasto, Adel Javanmard, Josh Karlin,\n  Shankar Kumar, Andres Munoz Medina, Vahab Mirrokni, Gabriel Henrique Nunes,\n  Sergei Vassilvitskii, Peilin Zhong",
+    "categories":"cs.CR cs.LG",
+    "doi":null,
+    "journal-ref":null,
+    "update_date":"2023-08-01",
+    "versions":[
+      {
+        "version":"v1",
+        "created":"Wed, 12 Apr 2023 16:27:36 GMT"
+      },
+      {
+        "version":"v2",
+        "created":"Mon, 31 Jul 2023 17:35:57 GMT"
+      }
+    ],
+    "primary_category":"cs.CR",
+    "all_categories":[
+      "cs.CR",
+      "cs.LG"
+    ],
+    "author_list":[
+      "CJ Carey",
+      "Travis Dick",
+      "Alessandro Epasto",
+      "Adel Javanmard",
+      "Josh Karlin",
+      "Shankar Kumar",
+      "Andres Munoz Medina",
+      "Vahab Mirrokni",
+      "Gabriel Henrique Nunes",
+      "Sergei Vassilvitskii",
+      "Peilin Zhong"
+    ],
+    "text":"Measuring Re-identification Risk. Compact user representations (such as embeddings) form the backbone of personalization services. In this work, we present a new theoretical framework to measure re-identification risk in such user representations. Our framework, based on hypothesis testing, formally bounds the probability that an attacker may be able to obtain the identity of a user from their representation. As an application, we show how our framework is general enough to model important real-world applications such as the Chrome's Topics API for interest-based advertising. We complement our theoretical bounds by showing provably good attack algorithms for re-identification that we use to estimate the re-identification risk in the Topics API. We believe this work provides a rigorous and interpretable notion of re-identification risk and a framework to measure it that can be used to inform real-world applications.",
+    "sum_extractive":"Compact user representations (such as embeddings) form the backbone of personalization services. In this work, we present a new theoretical framework to measure re-identification risk in such user representations. We complement our theoretical bounds by showing provably good attack algorithms for re-identification that we use to estimate the re-identification risk in the Topics API.",
+    "sum_bart":"New theoretical framework to measure re-identification risk in user representations. Framework is general enough to model important real-world applications such as the Chrome's Topics API.",
+    "sum_t5":"our framework formally bounds the probability that an attacker may be able to obtain the identity of a user from their representation . as an application, we show how our framework is general enough to model important real-world applications .",
+    "sum_llm_basic":"The abstract discusses a new theoretical framework designed to measure re-identification risk in compact user representations like embeddings. This framework uses hypothesis testing to bound the probability that an attacker could identify users from these representations. The authors apply this framework to demonstrate its utility through examples, including the Chrome's Topics API for interest-based advertising. They also provide attack algorithms to estimate re-identification risks within this context. The goal is to offer a rigorous method for quantifying re-identification risk that can guide the design and evaluation of privacy-preserving systems.",
+    "sum_llm_role":"This abstract discusses a new theoretical framework designed to assess the risk of re-identification in compact user representations like embeddings. The framework uses hypothesis testing to quantify the likelihood that an attacker could deduce a user's identity from these representations. It applies this concept to evaluate the re-identification risk in practical scenarios, particularly within the context of Google's Topics API for targeted advertising. The authors also demonstrate effective attack algorithms to estimate actual re-identification risks using this framework. Overall, they aim to provide a robust method for measuring re-identification risk that can guide the design and evaluation of privacy-preserving systems.",
+    "sum_llm_instruction":"The study presents a novel theoretical framework for measuring re-identification risk in compact user representations like embeddings. It applies this framework to the Chrome's Topics API, demonstrating its utility through both theoretical bounds and practical attack algorithms. The authors aim to provide a rigorous way to quantify re-identification risk for real-world applications.",
+    "sum_llm_few-shot":"A new theoretical framework measures re-identification risk in compact user representations, formalizing the probability of obtaining identities from these representations. The framework applies to Chrome's Topics API, demonstrating its utility through both theory and practical attacks.",
+    "reference":"Measuring Re-identification Risk. Compact user representations (such as embeddings) form the backbone of personalization services."
+  },
+  {
+    "id":"2206.12808",
+    "title":"Memory-Guided Multi-View Multi-Domain Fake News Detection",
+    "abstract":"The wide spread of fake news is increasingly threatening both individuals and society. Great efforts have been made for automatic fake news detection on a single domain (e.g., politics). However, correlations exist commonly across multiple news domains, and thus it is promising to simultaneously detect fake news of multiple domains. Based on our analysis, we pose two challenges in multi-domain fake news detection: 1) domain shift, caused by the discrepancy among domains in terms of words, emotions, styles, etc. 2) domain labeling incompleteness, stemming from the real-world categorization that only outputs one single domain label, regardless of topic diversity of a news piece. In this paper, we propose a Memory-guided Multi-view Multi-domain Fake News Detection Framework (M$^3$FEND) to address these two challenges. We model news pieces from a multi-view perspective, including semantics, emotion, and style. Specifically, we propose a Domain Memory Bank to enrich domain information which could discover potential domain labels based on seen news pieces and model domain characteristics. Then, with enriched domain information as input, a Domain Adapter could adaptively aggregate discriminative information from multiple views for news in various domains. Extensive offline experiments on English and Chinese datasets demonstrate the effectiveness of M$^3$FEND, and online tests verify its superiority in practice. Our code is available at https:\/\/github.com\/ICTMCG\/M3FEND.",
+    "authors":"Yongchun Zhu, Qiang Sheng, Juan Cao, Qiong Nan, Kai Shu, Minghui Wu,\n  Jindong Wang, and Fuzhen Zhuang",
+    "categories":"cs.CL cs.AI cs.LG",
+    "doi":"10.1109\/TKDE.2022.3185151",
+    "journal-ref":null,
+    "update_date":"2022-06-28",
+    "versions":[
+      {
+        "version":"v1",
+        "created":"Sun, 26 Jun 2022 07:09:23 GMT"
+      }
+    ],
+    "primary_category":"cs.CL",
+    "all_categories":[
+      "cs.CL",
+      "cs.AI",
+      "cs.LG"
+    ],
+    "author_list":[
+      "Yongchun Zhu",
+      "Qiang Sheng",
+      "Juan Cao",
+      "Qiong Nan",
+      "Kai Shu",
+      "Minghui Wu",
+      "Jindong Wang",
+      "Fuzhen Zhuang"
+    ],
+    "text":"Memory-Guided Multi-View Multi-Domain Fake News Detection. The wide spread of fake news is increasingly threatening both individuals and society. Great efforts have been made for automatic fake news detection on a single domain (e.g., politics). However, correlations exist commonly across multiple news domains, and thus it is promising to simultaneously detect fake news of multiple domains. Based on our analysis, we pose two challenges in multi-domain fake news detection: 1) domain shift, caused by the discrepancy among domains in terms of words, emotions, styles, etc. 2) domain labeling incompleteness, stemming from the real-world categorization that only outputs one single domain label, regardless of topic diversity of a news piece. In this paper, we propose a Memory-guided Multi-view Multi-domain Fake News Detection Framework (M$^3$FEND) to address these two challenges. We model news pieces from a multi-view perspective, including semantics, emotion, and style. Specifically, we propose a Domain Memory Bank to enrich domain information which could discover potential domain labels based on seen news pieces and model domain characteristics. Then, with enriched domain information as input, a Domain Adapter could adaptively aggregate discriminative information from multiple views for news in various domains. Extensive offline experiments on English and Chinese datasets demonstrate the effectiveness of M$^3$FEND, and online tests verify its superiority in practice. Our code is available at https:\/\/github.com\/ICTMCG\/M3FEND.",
+    "sum_extractive":"The wide spread of fake news is increasingly threatening both individuals and society. In this paper, we propose a Memory-guided Multi-view Multi-domain Fake News Detection Framework (M FEND) to address these two challenges. We model news pieces from a multi-view perspective, including semantics, emotion, and style.",
+    "sum_bart":"The wide spread of fake news is increasingly threatening both individuals and society. Great efforts have been made for automatic fake news detection on a single domain. correlations exist commonly across multiple news domains, and thus it is promising to simultaneously detect fake news of multiple domains.",
+    "sum_t5":"the wide spread of fake news is increasingly threatening both individuals and society . efforts have been made for automatic fake news detection on a single domain . but correlations exist commonly across multiple news domains . we propose a Memory-guided Multi-view Multi-domain Fake News Detection Framework .",
+    "sum_llm_basic":"This abstract discusses an approach called M FEND (Memory-guided Multi-view Multi-domain Fake News Detection Framework) designed to combat the problem of fake news spreading widely across different domains. The key points include:\n- Challenges addressed: \n  - Domain shift due to differences in word usage, emotions, and styles between domains.\n  - Domain labeling incompleteness because most systems use a single label per article rather than considering diverse topics.\n\n- Proposed solution:\n  - A multi-view framework combining semantic, emotional, and stylistic aspects of news articles.\n  - Utilizes a Domain Memory Bank to learn about unseen domains through existing data and predict new ones.\n  - Implements a Domain Adapter to integrate insights from all perspectives into a unified model for each domain.\n\n- Experimental validation:\n  - Offline testing on English and Chinese datasets shows improved performance over traditional methods.\n  - Online tests confirm the practical effectiveness of M FEND compared to other approaches.\n\n- Availability:\n  - Code for the proposed method is provided for further research and implementation.",
+    "sum_llm_role":"This abstract discusses the issue of fake news spreading widely and threatens both individuals and society. It highlights that while there has been significant effort in detecting fake news within specific domains like politics, addressing the challenge of detecting fake news across multiple domains remains an open problem due to commonalities between them.\n\nThe main challenges identified include:\n1. **Domain Shift**: Differences in word usage, emotional content, and stylistic elements across different domains.\n2. **Domain Labeling Incompleteness**: The current practice of assigning a single domain label to all news pieces, ignoring their diverse topics.\n\nTo tackle these issues, the authors propose a framework called M FEND (Memory-guided Multi-view Multi-domain Fake News Detection Framework), which models news pieces using a multi-view approach incorporating semantic, emotional, and stylistic aspects. They introduce a Domain Memory Bank to enhance domain-specific knowledge through previously encountered data, enabling more accurate adaptation of information from multiple perspectives. This method is tested on both English and Chinese datasets, showing improved performance over traditional approaches.",
+    "sum_llm_instruction":"The summary of the abstract in exactly two sentences:\n\nThis paper proposes an approach called M FEND (Memory-guided Multi-view Multi-domain Fake News Detection Framework) to address the challenges of detecting fake news across multiple domains due to differences in word usage, emotional content, and stylistic variations between domains. Experiments show that M FEND outperforms existing methods in both offline and online testing scenarios.",
+    "sum_llm_few-shot":"The proposed M FEND framework addresses challenges in multi-domain fake news detection through a multi-view approach, utilizing a Domain Memory Bank to enhance domain-specific knowledge and a Domain Adapter to integrate diverse view data effectively. Experimental results on English and Chinese datasets confirm the framework's efficacy.",
+    "reference":"Memory-Guided Multi-View Multi-Domain Fake News Detection. The wide spread of fake news is increasingly threatening both individuals and society."
+  },
+  {
+    "id":"1304.3422",
+    "title":"A Constraint Propagation Approach to Probabilistic Reasoning",
+    "abstract":"The paper demonstrates that strict adherence to probability theory does not preclude the use of concurrent, self-activated constraint-propagation mechanisms for managing uncertainty. Maintaining local records of sources-of-belief allows both predictive and diagnostic inferences to be activated simultaneously and propagate harmoniously towards a stable equilibrium.",
+    "authors":"Judea Pearl",
+    "categories":"cs.AI",
+    "doi":null,
+    "journal-ref":null,
+    "update_date":"2013-04-15",
+    "versions":[
+      {
+        "version":"v1",
+        "created":"Wed, 27 Mar 2013 19:55:56 GMT"
+      }
+    ],
+    "primary_category":"cs.AI",
+    "all_categories":[
+      "cs.AI"
+    ],
+    "author_list":[
+      "Judea Pearl"
+    ],
+    "text":"A Constraint Propagation Approach to Probabilistic Reasoning. The paper demonstrates that strict adherence to probability theory does not preclude the use of concurrent, self-activated constraint-propagation mechanisms for managing uncertainty. Maintaining local records of sources-of-belief allows both predictive and diagnostic inferences to be activated simultaneously and propagate harmoniously towards a stable equilibrium.",
+    "sum_extractive":"The paper demonstrates that strict adherence to probability theory does not preclude the use of concurrent, self-activated constraint-propagation mechanisms for managing uncertainty. Maintaining local records of sources-of-belief allows both predictive and diagnostic inferences to be activated simultaneously and propagate harmoniously towards a stable equilibrium.",
+    "sum_bart":"The paper demonstrates that strict adherence to probability theory does not preclude the use of concurrent, self-activated constraint-propagation mechanisms. Maintaining local records of sources-of-belief allows both predictive and diagnostic inferences to be activated simultaneously.",
+    "sum_t5":"the paper demonstrates that strict adherence to probability theory does not preclude the use of concurrent, self-activated constraint-propagation mechanisms .",
+    "sum_llm_basic":"This abstract discusses how strictly following probability theory can coexist with using concurrent, self-activated constraint propagation methods to manage uncertainty. It suggests maintaining local belief records enables simultaneous activation of predictive and diagnostic inferences, which then propagate harmoniously toward a stable equilibrium.",
+    "sum_llm_role":"This abstract discusses how strictly adhering to probability theory can coexist with using concurrent, self-activated constraint propagation mechanisms to manage uncertainty effectively. The key points include:\n1. Simultaneous activation of predictive and diagnostic inferences.\n2. Harmonious propagation towards a stable equilibrium through maintaining local records of beliefs.\n3. Integration of probabilistic reasoning with concurrent inference techniques.",
+    "sum_llm_instruction":"The paper shows that while strictly following probability theory, it's possible to utilize concurrent, self-activated constraint propagation methods to manage uncertainty effectively by maintaining local belief records, enabling simultaneous activation of predictive and diagnostic inferences which can converge towards a stable state.",
+    "sum_llm_few-shot":"The paper shows how strictly following probability theory can coexist with concurrent, self-activated constraint propagation for managing uncertainty, allowing simultaneous activation of predictive and diagnostic inferences while propagating beliefs harmoniously toward stability.",
+    "reference":"A Constraint Propagation Approach to Probabilistic Reasoning. The paper demonstrates that strict adherence to probability theory does not preclude the use of concurrent, self-activated constraint-propagation mechanisms for managing uncertainty."
+  },
+  {
+    "id":"1909.06239",
+    "title":"Modelling Stopping Criteria for Search Results using Poisson Processes",
+    "abstract":"Text retrieval systems often return large sets of documents, particularly when applied to large collections. Stopping criteria can reduce the number of these documents that need to be manually evaluated for relevance by predicting when a suitable level of recall has been achieved. In this work, a novel method for determining a stopping criterion is proposed that models the rate at which relevant documents occur using a Poisson process. This method allows a user to specify both a minimum desired level of recall to achieve and a desired probability of having achieved it. We evaluate our method on a public dataset and compare it with previous techniques for determining stopping criteria.",
+    "authors":"Alison Sneyd and Mark Stevenson",
+    "categories":"cs.IR",
+    "doi":null,
+    "journal-ref":null,
+    "update_date":"2019-09-16",
+    "versions":[
+      {
+        "version":"v1",
+        "created":"Fri, 13 Sep 2019 14:05:04 GMT"
+      }
+    ],
+    "primary_category":"cs.IR",
+    "all_categories":[
+      "cs.IR"
+    ],
+    "author_list":[
+      "Alison Sneyd",
+      "Mark Stevenson"
+    ],
+    "text":"Modelling Stopping Criteria for Search Results using Poisson Processes. Text retrieval systems often return large sets of documents, particularly when applied to large collections. Stopping criteria can reduce the number of these documents that need to be manually evaluated for relevance by predicting when a suitable level of recall has been achieved. In this work, a novel method for determining a stopping criterion is proposed that models the rate at which relevant documents occur using a Poisson process. This method allows a user to specify both a minimum desired level of recall to achieve and a desired probability of having achieved it. We evaluate our method on a public dataset and compare it with previous techniques for determining stopping criteria.",
+    "sum_extractive":"Text retrieval systems often return large sets of documents, particularly when applied to large collections. Stopping criteria can reduce the number of these documents that need to be manually evaluated for relevance by predicting when a suitable level of recall has been achieved. We evaluate our method on a public dataset and compare it with previous techniques for determining stopping criteria.",
+    "sum_bart":"Text retrieval systems often return large sets of documents, particularly when applied to large collections. Stopping criteria can reduce the number of these documents that need to be manually evaluated for relevance. In this work, a novel method for determining a stopping criterion is proposed.",
+    "sum_t5":"a new method for determining a stopping criterion is proposed . it predicts when a suitable level of recall has been achieved . the method is evaluated on a public dataset .",
+    "sum_llm_basic":"The abstract describes a new approach for setting a stopping criterion in text retrieval systems. The system uses a Poisson process model to predict how many relevant documents will appear before achieving a specified recall level. Users can set their own minimum required recall and the likelihood of reaching it. The method was tested on a publicly available dataset and compared against existing stopping criteria methods.",
+    "sum_llm_role":"The abstract describes a new approach to setting stopping criteria in text retrieval systems, specifically focusing on reducing manual evaluation workload. The system uses a Poisson process model to predict when a satisfactory recall level has been reached. Users can define both a minimum required recall and the likelihood of achieving it. The study evaluates this method against existing approaches using a publicly available dataset.",
+    "sum_llm_instruction":"The study proposes a new method for setting a stopping criterion in text retrieval systems based on modeling document relevance occurrence as a Poisson process. The method enables users to define both a required recall level and the likelihood of achieving it. The effectiveness of this approach is demonstrated through evaluation against existing stopping criteria methods on a publicly available dataset.",
+    "sum_llm_few-shot":"A new method predicts document relevance in text retrieval systems, allowing users to set a minimum recall and probability threshold. Evaluated against existing methods, it outperforms them.",
+    "reference":"Modelling Stopping Criteria for Search Results using Poisson Processes. Text retrieval systems often return large sets of documents, particularly when applied to large collections."
+  },
+  {
+    "id":"1411.3880",
+    "title":"Optimal Cost Almost-sure Reachability in POMDPs",
+    "abstract":"We consider partially observable Markov decision processes (POMDPs) with a set of target states and every transition is associated with an integer cost. The optimization objective we study asks to minimize the expected total cost till the target set is reached, while ensuring that the target set is reached almost-surely (with probability 1). We show that for integer costs approximating the optimal cost is undecidable. For positive costs, our results are as follows: (i) we establish matching lower and upper bounds for the optimal cost and the bound is double exponential; (ii) we show that the problem of approximating the optimal cost is decidable and present approximation algorithms developing on the existing algorithms for POMDPs with finite-horizon objectives. While the worst-case running time of our algorithm is double exponential, we also present efficient stopping criteria for the algorithm and show experimentally that it performs well in many examples of interest.",
+    "authors":"Krishnendu Chatterjee, Martin Chmel\\'ik, Raghav Gupta, Ayush Kanodia",
+    "categories":"cs.AI",
+    "doi":null,
+    "journal-ref":null,
+    "update_date":"2014-11-17",
+    "versions":[
+      {
+        "version":"v1",
+        "created":"Fri, 14 Nov 2014 12:13:45 GMT"
+      }
+    ],
+    "primary_category":"cs.AI",
+    "all_categories":[
+      "cs.AI"
+    ],
+    "author_list":[
+      "Krishnendu Chatterjee",
+      "Martin Chmel\u00edk",
+      "Raghav Gupta",
+      "Ayush Kanodia"
+    ],
+    "text":"Optimal Cost Almost-sure Reachability in POMDPs. We consider partially observable Markov decision processes (POMDPs) with a set of target states and every transition is associated with an integer cost. The optimization objective we study asks to minimize the expected total cost till the target set is reached, while ensuring that the target set is reached almost-surely (with probability 1). We show that for integer costs approximating the optimal cost is undecidable. For positive costs, our results are as follows: (i) we establish matching lower and upper bounds for the optimal cost and the bound is double exponential; (ii) we show that the problem of approximating the optimal cost is decidable and present approximation algorithms developing on the existing algorithms for POMDPs with finite-horizon objectives. While the worst-case running time of our algorithm is double exponential, we also present efficient stopping criteria for the algorithm and show experimentally that it performs well in many examples of interest.",
+    "sum_extractive":"We consider partially observable Markov decision processes (POMDPs) with a set of target states and every transition is associated with an integer cost. We show that for integer costs approximating the optimal cost is undecidable. For positive costs, our results are as follows: (i) we establish matching lower and upper bounds for the optimal cost and the bound is double exponential; (ii) we show that the problem of approximating the optimal cost is decidable and present approximation algorithms developing on the existing algorithms for POMDPs with finite-horizon objectives.",
+    "sum_bart":"We consider partially observable Markov decision processes (POMDPs) with a set of target states and every transition is associated with an integer cost. We show that for integer costs approximating the optimal cost is undecidable. While the worst-case running time of our algorithm is double exponential, we also present efficient stopping criteria for",
+    "sum_t5":"we show that for integer costs approximating the optimal cost is decidable . for positive costs, we establish matching lower and upper bounds . we also present efficient stopping criteria for the algorithm .",
+    "sum_llm_basic":"The abstract discusses partially observable Markov decision processes (POMDPs) where transitions have associated integer costs. The focus is on optimizing the process to minimize expected total cost until reaching a target set, with the goal being to ensure the target set is reached almost surely.\n\nKey points:\n- Integer costs make approximating the optimal cost undecidable.\n- Positive costs allow for establishing exact bounds on the optimal cost, which are double-exponential.\n- Decidability is achieved for positive costs by presenting approximation algorithms based on existing methods for POMDPs with finite-horizon objectives.\n- The algorithm's worst-case performance is double-exponential but has efficient stopping criteria and good empirical performance in practical scenarios.",
+    "sum_llm_role":"The abstract discusses the complexity and decidability aspects of optimizing partially observable Markov decision processes (POMDPs) with target states and integer costs. Key points include:\n- The optimization goal aims to minimize expected total cost until reaching the target set.\n- Integer costs can approximate the optimal cost but may not be exact due to undecidability issues.\n- For positive costs, there are established bounds on the optimal cost, which are double-exponential.\n- Deciding whether these bounds are tight is shown to be decidable, though the process involves complex algorithms.\n- An approximation algorithm exists for positive costs, although its worst-case performance is double-exponential.\n- Efficient stopping criteria have been developed for the algorithm, improving practical applicability.\n- Experiments demonstrate good performance of the algorithm across various example scenarios.",
+    "sum_llm_instruction":"The abstract discusses the complexity and decidability of minimizing expected total cost in partially observable Markov decision processes (POMDPs), focusing on both integer and positive cost scenarios. It presents findings including matching lower and upper bounds for the optimal cost when costs are positive, showing that approximating this cost is decidable but has a double-exponential worst-case running time. Despite this, efficient stopping criteria and performance experiments are provided for practical applications.",
+    "sum_llm_few-shot":"This paper explores partially observable Markov decision processes with integer costs, showing that approximating the optimal cost is undecidable but presenting algorithms for both exact and approximate solutions when costs are positive.",
+    "reference":"Optimal Cost Almost-sure Reachability in POMDPs. We consider partially observable Markov decision processes (POMDPs) with a set of target states and every transition is associated with an integer cost."
+  },
+  {
+    "id":"2303.05186",
+    "title":"A Framework for History-Aware Hyperparameter Optimisation in Reinforcement Learning",
+    "abstract":"A Reinforcement Learning (RL) system depends on a set of initial conditions (hyperparameters) that affect the system's performance. However, defining a good choice of hyperparameters is a challenging problem. Hyperparameter tuning often requires manual or automated searches to find optimal values. Nonetheless, a noticeable limitation is the high cost of algorithm evaluation for complex models, making the tuning process computationally expensive and time-consuming. In this paper, we propose a framework based on integrating complex event processing and temporal models, to alleviate these trade-offs. Through this combination, it is possible to gain insights about a running RL system efficiently and unobtrusively based on data stream monitoring and to create abstract representations that allow reasoning about the historical behaviour of the RL system. The obtained knowledge is exploited to provide feedback to the RL system for optimising its hyperparameters while making effective use of parallel resources. We introduce a novel history-aware epsilon-greedy logic for hyperparameter optimisation that instead of using static hyperparameters that are kept fixed for the whole training, adjusts the hyperparameters at runtime based on the analysis of the agent's performance over time windows in a single agent's lifetime. We tested the proposed approach in a 5G mobile communications case study that uses DQN, a variant of RL, for its decision-making. Our experiments demonstrated the effects of hyperparameter tuning using history on training stability and reward values. The encouraging results show that the proposed history-aware framework significantly improved performance compared to traditional hyperparameter tuning approaches.",
+    "authors":"Juan Marcelo Parra-Ullauri, Chen Zhen, Antonio Garc\\'ia-Dom\\'inguez,\n  Nelly Bencomo, Changgang Zheng, Juan Boubeta-Puig, Guadalupe Ortiz, Shufan\n  Yang",
+    "categories":"cs.LG cs.AI cs.SE",
+    "doi":null,
+    "journal-ref":null,
+    "update_date":"2023-03-10",
+    "versions":[
+      {
+        "version":"v1",
+        "created":"Thu, 9 Mar 2023 11:30:40 GMT"
+      }
+    ],
+    "primary_category":"cs.LG",
+    "all_categories":[
+      "cs.LG",
+      "cs.AI",
+      "cs.SE"
+    ],
+    "author_list":[
+      "Juan Marcelo Parra-Ullauri",
+      "Chen Zhen",
+      "Antonio Garc\u00eda-Dom\u00ednguez",
+      "Nelly Bencomo",
+      "Changgang Zheng",
+      "Juan Boubeta-Puig",
+      "Guadalupe Ortiz",
+      "Shufan Yang"
+    ],
+    "text":"A Framework for History-Aware Hyperparameter Optimisation in Reinforcement Learning. A Reinforcement Learning (RL) system depends on a set of initial conditions (hyperparameters) that affect the system's performance. However, defining a good choice of hyperparameters is a challenging problem. Hyperparameter tuning often requires manual or automated searches to find optimal values. Nonetheless, a noticeable limitation is the high cost of algorithm evaluation for complex models, making the tuning process computationally expensive and time-consuming. In this paper, we propose a framework based on integrating complex event processing and temporal models, to alleviate these trade-offs. Through this combination, it is possible to gain insights about a running RL system efficiently and unobtrusively based on data stream monitoring and to create abstract representations that allow reasoning about the historical behaviour of the RL system. The obtained knowledge is exploited to provide feedback to the RL system for optimising its hyperparameters while making effective use of parallel resources. We introduce a novel history-aware epsilon-greedy logic for hyperparameter optimisation that instead of using static hyperparameters that are kept fixed for the whole training, adjusts the hyperparameters at runtime based on the analysis of the agent's performance over time windows in a single agent's lifetime. We tested the proposed approach in a 5G mobile communications case study that uses DQN, a variant of RL, for its decision-making. Our experiments demonstrated the effects of hyperparameter tuning using history on training stability and reward values. The encouraging results show that the proposed history-aware framework significantly improved performance compared to traditional hyperparameter tuning approaches.",
+    "sum_extractive":"Hyperparameter tuning often requires manual or automated searches to find optimal values. Nonetheless, a noticeable limitation is the high cost of algorithm evaluation for complex models, making the tuning process computationally expensive and time-consuming. The encouraging results show that the proposed history-aware framework significantly improved performance compared to traditional hyperparameter tuning approaches.",
+    "sum_bart":"A Reinforcement Learning (RL) system depends on a set of initial conditions that affect the system's performance. Hyperparameter tuning often requires manual or automated searches to find optimal values. A noticeable limitation is the high cost of algorithm evaluation for complex models.",
+    "sum_t5":"hyperparameter tuning often requires manual or automated searches to find optimal values . high cost of algorithm evaluation for complex models makes tuning process computationally expensive and time-consuming . epsilon-greedy logic adjusts hyper parameters at runtime based on analysis of agent's performance over time windows in ",
+    "sum_llm_basic":"The abstract describes a reinforcement learning (RL) system where hyperparameters need to be carefully chosen due to their impact on performance. Traditional methods involve manual or automated search processes which can be costly and time-consuming. A new framework combining complex event processing with temporal models aims to address these issues by providing efficient and unobtrusive insights into the running RL system through data stream monitoring.\n\nKey points:\n1. Integration of complex event processing and temporal models.\n2. Efficiently gaining insights about an RL system's behavior without significant computational overhead.\n3. Creating abstract representations for reasoning about past behaviors.\n4. Using history-aware epsilon-greedy logic to adjust hyperparameters dynamically based on performance trends.\n5. Testing the approach in a 5G mobile communications scenario using DQN.\n6. Demonstrated improvements in training stability and reward values when using history-aware hyperparameter optimization compared to conventional methods.",
+    "sum_llm_role":"The abstract describes a new approach to hyperparameter optimization for reinforcement learning systems, which combines complex event processing with temporal models to improve efficiency and effectiveness. Key points include:\n1. Traditional hyperparameter tuning can be costly due to computational expense.\n2. A proposed framework integrates complex event processing and temporal models to monitor and analyze real-time data streams.\n3. This integration allows for efficient and unobtrusive insights into the running RL system.\n4. Abstract representations derived from this analysis enable better understanding of the historical behavior of the RL system.\n5. Feedback mechanisms are used to optimize hyperparameters dynamically based on performance metrics collected over time windows within an agent's lifespan.\n6. A specific example is provided: a 5G mobile communications application using Deep Q-Networks (DQN).\n7. Experimental results showed significant improvements in training stability and reward values when using the history-aware hyperparameter optimization method compared to conventional approaches.",
+    "sum_llm_instruction":"The proposed framework integrates complex event processing and temporal models to optimize hyperparameters in reinforcement learning systems by analyzing real-time data streams. This allows for efficient and dynamic adjustment of hyperparameters without increasing computational costs, leading to better training stability and reward values.",
+    "sum_llm_few-shot":"A reinforcement learning system's performance can be enhanced through an integrated framework combining complex event processing and temporal models, which allows efficient and non-intrusive exploration of hyperparameters during real-time operation. The framework dynamically adjusts hyperparameters based on historical data, leading to better optimization of hyperparameters and improved training stability and rewards.",
+    "reference":"A Framework for History-Aware Hyperparameter Optimisation in Reinforcement Learning. A Reinforcement Learning (RL) system depends on a set of initial conditions (hyperparameters) that affect the system's performance."
+  },
+  {
+    "id":"2508.10377",
+    "title":"Clicks Versus Conversion: Choosing a Recommender's Training Objective in E-Commerce",
+    "abstract":"Ranking product recommendations to optimize for a high click-through rate (CTR) or for high conversion, such as add-to-cart rate (ACR) and Order-Submit-Rate (OSR, view-to-purchase conversion) are standard practices in e-commerce. Optimizing for CTR appears like a straightforward choice: Training data (i.e., click data) are simple to collect and often available in large quantities. Additionally, CTR is used far beyond e-commerce, making it a generalist, easily implemented option. ACR and OSR, on the other hand, are more directly linked to a shop's business goals, such as the Gross Merchandise Value (GMV). In this paper, we compare the effects of using either of these objectives using an online A\/B test. Among our key findings, we demonstrate that in our shops, optimizing for OSR produces a GMV uplift more than five times larger than when optimizing for CTR, without sacrificing new product discovery. Our results also provide insights into the different feature importances for each of the objectives.",
+    "authors":"Michael Weiss, Robert Rosenbach, Christian Eggenberger",
+    "categories":"cs.IR cs.LG",
+    "doi":null,
+    "journal-ref":null,
+    "update_date":"2025-08-15",
+    "versions":[
+      {
+        "version":"v1",
+        "created":"Thu, 14 Aug 2025 06:15:23 GMT"
+      }
+    ],
+    "primary_category":"cs.IR",
+    "all_categories":[
+      "cs.IR",
+      "cs.LG"
+    ],
+    "author_list":[
+      "Michael Weiss",
+      "Robert Rosenbach",
+      "Christian Eggenberger"
+    ],
+    "text":"Clicks Versus Conversion: Choosing a Recommender's Training Objective in E-Commerce. Ranking product recommendations to optimize for a high click-through rate (CTR) or for high conversion, such as add-to-cart rate (ACR) and Order-Submit-Rate (OSR, view-to-purchase conversion) are standard practices in e-commerce. Optimizing for CTR appears like a straightforward choice: Training data (i.e., click data) are simple to collect and often available in large quantities. Additionally, CTR is used far beyond e-commerce, making it a generalist, easily implemented option. ACR and OSR, on the other hand, are more directly linked to a shop's business goals, such as the Gross Merchandise Value (GMV). In this paper, we compare the effects of using either of these objectives using an online A\/B test. Among our key findings, we demonstrate that in our shops, optimizing for OSR produces a GMV uplift more than five times larger than when optimizing for CTR, without sacrificing new product discovery. Our results also provide insights into the different feature importances for each of the objectives.",
+    "sum_extractive":"Ranking product recommendations to optimize for a high click-through rate (CTR) or for high conversion, such as add-to-cart rate (ACR) and Order-Submit-Rate (OSR, view-to-purchase conversion) are standard practices in e-commerce. Optimizing for CTR appears like a straightforward choice: Training data (i.e., click data) are simple to collect and often available in large quantities. Additionally, CTR is used far beyond e-commerce, making it a generalist, easily implemented option.",
+    "sum_bart":"Ranking product recommendations to optimize for a high click-through rate (CTR) or for high conversion is standard practices in e-commerce. ACR and OSR are more directly linked to a shop's business goals, such as the Gross Merchandise Value (GMV)",
+    "sum_t5":"add-to-cart rate (ACR) and Order-Submit-Rate (OSR) are standard practices in e-commerce . in our shops, optimizing for OSR produces a GMV uplift more than five times larger than CTR .",
+    "sum_llm_basic":"The abstract discusses comparing two methods for ranking product recommendations in e-commerce:\n1. Maximizing Click-Through Rate (CTR)\n2. Maximizing Conversion Rates (such as Add-to-Cart Rate - ACR and Order-Submit-Rate - OSR)\n\nKey points:\n- CTR is easier to measure but less aligned with specific business goals.\n- OSR is more closely tied to revenue metrics like Gross Merchandise Value (GMV).\n- An experiment was conducted where both objectives were tested simultaneously.\n- The study found that maximizing OSR resulted in a 5x higher GMV uplift compared to maximizing CTR.\n- Insights into which features are most important for each objective were provided.\n\nThis comparison highlights the trade-offs between simplicity and alignment with business outcomes in recommendation systems.",
+    "sum_llm_role":"The study compares the effectiveness of two ranking strategies for product recommendations in e-commerce: maximizing click-through rate (CTR) versus order-submit-rate (OSR), which corresponds to gross merchandise value (GMV). The researchers conducted an online A\/B test to evaluate these strategies across multiple shops.\n\nKey findings include:\n1. **Optimizing for OSR** resulted in a significantly higher GMV uplift compared to optimizing for CTR.\n2. This strategy did not negatively impact new product discovery.\n3. The study provides insights into the relative importance of features for each objective.\n\nOverall, the research suggests that focusing on increasing order submission rates can lead to substantial increases in GMV with minimal loss of new product exposure.",
+    "sum_llm_instruction":"The study compares the effectiveness of optimizing for Click-Through Rate (CTR) versus Conversion Rate Optimization (CRO), specifically focusing on Gross Merchandise Value (GMV) uplifts. The key finding shows that optimizing for Conversion Rate (CRO) yields a GMV uplift significantly higher than CTR optimization, indicating better overall performance across multiple metrics.",
+    "sum_llm_few-shot":"This paper compares the effectiveness of ranking product recommendations based on Click-Through Rate (CTR) versus Conversion Rate (CR), specifically focusing on Add-to-Cart Rate (ACR) and Order-Submit-Rate (OSR). The experiments reveal that optimizing for OSR yields a significantly higher Gross Merchandise Value (GMV) compared to CTR, demonstrating a substantial improvement in performance metrics without compromising new product discovery.",
+    "reference":"Clicks Versus Conversion: Choosing a Recommender's Training Objective in E-Commerce. Ranking product recommendations to optimize for a high click-through rate (CTR) or for high conversion, such as add-to-cart rate (ACR) and Order-Submit-Rate (OSR, view-to-purchase conversion) are standard practices in e-commerce."
+  },
+  {
+    "id":"2410.12405",
+    "title":"ProSA: Assessing and Understanding the Prompt Sensitivity of LLMs",
+    "abstract":"Large language models (LLMs) have demonstrated impressive capabilities across various tasks, but their performance is highly sensitive to the prompts utilized. This variability poses challenges for accurate assessment and user satisfaction. Current research frequently overlooks instance-level prompt variations and their implications on subjective evaluations. To address these shortcomings, we introduce ProSA, a framework designed to evaluate and comprehend prompt sensitivity in LLMs. ProSA incorporates a novel sensitivity metric, PromptSensiScore, and leverages decoding confidence to elucidate underlying mechanisms. Our extensive study, spanning multiple tasks, uncovers that prompt sensitivity fluctuates across datasets and models, with larger models exhibiting enhanced robustness. We observe that few-shot examples can alleviate this sensitivity issue, and subjective evaluations are also susceptible to prompt sensitivities, particularly in complex, reasoning-oriented tasks. Furthermore, our findings indicate that higher model confidence correlates with increased prompt robustness. We believe this work will serve as a helpful tool in studying prompt sensitivity of LLMs. The project is released at: https:\/\/github.com\/open-compass\/ProSA .",
+    "authors":"Jingming Zhuo, Songyang Zhang, Xinyu Fang, Haodong Duan, Dahua Lin,\n  Kai Chen",
+    "categories":"cs.CL",
+    "doi":null,
+    "journal-ref":null,
+    "update_date":"2024-10-17",
+    "versions":[
+      {
+        "version":"v1",
+        "created":"Wed, 16 Oct 2024 09:38:13 GMT"
+      }
+    ],
+    "primary_category":"cs.CL",
+    "all_categories":[
+      "cs.CL"
+    ],
+    "author_list":[
+      "Jingming Zhuo",
+      "Songyang Zhang",
+      "Xinyu Fang",
+      "Haodong Duan",
+      "Dahua Lin",
+      "Kai Chen"
+    ],
+    "text":"ProSA: Assessing and Understanding the Prompt Sensitivity of LLMs. Large language models (LLMs) have demonstrated impressive capabilities across various tasks, but their performance is highly sensitive to the prompts utilized. This variability poses challenges for accurate assessment and user satisfaction. Current research frequently overlooks instance-level prompt variations and their implications on subjective evaluations. To address these shortcomings, we introduce ProSA, a framework designed to evaluate and comprehend prompt sensitivity in LLMs. ProSA incorporates a novel sensitivity metric, PromptSensiScore, and leverages decoding confidence to elucidate underlying mechanisms. Our extensive study, spanning multiple tasks, uncovers that prompt sensitivity fluctuates across datasets and models, with larger models exhibiting enhanced robustness. We observe that few-shot examples can alleviate this sensitivity issue, and subjective evaluations are also susceptible to prompt sensitivities, particularly in complex, reasoning-oriented tasks. Furthermore, our findings indicate that higher model confidence correlates with increased prompt robustness. We believe this work will serve as a helpful tool in studying prompt sensitivity of LLMs. The project is released at: https:\/\/github.com\/open-compass\/ProSA .",
+    "sum_extractive":"This variability poses challenges for accurate assessment and user satisfaction. Current research frequently overlooks instance-level prompt variations and their implications on subjective evaluations. Furthermore, our findings indicate that higher model confidence correlates with increased prompt robustness.",
+    "sum_bart":"ProSA is a framework designed to evaluate and comprehend prompt sensitivity in LLMs. ProSA incorporates a novel sensitivity metric, PromptSensiScore, and leverages decoding confidence to elucidate underlying mechanisms.",
+    "sum_t5":"large language models (LLMs) are highly sensitive to the prompts utilized . this variability poses challenges for accurate assessment and user satisfaction . ProSA incorporates a novel sensitivity metric, PromptSensiScore .",
+    "sum_llm_basic":"The abstract discusses the limitations of current methods for evaluating large language model (LLM) performance based on prompts. It introduces ProSA, a new framework aimed at assessing and understanding how different prompts affect the behavior of LLMs. Key points include:\n1. Prompts influence LLM performance significantly.\n2. Current research often ignores individual prompt variations, leading to inaccurate assessments and low user satisfaction.\n3. ProSA includes a PromptSensiScore metric and uses decoding confidence to explain why some prompts perform better than others.\n4. The study shows that prompt sensitivity varies between datasets and models, with larger models generally being more robust.\n5. Few-shot examples help mitigate prompt sensitivity issues.\n6. Subjective evaluations are affected by prompt sensitivities, especially in complex tasks.\n7. Higher model confidence is associated with greater prompt robustness.\n8. The project's release details are provided at a specified URL.",
+    "sum_llm_role":"The abstract describes a new approach called ProSA (Prompt Sensitivity Assessment), which aims to improve understanding of how different prompts affect large language model (LLM) performance. Key points include:\n1. LLMs' performance varies significantly based on the prompts used.\n2. Current methods often ignore individual prompt differences, leading to inaccurate assessments and low user satisfaction.\n3. ProSA introduces a sensitivity metric called PromptSensiScore and uses decoding confidence to explain why some prompts perform better than others.\n4. The study shows that prompt sensitivity differs between datasets and models, with larger models generally being more robust.\n5. Few-shot examples help reduce prompt sensitivity, especially in simpler tasks.\n6. Subjective evaluations are influenced by prompt sensitivities, particularly in complex reasoning tasks.\n7. Higher model confidence tends to correlate with greater prompt robustness.\n8. The project's release details are provided at a specified URL.\nThis summary encapsulates the main ideas presented in the abstract about improving evaluation techniques for LLMs through a focus on prompt sensitivity.",
+    "sum_llm_instruction":"The abstract does not provide enough specific details to summarize it into two sentences.",
+    "sum_llm_few-shot":"ProSA evaluates and comprehends prompt sensitivity in large language models, introducing PromptSensiScore and decoding confidence to analyze mechanisms. It finds fluctuations across datasets\/models, noting few-shot examples' effectiveness and subjective evaluation's susceptibility to prompt sensitivities, especially in complex tasks. Higher model confidence correlates with greater robustness against prompt effects.",
+    "reference":"ProSA: Assessing and Understanding the Prompt Sensitivity of LLMs. Large language models (LLMs) have demonstrated impressive capabilities across various tasks, but their performance is highly sensitive to the prompts utilized."
+  },
+  {
+    "id":"2004.08919",
+    "title":"DeepPurpose: a Deep Learning Library for Drug-Target Interaction Prediction",
+    "abstract":"Accurate prediction of drug-target interactions (DTI) is crucial for drug discovery. Recently, deep learning (DL) models for show promising performance for DTI prediction. However, these models can be difficult to use for both computer scientists entering the biomedical field and bioinformaticians with limited DL experience. We present DeepPurpose, a comprehensive and easy-to-use deep learning library for DTI prediction. DeepPurpose supports training of customized DTI prediction models by implementing 15 compound and protein encoders and over 50 neural architectures, along with providing many other useful features. We demonstrate state-of-the-art performance of DeepPurpose on several benchmark datasets.",
+    "authors":"Kexin Huang, Tianfan Fu, Lucas Glass, Marinka Zitnik, Cao Xiao, Jimeng\n  Sun",
+    "categories":"cs.LG q-bio.QM stat.ML",
+    "doi":"10.1093\/bioinformatics\/btaa1005",
+    "journal-ref":null,
+    "update_date":"2020-12-11",
+    "versions":[
+      {
+        "version":"v1",
+        "created":"Sun, 19 Apr 2020 17:31:55 GMT"
+      },
+      {
+        "version":"v2",
+        "created":"Sat, 11 Jul 2020 13:10:26 GMT"
+      },
+      {
+        "version":"v3",
+        "created":"Wed, 9 Dec 2020 23:14:48 GMT"
+      }
+    ],
+    "primary_category":"cs.LG",
+    "all_categories":[
+      "cs.LG",
+      "q-bio.QM",
+      "stat.ML"
+    ],
+    "author_list":[
+      "Kexin Huang",
+      "Tianfan Fu",
+      "Lucas Glass",
+      "Marinka Zitnik",
+      "Cao Xiao",
+      "Jimeng Sun"
+    ],
+    "text":"DeepPurpose: a Deep Learning Library for Drug-Target Interaction Prediction. Accurate prediction of drug-target interactions (DTI) is crucial for drug discovery. Recently, deep learning (DL) models for show promising performance for DTI prediction. However, these models can be difficult to use for both computer scientists entering the biomedical field and bioinformaticians with limited DL experience. We present DeepPurpose, a comprehensive and easy-to-use deep learning library for DTI prediction. DeepPurpose supports training of customized DTI prediction models by implementing 15 compound and protein encoders and over 50 neural architectures, along with providing many other useful features. We demonstrate state-of-the-art performance of DeepPurpose on several benchmark datasets.",
+    "sum_extractive":"Recently, deep learning (DL) models for show promising performance for DTI prediction. We present DeepPurpose, a comprehensive and easy-to-use deep learning library for DTI prediction. We demonstrate state-of-the-art performance of DeepPurpose on several benchmark datasets.",
+    "sum_bart":"Accurate prediction of drug-target interactions (DTI) is crucial for drug discovery. Recently, deep learning (DL) models for show promising performance for DTI prediction. These models can be difficult to use for both computer scientists entering the biomedical field and bioinformaticians with limited DL experience. We present DeepPurpose,",
+    "sum_t5":"deep learning (DL) models show promising performance for DTI prediction . but these models can be difficult to use for computer scientists entering the biomedical field . we demonstrate state-of-the-art performance of DeepPurpose on several benchmark datasets .",
+    "sum_llm_basic":"DeepPurpose is a comprehensive and user-friendly deep learning library designed specifically for predicting drug-target interactions (DTIs). It includes:\n- 15 different compound encoders\n- Over 50 neural architecture options\n- Support for customizing DTI prediction models\nThe library provides various features beyond just model training, such as:\n- Easy integration into existing workflows\n- Compatibility with multiple programming languages\n- Availability of pre-trained models for quick experimentation\nDeepPurpose has been shown to achieve state-of-the-art performance on benchmark datasets in DTI prediction tasks.",
+    "sum_llm_role":"DeepPurpose is a comprehensive deep learning library designed specifically for predicting drug-target interactions (DTIs). It offers a user-friendly interface that simplifies the process for both biologists and data scientists new to deep learning. Key features include:\n- Support for customizing DTI prediction models using various compound and protein encoders.\n- Availability of over 50 different neural architecture options.\n- Additional utilities such as model visualization tools and hyperparameter tuning capabilities.\nThe library has been shown to achieve state-of-the-art performance across multiple benchmark datasets in DTI prediction tasks.",
+    "sum_llm_instruction":"DeepPurpose is a comprehensive and user-friendly deep learning library designed for predicting drug-target interactions (DTIs). It includes various encoders and neural architectures, making it accessible even for those without extensive knowledge in deep learning. The library achieves state-of-the-art performance on benchmark datasets.",
+    "sum_llm_few-shot":"DeepPurpose is a comprehensive and user-friendly deep learning library for predicting drug-target interactions, supporting custom model training and offering various encoders and architectures. It achieves state-of-the-art performance on benchmark datasets.",
+    "reference":"DeepPurpose: a Deep Learning Library for Drug-Target Interaction Prediction. Accurate prediction of drug-target interactions (DTI) is crucial for drug discovery."
+  },
+  {
+    "id":"2601.21181",
+    "title":"MAD: Modality-Adaptive Decoding for Mitigating Cross-Modal Hallucinations in Multimodal Large Language Models",
+    "abstract":"Multimodal Large Language Models (MLLMs) suffer from cross-modal hallucinations, where one modality inappropriately influences generation about another, leading to fabricated output. This exposes a more fundamental deficiency in modality-interaction control. To address this, we propose Modality-Adaptive Decoding (MAD), a training-free method that adaptively weights modality-specific decoding branches based on task requirements. MAD leverages the model's inherent ability to self-assess modality relevance by querying which modalities are needed for each task. The extracted modality probabilities are then used to adaptively weight contrastive decoding branches, enabling the model to focus on relevant information while suppressing cross-modal interference. Extensive experiments on CMM and AVHBench demonstrate that MAD significantly reduces cross-modal hallucinations across multiple audio-visual language models (7.8\\% and 2.0\\% improvements for VideoLLaMA2-AV, 8.7\\% and 4.7\\% improvements for Qwen2.5-Omni). Our approach demonstrates that explicit modality awareness through self-assessment is crucial for robust multimodal reasoning, offering a principled extension to existing contrastive decoding methods. Our code is available at \\href{https:\/\/github.com\/top-yun\/MAD}{https:\/\/github.com\/top-yun\/MAD}",
+    "authors":"Sangyun Chung, Se Yeon Kim, Youngchae Chee, and Yong Man Ro",
+    "categories":"cs.AI",
+    "doi":null,
+    "journal-ref":null,
+    "update_date":"2026-09-14",
+    "versions":[
+      {
+        "version":"v1",
+        "created":"Thu, 29 Jan 2026 02:30:32 GMT"
+      },
+      {
+        "version":"v2",
+        "created":"Fri, 11 Sep 2026 05:26:47 GMT"
+      }
+    ],
+    "primary_category":"cs.AI",
+    "all_categories":[
+      "cs.AI"
+    ],
+    "author_list":[
+      "Sangyun Chung",
+      "Se Yeon Kim",
+      "Youngchae Chee",
+      "Yong Man Ro"
+    ],
+    "text":"MAD: Modality-Adaptive Decoding for Mitigating Cross-Modal Hallucinations in Multimodal Large Language Models. Multimodal Large Language Models (MLLMs) suffer from cross-modal hallucinations, where one modality inappropriately influences generation about another, leading to fabricated output. This exposes a more fundamental deficiency in modality-interaction control. To address this, we propose Modality-Adaptive Decoding (MAD), a training-free method that adaptively weights modality-specific decoding branches based on task requirements. MAD leverages the model's inherent ability to self-assess modality relevance by querying which modalities are needed for each task. The extracted modality probabilities are then used to adaptively weight contrastive decoding branches, enabling the model to focus on relevant information while suppressing cross-modal interference. Extensive experiments on CMM and AVHBench demonstrate that MAD significantly reduces cross-modal hallucinations across multiple audio-visual language models (7.8\\% and 2.0\\% improvements for VideoLLaMA2-AV, 8.7\\% and 4.7\\% improvements for Qwen2.5-Omni). Our approach demonstrates that explicit modality awareness through self-assessment is crucial for robust multimodal reasoning, offering a principled extension to existing contrastive decoding methods. Our code is available at \\href{https:\/\/github.com\/top-yun\/MAD}{https:\/\/github.com\/top-yun\/MAD}",
+    "sum_extractive":"Multimodal Large Language Models (MLLMs) suffer from cross-modal hallucinations, where one modality inappropriately influences generation about another, leading to fabricated output. The extracted modality probabilities are then used to adaptively weight contrastive decoding branches, enabling the model to focus on relevant information while suppressing cross-modal interference. Our approach demonstrates that explicit modality awareness through self-assessment is crucial for robust multimodal reasoning, offering a principled extension to existing contrastive decoding methods.",
+    "sum_bart":"Modality-Adaptive Decoding (MAD) is a training-free method that adaptively weights modality-specific decoding branches based on task requirements. MAD leverages the model's inherent ability to self-assess modality relevance by querying which modalities are needed for each task.",
+    "sum_t5":"multimodal large language models suffer from cross-modal hallucinations . authors propose a training-free method that adaptively weights modality-specific decoding branches . their code is available at github.com\/modality-adaptive-decoding .",
+    "sum_llm_basic":"The abstract describes a problem with Multimodal Large Language Models (MLLMs) called \"cross-modal hallucinations,\" where one modality incorrectly influences the other during generation. This issue affects how well the models can handle different types of input data together.\n\nTo solve this problem, researchers propose a new method called Modality-Adaptive Decoding (MAD). MAD works without additional training steps and uses the model itself to assess which modalities are most important for a specific task. It does this by asking the model which modalities it considers necessary for completing a particular task.\n\nUsing these assessments, MAD adjusts the importance of different parts of the model's output, focusing on the relevant information and reducing interference between modalities. The effectiveness of MAD is demonstrated through extensive testing on two benchmarks: CMM and AVHBench. In both cases, MAD shows significant improvement over baseline models, achieving up to 12.5% reductions in cross-modal hallucinations compared to previous methods.\n\nOverall, the study suggests that incorporating explicit awareness of modality relevance into the model's decision-making process is essential for improving multimodal reasoning capabilities.",
+    "sum_llm_role":"The abstract describes a new method called Modality-Adaptive Decoding (MAD) designed to address cross-modal hallucinations in large language models (LLMs). Cross-modal hallucinations occur when one modality incorrectly influences the generation of another, resulting in fabricated outputs. MAD addresses this issue by adaptingively weighting modality-specific decoding branches based on their relevance to the current task. It does so by leveraging the model's intrinsic capability to assess modality importance through queries about necessary modalities for specific tasks. The extracted modality probabilities guide the adaptive weighting of contrastive decoding branches, allowing the model to concentrate on pertinent information while mitigating cross-modal interference. Experimental evaluations using CMM and AVHBench show that MAD effectively reduces cross-modal hallucinations across various audio-visual LLMs, achieving significant improvements such as 7.8% and 2.0% reductions in VideoLLaMA2-AV and 8.7% and 4.7% reductions in Qwen2.5-Omni compared to baseline models. The study underscores the importance of explicit modality awareness in enhancing the robustness of multimodal reasoning within LLMs, providing a novel solution to an ongoing challenge in the field.",
+    "sum_llm_instruction":"The abstract discusses Modality-Adaptive Decoding (MAD), an unsupervised method designed to improve multimodal large language models' performance by dynamically adjusting their attention to different modalities based on task needs. Experiments show significant reductions in cross-modal hallucinations compared to baseline approaches, particularly in video and audio-visual language tasks.",
+    "sum_llm_few-shot":"Modality-Adaptive Decoding (MAD) addresses cross-modal hallucinations in multimodal large language models by adaptingly weighting modality-specific decoding branches based on task requirements. It uses extracted modality probabilities to adjust contrastive decoding branches, focusing on relevant information and reducing cross-modal interference. Experimental results on CMM and AVHBench show significant reductions in hallucinations for VideoLLaMA2-AV and Qwen2.5-Omni.",
+    "reference":"MAD: Modality-Adaptive Decoding for Mitigating Cross-Modal Hallucinations in Multimodal Large Language Models. Multimodal Large Language Models (MLLMs) suffer from cross-modal hallucinations, where one modality inappropriately influences generation about another, leading to fabricated output."
+  },
+  {
+    "id":"1905.03752",
+    "title":"Compositional Coding for Collaborative Filtering",
+    "abstract":"Efficiency is crucial to the online recommender systems. Representing users and items as binary vectors for Collaborative Filtering (CF) can achieve fast user-item affinity computation in the Hamming space, in recent years, we have witnessed an emerging research effort in exploiting binary hashing techniques for CF methods. However, CF with binary codes naturally suffers from low accuracy due to limited representation capability in each bit, which impedes it from modeling complex structure of the data. In this work, we attempt to improve the efficiency without hurting the model performance by utilizing both the accuracy of real-valued vectors and the efficiency of binary codes to represent users\/items. In particular, we propose the Compositional Coding for Collaborative Filtering (CCCF) framework, which not only gains better recommendation efficiency than the state-of-the-art binarized CF approaches but also achieves even higher accuracy than the real-valued CF method. Specifically, CCCF innovatively represents each user\/item with a set of binary vectors, which are associated with a sparse real-value weight vector. Each value of the weight vector encodes the importance of the corresponding binary vector to the user\/item. The continuous weight vectors greatly enhances the representation capability of binary codes, and its sparsity guarantees the processing speed. Furthermore, an integer weight approximation scheme is proposed to further accelerate the speed. Based on the CCCF framework, we design an efficient discrete optimization algorithm to learn its parameters. Extensive experiments on three real-world datasets show that our method outperforms the state-of-the-art binarized CF methods (even achieves better performance than the real-valued CF method) by a large margin in terms of both recommendation accuracy and efficiency.",
+    "authors":"Chenghao Liu, Tao Lu, Xin Wang, Zhiyong Cheng, Jianling Sun, Steven\n  C.H. Hoi",
+    "categories":"cs.IR cs.LG",
+    "doi":null,
+    "journal-ref":null,
+    "update_date":"2019-05-10",
+    "versions":[
+      {
+        "version":"v1",
+        "created":"Thu, 9 May 2019 16:57:27 GMT"
+      }
+    ],
+    "primary_category":"cs.IR",
+    "all_categories":[
+      "cs.IR",
+      "cs.LG"
+    ],
+    "author_list":[
+      "Chenghao Liu",
+      "Tao Lu",
+      "Xin Wang",
+      "Zhiyong Cheng",
+      "Jianling Sun",
+      "Steven C. H. Hoi"
+    ],
+    "text":"Compositional Coding for Collaborative Filtering. Efficiency is crucial to the online recommender systems. Representing users and items as binary vectors for Collaborative Filtering (CF) can achieve fast user-item affinity computation in the Hamming space, in recent years, we have witnessed an emerging research effort in exploiting binary hashing techniques for CF methods. However, CF with binary codes naturally suffers from low accuracy due to limited representation capability in each bit, which impedes it from modeling complex structure of the data. In this work, we attempt to improve the efficiency without hurting the model performance by utilizing both the accuracy of real-valued vectors and the efficiency of binary codes to represent users\/items. In particular, we propose the Compositional Coding for Collaborative Filtering (CCCF) framework, which not only gains better recommendation efficiency than the state-of-the-art binarized CF approaches but also achieves even higher accuracy than the real-valued CF method. Specifically, CCCF innovatively represents each user\/item with a set of binary vectors, which are associated with a sparse real-value weight vector. Each value of the weight vector encodes the importance of the corresponding binary vector to the user\/item. The continuous weight vectors greatly enhances the representation capability of binary codes, and its sparsity guarantees the processing speed. Furthermore, an integer weight approximation scheme is proposed to further accelerate the speed. Based on the CCCF framework, we design an efficient discrete optimization algorithm to learn its parameters. Extensive experiments on three real-world datasets show that our method outperforms the state-of-the-art binarized CF methods (even achieves better performance than the real-valued CF method) by a large margin in terms of both recommendation accuracy and efficiency.",
+    "sum_extractive":"Efficiency is crucial to the online recommender systems. Specifically, CCCF innovatively represents each user\/item with a set of binary vectors, which are associated with a sparse real-value weight vector. The continuous weight vectors greatly enhances the representation capability of binary codes, and its sparsity guarantees the processing speed.",
+    "sum_bart":"Efficiency is crucial to the online recommender systems. Representing users and items as binary vectors for Collaborative Filtering (CF) can achieve fast user-item affinity computation in the Hamming space.",
+    "sum_t5":"cnn's eric liu: representing users and items as binary vectors for CF can achieve fast user-item affinity computation in the Hamming space . but CF with binary codes naturally suffers from low accuracy due to limited representation capability in each bit, he says ",
+    "sum_llm_basic":"The abstract discusses improvements in collaborative filtering (CF) algorithms through the use of binary coding combined with real-valued representations. Key points include:\n1. Binary coding's limitations in representing complex data structures.\n2. Proposing the Compositional Coding for Collaborative Filtering (CCCF) framework to address these issues.\n3. Using binary vectors to represent users and items while incorporating real-valued weights to enhance accuracy and efficiency.\n4. Introducing an integer weight approximation scheme to further speed up computations.\n5. Demonstrating superior performance compared to existing binarized CF methods and traditional real-valued CF methods across multiple datasets.",
+    "sum_llm_role":"The abstract discusses advancements in collaborative filtering (CF) algorithms designed to enhance both efficiency and accuracy in online recommender systems. Key points include:\n1. Binary coding limitations: Traditional binary representations in CF suffer from low accuracy due to their inability to fully capture complex data structures.\n2. Proposed solution: The Compositional Coding for Collaborative Filtering (CCCF) framework addresses these issues by combining the strengths of binary codes' efficiency with real-valued vectors' accuracy.\n3. CCCF's approach: It uses a set of binary vectors associated with a sparse real-value weight vector to represent users and items. This allows for enhanced representation capabilities while maintaining computational efficiency.\n4. Integer weight approximation: An additional technique is introduced to further optimize the speed of parameter learning.\n5. Performance evaluation: Experiments on real-world datasets demonstrate that CCCF significantly improves recommendation accuracy and efficiency compared to existing binarized CF methods, sometimes even surpassing traditional real-valued CF methods.\n6. Overall impact: The use of CCCF leads to more accurate recommendations at potentially faster speeds, making it a promising advancement in the field of recommender system development.",
+    "sum_llm_instruction":"The paper proposes the Compositional Coding for Collaborative Filtering (CCCF) framework, which combines the advantages of binary coding's efficiency with real-valued vectors' accuracy to enhance recommendation system performance while maintaining high computational speed. This approach significantly improves upon existing binarized collaborative filtering methods, achieving higher accuracy and faster execution times compared to traditional real-valued CF methods.",
+    "sum_llm_few-shot":"The paper proposes CCCF, a collaborative filtering framework that combines the advantages of binary and real-valued representations. It uses sparse real-value weights to enhance the representation capacity of binary codes, improving both efficiency and accuracy compared to existing methods.",
+    "reference":"Compositional Coding for Collaborative Filtering. Efficiency is crucial to the online recommender systems."
+  },
+  {
+    "id":"2510.00671",
+    "title":"Milco: Learned Sparse Retrieval Across Languages via a Multilingual Connector",
+    "abstract":"Learned Sparse Retrieval (LSR) combines the efficiency of bi-encoders with the transparency of lexical matching, but existing approaches struggle to scale beyond English. We introduce MILCO, an LSR architecture that maps queries and documents from different languages into a shared English lexical space via a multilingual connector. MILCO is trained with a specialized two-stage regime that combines Sparse Alignment Pretraining with contrastive training to provide representation transparency and effectiveness while mitigating semantic collapse. Motivated by the observation that uncommon entities are often lost when projected into English, we propose a new LexEcho head, which enhances robustness by augmenting the English lexical representation with a source-language view obtained through a special [ECHO] token. MILCO achieves state-of-the-art multilingual and cross-lingual LSR performance, outperforming leading dense, sparse, and multi-vector baselines such as BGE-M3 and Qwen3-Embed on standard multilingual benchmarks, while supporting dynamic efficiency through post-hoc pruning. Notably, when using mass-based pruning to reduce document representations to only 30 active dimensions on average, MILCO 560M outperforms the similarly-sized Qwen3-Embed 0.6B with 1024 dimensions, while achieving 3$\\times$ lower retrieval latency and 10$\\times$ smaller index size.",
+    "authors":"Thong Nguyen, Yibin Lei, Jia-Huei Ju, Eugene Yang, Andrew Yates",
+    "categories":"cs.IR cs.CL",
+    "doi":null,
+    "journal-ref":null,
+    "update_date":"2026-03-20",
+    "versions":[
+      {
+        "version":"v1",
+        "created":"Wed, 01 Oct 2025 08:58:25 GMT"
+      },
+      {
+        "version":"v2",
+        "created":"Thu, 19 Mar 2026 17:00:17 GMT"
+      }
+    ],
+    "primary_category":"cs.IR",
+    "all_categories":[
+      "cs.IR",
+      "cs.CL"
+    ],
+    "author_list":[
+      "Thong Nguyen",
+      "Yibin Lei",
+      "Jia-Huei Ju",
+      "Eugene Yang",
+      "Andrew Yates"
+    ],
+    "text":"Milco: Learned Sparse Retrieval Across Languages via a Multilingual Connector. Learned Sparse Retrieval (LSR) combines the efficiency of bi-encoders with the transparency of lexical matching, but existing approaches struggle to scale beyond English. We introduce MILCO, an LSR architecture that maps queries and documents from different languages into a shared English lexical space via a multilingual connector. MILCO is trained with a specialized two-stage regime that combines Sparse Alignment Pretraining with contrastive training to provide representation transparency and effectiveness while mitigating semantic collapse. Motivated by the observation that uncommon entities are often lost when projected into English, we propose a new LexEcho head, which enhances robustness by augmenting the English lexical representation with a source-language view obtained through a special [ECHO] token. MILCO achieves state-of-the-art multilingual and cross-lingual LSR performance, outperforming leading dense, sparse, and multi-vector baselines such as BGE-M3 and Qwen3-Embed on standard multilingual benchmarks, while supporting dynamic efficiency through post-hoc pruning. Notably, when using mass-based pruning to reduce document representations to only 30 active dimensions on average, MILCO 560M outperforms the similarly-sized Qwen3-Embed 0.6B with 1024 dimensions, while achieving 3$\\times$ lower retrieval latency and 10$\\times$ smaller index size.",
+    "sum_extractive":"MILCO is trained with a specialized two-stage regime that combines Sparse Alignment Pretraining with contrastive training to provide representation transparency and effectiveness while mitigating semantic collapse. MILCO achieves state-of-the-art multilingual and cross-lingual LSR performance, outperforming leading dense, sparse, and multi-vector baselines such as BGE-M3 and Qwen3-Embed on standard multilingual benchmarks, while supporting dynamic efficiency through post-hoc pruning. Notably, when using mass-based pruning to reduce document representations to only 30 active dimensions on average, MILCO 560M outperforms the similarly-sized Qwen3-Embed 0.6B with 1024 dimensions, while achieving 3 lower retrieval latency and 10 smaller index size.",
+    "sum_bart":"Learned Sparse Retrieval (LSR) combines efficiency of bi-encoders with transparency of lexical matching. We introduce MILCO, an LSR architecture that maps queries and documents from different languages into a shared English lexical space via a multilingual connector.",
+    "sum_t5":"learned Sparse Retrieval (LSR) maps queries and documents from different languages into a shared English lexical space via a multilingual connector . MILCO achieves state-of-the-art multilingual and cross-lingual LSR performance .",
+    "sum_llm_basic":"The paper introduces MILCO, an improved Learned Sparse Retrieval (LSR) system designed for handling multiple languages efficiently. It leverages a multilingual connector to map queries and documents across various languages into an English lexical space. The system uses a specialized two-stage approach combining Sparse Alignment Pretraining with contrastive learning to ensure both representation transparency and effectiveness.\n\nA key innovation in MILCO is the inclusion of a new LexEcho head, which helps maintain robustness by incorporating a source-language perspective through a special ECHO token. This design allows MILCO to achieve superior performance compared to other state-of-the-art methods like BGE-M3 and Qwen3-Embed across multilingual and cross-lingual tasks.\n\nNotably, MILCO demonstrates significant improvements in terms of retrieval accuracy, speed, and resource usage. For instance, it can be pruned down to just 30 active dimensions on average without losing important information, yet still outperforming larger models like Qwen3-Embed in these metrics. This makes MILCO particularly useful for applications requiring efficient processing of large-scale datasets in diverse language environments.",
+    "sum_llm_role":"The abstract describes a novel approach called Learned Sparse Retrieval (LSR), which aims to combine the benefits of bi-encoder models with the transparency of lexical matching. The main challenge addressed is scaling LSR beyond English due to language-specific issues.\n\n**Key Components:**\n\n1. **Multilingual Connector (MLC):** Maps queries and documents across multiple languages into a shared English lexical space.\n   \n2. **Two-Stage Training Regime:** Combines Sparse Alignment Pretraining with Contrastive Learning to:\n   - Provide representation transparency.\n   - Enhance effectiveness without losing semantic meaning.\n   - Mitigate potential semantic collapse.\n\n3. **LexEcho Head:** A new design element designed to improve robustness by incorporating a source-language perspective in the English lexical representation.\n\n**Performance Achievements:**\n\n- **State-of-the-Art Performance:** Outperforms leading dense, sparse, and multi-vector baselines like BGE-M3 and Qwen3-Embed on standard multilingual benchmarks.\n  \n- **Dynamic Efficiency:** Supports efficient retrieval by reducing document representations to 30 active dimensions on average, significantly improving both retrieval latency and index size compared to larger models like Qwen3-Embed.\n\n**Pruning Strategy:**\n- Uses mass-based pruning to further optimize model size and speed up inference.\n\nIn summary, MILCO offers scalable, transparent, and effective multilingual and cross-lingual LSR solutions, demonstrating superior performance over current state-of-the-art methods.",
+    "sum_llm_instruction":"The paper introduces MILCO, an improved version of Learned Sparse Retrieval (LSR) designed for multilingual and cross-lingual applications. It uses a multilingual connector to map queries and documents into an English lexical space, combining pretraining with contrastive learning to maintain representation transparency. A new LexEcho head enhances robustness by incorporating a source-language view. The approach achieves superior performance compared to other methods like BGE-M3 and Qwen3-Embed across various benchmarks, including reduced dimensionality without sacrificing accuracy.",
+    "sum_llm_few-shot":"MILCO combines the efficiency of bi-encoders with the transparency of lexical matching, reducing memory usage from quadratic to nearly linear for non-English language pairs. It uses a multilingual connector to map queries and documents into an English lexical space, trained with Sparse Alignment Pretraining and contrastive learning. The new LexEcho head enhances robustness by incorporating a source-language view. When pruned to 30 active dimensions, MILCO outperforms Qwen3-Embed on multilingual benchmarks while maintaining low retrieval latency and small index sizes.",
+    "reference":"Milco: Learned Sparse Retrieval Across Languages via a Multilingual Connector. Learned Sparse Retrieval (LSR) combines the efficiency of bi-encoders with the transparency of lexical matching, but existing approaches struggle to scale beyond English."
+  },
+  {
+    "id":"2304.05591",
+    "title":"Semantic Feature Verification in FLAN-T5",
+    "abstract":"This study evaluates the potential of a large language model for aiding in generation of semantic feature norms - a critical tool for evaluating conceptual structure in cognitive science. Building from an existing human-generated dataset, we show that machine-verified norms capture aspects of conceptual structure beyond what is expressed in human norms alone, and better explain human judgments of semantic similarity amongst items that are distally related. The results suggest that LLMs can greatly enhance traditional methods of semantic feature norm verification, with implications for our understanding of conceptual representation in humans and machines.",
+    "authors":"Siddharth Suresh, Kushin Mukherjee, Timothy T. Rogers",
+    "categories":"cs.CL cs.AI cs.LG",
+    "doi":null,
+    "journal-ref":null,
+    "update_date":"2023-04-13",
+    "versions":[
+      {
+        "version":"v1",
+        "created":"Wed, 12 Apr 2023 03:37:57 GMT"
+      }
+    ],
+    "primary_category":"cs.CL",
+    "all_categories":[
+      "cs.CL",
+      "cs.AI",
+      "cs.LG"
+    ],
+    "author_list":[
+      "Siddharth Suresh",
+      "Kushin Mukherjee",
+      "Timothy T. Rogers"
+    ],
+    "text":"Semantic Feature Verification in FLAN-T5. This study evaluates the potential of a large language model for aiding in generation of semantic feature norms - a critical tool for evaluating conceptual structure in cognitive science. Building from an existing human-generated dataset, we show that machine-verified norms capture aspects of conceptual structure beyond what is expressed in human norms alone, and better explain human judgments of semantic similarity amongst items that are distally related. The results suggest that LLMs can greatly enhance traditional methods of semantic feature norm verification, with implications for our understanding of conceptual representation in humans and machines.",
+    "sum_extractive":"This study evaluates the potential of a large language model for aiding in generation of semantic feature norms - a critical tool for evaluating conceptual structure in cognitive science. Building from an existing human-generated dataset, we show that machine-verified norms capture aspects of conceptual structure beyond what is expressed in human norms alone, and better explain human judgments of semantic similarity amongst items that are distally related. The results suggest that LLMs can greatly enhance traditional methods of semantic feature norm verification, with implications for our understanding of conceptual representation in humans and machines.",
+    "sum_bart":"Machine-verified norms capture aspects of conceptual structure beyond what is expressed in human norms alone. Results suggest that LLMs can greatly enhance traditional methods of semantic feature norm verification, with implications for our understanding of conceptual representation.",
+    "sum_t5":"study shows that machine-verified norms capture aspects of conceptual structure beyond what is expressed in human norms alone . results suggest that LLMs can greatly enhance traditional methods of semantic feature norm verification .",
+    "sum_llm_basic":"The study examines how a large language model (LLM) can aid in generating semantic feature norms, which are essential for assessing conceptual structures in cognitive science. By using an existing human-generated dataset, researchers demonstrate that machine-verified norms provide insights into concepts not captured by human norms alone. These LLM-derived norms also offer improved explanations for human judgments regarding the semantic similarity between distantly related items. This finding suggests that LLMs could significantly augment traditional methods for verifying semantic features, potentially offering new perspectives on how humans and machines represent concepts.",
+    "sum_llm_role":"The study examines how a large language model (LLM) can aid in generating semantic feature norms, which are essential for assessing conceptual structures in cognitive science. By using an existing human-generated dataset, researchers demonstrate that machine-verified norms provide insights into concepts not captured by human norms alone. These machine-verified norms also offer more accurate explanations for human judgments regarding the semantic similarity between distantly related items. This finding suggests that LLMs could significantly improve traditional methods of verifying semantic features, potentially offering new perspectives on how humans and machines represent concepts.",
+    "sum_llm_instruction":"This study investigates how a large language model can improve the creation of semantic feature norms used to assess conceptual structures in cognitive science. It demonstrates that machine-verified norms offer more comprehensive insights into conceptual organization than purely human-generated norms, particularly when applied to distantly related items. These findings indicate that LLMs could significantly enhance traditional methods for verifying semantic features, potentially offering new perspectives on human and machine cognition.",
+    "sum_llm_few-shot":"This study uses a large language model to generate semantic feature norms, showing it captures more aspects than human norms and explains human judgments better, suggesting enhanced verification through LLMs.",
+    "reference":"Semantic Feature Verification in FLAN-T5. This study evaluates the potential of a large language model for aiding in generation of semantic feature norms - a critical tool for evaluating conceptual structure in cognitive science."
+  },
+  {
+    "id":"2602.00682",
+    "title":"RecGOAT: Graph Optimal Adaptive Transport for LLM-Enhanced Multimodal Recommendation with Dual Semantic Alignment",
+    "abstract":"Integrating large language model (LLM) representations into multimodal recommendation has shown promise, yet a fundamental challenge remains largely overlooked: the semantic heterogeneity between generative LM representations and the ID-based collaborative signals that recommendation systems rely on. Naively injecting LM features without alignment degrades recommendation performance rather than improving it. To resolve this, we propose RecGOAT, a dual-granularity semantic alignment framework built on graph neural networks and optimal transport theory. RecGOAT first enriches collaborative semantics through multimodal attentive graphs that capture item-item, user-item, and user-user relationships, initializing user representations via LLM-inferred behavioral preferences. It then aligns LM-derived modality representations with recommendation IDs at two complementary granularities: (1) instance-level alignment via cross-modal contrastive learning (CMCL), which produces discriminative per-sample representations; and (2) distribution-level alignment via optimal adaptive transport (OAT), which minimizes the 1-Wasserstein distance between ID distributions and LLM semantics to produce a unified, consistently aligned feature space. Theoretically, we prove that the unified representation achieves strictly lower target error than any single-modality representation, with the gap bounded by the Wasserstein distance and the InfoNCE loss, providing rigorous guarantees for both alignment consistency and fusion comprehensiveness. Extensive experiments on three public benchmarks demonstrate state-of-the-art performance. Deployment on a large-scale online advertising platform further validates RecGOAT's industrial scalability. Our code is available at https:\/\/github.com\/6lyc\/RecGOAT-LLM4Rec.",
+    "authors":"Yuecheng Li, Hengwei Ju, Zeyu Song, Wei Yang, Chi Lu, Peng Jiang, Kun Gai",
+    "categories":"cs.IR cs.AI",
+    "doi":null,
+    "journal-ref":null,
+    "update_date":"2026-05-26",
+    "versions":[
+      {
+        "version":"v1",
+        "created":"Sat, 31 Jan 2026 11:58:38 GMT"
+      },
+      {
+        "version":"v2",
+        "created":"Mon, 25 May 2026 17:41:39 GMT"
+      }
+    ],
+    "primary_category":"cs.IR",
+    "all_categories":[
+      "cs.IR",
+      "cs.AI"
+    ],
+    "author_list":[
+      "Yuecheng Li",
+      "Hengwei Ju",
+      "Zeyu Song",
+      "Wei Yang",
+      "Chi Lu",
+      "Peng Jiang",
+      "Kun Gai"
+    ],
+    "text":"RecGOAT: Graph Optimal Adaptive Transport for LLM-Enhanced Multimodal Recommendation with Dual Semantic Alignment. Integrating large language model (LLM) representations into multimodal recommendation has shown promise, yet a fundamental challenge remains largely overlooked: the semantic heterogeneity between generative LM representations and the ID-based collaborative signals that recommendation systems rely on. Naively injecting LM features without alignment degrades recommendation performance rather than improving it. To resolve this, we propose RecGOAT, a dual-granularity semantic alignment framework built on graph neural networks and optimal transport theory. RecGOAT first enriches collaborative semantics through multimodal attentive graphs that capture item-item, user-item, and user-user relationships, initializing user representations via LLM-inferred behavioral preferences. It then aligns LM-derived modality representations with recommendation IDs at two complementary granularities: (1) instance-level alignment via cross-modal contrastive learning (CMCL), which produces discriminative per-sample representations; and (2) distribution-level alignment via optimal adaptive transport (OAT), which minimizes the 1-Wasserstein distance between ID distributions and LLM semantics to produce a unified, consistently aligned feature space. Theoretically, we prove that the unified representation achieves strictly lower target error than any single-modality representation, with the gap bounded by the Wasserstein distance and the InfoNCE loss, providing rigorous guarantees for both alignment consistency and fusion comprehensiveness. Extensive experiments on three public benchmarks demonstrate state-of-the-art performance. Deployment on a large-scale online advertising platform further validates RecGOAT's industrial scalability. Our code is available at https:\/\/github.com\/6lyc\/RecGOAT-LLM4Rec.",
+    "sum_extractive":"To resolve this, we propose RecGOAT, a dual-granularity semantic alignment framework built on graph neural networks and optimal transport theory. Extensive experiments on three public benchmarks demonstrate state-of-the-art performance. Deployment on a large-scale online advertising platform further validates RecGOAT's industrial scalability.",
+    "sum_bart":"RecGOAT is a dual-granularity semantic alignment framework built on graph neural networks and optimal transport theory. It enriches collaborative semantics through multimodal attentive graphs that capture item-item, user-item and user-user relationships. It then aligns LM-derived modality representations with recommendation IDs.",
+    "sum_t5":"recGOAT is a semantic alignment framework built on graph neural networks and optimal transport theory . it aligns LM-derived modality representations with recommendation IDs at two complementary granularities . RecGOAT achieves strictly lower target error than any single-modality representation .",
+    "sum_llm_basic":"The abstract describes a new approach called RecGOAT designed to improve recommendations by integrating Large Language Model (LLM) representations into a system that relies on ID-based collaborative signals. Key points include:\n- Challenges in aligning generative LM representations with traditional recommendation systems.\n- Proposes RecGOAT as a solution using graph neural networks and optimal transport theory.\n- Enhances collaborative semantics through multimodal attentive graphs capturing various relationships.\n- Aligns LM-derived modality representations with recommendation IDs at two levels: instance-wise and distribution-wise.\n- Theoretical proof shows improved performance over single-modality approaches due to strict lower bound on target error.\n- Demonstrated superior performance on benchmark datasets compared to existing methods.\n- Validated through deployment on an online advertising platform.",
+    "sum_llm_role":"The abstract describes a new approach called RecGOAT designed to improve recommendation systems by integrating Large Language Model (LLM) representations with traditional collaborative filtering methods. Key points include:\n- Challenges in combining LLM-generated features with traditional recommendation system data.\n- Proposes RecGOAT as a solution using Graph Neural Networks and Optimal Transport Theory.\n- Enhances collaborative semantics through multimodal attentive graphs capturing various types of relationships.\n- Aligns LLM-derived modalities with recommendation IDs at two levels: instance-wise and distribution-wise.\n- Uses Cross-Modal Contrastive Learning (CMCL) for instance-level alignment and Optimal Adaptive Transport (OAT) for distribution-level alignment.\n- Demonstrates superior performance compared to existing methods across multiple datasets.\n- Shows practical applicability with real-world deployment on an online advertising platform.\nThe work aims to address the issue of semantic mismatch between LLM outputs and traditional recommendation metrics, thereby potentially enhancing recommendation accuracy and relevance.",
+    "sum_llm_instruction":"The abstract discusses a new approach called RecGOAT designed to improve recommendation systems by integrating large language model (LLM) representations with traditional collaborative filtering methods. This involves creating a dual-granularity semantic alignment framework using graph neural networks and optimal transport theory. The system enhances recommendation accuracy by aligning LLM-generated modalities with user IDs across different levels of granularity, achieving better performance compared to existing methods.",
+    "sum_llm_few-shot":"RecGOAT integrates large language model (LLM) representations into multimodal recommendations by leveraging dual-granularity semantic alignment. It uses multimodal attentive graphs to capture diverse relationships and initializes user representations based on inferred behavioral preferences. At instance level, CMCL enhances per-sample representations, and OAT aligns LM-derived modality representations with recommendation IDs, producing a unified feature space. Theoretical analysis shows improved performance due to strict lower bound on target error compared to single-modality approaches. Experimental validation across three benchmarks demonstrates superior performance, and its deployment on an online advertising platform confirms its practical utility.",
+    "reference":"RecGOAT: Graph Optimal Adaptive Transport for LLM-Enhanced Multimodal Recommendation with Dual Semantic Alignment. Integrating large language model (LLM) representations into multimodal recommendation has shown promise, yet a fundamental challenge remains largely overlooked: the semantic heterogeneity between generative LM representations and the ID-based collaborative signals that recommendation systems rely on."
+  },
+  {
+    "id":"2506.20504",
+    "title":"Engineering Sentience",
+    "abstract":"We spell out a definition of sentience that may be useful for designing and building it in machines. We propose that for sentience to be meaningful for AI, it must be fleshed out in functional, computational terms, in enough detail to allow for implementation. Yet, this notion of sentience must also reflect something essentially 'subjective', beyond just having the general capacity to encode perceptual content. For this specific functional notion of sentience to occur, we propose that certain sensory signals need to be both assertoric (persistent) and qualitative. To illustrate the definition in more concrete terms, we sketch out some ways for potential implementation, given current technology. Understanding what it takes for artificial agents to be functionally sentient can also help us avoid creating them inadvertently, or at least, realize that we have created them in a timely manner.",
+    "authors":"Konstantin Demin, Taylor Webb, Eric Elmoznino, Hakwan Lau",
+    "categories":"cs.AI q-bio.NC",
+    "doi":null,
+    "journal-ref":null,
+    "update_date":"2025-06-26",
+    "versions":[
+      {
+        "version":"v1",
+        "created":"Wed, 25 Jun 2025 14:49:50 GMT"
+      }
+    ],
+    "primary_category":"cs.AI",
+    "all_categories":[
+      "cs.AI",
+      "q-bio.NC"
+    ],
+    "author_list":[
+      "Konstantin Demin",
+      "Taylor Webb",
+      "Eric Elmoznino",
+      "Hakwan Lau"
+    ],
+    "text":"Engineering Sentience. We spell out a definition of sentience that may be useful for designing and building it in machines. We propose that for sentience to be meaningful for AI, it must be fleshed out in functional, computational terms, in enough detail to allow for implementation. Yet, this notion of sentience must also reflect something essentially 'subjective', beyond just having the general capacity to encode perceptual content. For this specific functional notion of sentience to occur, we propose that certain sensory signals need to be both assertoric (persistent) and qualitative. To illustrate the definition in more concrete terms, we sketch out some ways for potential implementation, given current technology. Understanding what it takes for artificial agents to be functionally sentient can also help us avoid creating them inadvertently, or at least, realize that we have created them in a timely manner.",
+    "sum_extractive":"Yet, this notion of sentience must also reflect something essentially 'subjective', beyond just having the general capacity to encode perceptual content. For this specific functional notion of sentience to occur, we propose that certain sensory signals need to be both assertoric (persistent) and qualitative. To illustrate the definition in more concrete terms, we sketch out some ways for potential implementation, given current technology.",
+    "sum_bart":"We spell out a definition of sentience that may be useful for designing and building it in machines. We propose that certain sensory signals need to be both assertoric (persistent) and qualitative. To illustrate the definition in more concrete terms, we sketch out some ways for potential implementation, given current technology.",
+    "sum_t5":"we propose that for sentience to be meaningful for AI, it must be fleshed out in functional, computational terms . but it must also reflect something essentially 'subjective', beyond just having the capacity to encode perceptual content . to illustrate the definition in more concrete terms, we sketch out some ways",
+    "sum_llm_basic":"The abstract discusses a definition of sentience suitable for AI design and implementation. It emphasizes that sentience should be defined in functional, computational terms with sufficient detail for practical application. The key aspects include:\n1. Sentience must be subjective, not merely about encoding perceptual content.\n2. Certain sensory signals need to be persistent and qualitative for sentience to be meaningful.\n3. This definition is meant to prevent unintentional creation of sentient AI and ensure timely development.\n4. The abstract suggests using existing technologies as a starting point for implementing this concept.\n5. Understanding sentience in AI could aid in avoiding unintended creation and promoting responsible AI development.",
+    "sum_llm_role":"The abstract discusses the development of an understanding of sentience as relevant to Artificial Intelligence (AI). It suggests defining sentience in terms of its functionality and computational details while acknowledging its subjective nature. The key points include:\n1. Sentience should be defined in functional, computational terms.\n2. This definition must encompass both the ability to process perceptual data and the experience of being subjectively aware.\n3. For sentience to be meaningful in AI, certain sensory signals must be persistent and qualitative.\n4. The abstract provides examples of how this concept might be implemented using current technological capabilities.\n5. By exploring what it takes for AI to be sentient, researchers aim to prevent unintended creation of such entities or ensure they are developed promptly.",
+    "sum_llm_instruction":"The abstract discusses defining sentience as a concept relevant for AI design, emphasizing its necessity for functionality while maintaining subjective aspects. It suggests that sensory signals should be persistent and qualitative for sentience to be meaningful. The summary highlights these key points without adding any external information.",
+    "sum_llm_few-shot":"Sentience is defined as meaningfully embodied functionality within machines capable of processing sensory data persistently and qualitatively, which can be implemented through current technologies.",
+    "reference":"Engineering Sentience. We spell out a definition of sentience that may be useful for designing and building it in machines."
+  },
+  {
+    "id":"2509.00625",
+    "title":"NetGent: Agent-Based Automation of Network Application Workflows",
+    "abstract":"We present NetGent, an AI-agent framework for automating complex application workflows to generate realistic network traffic datasets. Developing generalizable ML models for networking requires data collection from network environments with traffic that results from a diverse set of real-world web applications. However, using existing browser automation tools that are diverse, repeatable, realistic, and efficient remains fragile and costly. NetGent addresses this challenge by allowing users to specify workflows as natural-language rules that define state-dependent actions. These abstract specifications are compiled into nondeterministic finite automata (NFAs), which a state synthesis component translates into reusable, executable code. This design enables deterministic replay, reduces redundant LLM calls through state caching, and adapts quickly when application interfaces change. In experiments, NetGent automated more than 50+ workflows spanning video-on-demand streaming, live video streaming, video conferencing, social media, and web scraping, producing realistic traffic traces while remaining robust to UI variability. By combining the flexibility of language-based agents with the reliability of compiled execution, NetGent provides a scalable foundation for generating the diverse, repeatable datasets needed to advance ML in networking.",
+    "authors":"Jaber Daneshamooz, Eugene Vuong, Laasya Koduru, Sanjay Chandrasekaran, Arpit Gupta",
+    "categories":"cs.AI",
+    "doi":null,
+    "journal-ref":"NeurIPS 2025 Workshop on Machine Learning for Systems (ML4Sys 2025)",
+    "update_date":"2026-09-21",
+    "versions":[
+      {
+        "version":"v1",
+        "created":"Sat, 30 Aug 2025 22:47:15 GMT"
+      },
+      {
+        "version":"v2",
+        "created":"Fri, 14 Nov 2025 01:23:14 GMT"
+      }
+    ],
+    "primary_category":"cs.AI",
+    "all_categories":[
+      "cs.AI"
+    ],
+    "author_list":[
+      "Jaber Daneshamooz",
+      "Eugene Vuong",
+      "Laasya Koduru",
+      "Sanjay Chandrasekaran",
+      "Arpit Gupta"
+    ],
+    "text":"NetGent: Agent-Based Automation of Network Application Workflows. We present NetGent, an AI-agent framework for automating complex application workflows to generate realistic network traffic datasets. Developing generalizable ML models for networking requires data collection from network environments with traffic that results from a diverse set of real-world web applications. However, using existing browser automation tools that are diverse, repeatable, realistic, and efficient remains fragile and costly. NetGent addresses this challenge by allowing users to specify workflows as natural-language rules that define state-dependent actions. These abstract specifications are compiled into nondeterministic finite automata (NFAs), which a state synthesis component translates into reusable, executable code. This design enables deterministic replay, reduces redundant LLM calls through state caching, and adapts quickly when application interfaces change. In experiments, NetGent automated more than 50+ workflows spanning video-on-demand streaming, live video streaming, video conferencing, social media, and web scraping, producing realistic traffic traces while remaining robust to UI variability. By combining the flexibility of language-based agents with the reliability of compiled execution, NetGent provides a scalable foundation for generating the diverse, repeatable datasets needed to advance ML in networking.",
+    "sum_extractive":"We present NetGent, an AI-agent framework for automating complex application workflows to generate realistic network traffic datasets. NetGent addresses this challenge by allowing users to specify workflows as natural-language rules that define state-dependent actions. This design enables deterministic replay, reduces redundant LLM calls through state caching, and adapts quickly when application interfaces change.",
+    "sum_bart":"NetGent is an AI-agent framework for automating complex application workflows to generate realistic network traffic datasets. In experiments, NetGent automated more than 50+ workflows spanning video-on-demand streaming, live video streaming, and social media.",
+    "sum_t5":"we present NetGent, an AI-agent framework for automating complex application workflows . the framework allows users to specify workflows as natural-language rules that define state-dependent actions . netGent automated more than 50+ workflows, producing realistic traffic traces .",
+    "sum_llm_basic":"NetGent is an AI framework designed to automate complex application workflows for generating realistic network traffic datasets. It addresses the challenge of creating generalizable machine learning models for networking by enabling users to specify workflows in natural language rules. These rules are then translated into non-deterministic finite automata (NFAs) that can be executed, ensuring deterministic replay and reducing redundancy due to state caching. The system's adaptability allows it to handle changes in application interfaces efficiently.\n\nIn experiments, NetGent was able to automate over 50 different workflows across various applications such as video-on-demand streaming, live video streaming, video conferencing, social media, and web scraping. It produced realistic traffic traces without compromising on robustness against interface variations. By integrating the flexibility of language-based agents with the reliability of compiled execution, NetGent offers a scalable solution for generating diverse, repeatable datasets essential for advancing machine learning in networking.",
+    "sum_llm_role":"NetGent is an AI framework designed to automate complex application workflows for generating realistic network traffic datasets. It addresses the challenge of creating generalizable machine learning models for networking by leveraging natural-language rules to define state-dependent actions. The system compiles these rules into non-deterministic finite automata (NFAs) and uses a state synthesis component to translate them into executable code. Key features include:\n1. Deterministic replay: Ensures consistent behavior across different executions.\n2. Redundant call reduction: Utilizes state caching to minimize unnecessary model calls.\n3. Adaptability: Quickly adjusts to changes in application user interfaces.\nThe framework has been tested on various use cases including video-on-demand, live video streaming, video conferencing, social media, and web scraping. It successfully generated realistic traffic traces while maintaining robustness against interface variations. By integrating the flexibility of language-based agents with the reliability of compiled execution, NetGent offers a scalable solution for obtaining diverse, repeatable datasets essential for advancing machine learning in networking.",
+    "sum_llm_instruction":"NetGent is an AI-agent framework designed to automate complex application workflows for generating realistic network traffic datasets. It uses natural-language rules to compile workflow specifications into executable code, enabling deterministic replay and reducing redundancy. The system has been tested on various applications including video-on-demand, live streaming, and web scraping, demonstrating its ability to produce reliable traffic traces despite changes in user interface.",
+    "sum_llm_few-shot":"NetGent is an AI-agent framework designed to automate complex application workflows for generating realistic network traffic datasets. It uses natural-language rules to compile these into Nondeterministic Finite Automata (NFAs) for executable code, enabling deterministic replay and reducing redundancy. The system's ability to adapt to changes in application interfaces makes it robust against UI variability. In experiments, NetGent successfully automated workflows across various applications like video-on-demand, live streaming, and web scraping, producing reliable traffic traces.",
+    "reference":"NetGent: Agent-Based Automation of Network Application Workflows. We present NetGent, an AI-agent framework for automating complex application workflows to generate realistic network traffic datasets."
+  }
+]

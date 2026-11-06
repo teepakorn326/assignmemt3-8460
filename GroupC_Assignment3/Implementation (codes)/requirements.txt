@@ -1,0 +1,26 @@
+# The Hugging Face stack below was import- and retrieval-tested together on Python 3.13.2.
+# Keep these versions together: newer datasets with an older hub broke retrieval at import time.
+pandas>=2.0
+numpy>=1.26
+scikit-learn>=1.4
+spacy>=3.7
+nltk>=3.8
+sentence-transformers==5.1.2
+transformers==4.57.6
+huggingface-hub==0.36.2
+torch>=2.2
+accelerate             # NB03 DistilBERT fine-tune (Trainer)
+datasets==3.6.0        # NB03 Trainer; compatible with the hub version above
+wordcloud>=1.9
+joblib>=1.3
+rouge-score>=0.1.2
+matplotlib>=3.8
+seaborn>=0.13
+tqdm
+jupyter
+# spaCy models:
+#   python -m spacy download en_core_web_sm   (NB02, extraction.py, NB06)
+#   python -m spacy download en_core_web_md   (NB04 averaged word vectors)
+# optional
+# openai      (only for LLM_BACKEND=openai in llm.py)
+# faiss-cpu

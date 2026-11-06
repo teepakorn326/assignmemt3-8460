@@ -1,0 +1,88 @@
+{
+  "llm": {
+    "backend": "hf",
+    "model": "Qwen/Qwen2.5-1.5B-Instruct"
+  },
+  "rag_v1_vs_v2": [
+    {
+      "version": "v1 (notebook 05)",
+      "format ok": "5/5",
+      "judge-supported": "13/17 (76%)",
+      "cited": "5/17",
+      "kept by per-claim filter": "5/17",
+      "exact-source copies": "0/17",
+      "invalid citations": 0,
+      "answers needing fallback": "3/5"
+    },
+    {
+      "version": "v2 (cite every sentence)",
+      "format ok": "5/5",
+      "judge-supported": "18/21 (86%)",
+      "cited": "10/21",
+      "kept by per-claim filter": "10/21",
+      "exact-source copies": "0/21",
+      "invalid citations": 0,
+      "answers needing fallback": "2/5"
+    }
+  ],
+  "rag_v2_examples": [
+    {
+      "question": "How can large language models be defended against prompt injection attacks?",
+      "reply": "SYNTHESIS: The collective papers highlight the prevalence and complexity of prompt injection attacks on large language models (LLMs). They cover various approaches to defending against these attacks, including categorizing different types of prompt injections, evaluating the effectiveness of existing defenses like fine-tuning and architecture-aware attacks, and proposing innovative solutions like automated co-evolutionary frameworks and generative adversarial networks. Despite advancements, many challenges remain, particularly in ensuring robustness across diverse use cases and environments.\n\nGAP: None of the papers directly address the ethical considerations and societal impacts of prompt injection attacks on LLMs, focusing instead on technical defenses and evaluations.\n\nRECOMMENDATIONS:\n[1] An Early Categorization of Prompt Injection Attacks on Large Language Models - Provides a foundational understanding of prompt injection attacks and serves as a useful reference for future research.\n[2] May I have your Attention? Breaking Fine-Tuning based Prompt Injection Defenses using Architecture-Aware Attacks - Demonstrates the limitations of fine-tuning-based defenses and highlights the importance of considering the broader context of LLM usage.\n[3] AEGIS : Automated Co-Evolutionary Framework for Guarding Prompt Injections Schema - Proposes a novel framework that leverages continuous optimization to adapt to evolving attack strategies, offering potential for improved defense mechanisms."
+    },
+    {
+      "question": "What methods improve sequential recommendation with transformers?",
+      "reply": "SYNTHESIS: The collective findings suggest that enhancing Transformer-based sequential recommendation models through regularization and loss landscape analysis can mitigate noise and improve performance. Techniques like Sharpness-Aware Minimization (SAM) and Linear Attention Models (HydraAttention) offer promising solutions to overcome data sparsity and reduce computational costs. Furthermore, incorporating sequence uniformity and item frequency can significantly boost performance in handling non-uniform sequences and infrequent items. However, there remains a gap in understanding how to effectively incorporate personalized elements into Transformer-based models for improved recommendation accuracy.\n\nGAP: None of the provided papers specifically discuss the integration of personalized elements into Transformer-based sequential recommendation models.\n\nRECOMMENDATIONS:\n[1] - \"Denoising Self-attentive Sequential Recommendation\" - Addresses the issue of noise in real-world item sequences by proposing regularization techniques to prevent irrelevant item assignments.\n[2] - \"Enhancing Transformers without Self-supervised Learning: A Loss Landscape Perspective in Sequential Recommendation\" - Provides insights into optimizing loss landscapes to enhance data efficiency and generalization in sequential recommendation.\n[3] - \"Efficient Sequential Recommendation for Long Term User Interest Via Personalization\" - Introduces a novel approach to compress long user interaction histories using personalization techniques, reducing computational costs while maintaining high accuracy."
+    },
+    {
+      "question": "How is federated learning made robust to poisoned clients?",
+      "reply": "SYNTHESIS: All five papers discuss various aspects of federated learning resilience against poisoning attacks, focusing on different techniques such as detection methods, mitigation strategies, and defense mechanisms. Papers [1], [2], and [3] emphasize the importance of detecting and defending against specific types of poisoning attacks, including targeted and untargeted attacks, respectively. Paper [4] presents a novel self-purification technique that enhances the robustness of federated learning against poisoning attacks. Paper [5] provides a survey of heterogeneity considerations in federated learning, highlighting the need for efficient collaboration among diverse clients.\n\nGAP: None of the papers directly address the issue of federated learning's robustness to maliciously injected noise or outliers within the dataset itself, which could potentially lead to biased or inaccurate model predictions.\n\nRECOMMENDATIONS:\n[1] \"Detection and Prevention Against Poisoning Attacks in Federated Learning\" - This paper offers a detailed approach for detecting and preventing poisoning attacks through average accuracy deviation detection, providing valuable insights into the effectiveness of such methods in protecting federated learning models.\n\n[2] \"Back to the Drawing Board: A Critical Evaluation of Poisoning Attacks on Production Federated Learning\" - Although this paper focuses more on theoretical understanding and practical evaluation of poisoning attacks, it highlights the importance of considering both targeted and untargeted attacks, which aligns well with the broader goal of enhancing federated learning resilience.\n\n[3] \"Network-Level Adversaries in Federated Learning\" - This paper explores the impact of network-level adversaries on federated learning, demonstrating how communication disruptions can affect model accuracy. Its findings underscore the critical role of communication in maintaining the integrity of federated learning systems."
+    },
+    {
+      "question": "How do vision transformers compare with convolutional networks for image classification?",
+      "reply": "SYNTHESIS: All five papers discuss the performance of vision transformers compared to convolutional networks in image classification tasks. Papers [1], [2], and [3] explore how vision transformers perform relative to traditional CNNs, highlighting improvements in accuracy and robustness. Paper [4] focuses on optimizing Transformer architectures for real-world applications, emphasizing practical considerations like computational efficiency. Lastly, [5] introduces a method to reduce kernel complexity in transformers, potentially leading to further improvements in efficiency.\n\nGAP: None of the papers specifically address the long-term impact of vision transformers on the field of computer vision, focusing instead on short-term performance gains and practical optimizations.\n\nRECOMMENDATIONS: \n[1] Visformer: The Vision-friendly Transformer - Offers empirical evidence of improved accuracy and robustness through gradual transformation from a Transformer-based model to a convolution-based model.\n[2] Are Convolutional Neural Networks or Transformers more like human vision? - Provides insights into the strengths and weaknesses of both CNNs and vision transformers, suggesting potential areas for improvement in CNNs.\n[4] TRT-ViT: TensorRT-oriented Vision Transformer - Highlights the importance of considering computational efficiency alongside accuracy, providing practical guidelines for deploying Transformer-based models."
+    },
+    {
+      "question": "Which techniques reduce hallucination in retrieval-augmented question answering?",
+      "reply": "SYNTHESIS: All five papers discuss techniques aimed at reducing hallucinations in retrieval-augmented question answering (RAG). They explore ways to mitigate knowledge redundancy, ensure correctness of generated responses, and enhance the ability of LLMs to handle complex queries without producing erroneous results. Paper [1] focuses on identifying and pruning redundant knowledge using a Mastery-Score metric, while proposing Query Router and Noise-Tolerant Tuning to refine the query selection process. Paper [2] introduces TRAQ, a method that provides statistical guarantees on the correctness of RAG responses through conformal prediction. Papers [3] and [4] both highlight the importance of addressing retrieval and reasoning failures in KG-enhanced LLMs, though their solutions differ slightly\u2014[3] proposes a multi-hop approach, whereas [4] employs rationale-guided retrieval augmentation. Lastly, [5] presents PersonaRAG, which personalizes the retrieval process based on user feedback, aiming to improve the reliability and relevance of RAG outputs.\n\nGAP: None of the papers specifically address the reduction of hallucinations within the context of retrieval-augmented question answering itself. Instead, they focus more broadly on improving the overall quality and effectiveness of RAG systems.\n\nRECOMMENDATIONS: \n[1] \"Zero-RAG: Towards Retrieval-Augmented Generation with Zero Redundant Knowledge\"\n[2] \"TRAQ: Trustworthy Retrieval Augmented Question Answering via Conformal Prediction\"\n[3] \"ProgRAG: Hallucination-Resistant Progressive Retrieval and Reasoning over Knowledge Graphs\"\n\nThese papers collectively offer valuable insights into strategies for reducing hallucinations in RAG, ranging from methods to identify and eliminate redundant knowledge to ensuring the correctness of generated responses through statistical guarantees."
+    }
+  ],
+  "prompt_injection": [
+    {
+      "attacks": "original",
+      "setting": "none",
+      "succeeded (v1 exact check)": "2/9",
+      "succeeded (incl. partial hijack)": "3/9"
+    },
+    {
+      "attacks": "original",
+      "setting": "guard",
+      "succeeded (v1 exact check)": "3/9",
+      "succeeded (incl. partial hijack)": "3/9"
+    },
+    {
+      "attacks": "original",
+      "setting": "sanitize + guard",
+      "succeeded (v1 exact check)": "0/9",
+      "succeeded (incl. partial hijack)": "0/9"
+    },
+    {
+      "attacks": "held-out",
+      "setting": "none",
+      "succeeded (v1 exact check)": "4/9",
+      "succeeded (incl. partial hijack)": "4/9"
+    },
+    {
+      "attacks": "held-out",
+      "setting": "guard",
+      "succeeded (v1 exact check)": "4/9",
+      "succeeded (incl. partial hijack)": "4/9"
+    },
+    {
+      "attacks": "held-out",
+      "setting": "sanitize + guard",
+      "succeeded (v1 exact check)": "4/9",
+      "succeeded (incl. partial hijack)": "4/9"
+    }
+  ]
+}
